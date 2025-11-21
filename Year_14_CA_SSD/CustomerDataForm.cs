@@ -17,6 +17,7 @@ namespace Year_14_CA_SSD
         public List<string[]> customers = new List<string[]>();
         public List<int> displayedIndexes = new List<int>();
         public string[] columns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
+        public bool showArchive = false;
         public CustomerDataForm()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace Year_14_CA_SSD
         private void Search_Button_Click(object sender, EventArgs e)
         {
             Filter_Customers();
+            Display_Customers();
         }
         private void Refresh_Button_Click(object sender, EventArgs e)
         {
@@ -107,14 +109,14 @@ namespace Year_14_CA_SSD
         }
         void Filter_Customers()
         {
-            displayedIndexes.Clear();
             int filterIndex = Get_Column_Index(Filter_ComboBox.Text);
             if(filterIndex == -1)
             {
                 MessageBox.Show("Filter not selected");
                 return;
             }
-            for(int i = 0; i < customers.Count;i++)
+            displayedIndexes.Clear();
+            for (int i = 0; i < customers.Count;i++)
             {
                 string[] customer = customers[i];
                 if(customer[filterIndex].Contains(Filter_TextBox.Text))
@@ -122,8 +124,6 @@ namespace Year_14_CA_SSD
                     displayedIndexes.Add(i);
                 }
             }
-            ListViewCustomers.Items.Clear();
-            Display_Customers();
         }
         void Setup_Form()
         {
@@ -141,6 +141,7 @@ namespace Year_14_CA_SSD
         }
         void Display_Customers()
         {
+            ListViewCustomers.Items.Clear();
             for(int i = 0; i < displayedIndexes.Count;i++)
             {
                 string[] customer = customers[displayedIndexes[i]];
@@ -192,6 +193,69 @@ namespace Year_14_CA_SSD
                     MessageBox.Show("An error occured");
                 }
             }
+        }
+        void Display_Archived()
+        {
+            if (!showArchive)
+            {
+                Filter_By_Archive();
+                Display_Customers();
+            }
+            else //was hidding archived so need to reload customer
+            {
+                if(Filter_TextBox.Text != "")
+                {
+                    Filter_Customers();
+                }
+                else
+                {
+                    Reset_Displayed_Indexes();
+                }
+                Display_Customers();
+            }
+        }
+        void Reset_Displayed_Indexes()
+        {
+            displayedIndexes.Clear();
+            for (int i = 0; i < customers.Count; i++)
+            {
+                displayedIndexes.Add(i);
+            }
+
+        }
+        void Filter_By_Archive()
+        {
+            List<int> tempIndexes = new List<int>();
+            int archiveIndex = Get_Column_Index("Archived");
+            foreach(int index in displayedIndexes)
+            {
+                if(customers[index][archiveIndex] == "False")
+                {
+                    tempIndexes.Add(index);
+                }
+            }
+            displayedIndexes = tempIndexes;
+        }
+
+        private void Show_Archive_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+        void Show_Archive(object sender,EventArgs e)
+        {
+            showArchive = true;
+            Show_Archive_Button.Click -= new EventHandler(Show_Archive);
+            Show_Archive_Button.Click += new EventHandler(Hide_Archive);
+            Show_Archive_Button.Image = Properties.Resources.archive_visible;
+            Display_Archived();
+        }
+        void Hide_Archive(object sender,EventArgs e)
+        {
+            showArchive = false;
+            Show_Archive_Button.Click -= new EventHandler(Hide_Archive);
+            Show_Archive_Button.Click += new EventHandler(Show_Archive);
+            Show_Archive_Button.Image = Properties.Resources.archive_not_visible;
+            Display_Archived();
         }
     }
     public class Add_Customer_EventArgs : EventArgs

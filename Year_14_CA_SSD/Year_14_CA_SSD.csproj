@@ -250,6 +250,9 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\archive not visible.png" />
+    <None Include="resources\archive visible.png" />
+    <None Include="resources\archive.png" />
     <None Include="resources\search icon.png" />
     <None Include="resources\return car.png" />
     <None Include="resources\show password.png" />

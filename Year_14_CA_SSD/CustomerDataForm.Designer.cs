@@ -29,6 +29,7 @@ namespace Year_14_CA_SSD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ListViewCustomers = new System.Windows.Forms.ListView();
             this.Contact_Information_Label = new System.Windows.Forms.Label();
             this.Telephone_Label = new System.Windows.Forms.Label();
@@ -48,6 +49,15 @@ namespace Year_14_CA_SSD
             this.Damaged_Label = new System.Windows.Forms.Label();
             this.Filter_TextBox = new System.Windows.Forms.TextBox();
             this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
+            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Show_Archive_Button = new System.Windows.Forms.PictureBox();
+            this.Archive_Button = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Search_Button = new System.Windows.Forms.PictureBox();
             this.Refresh_Button = new System.Windows.Forms.PictureBox();
             this.Edit_Customer_Button = new System.Windows.Forms.PictureBox();
@@ -57,12 +67,14 @@ namespace Year_14_CA_SSD
             this.Address_PictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.History_PictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Show_Archive_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Customer_Button)).BeginInit();
@@ -72,12 +84,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.History_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // ListViewCustomers
@@ -282,15 +288,95 @@ namespace Year_14_CA_SSD
             this.Filter_ComboBox.Size = new System.Drawing.Size(165, 38);
             this.Filter_ComboBox.TabIndex = 31;
             // 
+            // Show_Archive_Button
+            // 
+            this.Show_Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive_not_visible;
+            this.Show_Archive_Button.Location = new System.Drawing.Point(806, 82);
+            this.Show_Archive_Button.Name = "Show_Archive_Button";
+            this.Show_Archive_Button.Size = new System.Drawing.Size(64, 64);
+            this.Show_Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Show_Archive_Button.TabIndex = 40;
+            this.Show_Archive_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Show_Archive_Button, "Add Customer");
+            this.Show_Archive_Button.Click += new System.EventHandler(this.Show_Archive);
+            // 
+            // Archive_Button
+            // 
+            this.Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive;
+            this.Archive_Button.Location = new System.Drawing.Point(806, 377);
+            this.Archive_Button.Name = "Archive_Button";
+            this.Archive_Button.Size = new System.Drawing.Size(64, 64);
+            this.Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Archive_Button.TabIndex = 39;
+            this.Archive_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Archive_Button, "Archive Button");
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox8.Location = new System.Drawing.Point(788, 528);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(5, 53);
+            this.pictureBox8.TabIndex = 38;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox7.Location = new System.Drawing.Point(621, 525);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(5, 53);
+            this.pictureBox7.TabIndex = 37;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox6.Location = new System.Drawing.Point(625, 568);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(164, 10);
+            this.pictureBox6.TabIndex = 36;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox5.Location = new System.Drawing.Point(625, 526);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(164, 10);
+            this.pictureBox5.TabIndex = 35;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(616, 523);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(180, 61);
+            this.pictureBox4.TabIndex = 34;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 523);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(598, 61);
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
+            // 
             // Search_Button
             // 
             this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(805, 520);
+            this.Search_Button.Location = new System.Drawing.Point(806, 520);
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(64, 64);
             this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Search_Button.TabIndex = 32;
             this.Search_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // Refresh_Button
@@ -302,17 +388,19 @@ namespace Year_14_CA_SSD
             this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh_Button.TabIndex = 9;
             this.Refresh_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh");
             this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
             // 
             // Edit_Customer_Button
             // 
             this.Edit_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Customer_Button.Location = new System.Drawing.Point(805, 377);
+            this.Edit_Customer_Button.Location = new System.Drawing.Point(806, 307);
             this.Edit_Customer_Button.Name = "Edit_Customer_Button";
             this.Edit_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Edit_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Edit_Customer_Button.TabIndex = 8;
             this.Edit_Customer_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Edit_Customer_Button, "Edit Customer");
             this.Edit_Customer_Button.Click += new System.EventHandler(this.Update_Customer_Button_Click);
             // 
             // Remove_Customer_Button
@@ -324,17 +412,19 @@ namespace Year_14_CA_SSD
             this.Remove_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Remove_Customer_Button.TabIndex = 7;
             this.Remove_Customer_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Remove_Customer_Button, "Delete Customer");
             this.Remove_Customer_Button.Click += new System.EventHandler(this.Remove_Customer_Button_Click);
             // 
             // Add_Customer_Button
             // 
             this.Add_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Customer_Button.Location = new System.Drawing.Point(805, 307);
+            this.Add_Customer_Button.Location = new System.Drawing.Point(806, 237);
             this.Add_Customer_Button.Name = "Add_Customer_Button";
             this.Add_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Add_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Add_Customer_Button.TabIndex = 6;
             this.Add_Customer_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Add_Customer_Button, "Add Customer");
             this.Add_Customer_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
             // 
             // Contact_PictureBox
@@ -373,67 +463,13 @@ namespace Year_14_CA_SSD
             this.History_PictureBox.TabIndex = 29;
             this.History_PictureBox.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 523);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(598, 61);
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(616, 523);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(180, 61);
-            this.pictureBox4.TabIndex = 34;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox6.Location = new System.Drawing.Point(625, 568);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(164, 10);
-            this.pictureBox6.TabIndex = 36;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox7.Location = new System.Drawing.Point(621, 525);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(5, 53);
-            this.pictureBox7.TabIndex = 37;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox8.Location = new System.Drawing.Point(788, 528);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(5, 53);
-            this.pictureBox8.TabIndex = 38;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(625, 526);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(164, 10);
-            this.pictureBox5.TabIndex = 35;
-            this.pictureBox5.TabStop = false;
-            // 
             // CustomerDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Show_Archive_Button);
+            this.Controls.Add(this.Archive_Button);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -471,6 +507,14 @@ namespace Year_14_CA_SSD
             this.Name = "CustomerDataForm";
             this.Text = "CustomerDataForm";
             this.Load += new System.EventHandler(this.CustomerDataForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Show_Archive_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Customer_Button)).EndInit();
@@ -480,12 +524,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.History_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +565,8 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ToolTip Tool_Tip;
+        private System.Windows.Forms.PictureBox Archive_Button;
+        private System.Windows.Forms.PictureBox Show_Archive_Button;
     }
 }
