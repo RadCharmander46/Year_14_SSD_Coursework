@@ -271,10 +271,12 @@ namespace Year_14_CA_SSD
             this.Filter_ComboBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filter_ComboBox.FormattingEnabled = true;
             this.Filter_ComboBox.Items.AddRange(new object[] {
-            "First Name",
-            "Last Name",
+            "First Name/s",
+            "Last Name/s",
             "Date Of Birth",
-            "Phone Number"});
+            "Phone Number",
+            "Email Address",
+            "Postcode"});
             this.Filter_ComboBox.Location = new System.Drawing.Point(625, 532);
             this.Filter_ComboBox.Name = "Filter_ComboBox";
             this.Filter_ComboBox.Size = new System.Drawing.Size(165, 38);

@@ -165,6 +165,9 @@
     <EmbeddedResource Include="CarReturnForm.resx">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDataForm.resx">
+      <DependentUpon>CustomerDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </EmbeddedResource>
