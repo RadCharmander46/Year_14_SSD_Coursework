@@ -92,7 +92,7 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(First_Name_TextBox, "First Name is invalid \n Check that it is not empty and has no numbers or special characters \n If a double barrel name is used, use a space not a hypen");
                 valid = false;
             }
-            if(!Globals.validString(Middle_Name_TextBox.Text,20,1,nonLetters,noNumbers,noSpecialChars,spaces))
+            if(Middle_Name_TextBox.Text != "" && !Globals.validString(Middle_Name_TextBox.Text,20,1,nonLetters,noNumbers,noSpecialChars,spaces))
             {
                 Middle_Name_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Middle_Name_TextBox, "Middle Name is invalid \n If filled in, it must not have any numebr or special characters \n If a double barrel name is used, use a space");
@@ -110,7 +110,7 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(Address_Line1_TextBox, "Address Line 1 is invalid \n Check that it is filled in and not left empty");
                 valid = false;
             }
-            if (!Globals.validString(Address_Line2_TextBox.Text, 40, 0,nonLetters,numbers,specialChars,spaces))
+            if (Address_Line2_TextBox.Text != "" && !Globals.validString(Address_Line2_TextBox.Text, 40, 0,nonLetters,numbers,specialChars,spaces))
             {
                 Address_Line2_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Address_Line2_TextBox, "Address Line 2 is invalid \n Check that it is filled in and not left empty");
@@ -145,7 +145,7 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(Phone_Number_TextBox, "Phone number is invalid \n ensure that you put 0 in front of a UK number");
                 valid = false;
             }
-            if(Globals.validString(Email_Address_TextBox.Text,50,5,nonLetters,numbers,specialChars,noSpaces))
+            if(Email_Address_TextBox.Text != "" && !Globals.validString(Email_Address_TextBox.Text,50,5,nonLetters,numbers,specialChars,noSpaces))
             {
                 Email_Address_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Email_Address_TextBox, "Email Address in invalid \n Ensure you have spelt it correctly");

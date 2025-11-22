@@ -87,6 +87,12 @@
     <Compile Include="CarReturnForm.Designer.cs">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarReturnForm.resx">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerDataForm.resx">
       <DependentUpon>CustomerDataForm.cs</DependentUpon>

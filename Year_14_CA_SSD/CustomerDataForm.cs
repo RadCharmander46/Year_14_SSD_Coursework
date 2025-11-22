@@ -67,6 +67,10 @@ namespace Year_14_CA_SSD
         }
         private void Refresh_Button_Click(object sender, EventArgs e)
         {
+            Refresh_Page();
+        }
+        void Refresh_Page()
+        {
             customers.Clear();
             displayedIndexes.Clear();
             ListViewCustomers.Clear();
@@ -129,7 +133,7 @@ namespace Year_14_CA_SSD
         {
             Setup_ListView();
             Load_Customers();
-            Display_Customers();
+            Display_Archived();
         }
         void Setup_ListView()
         {
@@ -256,6 +260,26 @@ namespace Year_14_CA_SSD
             Show_Archive_Button.Click += new EventHandler(Show_Archive);
             Show_Archive_Button.Image = Properties.Resources.archive_not_visible;
             Display_Archived();
+        }
+
+        private void Archive_Button_Click(object sender, EventArgs e)
+        {
+            if(ListViewCustomers.SelectedItems.Count == 1)
+            {
+                int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
+                ConfirmationForm archiveConfirm = new ConfirmationForm() {text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
+                if(archiveConfirm.ShowDialog() == DialogResult.OK)
+                {
+                    if(!SQL_Operation.UpdateEntryVariable(id,"CustomerId","Archived","True","CustomerTable"))
+                    {
+                        MessageBox.Show("An error ocurred");
+                    }
+                    else
+                    {
+                        Refresh_Page();
+                    }
+                }
+            }
         }
     }
     public class Add_Customer_EventArgs : EventArgs
