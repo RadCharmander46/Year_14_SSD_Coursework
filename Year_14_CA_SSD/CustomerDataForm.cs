@@ -63,7 +63,7 @@ namespace Year_14_CA_SSD
         private void Search_Button_Click(object sender, EventArgs e)
         {
             Filter_Customers();
-            Display_Customers();
+            Display_Archived();
         }
         private void Refresh_Button_Click(object sender, EventArgs e)
         {
@@ -90,7 +90,21 @@ namespace Year_14_CA_SSD
         }
         private void Remove_Customer_Button_Click(object sender, EventArgs e)
         {
-
+            if (ListViewCustomers.SelectedItems.Count == 1)
+            {
+                int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
+                if(Can_Delete(id))
+                {
+                    if (!SQL_Operation.DeleteEntry(id, "CustomerId", "CustomerTable"))
+                    {
+                        MessageBox.Show("And error occured");
+                    }
+                    else
+                    {
+                        Refresh_Page();
+                    }
+                }
+            }
         }
         private void Add_Customer_Button_Click(object sender, EventArgs e)
         {
@@ -280,6 +294,10 @@ namespace Year_14_CA_SSD
                     }
                 }
             }
+        }
+        bool Can_Delete(int id)
+        {
+            return true;
         }
     }
     public class Add_Customer_EventArgs : EventArgs

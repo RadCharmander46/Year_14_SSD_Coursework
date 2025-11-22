@@ -95,7 +95,6 @@ namespace Year_14_CA_SSD
             this.ListViewCustomers.Name = "ListViewCustomers";
             this.ListViewCustomers.Scrollable = false;
             this.ListViewCustomers.Size = new System.Drawing.Size(784, 499);
-            this.ListViewCustomers.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.ListViewCustomers.TabIndex = 1;
             this.ListViewCustomers.UseCompatibleStateImageBehavior = false;
             this.ListViewCustomers.View = System.Windows.Forms.View.Details;
