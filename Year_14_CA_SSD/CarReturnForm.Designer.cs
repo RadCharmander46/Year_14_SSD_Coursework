@@ -69,6 +69,7 @@ namespace Year_14_CA_SSD
             this.Cust_DOB_Label = new System.Windows.Forms.Label();
             this.Cust_Tel_Label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Cleaned_Label = new System.Windows.Forms.Label();
             this.Inspected_Label = new System.Windows.Forms.Label();
             this.Damaged_Label = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@ namespace Year_14_CA_SSD
             this.Car_Not_Damaged_CheckBox = new System.Windows.Forms.CheckBox();
             this.Car_Returned_CheckBox = new System.Windows.Forms.CheckBox();
             this.Return_Button = new System.Windows.Forms.Button();
-            this.Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Car_GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Car_DropDown)).BeginInit();
             this.Employee_GroupBox.SuspendLayout();
@@ -491,7 +491,7 @@ namespace Year_14_CA_SSD
             // 
             this.Postcode_Label.AutoSize = true;
             this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Postcode_Label.Location = new System.Drawing.Point(6, 95);
+            this.Postcode_Label.Location = new System.Drawing.Point(6, 128);
             this.Postcode_Label.Name = "Postcode_Label";
             this.Postcode_Label.Size = new System.Drawing.Size(143, 21);
             this.Postcode_Label.TabIndex = 14;
@@ -551,7 +551,7 @@ namespace Year_14_CA_SSD
             // 
             this.Cust_Email_Label.AutoSize = true;
             this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 121);
+            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 95);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
             this.Cust_Email_Label.Size = new System.Drawing.Size(234, 21);
             this.Cust_Email_Label.TabIndex = 8;
@@ -596,6 +596,26 @@ namespace Year_14_CA_SSD
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car Return";
+            // 
+            // Mileage_NumericUpDown
+            // 
+            this.Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_NumericUpDown.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.Mileage_NumericUpDown.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.Mileage_NumericUpDown.Location = new System.Drawing.Point(139, 26);
+            this.Mileage_NumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.Mileage_NumericUpDown.Name = "Mileage_NumericUpDown";
+            this.Mileage_NumericUpDown.Size = new System.Drawing.Size(147, 29);
+            this.Mileage_NumericUpDown.TabIndex = 23;
+            this.Mileage_NumericUpDown.ThousandsSeparator = true;
             // 
             // Cleaned_Label
             // 
@@ -709,26 +729,6 @@ namespace Year_14_CA_SSD
             this.Return_Button.Text = "Return Car";
             this.Return_Button.UseVisualStyleBackColor = true;
             this.Return_Button.Click += new System.EventHandler(this.Return_Button_Click);
-            // 
-            // Mileage_NumericUpDown
-            // 
-            this.Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mileage_NumericUpDown.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Mileage_NumericUpDown.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.Mileage_NumericUpDown.Location = new System.Drawing.Point(139, 26);
-            this.Mileage_NumericUpDown.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.Mileage_NumericUpDown.Name = "Mileage_NumericUpDown";
-            this.Mileage_NumericUpDown.Size = new System.Drawing.Size(147, 29);
-            this.Mileage_NumericUpDown.TabIndex = 23;
-            this.Mileage_NumericUpDown.ThousandsSeparator = true;
             // 
             // CarReturnForm
             // 

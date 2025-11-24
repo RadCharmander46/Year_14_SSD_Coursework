@@ -119,7 +119,7 @@ namespace Year_14_CA_SSD
             // 
             this.Postcode_Label.AutoSize = true;
             this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Postcode_Label.Location = new System.Drawing.Point(6, 95);
+            this.Postcode_Label.Location = new System.Drawing.Point(6, 138);
             this.Postcode_Label.Name = "Postcode_Label";
             this.Postcode_Label.Size = new System.Drawing.Size(143, 21);
             this.Postcode_Label.TabIndex = 14;
@@ -179,7 +179,7 @@ namespace Year_14_CA_SSD
             // 
             this.Cust_Email_Label.AutoSize = true;
             this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 138);
+            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 95);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
             this.Cust_Email_Label.Size = new System.Drawing.Size(234, 21);
             this.Cust_Email_Label.TabIndex = 8;

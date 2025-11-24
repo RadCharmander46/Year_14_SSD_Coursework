@@ -391,7 +391,7 @@ namespace Year_14_CA_SSD
             try
             {
                 DateTime startTime = (DateTime) Get_Start_Date();
-                string[] values = { startTime.ToString("yyyy-MM-dd HH:mm:ss"), CustomerId.ToString(), Calculate_Discounted_Price().ToString(), "Payment", "Paying for test drive" };
+                string[] values = { startTime.ToString("yyyy-MM-dd HH:mm:ss"), CustomerId.ToString(), Calculate_Discounted_Price().ToString(), "Payment", "Paying for test drive","False","False"};
                 int? id = SQL_Operation.CreateEntryReturnId(values, "PaymentTable", "PaymentId");
                 if(id.HasValue)
                 {

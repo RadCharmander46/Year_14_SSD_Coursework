@@ -259,6 +259,7 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\cancel.png" />
     <None Include="resources\archive not visible.png" />
     <None Include="resources\archive visible.png" />
     <None Include="resources\archive.png" />
