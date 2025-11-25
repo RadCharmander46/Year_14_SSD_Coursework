@@ -29,6 +29,7 @@ namespace Year_14_CA_SSD
         public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password" };
         public string[] carColumns = { "CarId", "Make", "Model", "Registration", "Year Of Manufacture", "Mileage", "Transmission", "Fuel Type", "Engine Size", "Power", "Colour", "Body Style", "No Of Seats", "Insurance Group", "Previous Owners", "Needs Cleaned", "Needs Inspected", "Price", "Has Been Sold" };
         public string[] carUnavailabiltyColumns = { "CarUnavailabiltyId", "CarId", "StartTime", "EndTime", "Description" };
+        public string[] testDriveTypes = { "30 Minutes", "1 Day", "Weekend" };
 
         private void TestDriveDataForm_Load(object sender, EventArgs e)
         {
@@ -817,7 +818,7 @@ namespace Year_14_CA_SSD
                     }
                 case "Test Drive":
                     {
-                        Add_TestDrive_DropDown();
+                        Search_TestDrives();
                         break;
                     }
                 default:
@@ -881,6 +882,49 @@ namespace Year_14_CA_SSD
                 if (car[filterIndex].Contains(searchText))
                 {
                     tempIndexes.Add(displayedIndexes[i]);
+                }
+            }
+            displayedIndexes = tempIndexes;
+        }
+        void Search_TestDrives()
+        {
+            List<int> tempIndexes = new List<int>();
+            string searchText = Filter_TextBox.Text;
+            for (int i = 0; i < displayedIndexes.Count; i++)
+            {
+                string[] testDrive = testDrives[displayedIndexes[i]];
+                int carUnavailId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CarUnavailabiltyId")]);
+                string[] carUnavailValues = Get_Car_Unavailabilty_Values(carUnavailId);
+                string startDate = Convert.ToDateTime(carUnavailValues[Get_CarUnavailabilty_Column_Index("StartTime")]).ToString("yyyy/MM/dd HH:mm:ss");
+                string endDate = Convert.ToDateTime(carUnavailValues[Get_CarUnavailabilty_Column_Index("EndTime")]).ToString("yyyy/MM/dd HH:mm:ss");
+                int testDriveType = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("TestDriveType")]);
+
+                int filterIndex = Filter_ComboBox.SelectedIndex;
+                if(filterIndex == 2) //test drive type
+                {
+                    if(testDriveTypes[testDriveType].Contains(searchText))
+                    {
+                        tempIndexes.Add(displayedIndexes[i]);
+                    }
+                }
+                else if(filterIndex == 1) //end time
+                {
+                    if(endDate.Contains(searchText))
+                    {
+                        tempIndexes.Add(displayedIndexes[i]);
+                    }
+                }
+                else if(filterIndex == 0) //start time
+                {
+                    if(startDate.Contains(searchText))
+                    {
+                        tempIndexes.Add(displayedIndexes[i]);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("An error occurred");
+                    return;
                 }
             }
             displayedIndexes = tempIndexes;
