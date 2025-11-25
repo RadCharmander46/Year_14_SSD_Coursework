@@ -14,6 +14,7 @@ namespace Year_14_CA_SSD
     public partial class TestDriveDataForm : Form
     {
         public event EventHandler TestDrive;
+        public bool showCancelled = false;
         public TestDriveDataForm()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Year_14_CA_SSD
         {
             Setup_Columns();
             Load_Tables();
-            Display_All_TestDrives();
+            Display_TestDrives();
             Reset_Labels();
         }
         void Load_Tables()
@@ -481,7 +482,7 @@ namespace Year_14_CA_SSD
             string[] testDrive = Get_Test_Drive_Values(testDriveId);
             int carUnavailabiltyId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CarUnavailabiltyId")]);
             DateTime startDate = Convert.ToDateTime(Get_Start_Time(carUnavailabiltyId.ToString()));
-            if(startDate > DateTime.Now.AddDays(-1)) //checking the test drive is more than 1 day ahead
+            if(startDate < DateTime.Now.AddDays(-1)) //checking the test drive is more than 1 day ahead
             {
                 return false;
             }
@@ -598,7 +599,7 @@ namespace Year_14_CA_SSD
                 int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
                 string[] paymentValues = Get_Payment_Values(paymentId);
                 
-                Cost_Label.Text = "Cost: " + paymentValues[3];
+                Cost_Label.Text = "Cost: £" +  paymentValues[3];
                 Paid_Label.Text = "Paid: " + Globals.boolToYN(paymentValues[6]);
 
             }
@@ -828,7 +829,7 @@ namespace Year_14_CA_SSD
                         break;
                     }
             }
-            Display_All_TestDrives();
+            Display_TestDrives();
         }
         void Search_Customers()
         {
@@ -925,6 +926,66 @@ namespace Year_14_CA_SSD
                 {
                     MessageBox.Show("An error occurred");
                     return;
+                }
+            }
+            displayedIndexes = tempIndexes;
+        }
+
+        private void Remove_Test_Drive_Button_Click(object sender, EventArgs e)
+        {
+            if (Test_Drives_ListView.SelectedItems.Count == 1)
+            {
+                int testDriveId = Convert.ToInt32(testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]][0]);
+                if (Can_Be_Deleted(testDriveId))
+                {
+                    if (!SQL_Operation.DeleteEntry(testDriveId, "TestDriveId", "TestDriveTable"))
+                    {
+                        MessageBox.Show("An error ocurred");
+                    }
+                }
+            }
+        }
+        bool Can_Be_Deleted(int id)
+        {
+            return true;
+        }
+
+        void Show_Cancelled(object sender, EventArgs e)
+        {
+            showCancelled = true;
+            Show_Cancelled_Button.Click -= new EventHandler(Show_Cancelled);
+            Show_Cancelled_Button.Click += new EventHandler(Hide_Cancelled);
+            Show_Cancelled_Button.Image = Properties.Resources.cancel_visible;
+            Display_TestDrives();
+        }
+        void Hide_Cancelled(object sender, EventArgs e)
+        {
+            showCancelled = false;
+            Show_Cancelled_Button.Click -= new EventHandler(Hide_Cancelled);
+            Show_Cancelled_Button.Click += new EventHandler(Show_Cancelled);
+            Show_Cancelled_Button.Image = Properties.Resources.cancel_not_visible;
+            Display_TestDrives();
+        }
+
+        void Display_TestDrives()
+        {
+            if(showCancelled)
+            {
+                Reset_Displayed_Indexes();
+            }
+            Filter_By_Cancelled();
+            Display_All_TestDrives();
+        }
+        void Filter_By_Cancelled()
+        {
+            List<int> tempIndexes = new List<int>();
+            for (int i = 0; i < displayedIndexes.Count; i++)
+            {
+                string[] testDrive = testDrives[displayedIndexes[i]];
+                bool cancelled = Convert.ToBoolean(testDrive[Get_TestDrive_Column_Index("IsCancelled")]);
+                if (!cancelled || showCancelled )
+                {
+                    tempIndexes.Add(displayedIndexes[i]);
                 }
             }
             displayedIndexes = tempIndexes;

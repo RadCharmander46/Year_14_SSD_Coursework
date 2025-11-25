@@ -183,6 +183,26 @@ namespace Year_14_CA_SSD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel_not_visible {
+            get {
+                object obj = ResourceManager.GetObject("cancel not visible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_visible {
+            get {
+                object obj = ResourceManager.GetObject("cancel visible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car_service {
             get {
                 object obj = ResourceManager.GetObject("car service", resourceCulture);
@@ -306,6 +326,16 @@ namespace Year_14_CA_SSD.Properties {
         internal static System.Drawing.Bitmap moving_car1 {
             get {
                 object obj = ResourceManager.GetObject("moving car1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payments {
+            get {
+                object obj = ResourceManager.GetObject("payments", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
