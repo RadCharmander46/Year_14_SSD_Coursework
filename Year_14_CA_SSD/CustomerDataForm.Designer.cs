@@ -50,6 +50,7 @@ namespace Year_14_CA_SSD
             this.Filter_TextBox = new System.Windows.Forms.TextBox();
             this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
             this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Sort_FirstName = new System.Windows.Forms.PictureBox();
             this.Show_Archive_Button = new System.Windows.Forms.PictureBox();
             this.Archive_Button = new System.Windows.Forms.PictureBox();
             this.Search_Button = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,10 @@ namespace Year_14_CA_SSD
             this.Edit_Customer_Button = new System.Windows.Forms.PictureBox();
             this.Remove_Customer_Button = new System.Windows.Forms.PictureBox();
             this.Add_Customer_Button = new System.Windows.Forms.PictureBox();
+            this.Sort_Middle_Name = new System.Windows.Forms.PictureBox();
+            this.Sort_Last_Name = new System.Windows.Forms.PictureBox();
+            this.Sort_DOB = new System.Windows.Forms.PictureBox();
+            this.Sort_Phone_Number = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -67,6 +72,7 @@ namespace Year_14_CA_SSD
             this.Address_PictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.History_PictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_FirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Archive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
@@ -74,6 +80,10 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Customer_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Customer_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Add_Customer_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Middle_Name)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_DOB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Phone_Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -287,6 +297,20 @@ namespace Year_14_CA_SSD
             this.Filter_ComboBox.Size = new System.Drawing.Size(165, 38);
             this.Filter_ComboBox.TabIndex = 31;
             // 
+            // Sort_FirstName
+            // 
+            this.Sort_FirstName.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_FirstName.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_FirstName.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_FirstName.Location = new System.Drawing.Point(140, 17);
+            this.Sort_FirstName.Name = "Sort_FirstName";
+            this.Sort_FirstName.Size = new System.Drawing.Size(20, 20);
+            this.Sort_FirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_FirstName.TabIndex = 42;
+            this.Sort_FirstName.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_FirstName, "Sort First Name");
+            this.Sort_FirstName.Click += new System.EventHandler(this.Sort_FirstName_Click);
+            // 
             // Show_Archive_Button
             // 
             this.Show_Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive_not_visible;
@@ -370,6 +394,62 @@ namespace Year_14_CA_SSD
             this.Add_Customer_Button.TabStop = false;
             this.Tool_Tip.SetToolTip(this.Add_Customer_Button, "Add Customer");
             this.Add_Customer_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
+            // 
+            // Sort_Middle_Name
+            // 
+            this.Sort_Middle_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Middle_Name.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Middle_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Middle_Name.Location = new System.Drawing.Point(290, 17);
+            this.Sort_Middle_Name.Name = "Sort_Middle_Name";
+            this.Sort_Middle_Name.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Middle_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Middle_Name.TabIndex = 43;
+            this.Sort_Middle_Name.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Middle_Name, "Sort Middle Name");
+            this.Sort_Middle_Name.Click += new System.EventHandler(this.Sort_Middle_Name_Click);
+            // 
+            // Sort_Last_Name
+            // 
+            this.Sort_Last_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Last_Name.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Last_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Last_Name.Location = new System.Drawing.Point(441, 17);
+            this.Sort_Last_Name.Name = "Sort_Last_Name";
+            this.Sort_Last_Name.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Last_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Last_Name.TabIndex = 44;
+            this.Sort_Last_Name.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Last_Name, "Sort Last Name");
+            this.Sort_Last_Name.Click += new System.EventHandler(this.Sort_Last_Name_Click);
+            // 
+            // Sort_DOB
+            // 
+            this.Sort_DOB.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_DOB.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_DOB.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_DOB.Location = new System.Drawing.Point(589, 17);
+            this.Sort_DOB.Name = "Sort_DOB";
+            this.Sort_DOB.Size = new System.Drawing.Size(20, 20);
+            this.Sort_DOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_DOB.TabIndex = 45;
+            this.Sort_DOB.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_DOB, "Sort Date Of Birth");
+            this.Sort_DOB.Click += new System.EventHandler(this.Sort_DOB_Click);
+            // 
+            // Sort_Phone_Number
+            // 
+            this.Sort_Phone_Number.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Phone_Number.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Phone_Number.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Phone_Number.Location = new System.Drawing.Point(770, 17);
+            this.Sort_Phone_Number.Name = "Sort_Phone_Number";
+            this.Sort_Phone_Number.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Phone_Number.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Phone_Number.TabIndex = 46;
+            this.Sort_Phone_Number.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Phone_Number, "Sort Phone Number");
+            this.Sort_Phone_Number.Click += new System.EventHandler(this.Sort_Phone_Number_Click);
             // 
             // pictureBox8
             // 
@@ -468,6 +548,11 @@ namespace Year_14_CA_SSD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Sort_Phone_Number);
+            this.Controls.Add(this.Sort_DOB);
+            this.Controls.Add(this.Sort_Last_Name);
+            this.Controls.Add(this.Sort_Middle_Name);
+            this.Controls.Add(this.Sort_FirstName);
             this.Controls.Add(this.Show_Archive_Button);
             this.Controls.Add(this.Archive_Button);
             this.Controls.Add(this.pictureBox8);
@@ -507,6 +592,7 @@ namespace Year_14_CA_SSD
             this.Name = "CustomerDataForm";
             this.Text = "CustomerDataForm";
             this.Load += new System.EventHandler(this.CustomerDataForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_FirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Archive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
@@ -514,6 +600,10 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Customer_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Customer_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Add_Customer_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Middle_Name)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_DOB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Phone_Number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -568,5 +658,10 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.ToolTip Tool_Tip;
         private System.Windows.Forms.PictureBox Archive_Button;
         private System.Windows.Forms.PictureBox Show_Archive_Button;
+        private System.Windows.Forms.PictureBox Sort_FirstName;
+        private System.Windows.Forms.PictureBox Sort_Middle_Name;
+        private System.Windows.Forms.PictureBox Sort_Last_Name;
+        private System.Windows.Forms.PictureBox Sort_DOB;
+        private System.Windows.Forms.PictureBox Sort_Phone_Number;
     }
 }

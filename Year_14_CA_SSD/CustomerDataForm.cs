@@ -16,8 +16,9 @@ namespace Year_14_CA_SSD
         public event EventHandler AddCustomer;
         public List<string[]> customers = new List<string[]>();
         public List<int> displayedIndexes = new List<int>();
-        public string[] columns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
+        public static string[] columns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
         public bool showArchive = false;
+        public string lastSort;
         public CustomerDataForm()
         {
             InitializeComponent();
@@ -114,7 +115,7 @@ namespace Year_14_CA_SSD
             }
             this.Close();
         }
-        int Get_Column_Index(string column)
+        static int Get_Column_Index(string column)
         {
             for(int i = 0; i < columns.Length;i++)
             {
@@ -155,7 +156,7 @@ namespace Year_14_CA_SSD
             ListViewCustomers.Columns.Add("Middle Name/s", 150);
             ListViewCustomers.Columns.Add("Last Name/s", 150);
             ListViewCustomers.Columns.Add("Date Of Birth", 150);
-            ListViewCustomers.Columns.Add("Phone Number", 150);
+            ListViewCustomers.Columns.Add("Phone Number", 170);
         }
         void Display_Customers()
         {
@@ -298,6 +299,129 @@ namespace Year_14_CA_SSD
         bool Can_Delete(int id)
         {
             return true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        public void Sort_Customer(List<int> items,int sortingIndex)
+        {
+            items.Sort((a, b) => customers[a][sortingIndex].CompareTo(customers[b][sortingIndex]));
+        }
+        public void Sort_Inverse_Customer(List<int> items, int sortingIndex)
+        {
+            items.Sort((b, a) => customers[a][sortingIndex].CompareTo(customers[b][sortingIndex]));
+        }
+
+        private void Sort_FirstName_Click(object sender, EventArgs e)
+        {
+            if (lastSort != "First Name")
+            {
+                Sort_Customer(displayedIndexes, 1);
+                Display_Customers();
+                lastSort = "First Name";
+            }
+            else
+            {
+                Sort_Inverse_Customer(displayedIndexes, 1);
+                Display_Customers();
+                lastSort = "Inverse First Name";
+            }
+        }
+
+        private void Sort_Middle_Name_Click(object sender, EventArgs e)
+        {
+            if (lastSort != "Middle Name")
+            {
+                Sort_Customer(displayedIndexes, 2);
+                Display_Customers();
+                lastSort = "Middle Name";
+            }
+            else
+            {
+                Sort_Inverse_Customer(displayedIndexes, 2);
+                Display_Customers();
+                lastSort = "Inverse Middle Name";
+            }
+        }
+
+        private void Sort_Last_Name_Click(object sender, EventArgs e)
+        {
+            if (lastSort != "Last Name")
+            {
+                Sort_Customer(displayedIndexes, 3);
+                Display_Customers();
+                lastSort = "Last Name";
+            }
+            else
+            {
+                Sort_Inverse_Customer(displayedIndexes, 3);
+                Display_Customers();
+                lastSort = "Inverse Last Name";
+            }
+        }
+
+        private void Sort_DOB_Click(object sender, EventArgs e)
+        {
+            if (lastSort != "Date Of Birth")
+            {
+                displayedIndexes.Sort((a, b) => Convert.ToDateTime(customers[a][4]).CompareTo(Convert.ToDateTime(customers[b][4])));
+                Display_Customers();
+                lastSort = "Date Of Birth";
+            }
+            else
+            {
+                displayedIndexes.Sort((b, a) => Convert.ToDateTime(customers[a][4]).CompareTo(Convert.ToDateTime(customers[b][4])));
+                Display_Customers();
+                lastSort = "Inverse Date Of Birth";
+            }
+        }
+
+        private void Sort_Phone_Number_Click(object sender, EventArgs e)
+        {
+            if (lastSort != "Phone Number")
+            {
+                Sort_Customer(displayedIndexes, 5);
+                Display_Customers();
+                lastSort = "Phone Number";
+            }
+            else
+            {
+                Sort_Inverse_Customer(displayedIndexes, 5);
+                Display_Customers();
+                lastSort = "Inverse Phone Number";
+            }
         }
     }
     public class Add_Customer_EventArgs : EventArgs

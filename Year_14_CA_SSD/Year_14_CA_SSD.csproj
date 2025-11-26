@@ -259,6 +259,8 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\sort.png" />
+    <None Include="resources\sort descending.png" />
     <None Include="resources\cancel visible.png" />
     <None Include="resources\cancel not visible.png" />
     <None Include="resources\payments.png" />

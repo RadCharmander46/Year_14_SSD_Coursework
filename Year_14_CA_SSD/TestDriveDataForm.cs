@@ -15,6 +15,7 @@ namespace Year_14_CA_SSD
     {
         public event EventHandler TestDrive;
         public bool showCancelled = false;
+        public string lastSorted;
         public TestDriveDataForm()
         {
             InitializeComponent();
@@ -989,6 +990,129 @@ namespace Year_14_CA_SSD
                 }
             }
             displayedIndexes = tempIndexes;
+        }
+
+        private void Sort_Customer_Click(object sender, EventArgs e)
+        {
+            if (lastSorted != "Customer")
+            {
+                Sort_Customer_Names();
+                Display_All_TestDrives();
+                lastSorted = "Customer";
+            }
+            else
+            {
+                Inverse_Sort_Customer_Names();
+                Display_All_TestDrives();
+                lastSorted = "Inverse Customer";
+            }
+        }
+        void Sort_Customer_Names() // 1 is customer id
+        {
+            displayedIndexes.Sort((a, b) => Get_Customer_Name(testDrives[a][1]).CompareTo(Get_Customer_Name(testDrives[b][1])));
+        }
+        void Inverse_Sort_Customer_Names()
+        {
+            displayedIndexes.Sort((b, a) => Get_Customer_Name(testDrives[a][1]).CompareTo(Get_Customer_Name(testDrives[b][1])));
+        }
+
+        private void Sort_Employee_Click(object sender, EventArgs e)
+        {
+            if(lastSorted != "Employee")
+            {
+                Sort_Employee_Names();
+                Display_All_TestDrives();
+                lastSorted = "Employee";
+            }
+            else
+            {
+                Inverse_Sort_Employee_Names();
+                Display_All_TestDrives();
+                lastSorted = "Inverse Employee";
+            }
+        }
+        void Sort_Employee_Names() // 2 is customer id
+        {
+            displayedIndexes.Sort((a, b) => Get_Employee_Name(testDrives[a][2]).CompareTo(Get_Employee_Name(testDrives[b][2])));
+        }
+        void Inverse_Sort_Employee_Names()
+        {
+            displayedIndexes.Sort((b, a) => Get_Employee_Name(testDrives[a][2]).CompareTo(Get_Employee_Name(testDrives[b][2])));
+        }
+
+        private void Sort_Car_Click(object sender, EventArgs e)
+        {
+            if(lastSorted != "Car")
+            {
+                Sort_Car_Names();
+                Display_All_TestDrives();
+                lastSorted = "Car";
+            }
+            else
+            {
+                Inverse_Sort_Car_Names();
+                Display_All_TestDrives();
+                lastSorted = "Inverse Car";
+            }
+        }
+        void Sort_Car_Names() // 3 is carUnavail id
+        {
+            displayedIndexes.Sort((a, b) => Get_Car_Name(Get_Car_Id(testDrives[a][3])).CompareTo(Get_Car_Name(Get_Car_Id(testDrives[b][3]))));
+        }
+        void Inverse_Sort_Car_Names()
+        {
+            displayedIndexes.Sort((b,a) => Get_Car_Name(Get_Car_Id(testDrives[a][3])).CompareTo(Get_Car_Name(Get_Car_Id(testDrives[b][3]))));
+        }
+
+        private void Sort_Start_Date_Click(object sender, EventArgs e)
+        {
+            if(lastSorted != "Start Date")
+            {
+                Sort_Start_Dates();
+                Display_All_TestDrives();
+                lastSorted = "Start Date";
+            }
+            else
+            {
+                Inverse_Sort_Start_Dates();
+                Display_All_TestDrives();
+                lastSorted = "Inverse Start Date";
+            }
+
+        }
+
+        void Sort_Start_Dates() // 3 is carUnavail id
+        {
+            displayedIndexes.Sort((a, b) => Convert.ToDateTime(Get_Start_Time(testDrives[a][3])) .CompareTo(Convert.ToDateTime(Get_Start_Time(testDrives[b][3]))));
+        }
+        void Inverse_Sort_Start_Dates()
+        {
+            displayedIndexes.Sort((b, a) => Convert.ToDateTime(Get_Start_Time(testDrives[a][3])).CompareTo(Convert.ToDateTime(Get_Start_Time(testDrives[b][3]))));
+        }
+
+        private void Sort_End_Date_Click(object sender, EventArgs e)
+        {
+            if(lastSorted != "End Date")
+            {
+                Sort_End_Dates();
+                Display_All_TestDrives();
+                lastSorted = "End Date";
+            }
+            else
+            {
+                Inverse_Sort_End_Dates();
+                Display_All_TestDrives();
+                lastSorted = "Inverse End Date";
+            }
+        }
+
+        void Sort_End_Dates() // 3 is carUnavail id
+        {
+            displayedIndexes.Sort((a, b) => Convert.ToDateTime(Get_End_Time(testDrives[a][3])).CompareTo(Convert.ToDateTime(Get_End_Time(testDrives[b][3]))));
+        }
+        void Inverse_Sort_End_Dates()
+        {
+            displayedIndexes.Sort((b, a) => Convert.ToDateTime(Get_End_Time(testDrives[a][3])).CompareTo(Convert.ToDateTime(Get_End_Time(testDrives[b][3]))));
         }
     }
     public class TestDrive_EventArgs : EventArgs
