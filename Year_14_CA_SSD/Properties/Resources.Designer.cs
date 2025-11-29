@@ -233,6 +233,16 @@ namespace Year_14_CA_SSD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap doherty_cars {
+            get {
+                object obj = ResourceManager.GetObject("doherty cars", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drop_down {
             get {
                 object obj = ResourceManager.GetObject("drop down", resourceCulture);

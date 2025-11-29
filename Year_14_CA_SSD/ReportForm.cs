@@ -24,19 +24,20 @@ namespace Year_14_CA_SSD
                 sqlConnection1.Open();
 
                 sqlDataAdapter1.SelectCommand.Parameters.Clear();
+                sqlDataAdapter1.SelectCommand.Parameters.AddWithValue("@CustId", 3);
                 dsTestDriveBookings1.Clear();
 
                 dsTestDriveBookings1.EnforceConstraints = false;
                 sqlDataAdapter1.Fill(dsTestDriveBookings1, "CarTable");
 
-                TestDriveBookingsReport report = new TestDriveBookingsReport();
+                TestDriveCustomerReport report = new TestDriveCustomerReport();
                 report.SetDataSource(dsTestDriveBookings1);
                 crystalReportViewer1.ReportSource = report;
                 crystalReportViewer1.Refresh();
             }
             catch (Exception e)
             {
-
+                MessageBox.Show("an error occurred");
             }
             finally
             {

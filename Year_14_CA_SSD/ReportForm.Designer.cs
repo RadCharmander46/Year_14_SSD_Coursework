@@ -53,6 +53,8 @@ namespace Year_14_CA_SSD
             // 
             this.sqlSelectCommand1.CommandText = resources.GetString("sqlSelectCommand1.CommandText");
             this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            this.sqlSelectCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@CustId", System.Data.SqlDbType.Int, 4, "CustomerId")});
             // 
             // sqlConnection1
             // 
@@ -73,7 +75,10 @@ namespace Year_14_CA_SSD
                         new System.Data.Common.DataColumnMapping("EndTime", "EndTime"),
                         new System.Data.Common.DataColumnMapping("Make", "Make"),
                         new System.Data.Common.DataColumnMapping("Model", "Model"),
-                        new System.Data.Common.DataColumnMapping("Registration", "Registration")})});
+                        new System.Data.Common.DataColumnMapping("Registration", "Registration"),
+                        new System.Data.Common.DataColumnMapping("Description", "Description"),
+                        new System.Data.Common.DataColumnMapping("Amount", "Amount"),
+                        new System.Data.Common.DataColumnMapping("IsCanceled", "IsCanceled")})});
             // 
             // dsTestDriveBookings1
             // 

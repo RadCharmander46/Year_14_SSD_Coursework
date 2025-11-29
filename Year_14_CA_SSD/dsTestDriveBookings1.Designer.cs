@@ -297,6 +297,12 @@ namespace Year_14_CA_SSD {
             
             private global::System.Data.DataColumn columnRegistration;
             
+            private global::System.Data.DataColumn columnDescription;
+            
+            private global::System.Data.DataColumn columnAmount;
+            
+            private global::System.Data.DataColumn columnIsCanceled;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CarTableDataTable() {
@@ -404,6 +410,30 @@ namespace Year_14_CA_SSD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AmountColumn {
+                get {
+                    return this.columnAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IsCanceledColumn {
+                get {
+                    return this.columnIsCanceled;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +469,7 @@ namespace Year_14_CA_SSD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CarTableRow AddCarTableRow(string Name, string PhoneNumber, string EmailAddress, System.DateTime StartTime, System.DateTime EndTime, string Make, string Model, string Registration) {
+            public CarTableRow AddCarTableRow(string Name, string PhoneNumber, string EmailAddress, System.DateTime StartTime, System.DateTime EndTime, string Make, string Model, string Registration, string Description, decimal Amount, bool IsCanceled) {
                 CarTableRow rowCarTableRow = ((CarTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -450,7 +480,10 @@ namespace Year_14_CA_SSD {
                         EndTime,
                         Make,
                         Model,
-                        Registration};
+                        Registration,
+                        Description,
+                        Amount,
+                        IsCanceled};
                 rowCarTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCarTableRow);
                 return rowCarTableRow;
@@ -489,6 +522,9 @@ namespace Year_14_CA_SSD {
                 this.columnMake = base.Columns["Make"];
                 this.columnModel = base.Columns["Model"];
                 this.columnRegistration = base.Columns["Registration"];
+                this.columnDescription = base.Columns["Description"];
+                this.columnAmount = base.Columns["Amount"];
+                this.columnIsCanceled = base.Columns["IsCanceled"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,6 +548,12 @@ namespace Year_14_CA_SSD {
                 base.Columns.Add(this.columnModel);
                 this.columnRegistration = new global::System.Data.DataColumn("Registration", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegistration);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
+                this.columnIsCanceled = new global::System.Data.DataColumn("IsCanceled", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsCanceled);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerId}, true));
                 this.columnCustomerId.AutoIncrement = true;
@@ -531,6 +573,10 @@ namespace Year_14_CA_SSD {
                 this.columnModel.MaxLength = 50;
                 this.columnRegistration.AllowDBNull = false;
                 this.columnRegistration.MaxLength = 7;
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 10;
+                this.columnAmount.AllowDBNull = false;
+                this.columnIsCanceled.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -777,6 +823,39 @@ namespace Year_14_CA_SSD {
                 }
                 set {
                     this[this.tableCarTable.RegistrationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Description {
+                get {
+                    return ((string)(this[this.tableCarTable.DescriptionColumn]));
+                }
+                set {
+                    this[this.tableCarTable.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Amount {
+                get {
+                    return ((decimal)(this[this.tableCarTable.AmountColumn]));
+                }
+                set {
+                    this[this.tableCarTable.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCanceled {
+                get {
+                    return ((bool)(this[this.tableCarTable.IsCanceledColumn]));
+                }
+                set {
+                    this[this.tableCarTable.IsCanceledColumn] = value;
                 }
             }
             

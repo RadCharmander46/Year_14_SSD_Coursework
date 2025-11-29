@@ -150,10 +150,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL_Operation.cs" />
-    <Compile Include="TestDriveBookingsReport.cs">
+    <Compile Include="TestDriveCustomerReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestDriveBookingsReport.rpt</DependentUpon>
+      <DependentUpon>TestDriveCustomerReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TestDriveDataForm.cs">
@@ -208,9 +208,9 @@
     <EmbeddedResource Include="TestDriveBookingForm.resx">
       <DependentUpon>TestDriveBookingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestDriveBookingsReport.rpt">
+    <EmbeddedResource Include="TestDriveCustomerReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TestDriveBookingsReport.cs</LastGenOutput>
+      <LastGenOutput>TestDriveCustomerReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TestDriveDataForm.resx">
       <DependentUpon>TestDriveDataForm.cs</DependentUpon>
@@ -259,6 +259,7 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\doherty cars.png" />
     <None Include="resources\sort.png" />
     <None Include="resources\sort descending.png" />
     <None Include="resources\cancel visible.png" />

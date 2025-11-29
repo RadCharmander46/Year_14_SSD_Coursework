@@ -9,10 +9,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsTestDriveBookings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTestDriveBookings" msprop:Generator_DataSetName="dsTestDriveBookings">
+  <xs:element name="dsTestDriveBookings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsTestDriveBookings" msprop:Generator_UserDSName="dsTestDriveBookings">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CarTable" msprop:Generator_TableClassName="CarTableDataTable" msprop:Generator_TableVarName="tableCarTable" msprop:Generator_TablePropName="CarTable" msprop:Generator_RowDeletingName="CarTableRowDeleting" msprop:Generator_RowChangingName="CarTableRowChanging" msprop:Generator_RowEvHandlerName="CarTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CarTableRowDeleted" msprop:Generator_UserTableName="CarTable" msprop:Generator_RowChangedName="CarTableRowChanged" msprop:Generator_RowEvArgName="CarTableRowChangeEvent" msprop:Generator_RowClassName="CarTableRow">
+        <xs:element name="CarTable" msprop:Generator_TableClassName="CarTableDataTable" msprop:Generator_TableVarName="tableCarTable" msprop:Generator_RowChangedName="CarTableRowChanged" msprop:Generator_TablePropName="CarTable" msprop:Generator_RowDeletingName="CarTableRowDeleting" msprop:Generator_RowChangingName="CarTableRowChanging" msprop:Generator_RowEvHandlerName="CarTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CarTableRowDeleted" msprop:Generator_RowClassName="CarTableRow" msprop:Generator_UserTableName="CarTable" msprop:Generator_RowEvArgName="CarTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CustomerId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" />
@@ -60,6 +60,15 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="IsCanceled" msprop:Generator_ColumnVarNameInTable="columnIsCanceled" msprop:Generator_ColumnPropNameInRow="IsCanceled" msprop:Generator_ColumnPropNameInTable="IsCanceledColumn" msprop:Generator_UserColumnName="IsCanceled" type="xs:boolean" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
