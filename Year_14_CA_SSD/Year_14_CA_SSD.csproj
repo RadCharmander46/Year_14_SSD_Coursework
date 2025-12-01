@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTestDriveBookings1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsTestDriveTimes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTestDriveTimes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HomeScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +155,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL_Operation.cs" />
+    <Compile Include="TestDriveTimesReport.cs">
+      <DependentUpon>TestDriveTimesReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="TestDriveCustomerReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,6 +219,10 @@
     <EmbeddedResource Include="TestDriveBookingForm.resx">
       <DependentUpon>TestDriveBookingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestDriveTimesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TestDriveTimesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestDriveCustomerReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TestDriveCustomerReport.cs</LastGenOutput>
@@ -225,6 +240,17 @@
     </None>
     <None Include="dsTestDriveBookings1.xss">
       <DependentUpon>dsTestDriveBookings1.xsd</DependentUpon>
+    </None>
+    <None Include="dsTestDriveTimes.xsc">
+      <DependentUpon>dsTestDriveTimes.xsd</DependentUpon>
+    </None>
+    <None Include="dsTestDriveTimes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTestDriveTimes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsTestDriveTimes.xss">
+      <DependentUpon>dsTestDriveTimes.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

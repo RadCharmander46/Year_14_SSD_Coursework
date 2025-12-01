@@ -137,13 +137,41 @@ FROM            TestDriveTable INNER JOIN
                          PaymentTable ON TestDriveTable.PaymentID = PaymentTable.PaymentId AND CustomerTable.CustomerId = PaymentTable.CustomerId 
 WHERE CustomerTable.CustomerId = @CustId</value>
   </data>
-  <metadata name="sqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="sqlConnectionCustomer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>160, 17</value>
   </metadata>
-  <metadata name="sqlDataAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="sqlDataAdapterCustomer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="dsTestDriveBookings1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="dsTestDriveCustomer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>296, 17</value>
+  </metadata>
+  <metadata name="sqlSelectCommand2.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlSelectCommand2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <metadata name="sqlSelectCommand2.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="sqlSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT        CustomerTable.CustomerId, RTRIM(CustomerTable.FirstName) + ' ' + RTRIM(CustomerTable.LastName) AS Name, CustomerTable.PhoneNumber, CustomerTable.EmailAddress, CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime, 
+                         CarTable.Make, CarTable.Model, CarTable.Registration, TestDriveTypeTable.Description, PaymentTable.Amount, TestDriveTable.IsCanceled
+FROM            TestDriveTable INNER JOIN
+                         CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId INNER JOIN
+                         CarTable ON CarUnavailabiltyTable.CarID = CarTable.CarId INNER JOIN
+                         CustomerTable ON TestDriveTable.CustomerId = CustomerTable.CustomerId INNER JOIN
+                         TestDriveTypeTable ON TestDriveTable.TestDriveType = TestDriveTypeTable.TestDriveTypeId INNER JOIN
+                         PaymentTable ON TestDriveTable.PaymentID = PaymentTable.PaymentId AND CustomerTable.CustomerId = PaymentTable.CustomerId </value>
+  </data>
+  <metadata name="sqlConnectionTimes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>631, 17</value>
+  </metadata>
+  <metadata name="sqlDataAdapterTimes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>463, 17</value>
+  </metadata>
+  <metadata name="dsTestDriveTimes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>792, 17</value>
   </metadata>
 </root>

@@ -35,9 +35,9 @@ namespace Year_14_CA_SSD
             this.Password_Label = new System.Windows.Forms.Label();
             this.Login_Button = new System.Windows.Forms.Button();
             this.Show_Password_Button = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Logo_PictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Password_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Username_TextBox
@@ -101,15 +101,15 @@ namespace Year_14_CA_SSD
             this.Show_Password_Button.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Show_Password_Button_MouseDown);
             this.Show_Password_Button.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Show_Password_Button_MouseUp);
             // 
-            // pictureBox1
+            // Logo_PictureBox
             // 
-            this.pictureBox1.Image = global::Year_14_CA_SSD.Properties.Resources.doherty_cars;
-            this.pictureBox1.Location = new System.Drawing.Point(416, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(353, 277);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.Logo_PictureBox.Image = global::Year_14_CA_SSD.Properties.Resources.doherty_cars;
+            this.Logo_PictureBox.Location = new System.Drawing.Point(416, 40);
+            this.Logo_PictureBox.Name = "Logo_PictureBox";
+            this.Logo_PictureBox.Size = new System.Drawing.Size(353, 277);
+            this.Logo_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo_PictureBox.TabIndex = 11;
+            this.Logo_PictureBox.TabStop = false;
             // 
             // LoginForm
             // 
@@ -117,7 +117,7 @@ namespace Year_14_CA_SSD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
             this.Controls.Add(this.Username_TextBox);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Logo_PictureBox);
             this.Controls.Add(this.Show_Password_Button);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Password_Label);
@@ -126,7 +126,7 @@ namespace Year_14_CA_SSD
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.Show_Password_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +139,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Password_Label;
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.PictureBox Show_Password_Button;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Logo_PictureBox;
     }
 }
