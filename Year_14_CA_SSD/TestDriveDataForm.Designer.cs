@@ -60,6 +60,12 @@ namespace Year_14_CA_SSD
             this.Body_Style_Label = new System.Windows.Forms.Label();
             this.Reg_Label = new System.Windows.Forms.Label();
             this.Mileage_Label = new System.Windows.Forms.Label();
+            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Sort_End_Date = new System.Windows.Forms.PictureBox();
+            this.Sort_Start_Date = new System.Windows.Forms.PictureBox();
+            this.Sort_Car = new System.Windows.Forms.PictureBox();
+            this.Sort_Employee = new System.Windows.Forms.PictureBox();
+            this.Sort_Customer = new System.Windows.Forms.PictureBox();
             this.Show_Cancelled_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -78,16 +84,15 @@ namespace Year_14_CA_SSD
             this.Remove_Test_Drive_Button = new System.Windows.Forms.PictureBox();
             this.Add_Button = new System.Windows.Forms.PictureBox();
             this.Edit_Button = new System.Windows.Forms.PictureBox();
-            this.Sort_Customer = new System.Windows.Forms.PictureBox();
-            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
-            this.Sort_Employee = new System.Windows.Forms.PictureBox();
-            this.Sort_Car = new System.Windows.Forms.PictureBox();
-            this.Sort_Start_Date = new System.Windows.Forms.PictureBox();
-            this.Sort_End_Date = new System.Windows.Forms.PictureBox();
             this.Customer_GroupBox.SuspendLayout();
             this.Employee_GroupBox.SuspendLayout();
             this.Test_Drive_GroupBox.SuspendLayout();
             this.Car_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -106,11 +111,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Test_Drive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).BeginInit();
             this.SuspendLayout();
             // 
             // Test_Drives_ListView
@@ -448,6 +448,76 @@ namespace Year_14_CA_SSD
             this.Mileage_Label.TabIndex = 0;
             this.Mileage_Label.Text = "Mileage: 310,910km";
             // 
+            // Sort_End_Date
+            // 
+            this.Sort_End_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_End_Date.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_End_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_End_Date.Location = new System.Drawing.Point(785, 7);
+            this.Sort_End_Date.Name = "Sort_End_Date";
+            this.Sort_End_Date.Size = new System.Drawing.Size(20, 20);
+            this.Sort_End_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_End_Date.TabIndex = 62;
+            this.Sort_End_Date.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_End_Date, "Sort End Date");
+            this.Sort_End_Date.Click += new System.EventHandler(this.Sort_End_Date_Click);
+            // 
+            // Sort_Start_Date
+            // 
+            this.Sort_Start_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Start_Date.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Start_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Start_Date.Location = new System.Drawing.Point(644, 7);
+            this.Sort_Start_Date.Name = "Sort_Start_Date";
+            this.Sort_Start_Date.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Start_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Start_Date.TabIndex = 61;
+            this.Sort_Start_Date.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Start_Date, "Sort Start Date");
+            this.Sort_Start_Date.Click += new System.EventHandler(this.Sort_Start_Date_Click);
+            // 
+            // Sort_Car
+            // 
+            this.Sort_Car.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Car.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Car.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Car.Location = new System.Drawing.Point(506, 7);
+            this.Sort_Car.Name = "Sort_Car";
+            this.Sort_Car.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Car.TabIndex = 60;
+            this.Sort_Car.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Car, "Sort Car Name");
+            this.Sort_Car.Click += new System.EventHandler(this.Sort_Car_Click);
+            // 
+            // Sort_Employee
+            // 
+            this.Sort_Employee.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Employee.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Employee.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Employee.Location = new System.Drawing.Point(320, 7);
+            this.Sort_Employee.Name = "Sort_Employee";
+            this.Sort_Employee.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Employee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Employee.TabIndex = 59;
+            this.Sort_Employee.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Employee, "Sort Employee Name");
+            this.Sort_Employee.Click += new System.EventHandler(this.Sort_Employee_Click);
+            // 
+            // Sort_Customer
+            // 
+            this.Sort_Customer.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
+            this.Sort_Customer.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Customer.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Customer.Location = new System.Drawing.Point(160, 7);
+            this.Sort_Customer.Name = "Sort_Customer";
+            this.Sort_Customer.Size = new System.Drawing.Size(20, 20);
+            this.Sort_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Sort_Customer.TabIndex = 58;
+            this.Sort_Customer.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Sort_Customer, "Sort Customer Name");
+            this.Sort_Customer.Click += new System.EventHandler(this.Sort_Customer_Click);
+            // 
             // Show_Cancelled_Button
             // 
             this.Show_Cancelled_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
@@ -634,76 +704,6 @@ namespace Year_14_CA_SSD
             this.Tool_Tip.SetToolTip(this.Edit_Button, "Edit Test Drive");
             this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
-            // Sort_Customer
-            // 
-            this.Sort_Customer.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Customer.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Customer.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Customer.Location = new System.Drawing.Point(160, 7);
-            this.Sort_Customer.Name = "Sort_Customer";
-            this.Sort_Customer.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Customer.TabIndex = 58;
-            this.Sort_Customer.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Customer, "Sort Customer Name");
-            this.Sort_Customer.Click += new System.EventHandler(this.Sort_Customer_Click);
-            // 
-            // Sort_Employee
-            // 
-            this.Sort_Employee.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Employee.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Employee.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Employee.Location = new System.Drawing.Point(320, 7);
-            this.Sort_Employee.Name = "Sort_Employee";
-            this.Sort_Employee.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Employee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Employee.TabIndex = 59;
-            this.Sort_Employee.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Employee, "Sort Employee Name");
-            this.Sort_Employee.Click += new System.EventHandler(this.Sort_Employee_Click);
-            // 
-            // Sort_Car
-            // 
-            this.Sort_Car.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Car.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Car.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Car.Location = new System.Drawing.Point(506, 7);
-            this.Sort_Car.Name = "Sort_Car";
-            this.Sort_Car.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Car.TabIndex = 60;
-            this.Sort_Car.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Car, "Sort Car Name");
-            this.Sort_Car.Click += new System.EventHandler(this.Sort_Car_Click);
-            // 
-            // Sort_Start_Date
-            // 
-            this.Sort_Start_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Start_Date.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Start_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Start_Date.Location = new System.Drawing.Point(644, 7);
-            this.Sort_Start_Date.Name = "Sort_Start_Date";
-            this.Sort_Start_Date.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Start_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Start_Date.TabIndex = 61;
-            this.Sort_Start_Date.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Start_Date, "Sort Start Date");
-            this.Sort_Start_Date.Click += new System.EventHandler(this.Sort_Start_Date_Click);
-            // 
-            // Sort_End_Date
-            // 
-            this.Sort_End_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_End_Date.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_End_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_End_Date.Location = new System.Drawing.Point(785, 7);
-            this.Sort_End_Date.Name = "Sort_End_Date";
-            this.Sort_End_Date.Size = new System.Drawing.Size(20, 20);
-            this.Sort_End_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_End_Date.TabIndex = 62;
-            this.Sort_End_Date.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_End_Date, "Sort End Date");
-            this.Sort_End_Date.Click += new System.EventHandler(this.Sort_End_Date_Click);
-            // 
             // TestDriveDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,6 +751,11 @@ namespace Year_14_CA_SSD
             this.Test_Drive_GroupBox.PerformLayout();
             this.Car_GroupBox.ResumeLayout(false);
             this.Car_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -769,11 +774,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Test_Drive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

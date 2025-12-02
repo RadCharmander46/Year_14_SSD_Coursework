@@ -127,6 +127,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentDataForm.Designer.cs">
+      <DependentUpon>PaymentDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PanelForm.resx">
       <DependentUpon>PanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentDataForm.resx">
+      <DependentUpon>PaymentDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PickerForm.resx">
       <DependentUpon>PickerForm.cs</DependentUpon>
@@ -285,6 +294,7 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\paid.png" />
     <None Include="resources\doherty cars.png" />
     <None Include="resources\sort.png" />
     <None Include="resources\sort descending.png" />

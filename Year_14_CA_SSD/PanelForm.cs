@@ -139,6 +139,17 @@ namespace Year_14_CA_SSD
             Return_Object.Show();
         }
 
+        void Load_PaymentDataForm(object sender, EventArgs e)
+        {
+            PaymentDataForm Payment_Object = new PaymentDataForm();
+            Payment_Object.TopLevel = false;
+            Payment_Object.AutoScroll = true;
+            Payment_Object.FormBorderStyle = FormBorderStyle.None;
+            Payment_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Payment_Object);
+            Payment_Object.Show();
+        }
+
         private void Adding_Cars_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not part of program");
@@ -248,6 +259,19 @@ namespace Year_14_CA_SSD
         {
             Wipe_Panel();
             Load_ReturnCarForm(this, EventArgs.Empty);
+        }
+
+        private void Payment_Database_Button_Click(object sender, EventArgs e)
+        {
+            Wipe_Panel();
+            Load_PaymentDataForm(this, EventArgs.Empty);
+        }
+
+        private void Payment_Button_Click(object sender, EventArgs e)
+        {
+            Clear_To_HomeScreen();
+            Sidebar_FlowPanel.Controls.Clear();
+            Sidebar_FlowPanel.Controls.Add(Payment_Database_Button);
         }
     }
 }
