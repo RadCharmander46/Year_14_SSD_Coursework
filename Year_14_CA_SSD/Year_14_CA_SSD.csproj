@@ -109,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTestDriveTimes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDataForm.Designer.cs">
+      <DependentUpon>EmployeeDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerDataForm.resx">
       <DependentUpon>CustomerDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDataForm.resx">
+      <DependentUpon>EmployeeDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>

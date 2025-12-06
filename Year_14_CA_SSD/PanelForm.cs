@@ -149,6 +149,31 @@ namespace Year_14_CA_SSD
             Screen_Panel.Controls.Add(Payment_Object);
             Payment_Object.Show();
         }
+        void Load_EmployeeDataForm(object sender, EventArgs e)
+        {
+            EmployeeDataForm Employee_Object = new EmployeeDataForm();
+            Employee_Object.TopLevel = false;
+            Employee_Object.AutoScroll = true;
+            Employee_Object.FormBorderStyle = FormBorderStyle.None;
+            Employee_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Employee_Object);
+            Employee_Object.AddEmployee += new EventHandler(Load_AddEmployeeForm);
+            Employee_Object.Show();
+        }
+        void Load_AddEmployeeForm(object sender, EventArgs e)
+        {
+            AddCustomerForm Add_Customer_Object = new AddCustomerForm();
+            Add_Customer_EventArgs eArgs = (Add_Customer_EventArgs)e;
+            Add_Customer_Object.Id = eArgs.Id;
+            Add_Customer_Object.addMode = eArgs.AddMode;
+            Add_Customer_Object.TopLevel = false;
+            Add_Customer_Object.AutoScroll = true;
+            Add_Customer_Object.FormBorderStyle = FormBorderStyle.None;
+            Add_Customer_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Add_Customer_Object);
+            Add_Customer_Object.Return += new EventHandler(Load_CustomerDataForm);
+            Add_Customer_Object.Show();
+        }
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)
         {
@@ -176,6 +201,7 @@ namespace Year_14_CA_SSD
             Clear_To_HomeScreen();
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Reports_Button);
+            Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
         }
 
         private void Customers_Button_Click(object sender, EventArgs e)
@@ -272,6 +298,12 @@ namespace Year_14_CA_SSD
             Clear_To_HomeScreen();
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Payment_Database_Button);
+        }
+
+        private void Employee_Database_Button_Click(object sender, EventArgs e)
+        {
+            Wipe_Panel();
+            Load_EmployeeDataForm(this, EventArgs.Empty);
         }
     }
 }

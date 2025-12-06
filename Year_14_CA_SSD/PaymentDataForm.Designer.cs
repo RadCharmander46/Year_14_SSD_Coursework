@@ -31,10 +31,15 @@ namespace Year_14_CA_SSD
         {
             this.Payments_ListView = new System.Windows.Forms.ListView();
             this.Customer_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Verified_Label = new System.Windows.Forms.Label();
             this.Cust_Postcode_Label = new System.Windows.Forms.Label();
+            this.Cust_Expiry_Label = new System.Windows.Forms.Label();
             this.Cust_Email_Label = new System.Windows.Forms.Label();
+            this.Cust_Issue_Label = new System.Windows.Forms.Label();
             this.Cust_DOB_Label = new System.Windows.Forms.Label();
+            this.Cust_LicenseNo_Label = new System.Windows.Forms.Label();
             this.Cust_Tel_Label = new System.Windows.Forms.Label();
+            this.PrevCust_Label = new System.Windows.Forms.Label();
             this.Payment_Label = new System.Windows.Forms.GroupBox();
             this.Description_Text_Label = new System.Windows.Forms.Label();
             this.Description_Label = new System.Windows.Forms.Label();
@@ -43,11 +48,6 @@ namespace Year_14_CA_SSD
             this.Transaction_Type_Label = new System.Windows.Forms.Label();
             this.Transaction_Time_Label = new System.Windows.Forms.Label();
             this.Amount_Label = new System.Windows.Forms.Label();
-            this.Verified_Label = new System.Windows.Forms.Label();
-            this.Cust_Expiry_Label = new System.Windows.Forms.Label();
-            this.Cust_Issue_Label = new System.Windows.Forms.Label();
-            this.Cust_LicenseNo_Label = new System.Windows.Forms.Label();
-            this.PrevCust_Label = new System.Windows.Forms.Label();
             this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
             this.Filter_TextBox = new System.Windows.Forms.TextBox();
             this.Mark_Paid_Button = new System.Windows.Forms.PictureBox();
@@ -115,6 +115,16 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.TabStop = false;
             this.Customer_GroupBox.Text = "Customer";
             // 
+            // Verified_Label
+            // 
+            this.Verified_Label.AutoSize = true;
+            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Verified_Label.Location = new System.Drawing.Point(6, 201);
+            this.Verified_Label.Name = "Verified_Label";
+            this.Verified_Label.Size = new System.Drawing.Size(93, 21);
+            this.Verified_Label.TabIndex = 55;
+            this.Verified_Label.Text = "Verified: Yes";
+            // 
             // Cust_Postcode_Label
             // 
             this.Cust_Postcode_Label.AutoSize = true;
@@ -124,6 +134,16 @@ namespace Year_14_CA_SSD
             this.Cust_Postcode_Label.Size = new System.Drawing.Size(150, 21);
             this.Cust_Postcode_Label.TabIndex = 3;
             this.Cust_Postcode_Label.Text = "Postcode: BT78 1AW";
+            // 
+            // Cust_Expiry_Label
+            // 
+            this.Cust_Expiry_Label.AutoSize = true;
+            this.Cust_Expiry_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Expiry_Label.Location = new System.Drawing.Point(6, 180);
+            this.Cust_Expiry_Label.Name = "Cust_Expiry_Label";
+            this.Cust_Expiry_Label.Size = new System.Drawing.Size(143, 21);
+            this.Cust_Expiry_Label.TabIndex = 54;
+            this.Cust_Expiry_Label.Text = "Expiry: 05/05/2029";
             // 
             // Cust_Email_Label
             // 
@@ -135,6 +155,16 @@ namespace Year_14_CA_SSD
             this.Cust_Email_Label.TabIndex = 2;
             this.Cust_Email_Label.Text = "Email: Nathanmcgee@gmail.com";
             // 
+            // Cust_Issue_Label
+            // 
+            this.Cust_Issue_Label.AutoSize = true;
+            this.Cust_Issue_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Issue_Label.Location = new System.Drawing.Point(6, 159);
+            this.Cust_Issue_Label.Name = "Cust_Issue_Label";
+            this.Cust_Issue_Label.Size = new System.Drawing.Size(136, 21);
+            this.Cust_Issue_Label.TabIndex = 53;
+            this.Cust_Issue_Label.Text = "Issue: 03/04/2019";
+            // 
             // Cust_DOB_Label
             // 
             this.Cust_DOB_Label.AutoSize = true;
@@ -145,6 +175,16 @@ namespace Year_14_CA_SSD
             this.Cust_DOB_Label.TabIndex = 1;
             this.Cust_DOB_Label.Text = "DOB: 26/03/2008";
             // 
+            // Cust_LicenseNo_Label
+            // 
+            this.Cust_LicenseNo_Label.AutoSize = true;
+            this.Cust_LicenseNo_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_LicenseNo_Label.Location = new System.Drawing.Point(6, 138);
+            this.Cust_LicenseNo_Label.Name = "Cust_LicenseNo_Label";
+            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(183, 21);
+            this.Cust_LicenseNo_Label.TabIndex = 52;
+            this.Cust_LicenseNo_Label.Text = "License No: 1946835735";
+            // 
             // Cust_Tel_Label
             // 
             this.Cust_Tel_Label.AutoSize = true;
@@ -154,6 +194,16 @@ namespace Year_14_CA_SSD
             this.Cust_Tel_Label.Size = new System.Drawing.Size(125, 21);
             this.Cust_Tel_Label.TabIndex = 0;
             this.Cust_Tel_Label.Text = "Tel: 0965736467";
+            // 
+            // PrevCust_Label
+            // 
+            this.PrevCust_Label.AutoSize = true;
+            this.PrevCust_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrevCust_Label.Location = new System.Drawing.Point(6, 104);
+            this.PrevCust_Label.Name = "PrevCust_Label";
+            this.PrevCust_Label.Size = new System.Drawing.Size(172, 21);
+            this.PrevCust_Label.TabIndex = 51;
+            this.PrevCust_Label.Text = "Previous Customer: Yes";
             // 
             // Payment_Label
             // 
@@ -243,56 +293,6 @@ namespace Year_14_CA_SSD
             this.Amount_Label.TabIndex = 0;
             this.Amount_Label.Text = "Amount: £0.00";
             // 
-            // Verified_Label
-            // 
-            this.Verified_Label.AutoSize = true;
-            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Verified_Label.Location = new System.Drawing.Point(6, 201);
-            this.Verified_Label.Name = "Verified_Label";
-            this.Verified_Label.Size = new System.Drawing.Size(93, 21);
-            this.Verified_Label.TabIndex = 55;
-            this.Verified_Label.Text = "Verified: Yes";
-            // 
-            // Cust_Expiry_Label
-            // 
-            this.Cust_Expiry_Label.AutoSize = true;
-            this.Cust_Expiry_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Expiry_Label.Location = new System.Drawing.Point(6, 180);
-            this.Cust_Expiry_Label.Name = "Cust_Expiry_Label";
-            this.Cust_Expiry_Label.Size = new System.Drawing.Size(143, 21);
-            this.Cust_Expiry_Label.TabIndex = 54;
-            this.Cust_Expiry_Label.Text = "Expiry: 05/05/2029";
-            // 
-            // Cust_Issue_Label
-            // 
-            this.Cust_Issue_Label.AutoSize = true;
-            this.Cust_Issue_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Issue_Label.Location = new System.Drawing.Point(6, 159);
-            this.Cust_Issue_Label.Name = "Cust_Issue_Label";
-            this.Cust_Issue_Label.Size = new System.Drawing.Size(136, 21);
-            this.Cust_Issue_Label.TabIndex = 53;
-            this.Cust_Issue_Label.Text = "Issue: 03/04/2019";
-            // 
-            // Cust_LicenseNo_Label
-            // 
-            this.Cust_LicenseNo_Label.AutoSize = true;
-            this.Cust_LicenseNo_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_LicenseNo_Label.Location = new System.Drawing.Point(6, 138);
-            this.Cust_LicenseNo_Label.Name = "Cust_LicenseNo_Label";
-            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(183, 21);
-            this.Cust_LicenseNo_Label.TabIndex = 52;
-            this.Cust_LicenseNo_Label.Text = "License No: 1946835735";
-            // 
-            // PrevCust_Label
-            // 
-            this.PrevCust_Label.AutoSize = true;
-            this.PrevCust_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrevCust_Label.Location = new System.Drawing.Point(6, 104);
-            this.PrevCust_Label.Name = "PrevCust_Label";
-            this.PrevCust_Label.Size = new System.Drawing.Size(172, 21);
-            this.PrevCust_Label.TabIndex = 51;
-            this.PrevCust_Label.Text = "Previous Customer: Yes";
-            // 
             // Filter_ComboBox
             // 
             this.Filter_ComboBox.CausesValidation = false;
@@ -327,6 +327,7 @@ namespace Year_14_CA_SSD
             this.Mark_Paid_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Mark_Paid_Button.TabIndex = 64;
             this.Mark_Paid_Button.TabStop = false;
+            this.Mark_Paid_Button.Click += new System.EventHandler(this.Mark_Paid_Button_Click);
             // 
             // Show_Cancelled_Button
             // 
@@ -337,6 +338,7 @@ namespace Year_14_CA_SSD
             this.Show_Cancelled_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Show_Cancelled_Button.TabIndex = 63;
             this.Show_Cancelled_Button.TabStop = false;
+            this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
             // 
             // pictureBox8
             // 
@@ -412,7 +414,7 @@ namespace Year_14_CA_SSD
             this.Sort_Transaction_Type.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Transaction_Type.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Transaction_Type.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Transaction_Type.Location = new System.Drawing.Point(571, 18);
+            this.Sort_Transaction_Type.Location = new System.Drawing.Point(577, 18);
             this.Sort_Transaction_Type.Name = "Sort_Transaction_Type";
             this.Sort_Transaction_Type.Size = new System.Drawing.Size(20, 20);
             this.Sort_Transaction_Type.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

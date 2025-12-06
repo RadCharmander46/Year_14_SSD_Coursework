@@ -41,6 +41,7 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Test_Drive_Button = new System.Windows.Forms.PictureBox();
             this.Car_Servicing_Button = new System.Windows.Forms.PictureBox();
+            this.Payment_Database_Button = new System.Windows.Forms.PictureBox();
             this.Car_Return_Button = new System.Windows.Forms.PictureBox();
             this.Calender_Button = new System.Windows.Forms.PictureBox();
             this.Customer_Database_Button = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,7 @@ namespace Year_14_CA_SSD
             this.Login_Button = new System.Windows.Forms.PictureBox();
             this.Clock_Label = new System.Windows.Forms.Label();
             this.Clock_Timer = new System.Windows.Forms.Timer(this.components);
-            this.Payment_Database_Button = new System.Windows.Forms.PictureBox();
+            this.Employee_Database_Button = new System.Windows.Forms.PictureBox();
             this.Taskbar_FlowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Moving_Cars_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adding_Cars_Button)).BeginInit();
@@ -61,13 +62,14 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Servicing_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Return_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Calender_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Customer_Database_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Data_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reports_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).BeginInit();
             this.SuspendLayout();
             // 
             // Screen_Panel
@@ -177,6 +179,7 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Sidebar_FlowPanel.Controls.Add(this.Test_Drive_Button);
             this.Sidebar_FlowPanel.Controls.Add(this.Car_Servicing_Button);
+            this.Sidebar_FlowPanel.Controls.Add(this.Employee_Database_Button);
             this.Sidebar_FlowPanel.Controls.Add(this.Payment_Database_Button);
             this.Sidebar_FlowPanel.Controls.Add(this.Car_Return_Button);
             this.Sidebar_FlowPanel.Controls.Add(this.Calender_Button);
@@ -217,11 +220,25 @@ namespace Year_14_CA_SSD
             this.Car_Servicing_Button.TabStop = false;
             this.Base_ToolTip.SetToolTip(this.Car_Servicing_Button, "Car Servicing");
             // 
+            // Payment_Database_Button
+            // 
+            this.Payment_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Payment_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
+            this.Payment_Database_Button.Location = new System.Drawing.Point(17, 292);
+            this.Payment_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.Payment_Database_Button.Name = "Payment_Database_Button";
+            this.Payment_Database_Button.Size = new System.Drawing.Size(84, 75);
+            this.Payment_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Payment_Database_Button.TabIndex = 7;
+            this.Payment_Database_Button.TabStop = false;
+            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payment Database");
+            this.Payment_Database_Button.Click += new System.EventHandler(this.Payment_Database_Button_Click);
+            // 
             // Car_Return_Button
             // 
             this.Car_Return_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Car_Return_Button.Image = global::Year_14_CA_SSD.Properties.Resources.return_car;
-            this.Car_Return_Button.Location = new System.Drawing.Point(17, 292);
+            this.Car_Return_Button.Location = new System.Drawing.Point(17, 382);
             this.Car_Return_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.Car_Return_Button.Name = "Car_Return_Button";
             this.Car_Return_Button.Size = new System.Drawing.Size(84, 75);
@@ -235,7 +252,7 @@ namespace Year_14_CA_SSD
             // 
             this.Calender_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Calender_Button.Image = global::Year_14_CA_SSD.Properties.Resources.calender;
-            this.Calender_Button.Location = new System.Drawing.Point(17, 382);
+            this.Calender_Button.Location = new System.Drawing.Point(17, 472);
             this.Calender_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.Calender_Button.Name = "Calender_Button";
             this.Calender_Button.Size = new System.Drawing.Size(84, 75);
@@ -249,7 +266,7 @@ namespace Year_14_CA_SSD
             // 
             this.Customer_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Customer_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
-            this.Customer_Database_Button.Location = new System.Drawing.Point(17, 472);
+            this.Customer_Database_Button.Location = new System.Drawing.Point(107, 22);
             this.Customer_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.Customer_Database_Button.Name = "Customer_Database_Button";
             this.Customer_Database_Button.Size = new System.Drawing.Size(84, 75);
@@ -263,7 +280,7 @@ namespace Year_14_CA_SSD
             // 
             this.Test_Drive_Data_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Test_Drive_Data_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
-            this.Test_Drive_Data_Button.Location = new System.Drawing.Point(107, 22);
+            this.Test_Drive_Data_Button.Location = new System.Drawing.Point(107, 112);
             this.Test_Drive_Data_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.Test_Drive_Data_Button.Name = "Test_Drive_Data_Button";
             this.Test_Drive_Data_Button.Size = new System.Drawing.Size(84, 75);
@@ -277,7 +294,7 @@ namespace Year_14_CA_SSD
             // 
             this.Reports_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Reports_Button.Image = global::Year_14_CA_SSD.Properties.Resources.report1;
-            this.Reports_Button.Location = new System.Drawing.Point(107, 112);
+            this.Reports_Button.Location = new System.Drawing.Point(107, 202);
             this.Reports_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
             this.Reports_Button.Name = "Reports_Button";
             this.Reports_Button.Size = new System.Drawing.Size(84, 75);
@@ -323,19 +340,19 @@ namespace Year_14_CA_SSD
             this.Clock_Timer.Interval = 1000;
             this.Clock_Timer.Tick += new System.EventHandler(this.Clock_Timer_Tick);
             // 
-            // Payment_Database_Button
+            // Employee_Database_Button
             // 
-            this.Payment_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Payment_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
-            this.Payment_Database_Button.Location = new System.Drawing.Point(17, 202);
-            this.Payment_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.Payment_Database_Button.Name = "Payment_Database_Button";
-            this.Payment_Database_Button.Size = new System.Drawing.Size(84, 75);
-            this.Payment_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Payment_Database_Button.TabIndex = 7;
-            this.Payment_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payment Database");
-            this.Payment_Database_Button.Click += new System.EventHandler(this.Payment_Database_Button_Click);
+            this.Employee_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Employee_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
+            this.Employee_Database_Button.Location = new System.Drawing.Point(17, 202);
+            this.Employee_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.Employee_Database_Button.Name = "Employee_Database_Button";
+            this.Employee_Database_Button.Size = new System.Drawing.Size(84, 75);
+            this.Employee_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Employee_Database_Button.TabIndex = 8;
+            this.Employee_Database_Button.TabStop = false;
+            this.Base_ToolTip.SetToolTip(this.Employee_Database_Button, "Employee Database");
+            this.Employee_Database_Button.Click += new System.EventHandler(this.Employee_Database_Button_Click);
             // 
             // PanelForm
             // 
@@ -361,13 +378,14 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Servicing_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Return_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Calender_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Customer_Database_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Data_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reports_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,5 +413,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.PictureBox Car_Return_Button;
         private System.Windows.Forms.PictureBox Payment_Button;
         private System.Windows.Forms.PictureBox Payment_Database_Button;
+        private System.Windows.Forms.PictureBox Employee_Database_Button;
     }
 }

@@ -28,7 +28,7 @@ namespace Year_14_CA_SSD
         public List<string[]> carUnavailabilities = new List<string[]>();
         public string[] testDriveColumns = { "TestDriveId", "CustomerId", "EmployeeId", "CarUnavailabiltyId", "PaymentId", "TestDriveType", "HasBeenReturned", "ReturnedDamaged", "IsCancelled" };
         public string[] customerColumns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
-        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password" };
+        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Unavailable","Next Time Available" };
         public string[] carColumns = { "CarId", "Make", "Model", "Registration", "Year Of Manufacture", "Mileage", "Transmission", "Fuel Type", "Engine Size", "Power", "Colour", "Body Style", "No Of Seats", "Insurance Group", "Previous Owners", "Needs Cleaned", "Needs Inspected", "Price", "Has Been Sold" };
         public string[] carUnavailabiltyColumns = { "CarUnavailabiltyId", "CarId", "StartTime", "EndTime", "Description" };
         public string[] testDriveTypes = { "30 Minutes", "1 Day", "Weekend" };
@@ -434,49 +434,50 @@ namespace Year_14_CA_SSD
 
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
-            if(Test_Drives_ListView.SelectedItems.Count == 1)
+            if(Test_Drives_ListView.SelectedItems.Count != 1)
             {
-                int id = Convert.ToInt32(testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]][0]);
-                if(Can_Be_Cancelled(id))
-                {
-                    if(SQL_Operation.UpdateEntryVariable(id,"TestDriveId","IsCanceled","True","TestDriveTable")) //cancelling was succesful
-                    {
-                        string[] testDrive = Get_Test_Drive_Values(id);
-                        int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
-                        if (Has_Been_Paid(paymentId))
-                        {
-                            int customerId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CustomerId")]);
-
-                            //create a refund
-                            decimal refundAmount = Convert.ToDecimal(Get_Payment_Amount(paymentId.ToString()));
-                            string[] values = { customerId.ToString(), refundAmount.ToString(), "Refund", "Refund for a cancelled test drive", "False" };
-                            if(!SQL_Operation.CreateEntry(values,"PaymentTable"))
-                            {
-                                MessageBox.Show("An error occurred when creating a refund");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            if(!SQL_Operation.UpdateEntryVariable(paymentId,"PaymentId","IsCancelled","True","PaymentTable"))
-                            {
-                                MessageBox.Show("An error occured when updating the payment");
-                                return;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("An error occurred when updating the test drive ");
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Test Drive cannot be cancelled");
-                }
-
+                MessageBox.Show("No entry selected");
             }
+
+            int id = Convert.ToInt32(testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]][0]);
+
+            if (!Can_Be_Cancelled(id))
+            {
+                MessageBox.Show("Test Drive cannot be cancelled");
+                return;
+            }
+
+            if (!SQL_Operation.UpdateEntryVariable(id, "TestDriveId", "IsCanceled", "True", "TestDriveTable")) //cancelling was unsuccesful
+            {
+                MessageBox.Show("An error occurred when updating the test drive ");
+                return;
+            }
+
+            string[] testDrive = Get_Test_Drive_Values(id);
+            int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
+            if (Has_Been_Paid(paymentId))
+            {
+                int customerId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CustomerId")]);
+
+                //create a refund
+                decimal refundAmount = Convert.ToDecimal(Get_Payment_Amount(paymentId.ToString()));
+                string[] values = { customerId.ToString(), refundAmount.ToString(), "Refund", "Refund for a cancelled test drive", "False" };
+                if (!SQL_Operation.CreateEntry(values, "PaymentTable"))
+                {
+                    MessageBox.Show("An error occurred when creating a refund");
+                    return;
+                }
+            }
+            else
+            {
+                if (!SQL_Operation.UpdateEntryVariable(paymentId, "PaymentId", "IsCancelled", "True", "PaymentTable"))
+                {
+                    MessageBox.Show("An error occured when updating the payment");
+                    return;
+                }
+            }
+            Refresh_Page();
+
         }
         bool Can_Be_Cancelled(int testDriveId)
         {
@@ -496,6 +497,10 @@ namespace Year_14_CA_SSD
         }
 
         private void Refresh_Button_Click(object sender, EventArgs e)
+        {
+            Refresh_Page();
+        }
+        void Refresh_Page()
         {
             Test_Drives_ListView.Clear();
             displayedIndexes.Clear();
@@ -723,8 +728,8 @@ namespace Year_14_CA_SSD
 
         private void Sorting_Group_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Filter_ComboBox.Items.Clear();
-            switch (Sorting_Group_ComboBox.Text)
+            Search_ComboBox.Items.Clear();
+            switch (Searching_Group_ComboBox.Text)
             {
                 case "Customer":
                 {
@@ -748,60 +753,60 @@ namespace Year_14_CA_SSD
                 }
                 default:
                 {
-                    Filter_ComboBox.Items.Add("Select a section to sort first");
+                    Search_ComboBox.Items.Add("Select a section to sort first");
                     break;
                 }
             }
         }
         void Add_Customer_DropDown()
         {
-            Filter_ComboBox.Items.Add("First Name/s");
-            Filter_ComboBox.Items.Add("Middle Name/s");
-            Filter_ComboBox.Items.Add("Last Name/s");
-            Filter_ComboBox.Items.Add("Date Of Birth");
-            Filter_ComboBox.Items.Add("Phone Number");
-            Filter_ComboBox.Items.Add("Email Address");
-            Filter_ComboBox.Items.Add("Postcode");
+            Search_ComboBox.Items.Add("First Name/s");
+            Search_ComboBox.Items.Add("Middle Name/s");
+            Search_ComboBox.Items.Add("Last Name/s");
+            Search_ComboBox.Items.Add("Date Of Birth");
+            Search_ComboBox.Items.Add("Phone Number");
+            Search_ComboBox.Items.Add("Email Address");
+            Search_ComboBox.Items.Add("Postcode");
         }
         void Add_Employee_DropDown()
         {
-            Filter_ComboBox.Items.Add("First Name/s");
-            Filter_ComboBox.Items.Add("Middle Name/s");
-            Filter_ComboBox.Items.Add("Last Name/s");
-            Filter_ComboBox.Items.Add("Date Of Birth");
-            Filter_ComboBox.Items.Add("Phone Number");
-            Filter_ComboBox.Items.Add("Email Address");
-            Filter_ComboBox.Items.Add("Username");
+            Search_ComboBox.Items.Add("First Name/s");
+            Search_ComboBox.Items.Add("Middle Name/s");
+            Search_ComboBox.Items.Add("Last Name/s");
+            Search_ComboBox.Items.Add("Date Of Birth");
+            Search_ComboBox.Items.Add("Phone Number");
+            Search_ComboBox.Items.Add("Email Address");
+            Search_ComboBox.Items.Add("Username");
         }
         void Add_Car_DropDown()
         {
-            Filter_ComboBox.Items.Add("Make");
-            Filter_ComboBox.Items.Add("Model");
-            Filter_ComboBox.Items.Add("Registration");
-            Filter_ComboBox.Items.Add("Year Of Manufacture");
+            Search_ComboBox.Items.Add("Make");
+            Search_ComboBox.Items.Add("Model");
+            Search_ComboBox.Items.Add("Registration");
+            Search_ComboBox.Items.Add("Year Of Manufacture");
         }
 
         void Add_TestDrive_DropDown()
         {
-            Filter_ComboBox.Items.Add("Start Time");
-            Filter_ComboBox.Items.Add("End Time");
-            Filter_ComboBox.Items.Add("Length");
+            Search_ComboBox.Items.Add("Start Time");
+            Search_ComboBox.Items.Add("End Time");
+            Search_ComboBox.Items.Add("Length");
         }
 
         private void Search_Button_Click(object sender, EventArgs e)
         {
-            if(Sorting_Group_ComboBox.Text == "")
+            if(Searching_Group_ComboBox.Text == "")
             {
                 MessageBox.Show("Pick a searching group first");
                 return;
             }
-            if(Filter_ComboBox.Text == "")
+            if(Search_ComboBox.Text == "")
             {
                 MessageBox.Show("Pick a filed to search first");
                 return;
             }
             Reset_Displayed_Indexes();
-            switch (Sorting_Group_ComboBox.Text)
+            switch (Searching_Group_ComboBox.Text)
             {
                 case "Customer":
                     {
@@ -835,13 +840,13 @@ namespace Year_14_CA_SSD
         void Search_Customers()
         {
             List<int> tempIndexes = new List<int>();
-            string searchText = Filter_TextBox.Text;
+            string searchText = Search_TextBox.Text;
             for(int i = 0; i < displayedIndexes.Count;i++)
             {
                 string[] testDrive = testDrives[displayedIndexes[i]];
                 int customerId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CustomerId")]);
                 string[] customer = Get_Customer_Values(customerId);
-                int filterIndex = Get_Customer_Column_Index(Filter_ComboBox.Text);
+                int filterIndex = Get_Customer_Column_Index(Search_ComboBox.Text);
                 if (customer[filterIndex].Contains(searchText))
                 {
                     tempIndexes.Add(displayedIndexes[i]);
@@ -853,13 +858,13 @@ namespace Year_14_CA_SSD
         void Search_Employees()
         {
             List<int> tempIndexes = new List<int>();
-            string searchText = Filter_TextBox.Text;
+            string searchText = Search_TextBox.Text;
             for (int i = 0; i < displayedIndexes.Count; i++)
             {
                 string[] testDrive = testDrives[displayedIndexes[i]];
                 int employeeId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("EmployeeId")]);
                 string[] employee = Get_Customer_Values(employeeId);
-                int filterIndex = Get_Employee_Column_Index(Filter_ComboBox.Text);
+                int filterIndex = Get_Employee_Column_Index(Search_ComboBox.Text);
                 if (employee[filterIndex].Contains(searchText))
                 {
                     tempIndexes.Add(displayedIndexes[i]);
@@ -871,7 +876,7 @@ namespace Year_14_CA_SSD
         void Search_Cars()
         {
             List<int> tempIndexes = new List<int>();
-            string searchText = Filter_TextBox.Text;
+            string searchText = Search_TextBox.Text;
             for (int i = 0; i < displayedIndexes.Count; i++)
             {
                 string[] testDrive = testDrives[displayedIndexes[i]];
@@ -880,7 +885,7 @@ namespace Year_14_CA_SSD
                 int carId = Convert.ToInt32(carUnavailValues[Get_CarUnavailabilty_Column_Index("CarId")]);
 
                 string[] car = Get_Car_Values(carId);
-                int filterIndex = Get_Car_Column_Index(Filter_ComboBox.Text);
+                int filterIndex = Get_Car_Column_Index(Search_ComboBox.Text);
                 if (car[filterIndex].Contains(searchText))
                 {
                     tempIndexes.Add(displayedIndexes[i]);
@@ -891,7 +896,7 @@ namespace Year_14_CA_SSD
         void Search_TestDrives()
         {
             List<int> tempIndexes = new List<int>();
-            string searchText = Filter_TextBox.Text;
+            string searchText = Search_TextBox.Text;
             for (int i = 0; i < displayedIndexes.Count; i++)
             {
                 string[] testDrive = testDrives[displayedIndexes[i]];
@@ -901,7 +906,7 @@ namespace Year_14_CA_SSD
                 string endDate = Convert.ToDateTime(carUnavailValues[Get_CarUnavailabilty_Column_Index("EndTime")]).ToString("yyyy/MM/dd HH:mm:ss");
                 int testDriveType = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("TestDriveType")]);
 
-                int filterIndex = Filter_ComboBox.SelectedIndex;
+                int filterIndex = Search_ComboBox.SelectedIndex;
                 if(filterIndex == 2) //test drive type
                 {
                     if(testDriveTypes[testDriveType].Contains(searchText))

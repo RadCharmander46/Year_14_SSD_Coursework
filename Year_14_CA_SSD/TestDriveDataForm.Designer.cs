@@ -31,8 +31,8 @@ namespace Year_14_CA_SSD
         {
             this.components = new System.ComponentModel.Container();
             this.Test_Drives_ListView = new System.Windows.Forms.ListView();
-            this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
-            this.Filter_TextBox = new System.Windows.Forms.TextBox();
+            this.Search_ComboBox = new System.Windows.Forms.ComboBox();
+            this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Customer_GroupBox = new System.Windows.Forms.GroupBox();
             this.Cust_Postcode_Label = new System.Windows.Forms.Label();
             this.Cust_Email_Label = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@ namespace Year_14_CA_SSD
             this.Cancelled_Label = new System.Windows.Forms.Label();
             this.Test_Drive_Length_Label = new System.Windows.Forms.Label();
             this.Cost_Label = new System.Windows.Forms.Label();
-            this.Sorting_Group_ComboBox = new System.Windows.Forms.ComboBox();
+            this.Searching_Group_ComboBox = new System.Windows.Forms.ComboBox();
             this.Car_GroupBox = new System.Windows.Forms.GroupBox();
             this.Power_Label = new System.Windows.Forms.Label();
             this.Engine_Size_Label = new System.Windows.Forms.Label();
@@ -67,23 +67,23 @@ namespace Year_14_CA_SSD
             this.Sort_Employee = new System.Windows.Forms.PictureBox();
             this.Sort_Customer = new System.Windows.Forms.PictureBox();
             this.Show_Cancelled_Button = new System.Windows.Forms.PictureBox();
+            this.Refresh_Button = new System.Windows.Forms.PictureBox();
+            this.Search_Button = new System.Windows.Forms.PictureBox();
+            this.Cancel_Button = new System.Windows.Forms.PictureBox();
+            this.Delete_Button = new System.Windows.Forms.PictureBox();
+            this.Add_Button = new System.Windows.Forms.PictureBox();
+            this.Edit_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.Refresh_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Search_Button = new System.Windows.Forms.PictureBox();
-            this.Cancel_Button = new System.Windows.Forms.PictureBox();
-            this.Remove_Test_Drive_Button = new System.Windows.Forms.PictureBox();
-            this.Add_Button = new System.Windows.Forms.PictureBox();
-            this.Edit_Button = new System.Windows.Forms.PictureBox();
             this.Customer_GroupBox.SuspendLayout();
             this.Employee_GroupBox.SuspendLayout();
             this.Test_Drive_GroupBox.SuspendLayout();
@@ -94,23 +94,23 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delete_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Remove_Test_Drive_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).BeginInit();
             this.SuspendLayout();
             // 
             // Test_Drives_ListView
@@ -126,28 +126,28 @@ namespace Year_14_CA_SSD
             this.Test_Drives_ListView.View = System.Windows.Forms.View.Details;
             this.Test_Drives_ListView.SelectedIndexChanged += new System.EventHandler(this.Test_Drives_ListView_SelectedIndexChanged);
             // 
-            // Filter_ComboBox
+            // Search_ComboBox
             // 
-            this.Filter_ComboBox.CausesValidation = false;
-            this.Filter_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Filter_ComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Filter_ComboBox.FormattingEnabled = true;
-            this.Filter_ComboBox.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Filter_ComboBox.Items.AddRange(new object[] {
+            this.Search_ComboBox.CausesValidation = false;
+            this.Search_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Search_ComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_ComboBox.FormattingEnabled = true;
+            this.Search_ComboBox.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.Search_ComboBox.Items.AddRange(new object[] {
             "Pick a section first"});
-            this.Filter_ComboBox.Location = new System.Drawing.Point(611, 540);
-            this.Filter_ComboBox.Name = "Filter_ComboBox";
-            this.Filter_ComboBox.Size = new System.Drawing.Size(191, 33);
-            this.Filter_ComboBox.TabIndex = 39;
+            this.Search_ComboBox.Location = new System.Drawing.Point(611, 540);
+            this.Search_ComboBox.Name = "Search_ComboBox";
+            this.Search_ComboBox.Size = new System.Drawing.Size(191, 33);
+            this.Search_ComboBox.TabIndex = 39;
             // 
-            // Filter_TextBox
+            // Search_TextBox
             // 
-            this.Filter_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Filter_TextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Filter_TextBox.Location = new System.Drawing.Point(22, 537);
-            this.Filter_TextBox.Name = "Filter_TextBox";
-            this.Filter_TextBox.Size = new System.Drawing.Size(408, 39);
-            this.Filter_TextBox.TabIndex = 38;
+            this.Search_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Search_TextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_TextBox.Location = new System.Drawing.Point(22, 537);
+            this.Search_TextBox.Name = "Search_TextBox";
+            this.Search_TextBox.Size = new System.Drawing.Size(408, 39);
+            this.Search_TextBox.TabIndex = 38;
             // 
             // Customer_GroupBox
             // 
@@ -333,22 +333,22 @@ namespace Year_14_CA_SSD
             this.Cost_Label.TabIndex = 0;
             this.Cost_Label.Text = "Cost: £180";
             // 
-            // Sorting_Group_ComboBox
+            // Searching_Group_ComboBox
             // 
-            this.Sorting_Group_ComboBox.CausesValidation = false;
-            this.Sorting_Group_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Sorting_Group_ComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sorting_Group_ComboBox.FormattingEnabled = true;
-            this.Sorting_Group_ComboBox.Items.AddRange(new object[] {
+            this.Searching_Group_ComboBox.CausesValidation = false;
+            this.Searching_Group_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Searching_Group_ComboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searching_Group_ComboBox.FormattingEnabled = true;
+            this.Searching_Group_ComboBox.Items.AddRange(new object[] {
             "Customer",
             "Employee",
             "Car",
             "Test Drive"});
-            this.Sorting_Group_ComboBox.Location = new System.Drawing.Point(451, 543);
-            this.Sorting_Group_ComboBox.Name = "Sorting_Group_ComboBox";
-            this.Sorting_Group_ComboBox.Size = new System.Drawing.Size(139, 33);
-            this.Sorting_Group_ComboBox.TabIndex = 51;
-            this.Sorting_Group_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Sorting_Group_ComboBox_SelectedIndexChanged);
+            this.Searching_Group_ComboBox.Location = new System.Drawing.Point(451, 543);
+            this.Searching_Group_ComboBox.Name = "Searching_Group_ComboBox";
+            this.Searching_Group_ComboBox.Size = new System.Drawing.Size(139, 33);
+            this.Searching_Group_ComboBox.TabIndex = 51;
+            this.Searching_Group_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Sorting_Group_ComboBox_SelectedIndexChanged);
             // 
             // Car_GroupBox
             // 
@@ -530,6 +530,78 @@ namespace Year_14_CA_SSD
             this.Tool_Tip.SetToolTip(this.Show_Cancelled_Button, "Toggle Cancelled Visibility");
             this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
             // 
+            // Refresh_Button
+            // 
+            this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
+            this.Refresh_Button.Location = new System.Drawing.Point(815, 2);
+            this.Refresh_Button.Name = "Refresh_Button";
+            this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
+            this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Refresh_Button.TabIndex = 47;
+            this.Refresh_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh");
+            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
+            // 
+            // Search_Button
+            // 
+            this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
+            this.Search_Button.Location = new System.Drawing.Point(814, 526);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(64, 64);
+            this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Search_Button.TabIndex = 40;
+            this.Search_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
+            // 
+            // Cancel_Button
+            // 
+            this.Cancel_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel;
+            this.Cancel_Button.Location = new System.Drawing.Point(814, 316);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(64, 64);
+            this.Cancel_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Cancel_Button.TabIndex = 12;
+            this.Cancel_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Cancel_Button, "Cancel Test Drive");
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
+            // 
+            // Delete_Button
+            // 
+            this.Delete_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
+            this.Delete_Button.Location = new System.Drawing.Point(814, 456);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Size = new System.Drawing.Size(64, 64);
+            this.Delete_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Delete_Button.TabIndex = 11;
+            this.Delete_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Delete_Button, "Delete Test Drive");
+            this.Delete_Button.Click += new System.EventHandler(this.Remove_Test_Drive_Button_Click);
+            // 
+            // Add_Button
+            // 
+            this.Add_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
+            this.Add_Button.Location = new System.Drawing.Point(814, 246);
+            this.Add_Button.Name = "Add_Button";
+            this.Add_Button.Size = new System.Drawing.Size(64, 64);
+            this.Add_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Add_Button.TabIndex = 10;
+            this.Add_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Add_Button, "Add Test Drive");
+            this.Add_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
+            this.Edit_Button.Location = new System.Drawing.Point(814, 386);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Size = new System.Drawing.Size(64, 64);
+            this.Edit_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Edit_Button.TabIndex = 9;
+            this.Edit_Button.TabStop = false;
+            this.Tool_Tip.SetToolTip(this.Edit_Button, "Edit Test Drive");
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            // 
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Gainsboro;
@@ -575,18 +647,6 @@ namespace Year_14_CA_SSD
             this.pictureBox10.Size = new System.Drawing.Size(154, 61);
             this.pictureBox10.TabIndex = 52;
             this.pictureBox10.TabStop = false;
-            // 
-            // Refresh_Button
-            // 
-            this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(815, 2);
-            this.Refresh_Button.Name = "Refresh_Button";
-            this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
-            this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Refresh_Button.TabIndex = 47;
-            this.Refresh_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh");
-            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
             // 
             // pictureBox3
             // 
@@ -644,66 +704,6 @@ namespace Year_14_CA_SSD
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
             // 
-            // Search_Button
-            // 
-            this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(814, 526);
-            this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(64, 64);
-            this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Search_Button.TabIndex = 40;
-            this.Search_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
-            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
-            // 
-            // Cancel_Button
-            // 
-            this.Cancel_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(814, 316);
-            this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(64, 64);
-            this.Cancel_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cancel_Button.TabIndex = 12;
-            this.Cancel_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Cancel_Button, "Cancel Test Drive");
-            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
-            // 
-            // Remove_Test_Drive_Button
-            // 
-            this.Remove_Test_Drive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Remove_Test_Drive_Button.Location = new System.Drawing.Point(814, 456);
-            this.Remove_Test_Drive_Button.Name = "Remove_Test_Drive_Button";
-            this.Remove_Test_Drive_Button.Size = new System.Drawing.Size(64, 64);
-            this.Remove_Test_Drive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Remove_Test_Drive_Button.TabIndex = 11;
-            this.Remove_Test_Drive_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Remove_Test_Drive_Button, "Delete Test Drive");
-            this.Remove_Test_Drive_Button.Click += new System.EventHandler(this.Remove_Test_Drive_Button_Click);
-            // 
-            // Add_Button
-            // 
-            this.Add_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Button.Location = new System.Drawing.Point(814, 246);
-            this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(64, 64);
-            this.Add_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Add_Button.TabIndex = 10;
-            this.Add_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Add_Button, "Add Test Drive");
-            this.Add_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
-            // 
-            // Edit_Button
-            // 
-            this.Edit_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Button.Location = new System.Drawing.Point(814, 386);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Size = new System.Drawing.Size(64, 64);
-            this.Edit_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Edit_Button.TabIndex = 9;
-            this.Edit_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Edit_Button, "Edit Test Drive");
-            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
-            // 
             // TestDriveDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -720,7 +720,7 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.Sorting_Group_ComboBox);
+            this.Controls.Add(this.Searching_Group_ComboBox);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.Test_Drive_GroupBox);
             this.Controls.Add(this.Employee_GroupBox);
@@ -730,13 +730,13 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.Filter_ComboBox);
+            this.Controls.Add(this.Search_ComboBox);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.Filter_TextBox);
+            this.Controls.Add(this.Search_TextBox);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Cancel_Button);
-            this.Controls.Add(this.Remove_Test_Drive_Button);
+            this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Test_Drives_ListView);
@@ -757,23 +757,23 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delete_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Remove_Test_Drive_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,13 +784,13 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.ListView Test_Drives_ListView;
         private System.Windows.Forms.PictureBox Edit_Button;
         private System.Windows.Forms.PictureBox Add_Button;
-        private System.Windows.Forms.PictureBox Remove_Test_Drive_Button;
+        private System.Windows.Forms.PictureBox Delete_Button;
         private System.Windows.Forms.PictureBox Cancel_Button;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ComboBox Filter_ComboBox;
+        private System.Windows.Forms.ComboBox Search_ComboBox;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox Filter_TextBox;
+        private System.Windows.Forms.TextBox Search_TextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox Search_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -816,7 +816,7 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.ComboBox Sorting_Group_ComboBox;
+        private System.Windows.Forms.ComboBox Searching_Group_ComboBox;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.GroupBox Car_GroupBox;
         private System.Windows.Forms.Label Colour_Label;

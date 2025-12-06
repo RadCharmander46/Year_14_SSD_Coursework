@@ -19,6 +19,7 @@ namespace Year_14_CA_SSD
         public string[] paymentColumns = { "PaymentId", "Transaction Time", "CustomerId", "Amount", "Transaction Type", "Description", "Has Been Paid", "Cancelled" };
         public string[] customerColumns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
         string lastSorted;
+        bool showCancelled;
         public PaymentDataForm()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Year_14_CA_SSD
             Setup_Columns();
             Load_Payments();
             Load_Customers();
-            Display_All_Payments();
+            Display_Payments();
         }
         void Setup_Columns()
         {
@@ -396,6 +397,66 @@ namespace Year_14_CA_SSD
             for (int i = 0; i < payments.Count; i++)
             {
                 tempIndexes.Add(i);
+            }
+            displayedIndexes = tempIndexes;
+        }
+
+        private void Mark_Paid_Button_Click(object sender, EventArgs e)
+        {
+            if (Payments_ListView.SelectedItems.Count == 1)
+            {
+                try
+                {
+                    int id = Convert.ToInt32(payments[displayedIndexes[Payments_ListView.SelectedItems[0].Index]][0]);
+                    if (!SQL_Operation.UpdateEntryVariable(id, "PaymentId", "IsCancelled", "True", "PaymentTable")) //paying was succesful
+                    {
+                        MessageBox.Show("An error occurred when updating the payment");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("An error occurred when updating the payment ");
+                    return;
+                }
+
+            }
+        }
+        void Show_Cancelled(object sender, EventArgs e)
+        {
+            showCancelled = true;
+            Show_Cancelled_Button.Click -= new EventHandler(Show_Cancelled);
+            Show_Cancelled_Button.Click += new EventHandler(Hide_Cancelled);
+            Show_Cancelled_Button.Image = Properties.Resources.cancel_visible;
+            Display_Payments();
+        }
+        void Hide_Cancelled(object sender, EventArgs e)
+        {
+            showCancelled = false;
+            Show_Cancelled_Button.Click -= new EventHandler(Hide_Cancelled);
+            Show_Cancelled_Button.Click += new EventHandler(Show_Cancelled);
+            Show_Cancelled_Button.Image = Properties.Resources.cancel_not_visible;
+            Display_Payments();
+        }
+        void Display_Payments()
+        {
+            if (showCancelled)
+            {
+                Reset_Displayed_Indexes();
+            }
+            Filter_By_Cancelled();
+            Display_All_Payments();
+        }
+        void Filter_By_Cancelled()
+        {
+            List<int> tempIndexes = new List<int>();
+            for (int i = 0; i < displayedIndexes.Count; i++)
+            {
+                string[] payment = payments[displayedIndexes[i]];
+                bool cancelled = Convert.ToBoolean(payment[Get_Payment_Column_Index("Cancelled")]);
+                if (!cancelled || showCancelled)
+                {
+                    tempIndexes.Add(displayedIndexes[i]);
+                }
             }
             displayedIndexes = tempIndexes;
         }
