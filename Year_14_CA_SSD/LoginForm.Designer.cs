@@ -36,6 +36,7 @@ namespace Year_14_CA_SSD
             this.Login_Button = new System.Windows.Forms.Button();
             this.Show_Password_Button = new System.Windows.Forms.PictureBox();
             this.Logo_PictureBox = new System.Windows.Forms.PictureBox();
+            this.Forgotten_Password_Button = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Show_Password_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo_PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -111,11 +112,26 @@ namespace Year_14_CA_SSD
             this.Logo_PictureBox.TabIndex = 11;
             this.Logo_PictureBox.TabStop = false;
             // 
+            // Forgotten_Password_Button
+            // 
+            this.Forgotten_Password_Button.AutoSize = true;
+            this.Forgotten_Password_Button.BackColor = System.Drawing.SystemColors.Control;
+            this.Forgotten_Password_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Forgotten_Password_Button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Forgotten_Password_Button.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Forgotten_Password_Button.Location = new System.Drawing.Point(779, 414);
+            this.Forgotten_Password_Button.Name = "Forgotten_Password_Button";
+            this.Forgotten_Password_Button.Size = new System.Drawing.Size(145, 20);
+            this.Forgotten_Password_Button.TabIndex = 12;
+            this.Forgotten_Password_Button.Text = "Forgotten Password";
+            this.Forgotten_Password_Button.Click += new System.EventHandler(this.Forgotten_Password_Button_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Forgotten_Password_Button);
             this.Controls.Add(this.Username_TextBox);
             this.Controls.Add(this.Logo_PictureBox);
             this.Controls.Add(this.Show_Password_Button);
@@ -140,5 +156,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.PictureBox Show_Password_Button;
         private System.Windows.Forms.PictureBox Logo_PictureBox;
+        private System.Windows.Forms.Label Forgotten_Password_Button;
     }
 }

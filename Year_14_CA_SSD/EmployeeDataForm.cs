@@ -380,7 +380,7 @@ namespace Year_14_CA_SSD
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
                 if (AddEmployee != null)
                 {
-                    AddEmployee.Invoke(this, new Add_Customer_EventArgs { AddMode = false, Id = id });
+                    AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = false, Id = id });
                 }
                 this.Close();
             }
@@ -390,7 +390,7 @@ namespace Year_14_CA_SSD
         {
             if (AddEmployee != null)
             {
-                AddEmployee.Invoke(this, new Add_Customer_EventArgs { AddMode = true });
+                AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = true });
             }
             this.Close();
         }

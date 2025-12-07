@@ -162,17 +162,17 @@ namespace Year_14_CA_SSD
         }
         void Load_AddEmployeeForm(object sender, EventArgs e)
         {
-            AddCustomerForm Add_Customer_Object = new AddCustomerForm();
-            Add_Customer_EventArgs eArgs = (Add_Customer_EventArgs)e;
-            Add_Customer_Object.Id = eArgs.Id;
-            Add_Customer_Object.addMode = eArgs.AddMode;
-            Add_Customer_Object.TopLevel = false;
-            Add_Customer_Object.AutoScroll = true;
-            Add_Customer_Object.FormBorderStyle = FormBorderStyle.None;
-            Add_Customer_Object.Dock = DockStyle.Fill;
-            Screen_Panel.Controls.Add(Add_Customer_Object);
-            Add_Customer_Object.Return += new EventHandler(Load_CustomerDataForm);
-            Add_Customer_Object.Show();
+            AddEmployeeForm Add_Employee_Object = new AddEmployeeForm();
+            Add_Employee_EventArgs eArgs = (Add_Employee_EventArgs)e;
+            Add_Employee_Object.Id = eArgs.Id;
+            Add_Employee_Object.addMode = eArgs.AddMode;
+            Add_Employee_Object.TopLevel = false;
+            Add_Employee_Object.AutoScroll = true;
+            Add_Employee_Object.FormBorderStyle = FormBorderStyle.None;
+            Add_Employee_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Add_Employee_Object);
+            Add_Employee_Object.Return += new EventHandler(Load_EmployeeDataForm);
+            Add_Employee_Object.Show();
         }
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)

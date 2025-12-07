@@ -44,3 +44,4 @@ C:\Users\emmet\Downloads\Applications\VS programs\Year_14_CA_SSD\obj\Debug\Year_
 C:\Users\emmet\Downloads\Applications\VS programs\Year_14_CA_SSD\obj\Debug\Year_14_CA_SSD.ConfirmationForm.resources
 C:\Users\emmet\Downloads\Applications\VS programs\Year_14_CA_SSD\obj\Debug\Year_14_CA_SSD.PaymentDataForm.resources
 C:\Users\emmet\Downloads\Applications\VS programs\Year_14_CA_SSD\obj\Debug\Year_14_CA_SSD.EmployeeDataForm.resources
+C:\Users\emmet\Downloads\Applications\VS programs\Year_14_CA_SSD\obj\Debug\Year_14_CA_SSD.AddEmployeeForm.resources

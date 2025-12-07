@@ -150,5 +150,10 @@ namespace Year_14_CA_SSD
         {
             Password_TextBox.UseSystemPasswordChar = true;
         }
+
+        private void Forgotten_Password_Button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact an admistrator to reset your password");
+        }
     }
 }
