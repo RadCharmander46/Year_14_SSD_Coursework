@@ -12,6 +12,7 @@ namespace Year_14_CA_SSD
 {
     public partial class LoginDataForm : Form
     {
+        public event EventHandler ManagerSettings;
         public LoginDataForm()
         {
             InitializeComponent();
@@ -40,6 +41,15 @@ namespace Year_14_CA_SSD
             Globals.loginId = null;
             Globals.isManager = false;
             Globals.signedIn = false;
+            this.Close();
+        }
+
+        private void Manager_Settings_Button_Click(object sender, EventArgs e)
+        {
+            if(ManagerSettings != null)
+            {
+                ManagerSettings.Invoke(this,EventArgs.Empty);
+            }
             this.Close();
         }
     }

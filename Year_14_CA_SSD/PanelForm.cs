@@ -115,6 +115,7 @@ namespace Year_14_CA_SSD
             Login_Object.FormBorderStyle = FormBorderStyle.None;
             Login_Object.Dock = DockStyle.Fill;
             Screen_Panel.Controls.Add(Login_Object);
+            Login_Object.ManagerSettings += new EventHandler(Load_ManagerSettingsForm);
             Login_Object.Show();
         }
         void Load_HomeScreenForm(object sender, EventArgs e)
@@ -173,6 +174,16 @@ namespace Year_14_CA_SSD
             Screen_Panel.Controls.Add(Add_Employee_Object);
             Add_Employee_Object.Return += new EventHandler(Load_EmployeeDataForm);
             Add_Employee_Object.Show();
+        }
+        void Load_ManagerSettingsForm(object sender, EventArgs e)
+        {
+            ManagerSettingsForm Manager_Object = new ManagerSettingsForm();
+            Manager_Object.TopLevel = false;
+            Manager_Object.AutoScroll = true;
+            Manager_Object.FormBorderStyle = FormBorderStyle.None;
+            Manager_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Manager_Object);
+            Manager_Object.Show();
         }
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)

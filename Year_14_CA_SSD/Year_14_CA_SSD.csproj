@@ -93,6 +93,7 @@
     <Compile Include="CarReturnForm.Designer.cs">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingsLoading.cs" />
     <Compile Include="ConfirmationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerSettingsForm.Designer.cs">
+      <DependentUpon>ManagerSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaymentDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +164,7 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="TestDriveBookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +229,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSettingsForm.resx">
+      <DependentUpon>ManagerSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PanelForm.resx">
       <DependentUpon>PanelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +253,7 @@
     </Compile>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TestDriveBookingForm.resx">
       <DependentUpon>TestDriveBookingForm.cs</DependentUpon>

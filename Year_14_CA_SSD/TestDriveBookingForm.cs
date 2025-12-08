@@ -301,13 +301,13 @@ namespace Year_14_CA_SSD
         {
             decimal price = 0;
             if(Length_ComboBox.Text == "Weekend") { 
-                price = 175; 
+                price = Globals.settings.TestDriveCosts[2]; 
             }
             else if(Length_ComboBox.Text == "1 Day") {
-                price = 80; 
+                price = Globals.settings.TestDriveCosts[1]; 
             }
             else { 
-                price = 0; 
+                price = Globals.settings.TestDriveCosts[0]; 
             }
             return price;
         }

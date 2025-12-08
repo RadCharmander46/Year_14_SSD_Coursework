@@ -32,6 +32,7 @@ namespace Year_14_CA_SSD
             this.Sign_Out_Button = new System.Windows.Forms.Button();
             this.Username_Label = new System.Windows.Forms.Label();
             this.Username_Value_Label = new System.Windows.Forms.Label();
+            this.Manager_Settings_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Sign_Out_Button
@@ -65,11 +66,23 @@ namespace Year_14_CA_SSD
             this.Username_Value_Label.TabIndex = 2;
             this.Username_Value_Label.Text = "NAMCGEE782";
             // 
+            // Manager_Settings_Button
+            // 
+            this.Manager_Settings_Button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Manager_Settings_Button.Location = new System.Drawing.Point(828, 510);
+            this.Manager_Settings_Button.Name = "Manager_Settings_Button";
+            this.Manager_Settings_Button.Size = new System.Drawing.Size(166, 74);
+            this.Manager_Settings_Button.TabIndex = 3;
+            this.Manager_Settings_Button.Text = "Manager Settings";
+            this.Manager_Settings_Button.UseVisualStyleBackColor = true;
+            this.Manager_Settings_Button.Click += new System.EventHandler(this.Manager_Settings_Button_Click);
+            // 
             // LoginDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Manager_Settings_Button);
             this.Controls.Add(this.Username_Value_Label);
             this.Controls.Add(this.Username_Label);
             this.Controls.Add(this.Sign_Out_Button);
@@ -86,5 +99,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Button Sign_Out_Button;
         private System.Windows.Forms.Label Username_Label;
         private System.Windows.Forms.Label Username_Value_Label;
+        private System.Windows.Forms.Button Manager_Settings_Button;
     }
 }

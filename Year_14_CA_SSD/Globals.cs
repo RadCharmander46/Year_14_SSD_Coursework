@@ -15,6 +15,7 @@ namespace Year_14_CA_SSD
         public static bool signedIn = false;
         public static int? loginId = 0;
         public static bool isManager = false;
+        public static Settings settings = SettingsLoading.Load_Settings();
         public static bool checkStringLength(string testString,int maxLength,int minLength)
         {
             try

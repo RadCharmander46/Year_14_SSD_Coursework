@@ -30,11 +30,15 @@ namespace Year_14_CA_SSD
         private void InitializeComponent()
         {
             this.License_Details_GroupBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Password_TextBox = new System.Windows.Forms.TextBox();
             this.Issue_Label = new System.Windows.Forms.Label();
-            this.Expiry_Label = new System.Windows.Forms.Label();
             this.Usernname_TextBox = new System.Windows.Forms.TextBox();
-            this.Manager_Access_CheckBox = new System.Windows.Forms.CheckBox();
             this.License_Number_Label = new System.Windows.Forms.Label();
+            this.Expiry_Label = new System.Windows.Forms.Label();
+            this.Manager_Access_CheckBox = new System.Windows.Forms.CheckBox();
             this.Address_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.Address_Line3_TextBox = new System.Windows.Forms.TextBox();
             this.Address_Line1_TextBox = new System.Windows.Forms.TextBox();
@@ -61,14 +65,10 @@ namespace Year_14_CA_SSD
             this.Title_Label = new System.Windows.Forms.Label();
             this.Back_Button = new System.Windows.Forms.Button();
             this.Add_Employee_Button = new System.Windows.Forms.Button();
-            this.Password_TextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Department_TextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Role_TextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Department_TextBox = new System.Windows.Forms.TextBox();
             this.License_Details_GroupBox.SuspendLayout();
             this.Address_Details_GroupBox.SuspendLayout();
             this.Personal_Details_GroupBox.SuspendLayout();
@@ -95,6 +95,42 @@ namespace Year_14_CA_SSD
             this.License_Details_GroupBox.TabStop = false;
             this.License_Details_GroupBox.Text = "Account";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(184, 72);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(188, 33);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Generate Username";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(184, 150);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(188, 35);
+            this.textBox2.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 30);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Retype Password";
+            // 
+            // Password_TextBox
+            // 
+            this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_TextBox.Location = new System.Drawing.Point(184, 109);
+            this.Password_TextBox.Name = "Password_TextBox";
+            this.Password_TextBox.Size = new System.Drawing.Size(188, 35);
+            this.Password_TextBox.TabIndex = 33;
+            // 
             // Issue_Label
             // 
             this.Issue_Label.AutoSize = true;
@@ -105,6 +141,24 @@ namespace Year_14_CA_SSD
             this.Issue_Label.TabIndex = 32;
             this.Issue_Label.Text = "Password";
             // 
+            // Usernname_TextBox
+            // 
+            this.Usernname_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usernname_TextBox.Location = new System.Drawing.Point(184, 31);
+            this.Usernname_TextBox.Name = "Usernname_TextBox";
+            this.Usernname_TextBox.Size = new System.Drawing.Size(188, 35);
+            this.Usernname_TextBox.TabIndex = 28;
+            // 
+            // License_Number_Label
+            // 
+            this.License_Number_Label.AutoSize = true;
+            this.License_Number_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.License_Number_Label.Location = new System.Drawing.Point(65, 34);
+            this.License_Number_Label.Name = "License_Number_Label";
+            this.License_Number_Label.Size = new System.Drawing.Size(106, 30);
+            this.License_Number_Label.TabIndex = 29;
+            this.License_Number_Label.Text = "Username";
+            // 
             // Expiry_Label
             // 
             this.Expiry_Label.AutoSize = true;
@@ -114,14 +168,6 @@ namespace Year_14_CA_SSD
             this.Expiry_Label.Size = new System.Drawing.Size(124, 30);
             this.Expiry_Label.TabIndex = 31;
             this.Expiry_Label.Text = "Department";
-            // 
-            // Usernname_TextBox
-            // 
-            this.Usernname_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usernname_TextBox.Location = new System.Drawing.Point(184, 31);
-            this.Usernname_TextBox.Name = "Usernname_TextBox";
-            this.Usernname_TextBox.Size = new System.Drawing.Size(188, 35);
-            this.Usernname_TextBox.TabIndex = 28;
             // 
             // Manager_Access_CheckBox
             // 
@@ -136,16 +182,6 @@ namespace Year_14_CA_SSD
             this.Manager_Access_CheckBox.Text = "Manager Access";
             this.Manager_Access_CheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Manager_Access_CheckBox.UseVisualStyleBackColor = false;
-            // 
-            // License_Number_Label
-            // 
-            this.License_Number_Label.AutoSize = true;
-            this.License_Number_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.License_Number_Label.Location = new System.Drawing.Point(65, 34);
-            this.License_Number_Label.Name = "License_Number_Label";
-            this.License_Number_Label.Size = new System.Drawing.Size(106, 30);
-            this.License_Number_Label.TabIndex = 29;
-            this.License_Number_Label.Text = "Username";
             // 
             // Address_Details_GroupBox
             // 
@@ -410,32 +446,6 @@ namespace Year_14_CA_SSD
             this.Add_Employee_Button.UseVisualStyleBackColor = true;
             this.Add_Employee_Button.Click += new System.EventHandler(this.Add_Employee_Button_Click);
             // 
-            // Password_TextBox
-            // 
-            this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_TextBox.Location = new System.Drawing.Point(184, 109);
-            this.Password_TextBox.Name = "Password_TextBox";
-            this.Password_TextBox.Size = new System.Drawing.Size(188, 35);
-            this.Password_TextBox.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 30);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Retype Password";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(184, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 35);
-            this.textBox2.TabIndex = 35;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
@@ -453,13 +463,13 @@ namespace Year_14_CA_SSD
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Job Details";
             // 
-            // Department_TextBox
+            // Role_TextBox
             // 
-            this.Department_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Department_TextBox.Location = new System.Drawing.Point(184, 19);
-            this.Department_TextBox.Name = "Department_TextBox";
-            this.Department_TextBox.Size = new System.Drawing.Size(156, 35);
-            this.Department_TextBox.TabIndex = 28;
+            this.Role_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Role_TextBox.Location = new System.Drawing.Point(184, 63);
+            this.Role_TextBox.Name = "Role_TextBox";
+            this.Role_TextBox.Size = new System.Drawing.Size(241, 35);
+            this.Role_TextBox.TabIndex = 28;
             // 
             // label2
             // 
@@ -471,23 +481,13 @@ namespace Year_14_CA_SSD
             this.label2.TabIndex = 32;
             this.label2.Text = "Role";
             // 
-            // Role_TextBox
+            // Department_TextBox
             // 
-            this.Role_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_TextBox.Location = new System.Drawing.Point(184, 63);
-            this.Role_TextBox.Name = "Role_TextBox";
-            this.Role_TextBox.Size = new System.Drawing.Size(241, 35);
-            this.Role_TextBox.TabIndex = 28;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(184, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 33);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Generate Username";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Department_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Department_TextBox.Location = new System.Drawing.Point(184, 19);
+            this.Department_TextBox.Name = "Department_TextBox";
+            this.Department_TextBox.Size = new System.Drawing.Size(156, 35);
+            this.Department_TextBox.TabIndex = 28;
             // 
             // AddEmployeeForm
             // 
@@ -504,6 +504,7 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Add_Employee_Button);
             this.Name = "AddEmployeeForm";
             this.Text = "AddEmployeeForm";
+            this.Load += new System.EventHandler(this.AddEmployeeForm_Load);
             this.License_Details_GroupBox.ResumeLayout(false);
             this.License_Details_GroupBox.PerformLayout();
             this.Address_Details_GroupBox.ResumeLayout(false);
