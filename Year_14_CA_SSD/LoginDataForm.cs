@@ -21,6 +21,10 @@ namespace Year_14_CA_SSD
         private void LoginDataForm_Load(object sender, EventArgs e)
         {
             Display_Employee_Data();
+            if(!Globals.isManager)
+            {
+                Manager_Settings_Button.Visible = false;
+            }
         }
         void Display_Employee_Data()
         {

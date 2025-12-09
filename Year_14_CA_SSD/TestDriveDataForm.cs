@@ -586,13 +586,21 @@ namespace Year_14_CA_SSD
             if (Test_Drives_ListView.SelectedItems.Count == 1)
             {
                 string[] testDrive = testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]];
-                int employeeId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("EmployeeId")]);
+                string employeeIdText = testDrive[Get_TestDrive_Column_Index("EmployeeId")];
+                if (employeeIdText != "")
+                {
+                    int employeeId = Convert.ToInt32(employeeIdText);
+                    Display_Employee(employeeId);
+                }
+                else
+                {
+                    Reset_Employee_Labels();
+                }
                 int customerId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CustomerId")]);
                 int carUnavailabiltyId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CarUnavailabiltyId")]);
                 int carId = Convert.ToInt32(Get_Car_Id(carUnavailabiltyId.ToString()));
 
                 Display_Customer(customerId);
-                Display_Employee(employeeId);
                 Display_Car(carId);
 
                 Returned_Label.Text = "Car Returned: " + Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("HasBeenReturned")]);
@@ -616,11 +624,20 @@ namespace Year_14_CA_SSD
         }
         void Reset_Labels()
         {
+            Reset_Customer_Labels();
+            Reset_Car_Labels();
+            Reset_Employee_Labels();
+            Reset_Test_Drive_Labels();
+        }
+        void Reset_Customer_Labels()
+        {
             Cust_DOB_Label.Text = "DOB: ";
             Cust_Tel_Label.Text = "Tel: ";
             Cust_Email_Label.Text = "Email: ";
             Cust_Postcode_Label.Text = "Postcode: ";
-
+        }
+        void Reset_Car_Labels()
+        {
             Reg_Label.Text = "Reg: ";
             Mileage_Label.Text = "Mileage: ";
             Transmission_Label.Text = "Transmission: ";
@@ -629,18 +646,22 @@ namespace Year_14_CA_SSD
             Power_Label.Text = "Power: ";
             Colour_Label.Text = "Colour: ";
             Body_Style_Label.Text = "Body Style: ";
-
-            Employee_DOB_Label.Text = "DOB: ";
-            Employee_Tel_Label.Text = "Tel: ";
-            Employee_Email_Label.Text = "Email: ";
-            Employee_Username_Label.Text = "Username: ";
-
+        }
+        void Reset_Test_Drive_Labels()
+        {
             Returned_Label.Text = "Car Returned: ";
             Damaged_Returned.Text = "Car Damaged: ";
             Cancelled_Label.Text = "Test Drive Cancelled: ";
             Test_Drive_Length_Label.Text = "Test Drive Length: ";
             Cost_Label.Text = "Cost: ";
             Paid_Label.Text = "Paid: ";
+        }
+        void Reset_Employee_Labels()
+        {
+            Employee_DOB_Label.Text = "DOB: ";
+            Employee_Tel_Label.Text = "Tel: ";
+            Employee_Email_Label.Text = "Email: ";
+            Employee_Username_Label.Text = "Username: ";
         }
         void Display_Customer(int customerId)
         {

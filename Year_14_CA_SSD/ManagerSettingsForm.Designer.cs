@@ -30,35 +30,65 @@ namespace Year_14_CA_SSD
         private void InitializeComponent()
         {
             this.Back_Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.Test_Drive_Cost_Label = new System.Windows.Forms.Label();
+            this.Half_Hour_Cost_Label = new System.Windows.Forms.Label();
+            this.Day_Cost_Label = new System.Windows.Forms.Label();
+            this.Weekend_Cost_Label = new System.Windows.Forms.Label();
+            this.Discount_Label = new System.Windows.Forms.Label();
+            this.Monday_Label = new System.Windows.Forms.Label();
+            this.Tuesday_Label = new System.Windows.Forms.Label();
+            this.Wednesday_Label = new System.Windows.Forms.Label();
+            this.Thursday_Label = new System.Windows.Forms.Label();
+            this.Friday_Label = new System.Windows.Forms.Label();
+            this.Saturday_Label = new System.Windows.Forms.Label();
+            this.Sunday_Label = new System.Windows.Forms.Label();
+            this.Test_Drive_Cancel_Label = new System.Windows.Forms.Label();
+            this.Min_Age_Label = new System.Windows.Forms.Label();
+            this.Test_Drive_Mileage_Label = new System.Windows.Forms.Label();
+            this.Half_Hour_Mileage_Label = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.Weekend_Mileage_Label = new System.Windows.Forms.Label();
+            this.Mileage_Fee_Label = new System.Windows.Forms.Label();
             this.Apply_Button = new System.Windows.Forms.Button();
             this.Day_Cost_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Half_Hour_Cost_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Weekend_Cost_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Discount_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Percent_Unit_Label = new System.Windows.Forms.Label();
+            this.Min_Age_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Cancel_Days_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Day_Unit_Label = new System.Windows.Forms.Label();
+            this.Half_Hour_Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Half_Km_Label = new System.Windows.Forms.Label();
+            this.Day_Km_Label = new System.Windows.Forms.Label();
+            this.Day_Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Weekend_Km_Label = new System.Windows.Forms.Label();
+            this.Weekend_Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Mileage_Fee_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Monday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Monday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Tuesday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Tuesday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Wednesday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Wednesday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Thursday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Thursday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Friday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Friday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Saturday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Saturday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Sunday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Sunday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Day_Cost_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Cost_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Weekend_Cost_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Discount_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Min_Age_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Days_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Mileage_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Day_Mileage_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Back_Button
@@ -71,267 +101,196 @@ namespace Year_14_CA_SSD
             this.Back_Button.Text = "Back";
             this.Back_Button.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Test_Drive_Cost_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 332);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Test Drive Costs;";
+            this.Test_Drive_Cost_Label.AutoSize = true;
+            this.Test_Drive_Cost_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_Cost_Label.Location = new System.Drawing.Point(356, 332);
+            this.Test_Drive_Cost_Label.Name = "Test_Drive_Cost_Label";
+            this.Test_Drive_Cost_Label.Size = new System.Drawing.Size(122, 21);
+            this.Test_Drive_Cost_Label.TabIndex = 23;
+            this.Test_Drive_Cost_Label.Text = "Test Drive Costs;";
             // 
-            // label2
+            // Half_Hour_Cost_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(289, 353);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 21);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "30 Minutes: £0.00";
+            this.Half_Hour_Cost_Label.AutoSize = true;
+            this.Half_Hour_Cost_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Half_Hour_Cost_Label.Location = new System.Drawing.Point(376, 360);
+            this.Half_Hour_Cost_Label.Name = "Half_Hour_Cost_Label";
+            this.Half_Hour_Cost_Label.Size = new System.Drawing.Size(134, 21);
+            this.Half_Hour_Cost_Label.TabIndex = 24;
+            this.Half_Hour_Cost_Label.Text = "30 Minutes: £0.00";
             // 
-            // label3
+            // Day_Cost_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(318, 374);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 21);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "1 Day: £80.00";
+            this.Day_Cost_Label.AutoSize = true;
+            this.Day_Cost_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Day_Cost_Label.Location = new System.Drawing.Point(414, 391);
+            this.Day_Cost_Label.Name = "Day_Cost_Label";
+            this.Day_Cost_Label.Size = new System.Drawing.Size(105, 21);
+            this.Day_Cost_Label.TabIndex = 25;
+            this.Day_Cost_Label.Text = "1 Day: £80.00";
             // 
-            // label4
+            // Weekend_Cost_Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 395);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 21);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Weekend: £175.00";
+            this.Weekend_Cost_Label.AutoSize = true;
+            this.Weekend_Cost_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weekend_Cost_Label.Location = new System.Drawing.Point(390, 423);
+            this.Weekend_Cost_Label.Name = "Weekend_Cost_Label";
+            this.Weekend_Cost_Label.Size = new System.Drawing.Size(129, 21);
+            this.Weekend_Cost_Label.TabIndex = 26;
+            this.Weekend_Cost_Label.Text = "Weekend: £17.00";
             // 
-            // label5
+            // Discount_Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(260, 416);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(245, 21);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Previous Customer Discount: 15%";
+            this.Discount_Label.AutoSize = true;
+            this.Discount_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Discount_Label.Location = new System.Drawing.Point(309, 451);
+            this.Discount_Label.Name = "Discount_Label";
+            this.Discount_Label.Size = new System.Drawing.Size(210, 21);
+            this.Discount_Label.TabIndex = 27;
+            this.Discount_Label.Text = "Previous Customer Discount:";
             // 
-            // label6
+            // Monday_Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 21);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Monday";
+            this.Monday_Label.AutoSize = true;
+            this.Monday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Monday_Label.Location = new System.Drawing.Point(59, 176);
+            this.Monday_Label.Name = "Monday_Label";
+            this.Monday_Label.Size = new System.Drawing.Size(67, 21);
+            this.Monday_Label.TabIndex = 28;
+            this.Monday_Label.Text = "Monday";
             // 
-            // label7
+            // Tuesday_Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(141, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 21);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Tuesday";
+            this.Tuesday_Label.AutoSize = true;
+            this.Tuesday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tuesday_Label.Location = new System.Drawing.Point(141, 176);
+            this.Tuesday_Label.Name = "Tuesday_Label";
+            this.Tuesday_Label.Size = new System.Drawing.Size(67, 21);
+            this.Tuesday_Label.TabIndex = 29;
+            this.Tuesday_Label.Text = "Tuesday";
             // 
-            // label8
+            // Wednesday_Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(222, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 21);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Wednesday";
+            this.Wednesday_Label.AutoSize = true;
+            this.Wednesday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wednesday_Label.Location = new System.Drawing.Point(222, 176);
+            this.Wednesday_Label.Name = "Wednesday_Label";
+            this.Wednesday_Label.Size = new System.Drawing.Size(90, 21);
+            this.Wednesday_Label.TabIndex = 30;
+            this.Wednesday_Label.Text = "Wednesday";
             // 
-            // label9
+            // Thursday_Label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(318, 176);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 21);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Thursday";
+            this.Thursday_Label.AutoSize = true;
+            this.Thursday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thursday_Label.Location = new System.Drawing.Point(318, 176);
+            this.Thursday_Label.Name = "Thursday_Label";
+            this.Thursday_Label.Size = new System.Drawing.Size(74, 21);
+            this.Thursday_Label.TabIndex = 31;
+            this.Thursday_Label.Text = "Thursday";
             // 
-            // label10
+            // Friday_Label
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(425, 176);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 21);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Friday";
+            this.Friday_Label.AutoSize = true;
+            this.Friday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Friday_Label.Location = new System.Drawing.Point(425, 176);
+            this.Friday_Label.Name = "Friday_Label";
+            this.Friday_Label.Size = new System.Drawing.Size(53, 21);
+            this.Friday_Label.TabIndex = 32;
+            this.Friday_Label.Text = "Friday";
             // 
-            // label11
+            // Saturday_Label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(514, 176);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 21);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Saturday";
+            this.Saturday_Label.AutoSize = true;
+            this.Saturday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saturday_Label.Location = new System.Drawing.Point(514, 176);
+            this.Saturday_Label.Name = "Saturday_Label";
+            this.Saturday_Label.Size = new System.Drawing.Size(72, 21);
+            this.Saturday_Label.TabIndex = 33;
+            this.Saturday_Label.Text = "Saturday";
             // 
-            // label12
+            // Sunday_Label
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(601, 176);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 21);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "Sunday";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.Sunday_Label.AutoSize = true;
+            this.Sunday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sunday_Label.Location = new System.Drawing.Point(601, 176);
+            this.Sunday_Label.Name = "Sunday_Label";
+            this.Sunday_Label.Size = new System.Drawing.Size(62, 21);
+            this.Sunday_Label.TabIndex = 34;
+            this.Sunday_Label.Text = "Sunday";
+            this.Sunday_Label.Click += new System.EventHandler(this.label12_Click);
             // 
-            // label13
+            // Test_Drive_Cancel_Label
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(41, 206);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 21);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "7:00-18:00";
+            this.Test_Drive_Cancel_Label.AutoSize = true;
+            this.Test_Drive_Cancel_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_Cancel_Label.Location = new System.Drawing.Point(41, 284);
+            this.Test_Drive_Cancel_Label.Name = "Test_Drive_Cancel_Label";
+            this.Test_Drive_Cancel_Label.Size = new System.Drawing.Size(218, 21);
+            this.Test_Drive_Cancel_Label.TabIndex = 42;
+            this.Test_Drive_Cancel_Label.Text = "Test Drive Cancellation Notice:";
             // 
-            // label14
+            // Min_Age_Label
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(132, 206);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 21);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "7:00-18:00";
+            this.Min_Age_Label.AutoSize = true;
+            this.Min_Age_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min_Age_Label.Location = new System.Drawing.Point(41, 311);
+            this.Min_Age_Label.Name = "Min_Age_Label";
+            this.Min_Age_Label.Size = new System.Drawing.Size(210, 21);
+            this.Min_Age_Label.TabIndex = 43;
+            this.Min_Age_Label.Text = "Minimum Age For Test Drive:";
             // 
-            // label15
+            // Test_Drive_Mileage_Label
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(227, 206);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(85, 21);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "7:00-18:00";
+            this.Test_Drive_Mileage_Label.AutoSize = true;
+            this.Test_Drive_Mileage_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_Mileage_Label.Location = new System.Drawing.Point(41, 332);
+            this.Test_Drive_Mileage_Label.Name = "Test_Drive_Mileage_Label";
+            this.Test_Drive_Mileage_Label.Size = new System.Drawing.Size(185, 21);
+            this.Test_Drive_Mileage_Label.TabIndex = 44;
+            this.Test_Drive_Mileage_Label.Text = "Test Drive Mileage Limits:";
             // 
-            // label16
+            // Half_Hour_Mileage_Label
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(318, 206);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(85, 21);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "7:00-18:00";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(415, 206);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 21);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "7:00-18:00";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(506, 206);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(85, 21);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "7:00-20:00";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(592, 206);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 21);
-            this.label19.TabIndex = 41;
-            this.label19.Text = "9:00-15:00";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(41, 290);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(262, 21);
-            this.label20.TabIndex = 42;
-            this.label20.Text = "Test Drive Cancellation Notice: 1 Day";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(41, 311);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(232, 21);
-            this.label21.TabIndex = 43;
-            this.label21.Text = "Minimum Age For Test Drive: 18";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(41, 332);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(185, 21);
-            this.label22.TabIndex = 44;
-            this.label22.Text = "Test Drive Mileage Limits:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(84, 353);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(133, 21);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "30 Minutes: None";
+            this.Half_Hour_Mileage_Label.AutoSize = true;
+            this.Half_Hour_Mileage_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Half_Hour_Mileage_Label.Location = new System.Drawing.Point(83, 360);
+            this.Half_Hour_Mileage_Label.Name = "Half_Hour_Mileage_Label";
+            this.Half_Hour_Mileage_Label.Size = new System.Drawing.Size(91, 21);
+            this.Half_Hour_Mileage_Label.TabIndex = 45;
+            this.Half_Hour_Mileage_Label.Text = "30 Minutes:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(120, 374);
+            this.label24.Location = new System.Drawing.Point(120, 389);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(106, 21);
+            this.label24.Size = new System.Drawing.Size(53, 21);
             this.label24.TabIndex = 46;
-            this.label24.Text = "1 Day: 100km";
+            this.label24.Text = "1 Day:";
             // 
-            // label25
+            // Weekend_Mileage_Label
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(96, 395);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(130, 21);
-            this.label25.TabIndex = 47;
-            this.label25.Text = "Weekend: 200km";
+            this.Weekend_Mileage_Label.AutoSize = true;
+            this.Weekend_Mileage_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weekend_Mileage_Label.Location = new System.Drawing.Point(96, 427);
+            this.Weekend_Mileage_Label.Name = "Weekend_Mileage_Label";
+            this.Weekend_Mileage_Label.Size = new System.Drawing.Size(77, 21);
+            this.Weekend_Mileage_Label.TabIndex = 47;
+            this.Weekend_Mileage_Label.Text = "Weekend:";
             // 
-            // label26
+            // Mileage_Fee_Label
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(48, 416);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(169, 21);
-            this.label26.TabIndex = 48;
-            this.label26.Text = "Fee per Km over: £0.50";
+            this.Mileage_Fee_Label.AutoSize = true;
+            this.Mileage_Fee_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Fee_Label.Location = new System.Drawing.Point(90, 451);
+            this.Mileage_Fee_Label.Name = "Mileage_Fee_Label";
+            this.Mileage_Fee_Label.Size = new System.Drawing.Size(139, 21);
+            this.Mileage_Fee_Label.TabIndex = 48;
+            this.Mileage_Fee_Label.Text = "Fee per Km over: £";
             // 
             // Apply_Button
             // 
@@ -346,49 +305,497 @@ namespace Year_14_CA_SSD
             // 
             // Day_Cost_NumericUpDown
             // 
+            this.Day_Cost_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Day_Cost_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Day_Cost_NumericUpDown.DecimalPlaces = 2;
             this.Day_Cost_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Day_Cost_NumericUpDown.Location = new System.Drawing.Point(429, 372);
+            this.Day_Cost_NumericUpDown.Location = new System.Drawing.Point(475, 391);
+            this.Day_Cost_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.Day_Cost_NumericUpDown.Name = "Day_Cost_NumericUpDown";
-            this.Day_Cost_NumericUpDown.Size = new System.Drawing.Size(49, 29);
+            this.Day_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
             this.Day_Cost_NumericUpDown.TabIndex = 50;
+            this.Day_Cost_NumericUpDown.ThousandsSeparator = true;
+            this.Day_Cost_NumericUpDown.Value = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            // 
+            // Half_Hour_Cost_NumericUpDown
+            // 
+            this.Half_Hour_Cost_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Half_Hour_Cost_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Half_Hour_Cost_NumericUpDown.DecimalPlaces = 2;
+            this.Half_Hour_Cost_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Half_Hour_Cost_NumericUpDown.Location = new System.Drawing.Point(475, 360);
+            this.Half_Hour_Cost_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Half_Hour_Cost_NumericUpDown.Name = "Half_Hour_Cost_NumericUpDown";
+            this.Half_Hour_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
+            this.Half_Hour_Cost_NumericUpDown.TabIndex = 51;
+            this.Half_Hour_Cost_NumericUpDown.ThousandsSeparator = true;
+            this.Half_Hour_Cost_NumericUpDown.ValueChanged += new System.EventHandler(this.Half_Hour_Cost_NumericUpDown_ValueChanged);
+            // 
+            // Weekend_Cost_NumericUpDown
+            // 
+            this.Weekend_Cost_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Weekend_Cost_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Weekend_Cost_NumericUpDown.DecimalPlaces = 2;
+            this.Weekend_Cost_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weekend_Cost_NumericUpDown.Location = new System.Drawing.Point(475, 423);
+            this.Weekend_Cost_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Weekend_Cost_NumericUpDown.Name = "Weekend_Cost_NumericUpDown";
+            this.Weekend_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
+            this.Weekend_Cost_NumericUpDown.TabIndex = 52;
+            this.Weekend_Cost_NumericUpDown.ThousandsSeparator = true;
+            this.Weekend_Cost_NumericUpDown.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // Discount_NumericUpDown
+            // 
+            this.Discount_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Discount_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Discount_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Discount_NumericUpDown.Location = new System.Drawing.Point(528, 451);
+            this.Discount_NumericUpDown.Name = "Discount_NumericUpDown";
+            this.Discount_NumericUpDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Discount_NumericUpDown.Size = new System.Drawing.Size(46, 25);
+            this.Discount_NumericUpDown.TabIndex = 53;
+            this.Discount_NumericUpDown.ThousandsSeparator = true;
+            this.Discount_NumericUpDown.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // Percent_Unit_Label
+            // 
+            this.Percent_Unit_Label.AutoSize = true;
+            this.Percent_Unit_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Percent_Unit_Label.Location = new System.Drawing.Point(574, 452);
+            this.Percent_Unit_Label.Name = "Percent_Unit_Label";
+            this.Percent_Unit_Label.Size = new System.Drawing.Size(23, 21);
+            this.Percent_Unit_Label.TabIndex = 54;
+            this.Percent_Unit_Label.Text = "%";
+            this.Percent_Unit_Label.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // Min_Age_NumericUpDown
+            // 
+            this.Min_Age_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Min_Age_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Min_Age_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Min_Age_NumericUpDown.Location = new System.Drawing.Point(257, 311);
+            this.Min_Age_NumericUpDown.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.Min_Age_NumericUpDown.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.Min_Age_NumericUpDown.Name = "Min_Age_NumericUpDown";
+            this.Min_Age_NumericUpDown.Size = new System.Drawing.Size(37, 25);
+            this.Min_Age_NumericUpDown.TabIndex = 55;
+            this.Min_Age_NumericUpDown.ThousandsSeparator = true;
+            this.Min_Age_NumericUpDown.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            // 
+            // Cancel_Days_NumericUpDown
+            // 
+            this.Cancel_Days_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Cancel_Days_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Cancel_Days_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel_Days_NumericUpDown.Location = new System.Drawing.Point(257, 284);
+            this.Cancel_Days_NumericUpDown.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.Cancel_Days_NumericUpDown.Name = "Cancel_Days_NumericUpDown";
+            this.Cancel_Days_NumericUpDown.Size = new System.Drawing.Size(37, 25);
+            this.Cancel_Days_NumericUpDown.TabIndex = 56;
+            this.Cancel_Days_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Cancel_Days_NumericUpDown.ThousandsSeparator = true;
+            this.Cancel_Days_NumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Cancel_Days_NumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // Day_Unit_Label
+            // 
+            this.Day_Unit_Label.AutoSize = true;
+            this.Day_Unit_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Day_Unit_Label.Location = new System.Drawing.Point(297, 284);
+            this.Day_Unit_Label.Name = "Day_Unit_Label";
+            this.Day_Unit_Label.Size = new System.Drawing.Size(50, 21);
+            this.Day_Unit_Label.TabIndex = 57;
+            this.Day_Unit_Label.Text = "Day/s";
+            // 
+            // Half_Hour_Mileage_NumericUpDown
+            // 
+            this.Half_Hour_Mileage_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Half_Hour_Mileage_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Half_Hour_Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Half_Hour_Mileage_NumericUpDown.Location = new System.Drawing.Point(170, 360);
+            this.Half_Hour_Mileage_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Half_Hour_Mileage_NumericUpDown.Name = "Half_Hour_Mileage_NumericUpDown";
+            this.Half_Hour_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
+            this.Half_Hour_Mileage_NumericUpDown.TabIndex = 58;
+            this.Half_Hour_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Half_Hour_Mileage_NumericUpDown.ThousandsSeparator = true;
+            // 
+            // Half_Km_Label
+            // 
+            this.Half_Km_Label.AutoSize = true;
+            this.Half_Km_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Half_Km_Label.Location = new System.Drawing.Point(222, 360);
+            this.Half_Km_Label.Name = "Half_Km_Label";
+            this.Half_Km_Label.Size = new System.Drawing.Size(32, 21);
+            this.Half_Km_Label.TabIndex = 59;
+            this.Half_Km_Label.Text = "km";
+            // 
+            // Day_Km_Label
+            // 
+            this.Day_Km_Label.AutoSize = true;
+            this.Day_Km_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Day_Km_Label.Location = new System.Drawing.Point(222, 390);
+            this.Day_Km_Label.Name = "Day_Km_Label";
+            this.Day_Km_Label.Size = new System.Drawing.Size(32, 21);
+            this.Day_Km_Label.TabIndex = 61;
+            this.Day_Km_Label.Text = "km";
+            // 
+            // Day_Mileage_NumericUpDown
+            // 
+            this.Day_Mileage_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Day_Mileage_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Day_Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Day_Mileage_NumericUpDown.Location = new System.Drawing.Point(170, 390);
+            this.Day_Mileage_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Day_Mileage_NumericUpDown.Name = "Day_Mileage_NumericUpDown";
+            this.Day_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
+            this.Day_Mileage_NumericUpDown.TabIndex = 60;
+            this.Day_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Day_Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Day_Mileage_NumericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // Weekend_Km_Label
+            // 
+            this.Weekend_Km_Label.AutoSize = true;
+            this.Weekend_Km_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weekend_Km_Label.Location = new System.Drawing.Point(222, 427);
+            this.Weekend_Km_Label.Name = "Weekend_Km_Label";
+            this.Weekend_Km_Label.Size = new System.Drawing.Size(32, 21);
+            this.Weekend_Km_Label.TabIndex = 63;
+            this.Weekend_Km_Label.Text = "km";
+            // 
+            // Weekend_Mileage_NumericUpDown
+            // 
+            this.Weekend_Mileage_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Weekend_Mileage_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Weekend_Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weekend_Mileage_NumericUpDown.Location = new System.Drawing.Point(170, 427);
+            this.Weekend_Mileage_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Weekend_Mileage_NumericUpDown.Name = "Weekend_Mileage_NumericUpDown";
+            this.Weekend_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
+            this.Weekend_Mileage_NumericUpDown.TabIndex = 62;
+            this.Weekend_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Weekend_Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Weekend_Mileage_NumericUpDown.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // Mileage_Fee_NumericUpDown
+            // 
+            this.Mileage_Fee_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Mileage_Fee_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Mileage_Fee_NumericUpDown.DecimalPlaces = 2;
+            this.Mileage_Fee_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Fee_NumericUpDown.Location = new System.Drawing.Point(225, 451);
+            this.Mileage_Fee_NumericUpDown.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.Mileage_Fee_NumericUpDown.Name = "Mileage_Fee_NumericUpDown";
+            this.Mileage_Fee_NumericUpDown.Size = new System.Drawing.Size(69, 25);
+            this.Mileage_Fee_NumericUpDown.TabIndex = 64;
+            this.Mileage_Fee_NumericUpDown.ThousandsSeparator = true;
+            // 
+            // Monday_Opening_TimePicker
+            // 
+            this.Monday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Monday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Monday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Monday_Opening_TimePicker.Location = new System.Drawing.Point(60, 204);
+            this.Monday_Opening_TimePicker.Name = "Monday_Opening_TimePicker";
+            this.Monday_Opening_TimePicker.ShowUpDown = true;
+            this.Monday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Monday_Opening_TimePicker.TabIndex = 65;
+            this.Monday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Monday_Closing_TimePicker
+            // 
+            this.Monday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Monday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Monday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Monday_Closing_TimePicker.Location = new System.Drawing.Point(60, 239);
+            this.Monday_Closing_TimePicker.Name = "Monday_Closing_TimePicker";
+            this.Monday_Closing_TimePicker.ShowUpDown = true;
+            this.Monday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Monday_Closing_TimePicker.TabIndex = 66;
+            this.Monday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
+            // 
+            // Tuesday_Closing_TimePicker
+            // 
+            this.Tuesday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Tuesday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tuesday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Tuesday_Closing_TimePicker.Location = new System.Drawing.Point(145, 239);
+            this.Tuesday_Closing_TimePicker.Name = "Tuesday_Closing_TimePicker";
+            this.Tuesday_Closing_TimePicker.ShowUpDown = true;
+            this.Tuesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Tuesday_Closing_TimePicker.TabIndex = 68;
+            this.Tuesday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
+            this.Tuesday_Closing_TimePicker.ValueChanged += new System.EventHandler(this.Tuesday_TimePicker_ValueChanged);
+            // 
+            // Tuesday_Opening_TimePicker
+            // 
+            this.Tuesday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Tuesday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tuesday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Tuesday_Opening_TimePicker.Location = new System.Drawing.Point(145, 204);
+            this.Tuesday_Opening_TimePicker.Name = "Tuesday_Opening_TimePicker";
+            this.Tuesday_Opening_TimePicker.ShowUpDown = true;
+            this.Tuesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Tuesday_Opening_TimePicker.TabIndex = 67;
+            this.Tuesday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Wednesday_Closing_TimePicker
+            // 
+            this.Wednesday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Wednesday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wednesday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Wednesday_Closing_TimePicker.Location = new System.Drawing.Point(237, 239);
+            this.Wednesday_Closing_TimePicker.Name = "Wednesday_Closing_TimePicker";
+            this.Wednesday_Closing_TimePicker.ShowUpDown = true;
+            this.Wednesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Wednesday_Closing_TimePicker.TabIndex = 70;
+            this.Wednesday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
+            // 
+            // Wednesday_Opening_TimePicker
+            // 
+            this.Wednesday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Wednesday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wednesday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Wednesday_Opening_TimePicker.Location = new System.Drawing.Point(237, 204);
+            this.Wednesday_Opening_TimePicker.Name = "Wednesday_Opening_TimePicker";
+            this.Wednesday_Opening_TimePicker.ShowUpDown = true;
+            this.Wednesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Wednesday_Opening_TimePicker.TabIndex = 69;
+            this.Wednesday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Thursday_Closing_TimePicker
+            // 
+            this.Thursday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Thursday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thursday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Thursday_Closing_TimePicker.Location = new System.Drawing.Point(322, 239);
+            this.Thursday_Closing_TimePicker.Name = "Thursday_Closing_TimePicker";
+            this.Thursday_Closing_TimePicker.ShowUpDown = true;
+            this.Thursday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Thursday_Closing_TimePicker.TabIndex = 72;
+            this.Thursday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
+            // 
+            // Thursday_Opening_TimePicker
+            // 
+            this.Thursday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Thursday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thursday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Thursday_Opening_TimePicker.Location = new System.Drawing.Point(322, 204);
+            this.Thursday_Opening_TimePicker.Name = "Thursday_Opening_TimePicker";
+            this.Thursday_Opening_TimePicker.ShowUpDown = true;
+            this.Thursday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Thursday_Opening_TimePicker.TabIndex = 71;
+            this.Thursday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Friday_Closing_TimePicker
+            // 
+            this.Friday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Friday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Friday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Friday_Closing_TimePicker.Location = new System.Drawing.Point(418, 239);
+            this.Friday_Closing_TimePicker.Name = "Friday_Closing_TimePicker";
+            this.Friday_Closing_TimePicker.ShowUpDown = true;
+            this.Friday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Friday_Closing_TimePicker.TabIndex = 74;
+            this.Friday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
+            // 
+            // Friday_Opening_TimePicker
+            // 
+            this.Friday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Friday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Friday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Friday_Opening_TimePicker.Location = new System.Drawing.Point(418, 204);
+            this.Friday_Opening_TimePicker.Name = "Friday_Opening_TimePicker";
+            this.Friday_Opening_TimePicker.ShowUpDown = true;
+            this.Friday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Friday_Opening_TimePicker.TabIndex = 73;
+            this.Friday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Saturday_Closing_TimePicker
+            // 
+            this.Saturday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Saturday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saturday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Saturday_Closing_TimePicker.Location = new System.Drawing.Point(518, 239);
+            this.Saturday_Closing_TimePicker.Name = "Saturday_Closing_TimePicker";
+            this.Saturday_Closing_TimePicker.ShowUpDown = true;
+            this.Saturday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Saturday_Closing_TimePicker.TabIndex = 76;
+            this.Saturday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 20, 0, 0, 0);
+            // 
+            // Saturday_Opening_TimePicker
+            // 
+            this.Saturday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Saturday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Saturday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Saturday_Opening_TimePicker.Location = new System.Drawing.Point(518, 204);
+            this.Saturday_Opening_TimePicker.Name = "Saturday_Opening_TimePicker";
+            this.Saturday_Opening_TimePicker.ShowUpDown = true;
+            this.Saturday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Saturday_Opening_TimePicker.TabIndex = 75;
+            this.Saturday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
+            // 
+            // Sunday_Closing_TimePicker
+            // 
+            this.Sunday_Closing_TimePicker.CustomFormat = "HH:mm";
+            this.Sunday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sunday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Sunday_Closing_TimePicker.Location = new System.Drawing.Point(597, 239);
+            this.Sunday_Closing_TimePicker.Name = "Sunday_Closing_TimePicker";
+            this.Sunday_Closing_TimePicker.ShowUpDown = true;
+            this.Sunday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Sunday_Closing_TimePicker.TabIndex = 78;
+            this.Sunday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 15, 0, 0, 0);
+            // 
+            // Sunday_Opening_TimePicker
+            // 
+            this.Sunday_Opening_TimePicker.CustomFormat = "HH:mm";
+            this.Sunday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sunday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Sunday_Opening_TimePicker.Location = new System.Drawing.Point(597, 204);
+            this.Sunday_Opening_TimePicker.Name = "Sunday_Opening_TimePicker";
+            this.Sunday_Opening_TimePicker.ShowUpDown = true;
+            this.Sunday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
+            this.Sunday_Opening_TimePicker.TabIndex = 77;
+            this.Sunday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 9, 0, 0, 0);
             // 
             // ManagerSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Sunday_Closing_TimePicker);
+            this.Controls.Add(this.Sunday_Opening_TimePicker);
+            this.Controls.Add(this.Saturday_Closing_TimePicker);
+            this.Controls.Add(this.Saturday_Opening_TimePicker);
+            this.Controls.Add(this.Friday_Closing_TimePicker);
+            this.Controls.Add(this.Friday_Opening_TimePicker);
+            this.Controls.Add(this.Thursday_Closing_TimePicker);
+            this.Controls.Add(this.Thursday_Opening_TimePicker);
+            this.Controls.Add(this.Wednesday_Closing_TimePicker);
+            this.Controls.Add(this.Wednesday_Opening_TimePicker);
+            this.Controls.Add(this.Tuesday_Closing_TimePicker);
+            this.Controls.Add(this.Tuesday_Opening_TimePicker);
+            this.Controls.Add(this.Monday_Closing_TimePicker);
+            this.Controls.Add(this.Monday_Opening_TimePicker);
+            this.Controls.Add(this.Mileage_Fee_NumericUpDown);
+            this.Controls.Add(this.Weekend_Km_Label);
+            this.Controls.Add(this.Weekend_Mileage_NumericUpDown);
+            this.Controls.Add(this.Day_Km_Label);
+            this.Controls.Add(this.Day_Mileage_NumericUpDown);
+            this.Controls.Add(this.Half_Km_Label);
+            this.Controls.Add(this.Half_Hour_Mileage_NumericUpDown);
+            this.Controls.Add(this.Day_Unit_Label);
+            this.Controls.Add(this.Cancel_Days_NumericUpDown);
+            this.Controls.Add(this.Min_Age_NumericUpDown);
+            this.Controls.Add(this.Percent_Unit_Label);
+            this.Controls.Add(this.Discount_Label);
+            this.Controls.Add(this.Discount_NumericUpDown);
+            this.Controls.Add(this.Weekend_Cost_NumericUpDown);
+            this.Controls.Add(this.Half_Hour_Cost_NumericUpDown);
             this.Controls.Add(this.Day_Cost_NumericUpDown);
             this.Controls.Add(this.Apply_Button);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.Mileage_Fee_Label);
+            this.Controls.Add(this.Weekend_Mileage_Label);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Half_Hour_Mileage_Label);
+            this.Controls.Add(this.Test_Drive_Mileage_Label);
+            this.Controls.Add(this.Min_Age_Label);
+            this.Controls.Add(this.Test_Drive_Cancel_Label);
+            this.Controls.Add(this.Sunday_Label);
+            this.Controls.Add(this.Saturday_Label);
+            this.Controls.Add(this.Friday_Label);
+            this.Controls.Add(this.Thursday_Label);
+            this.Controls.Add(this.Wednesday_Label);
+            this.Controls.Add(this.Tuesday_Label);
+            this.Controls.Add(this.Monday_Label);
+            this.Controls.Add(this.Weekend_Cost_Label);
+            this.Controls.Add(this.Day_Cost_Label);
+            this.Controls.Add(this.Half_Hour_Cost_Label);
+            this.Controls.Add(this.Test_Drive_Cost_Label);
             this.Controls.Add(this.Back_Button);
             this.Name = "ManagerSettingsForm";
             this.Text = "ManagerSettingsForm";
             ((System.ComponentModel.ISupportInitialize)(this.Day_Cost_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Cost_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Weekend_Cost_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Discount_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Min_Age_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Days_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Mileage_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Day_Mileage_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,33 +804,54 @@ namespace Year_14_CA_SSD
         #endregion
 
         private System.Windows.Forms.Button Back_Button;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label Test_Drive_Cost_Label;
+        private System.Windows.Forms.Label Half_Hour_Cost_Label;
+        private System.Windows.Forms.Label Day_Cost_Label;
+        private System.Windows.Forms.Label Weekend_Cost_Label;
+        private System.Windows.Forms.Label Discount_Label;
+        private System.Windows.Forms.Label Monday_Label;
+        private System.Windows.Forms.Label Tuesday_Label;
+        private System.Windows.Forms.Label Wednesday_Label;
+        private System.Windows.Forms.Label Thursday_Label;
+        private System.Windows.Forms.Label Friday_Label;
+        private System.Windows.Forms.Label Saturday_Label;
+        private System.Windows.Forms.Label Sunday_Label;
+        private System.Windows.Forms.Label Test_Drive_Cancel_Label;
+        private System.Windows.Forms.Label Min_Age_Label;
+        private System.Windows.Forms.Label Test_Drive_Mileage_Label;
+        private System.Windows.Forms.Label Half_Hour_Mileage_Label;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label Weekend_Mileage_Label;
+        private System.Windows.Forms.Label Mileage_Fee_Label;
         private System.Windows.Forms.Button Apply_Button;
         private System.Windows.Forms.NumericUpDown Day_Cost_NumericUpDown;
+        private System.Windows.Forms.NumericUpDown Half_Hour_Cost_NumericUpDown;
+        private System.Windows.Forms.NumericUpDown Weekend_Cost_NumericUpDown;
+        private System.Windows.Forms.NumericUpDown Discount_NumericUpDown;
+        private System.Windows.Forms.Label Percent_Unit_Label;
+        private System.Windows.Forms.NumericUpDown Min_Age_NumericUpDown;
+        private System.Windows.Forms.NumericUpDown Cancel_Days_NumericUpDown;
+        private System.Windows.Forms.Label Day_Unit_Label;
+        private System.Windows.Forms.NumericUpDown Half_Hour_Mileage_NumericUpDown;
+        private System.Windows.Forms.Label Half_Km_Label;
+        private System.Windows.Forms.Label Day_Km_Label;
+        private System.Windows.Forms.NumericUpDown Day_Mileage_NumericUpDown;
+        private System.Windows.Forms.Label Weekend_Km_Label;
+        private System.Windows.Forms.NumericUpDown Weekend_Mileage_NumericUpDown;
+        private System.Windows.Forms.NumericUpDown Mileage_Fee_NumericUpDown;
+        private System.Windows.Forms.DateTimePicker Monday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Monday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Tuesday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Tuesday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Wednesday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Wednesday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Thursday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Thursday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Friday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Friday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Saturday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Saturday_Opening_TimePicker;
+        private System.Windows.Forms.DateTimePicker Sunday_Closing_TimePicker;
+        private System.Windows.Forms.DateTimePicker Sunday_Opening_TimePicker;
     }
 }

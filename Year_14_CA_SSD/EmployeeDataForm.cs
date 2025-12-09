@@ -309,6 +309,7 @@ namespace Year_14_CA_SSD
         }
         void Refresh_Page()
         {
+            displayedIndexes.Clear();
             employees.Clear();
             Employee_ListView.Clear();
             Setup_Form();

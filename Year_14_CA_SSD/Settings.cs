@@ -9,7 +9,7 @@ namespace Year_14_CA_SSD
     [Serializable]
     class Settings
     {
-        private string[] openningTimes = { "7:00", "7:00", "7:00", "7:00", "7:00", "7:00", "9:00" };
+        private string[] openingTimes = { "7:00", "7:00", "7:00", "7:00", "7:00", "7:00", "9:00" };
         private string[] closingTimes = { "18:00", "18:00", "18:00", "18:00", "18:00", "20:00", "15:00" };
         private TimeSpan testDriveCancelNotice = new TimeSpan(24, 0, 0);
         private int minTestDriveAge = 18;
@@ -17,11 +17,12 @@ namespace Year_14_CA_SSD
         private decimal mileageFee = 0.5M;
         private decimal[] testDriveCosts = { 0, 80, 175 };
         private int previousCustDiscount = 15;
+        private TimeSpan cleaningTimeBetweenTestDrives = new TimeSpan(4, 0, 0);
 
         public string[] OpenningTimes
         {
-            get { return openningTimes; }
-            set { openningTimes = value; }
+            get { return openingTimes; }
+            set { openingTimes = value; }
         }
         public string[] ClosingTimes
         {
@@ -68,9 +69,14 @@ namespace Year_14_CA_SSD
                 }
             }
         }
-        public void Set_Openning_Time(int day,string time)
+        public TimeSpan CleaningTimeBetweeenTestDrives
         {
-            this.openningTimes[day] = time;
+            get { return cleaningTimeBetweenTestDrives; }
+            set { cleaningTimeBetweenTestDrives = value; }
+        }
+        public void Set_Opening_Time(int day,string time)
+        {
+            this.openingTimes[day] = time;
         }
         public void Set_Closing_Time (int day, string time)
         {

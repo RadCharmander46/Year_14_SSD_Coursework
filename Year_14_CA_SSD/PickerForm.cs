@@ -60,7 +60,7 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string query = "SELECT CustomerId, FirstName, LastName, DateOfBirth, PhoneNumber FROM CustomerTable";
+                    string query = "SELECT CustomerId, FirstName, LastName, DateOfBirth, PhoneNumber FROM CustomerTable WHERE Archived = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -94,7 +94,7 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string query = "SELECT EmployeeId, Username, FirstName, LastName, DateOfBirth FROM EmployeeTable";
+                    string query = "SELECT EmployeeId, Username, FirstName, LastName, DateOfBirth FROM EmployeeTable WHERE Archived = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
