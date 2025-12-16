@@ -32,33 +32,33 @@ namespace Year_14_CA_SSD
             if (ListViewCustomers.SelectedItems.Count == 1)
             {
                 string[] customer = customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]];
-                Telephone_Label.Text = "Tel: " + customer[5];
-                Email_Label.Text = "Email: " + Globals.splitEmailTwoRows(customer[6], 20);
+                Telephone_Label.Text = customer[5];
+                Email_Label.Text = Globals.splitEmailTwoRows(customer[6], 20);
                 Address_Line1_Label.Text = customer[7];
                 Address_Line2_Label.Text = customer[8];
                 Address_Line3_Label.Text = customer[9];
                 Postcode_Label.Text = customer[10];
-                License_Number_Label.Text = "License No: " +customer[11];
-                Issue_Label.Text = "Issue: " + customer[12];
-                Expiry_Label.Text = "Expiry: " + customer[13];
-                Verified_Label.Text = "Verified License: " + Globals.boolToYN(customer[14]);
-                Previous_Label.Text = "Previous Customer: " +Globals.boolToYN(customer[15]);
-                Damaged_Label.Text = "Damaged Vehicle: " +Globals.boolToYN(customer[16]);
+                License_Number_Label.Text = customer[11];
+                Issue_Label.Text = customer[12];
+                Expiry_Label.Text = customer[13];
+                Verified_Label.Text = Globals.boolToYN(customer[14]);
+                Previous_Label.Text = Globals.boolToYN(customer[15]);
+                Damaged_Label.Text = Globals.boolToYN(customer[16]);
             }
             else
             {
-                Telephone_Label.Text = "Tel:";
-                Email_Label.Text = "Email:";
+                Telephone_Label.Text = "";
+                Email_Label.Text = "";
                 Address_Line1_Label.Text = "";
                 Address_Line2_Label.Text = "";
                 Address_Line3_Label.Text = "";
                 Postcode_Label.Text = "";
-                License_Number_Label.Text = "License No:";
-                Issue_Label.Text = "Issue:";
-                Expiry_Label.Text = "Expiry:";
-                Verified_Label.Text = "Verified License:";
-                Previous_Label.Text = "Previous Customer:";
-                Damaged_Label.Text = "Damaged Vehicle:";
+                License_Number_Label.Text = "";
+                Issue_Label.Text = "";
+                Expiry_Label.Text = "";
+                Verified_Label.Text = "";
+                Previous_Label.Text = "";
+                Damaged_Label.Text = "";
             }
         }
         private void Search_Button_Click(object sender, EventArgs e)
@@ -152,6 +152,8 @@ namespace Year_14_CA_SSD
         }
         void Setup_ListView()
         {
+            ListViewCustomers.Font = new Font(ListViewCustomers.Font, FontStyle.Bold);
+            ListViewCustomers.ForeColor = Color.Red;
             ListViewCustomers.Columns.Add("First Name/s", 150);
             ListViewCustomers.Columns.Add("Middle Name/s", 150);
             ListViewCustomers.Columns.Add("Last Name/s", 150);
@@ -169,8 +171,29 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(customer[3]);
                 row.SubItems.Add(customer[4]);
                 row.SubItems.Add(customer[5]);
+                row.Font = new Font(ListViewCustomers.Font, FontStyle.Regular);
+                if (Customer_Is_Archived(customer))
+                {
+                    row.ForeColor = Color.DarkGray;
+                }
+                else if(Customer_Is_Liabillty(customer))
+                {
+                    row.ForeColor = Color.Red;
+                }
+                else
+                {
+                    row.ForeColor = Color.Black;
+                }
                 ListViewCustomers.Items.Add(row);
             }
+        }
+        bool Customer_Is_Archived(string[] customer)
+        {
+            return Convert.ToBoolean(customer[Get_Column_Index("Archived")]);
+        }
+        bool Customer_Is_Liabillty(string[] customer)
+        {
+            return Convert.ToBoolean(customer[Get_Column_Index("Damaged Vehicle")]);
         }
         void Load_Customers()
         {
@@ -422,6 +445,56 @@ namespace Year_14_CA_SSD
                 Display_Customers();
                 lastSort = "Inverse Phone Number";
             }
+        }
+
+        private void Damaged_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Previous_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Filter_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Filter_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class Add_Customer_EventArgs : EventArgs

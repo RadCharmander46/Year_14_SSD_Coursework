@@ -1140,6 +1140,11 @@ namespace Year_14_CA_SSD
         {
             displayedIndexes.Sort((b, a) => Convert.ToDateTime(Get_End_Time(testDrives[a][3])).CompareTo(Convert.ToDateTime(Get_End_Time(testDrives[b][3]))));
         }
+
+        private void Cost_Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public class TestDrive_EventArgs : EventArgs
     {

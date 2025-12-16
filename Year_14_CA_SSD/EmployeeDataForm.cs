@@ -37,6 +37,7 @@ namespace Year_14_CA_SSD
         }
         void Setup_ListView()
         {
+            Employee_ListView.Font = new Font(Employee_ListView.Font, FontStyle.Bold);
             Employee_ListView.Columns.Add("First Name/s", 150);
             Employee_ListView.Columns.Add("Middle Name/s", 150);
             Employee_ListView.Columns.Add("Last Name/s", 150);
@@ -54,6 +55,7 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(employee[3]);
                 row.SubItems.Add(Globals.removeTime(employee[4]));
                 row.SubItems.Add(employee[5]);
+                row.Font = new Font(Employee_ListView.Font, FontStyle.Regular);
                 Employee_ListView.Items.Add(row);
             }
         }
@@ -232,30 +234,30 @@ namespace Year_14_CA_SSD
             if (Employee_ListView.SelectedItems.Count == 1)
             {
                 string[] employee = employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]];
-                Telephone_Label.Text = "Tel: " + employee[5];
-                Email_Label.Text = "Email: " + Globals.splitEmailTwoRows(employee[6], 20);
+                Telephone_Label.Text = employee[5];
+                Email_Label.Text = Globals.splitEmailTwoRows(employee[6], 20);
                 Address_Line1_Label.Text = employee[7];
                 Address_Line2_Label.Text = employee[8];
                 Address_Line3_Label.Text = employee[9];
                 Postcode_Label.Text = employee[10];
-                Username_Label.Text = "Username: " + employee[13];
-                Department_Label.Text = "Department: " + employee[11];
-                Role_Label.Text = "Role: " + employee[12];
-                Archived_Label.Text = "Archived: " + Globals.boolToYN(employee[15]);
+                Username_Label.Text = employee[13];
+                Department_Label.Text = employee[11];
+                Role_Label.Text = employee[12];
+                Archived_Label.Text = Globals.boolToYN(employee[15]);
                 bool available = !Convert.ToBoolean(employee[16]);
-                Available_Label.Text = "Currently Available: " + Globals.boolToYN(available); //stored as unavailable check in database
+                Available_Label.Text = Globals.boolToYN(available); //stored as unavailable check in database
                 if(available)
                 {
-                    Next_Available_Label.Text = "Next Time Available: Now";
+                    Next_Available_Label.Text = "Now";
                     return;
                 }
                 if (employee[17] != "")
                 {
-                    Next_Available_Label.Text = "Next Time Available: \n" + Globals.removeSeconds(employee[17]);
+                    Next_Available_Label.Text = Globals.removeSeconds(employee[17]);
                 }
                 else
                 {
-                    Next_Available_Label.Text = "Next Time Available: \nUnknown";
+                    Next_Available_Label.Text = "Unknown";
                 }
             }
             else
@@ -265,18 +267,18 @@ namespace Year_14_CA_SSD
         }
         void Reset_Labels()
         {
-            Telephone_Label.Text = "Tel:";
-            Email_Label.Text = "Email:";
+            Telephone_Label.Text = "";
+            Email_Label.Text = "";
             Address_Line1_Label.Text = "";
             Address_Line2_Label.Text = "";
             Address_Line3_Label.Text = "";
             Postcode_Label.Text = "";
-            Department_Label.Text = "Department:";
-            Role_Label.Text = "Role:";
-            Username_Label.Text = "Username:";
-            Archived_Label.Text = "Archived:";
-            Available_Label.Text = "Currently Available:";
-            Next_Available_Label.Text = "Next Time Available:";
+            Department_Label.Text = "";
+            Role_Label.Text = "";
+            Username_Label.Text = "";
+            Archived_Label.Text = "";
+            Available_Label.Text = "";
+            Next_Available_Label.Text = "";
         }
 
         private void Search_Button_Click(object sender, EventArgs e)
@@ -394,6 +396,11 @@ namespace Year_14_CA_SSD
                 AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = true });
             }
             this.Close();
+        }
+
+        private void Email_Label_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class Add_Employee_EventArgs : EventArgs

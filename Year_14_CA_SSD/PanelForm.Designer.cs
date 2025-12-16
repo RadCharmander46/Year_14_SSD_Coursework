@@ -41,6 +41,7 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Test_Drive_Button = new System.Windows.Forms.PictureBox();
             this.Car_Servicing_Button = new System.Windows.Forms.PictureBox();
+            this.Employee_Database_Button = new System.Windows.Forms.PictureBox();
             this.Payment_Database_Button = new System.Windows.Forms.PictureBox();
             this.Car_Return_Button = new System.Windows.Forms.PictureBox();
             this.Calender_Button = new System.Windows.Forms.PictureBox();
@@ -51,7 +52,6 @@ namespace Year_14_CA_SSD
             this.Login_Button = new System.Windows.Forms.PictureBox();
             this.Clock_Label = new System.Windows.Forms.Label();
             this.Clock_Timer = new System.Windows.Forms.Timer(this.components);
-            this.Employee_Database_Button = new System.Windows.Forms.PictureBox();
             this.Taskbar_FlowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Moving_Cars_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adding_Cars_Button)).BeginInit();
@@ -62,6 +62,7 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Servicing_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Return_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Calender_Button)).BeginInit();
@@ -69,7 +70,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Data_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reports_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).BeginInit();
             this.SuspendLayout();
             // 
             // Screen_Panel
@@ -220,6 +220,20 @@ namespace Year_14_CA_SSD
             this.Car_Servicing_Button.TabStop = false;
             this.Base_ToolTip.SetToolTip(this.Car_Servicing_Button, "Car Servicing");
             // 
+            // Employee_Database_Button
+            // 
+            this.Employee_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Employee_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
+            this.Employee_Database_Button.Location = new System.Drawing.Point(17, 202);
+            this.Employee_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.Employee_Database_Button.Name = "Employee_Database_Button";
+            this.Employee_Database_Button.Size = new System.Drawing.Size(84, 75);
+            this.Employee_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Employee_Database_Button.TabIndex = 8;
+            this.Employee_Database_Button.TabStop = false;
+            this.Base_ToolTip.SetToolTip(this.Employee_Database_Button, "Employee Database");
+            this.Employee_Database_Button.Click += new System.EventHandler(this.Employee_Database_Button_Click);
+            // 
             // Payment_Database_Button
             // 
             this.Payment_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -340,20 +354,6 @@ namespace Year_14_CA_SSD
             this.Clock_Timer.Interval = 1000;
             this.Clock_Timer.Tick += new System.EventHandler(this.Clock_Timer_Tick);
             // 
-            // Employee_Database_Button
-            // 
-            this.Employee_Database_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Employee_Database_Button.Image = global::Year_14_CA_SSD.Properties.Resources.database;
-            this.Employee_Database_Button.Location = new System.Drawing.Point(17, 202);
-            this.Employee_Database_Button.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
-            this.Employee_Database_Button.Name = "Employee_Database_Button";
-            this.Employee_Database_Button.Size = new System.Drawing.Size(84, 75);
-            this.Employee_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Employee_Database_Button.TabIndex = 8;
-            this.Employee_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Employee_Database_Button, "Employee Database");
-            this.Employee_Database_Button.Click += new System.EventHandler(this.Employee_Database_Button_Click);
-            // 
             // PanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +378,7 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Servicing_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Database_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Return_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Calender_Button)).EndInit();
@@ -385,7 +386,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Test_Drive_Data_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reports_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Employee_Database_Button)).EndInit();
             this.ResumeLayout(false);
 
         }

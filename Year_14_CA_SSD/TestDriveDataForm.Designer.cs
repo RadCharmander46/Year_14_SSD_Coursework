@@ -84,6 +84,29 @@ namespace Year_14_CA_SSD
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.Customer_GroupBox.SuspendLayout();
             this.Employee_GroupBox.SuspendLayout();
             this.Test_Drive_GroupBox.SuspendLayout();
@@ -111,6 +134,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // Test_Drives_ListView
@@ -118,7 +142,7 @@ namespace Year_14_CA_SSD
             this.Test_Drives_ListView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Test_Drives_ListView.FullRowSelect = true;
             this.Test_Drives_ListView.HideSelection = false;
-            this.Test_Drives_ListView.Location = new System.Drawing.Point(12, 2);
+            this.Test_Drives_ListView.Location = new System.Drawing.Point(82, 1);
             this.Test_Drives_ListView.Name = "Test_Drives_ListView";
             this.Test_Drives_ListView.Size = new System.Drawing.Size(796, 521);
             this.Test_Drives_ListView.TabIndex = 0;
@@ -135,7 +159,7 @@ namespace Year_14_CA_SSD
             this.Search_ComboBox.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Search_ComboBox.Items.AddRange(new object[] {
             "Pick a section first"});
-            this.Search_ComboBox.Location = new System.Drawing.Point(611, 540);
+            this.Search_ComboBox.Location = new System.Drawing.Point(681, 539);
             this.Search_ComboBox.Name = "Search_ComboBox";
             this.Search_ComboBox.Size = new System.Drawing.Size(191, 33);
             this.Search_ComboBox.TabIndex = 39;
@@ -144,18 +168,22 @@ namespace Year_14_CA_SSD
             // 
             this.Search_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Search_TextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_TextBox.Location = new System.Drawing.Point(22, 537);
+            this.Search_TextBox.Location = new System.Drawing.Point(92, 536);
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(408, 39);
             this.Search_TextBox.TabIndex = 38;
             // 
             // Customer_GroupBox
             // 
+            this.Customer_GroupBox.Controls.Add(this.label4);
+            this.Customer_GroupBox.Controls.Add(this.label3);
+            this.Customer_GroupBox.Controls.Add(this.label2);
+            this.Customer_GroupBox.Controls.Add(this.Cust_DOB_Label);
+            this.Customer_GroupBox.Controls.Add(this.label1);
             this.Customer_GroupBox.Controls.Add(this.Cust_Postcode_Label);
             this.Customer_GroupBox.Controls.Add(this.Cust_Email_Label);
-            this.Customer_GroupBox.Controls.Add(this.Cust_DOB_Label);
             this.Customer_GroupBox.Controls.Add(this.Cust_Tel_Label);
-            this.Customer_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Customer_GroupBox.Location = new System.Drawing.Point(884, 2);
             this.Customer_GroupBox.Name = "Customer_GroupBox";
             this.Customer_GroupBox.Size = new System.Drawing.Size(294, 108);
@@ -166,50 +194,54 @@ namespace Year_14_CA_SSD
             // Cust_Postcode_Label
             // 
             this.Cust_Postcode_Label.AutoSize = true;
-            this.Cust_Postcode_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Postcode_Label.Location = new System.Drawing.Point(6, 83);
+            this.Cust_Postcode_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Postcode_Label.Location = new System.Drawing.Point(76, 83);
             this.Cust_Postcode_Label.Name = "Cust_Postcode_Label";
-            this.Cust_Postcode_Label.Size = new System.Drawing.Size(150, 21);
+            this.Cust_Postcode_Label.Size = new System.Drawing.Size(76, 21);
             this.Cust_Postcode_Label.TabIndex = 3;
-            this.Cust_Postcode_Label.Text = "Postcode: BT78 1AW";
+            this.Cust_Postcode_Label.Text = "BT78 1AW";
             // 
             // Cust_Email_Label
             // 
             this.Cust_Email_Label.AutoSize = true;
-            this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 62);
+            this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Email_Label.Location = new System.Drawing.Point(53, 62);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
-            this.Cust_Email_Label.Size = new System.Drawing.Size(239, 21);
+            this.Cust_Email_Label.Size = new System.Drawing.Size(189, 21);
             this.Cust_Email_Label.TabIndex = 2;
-            this.Cust_Email_Label.Text = "Email: Nathanmcgee@gmail.com";
+            this.Cust_Email_Label.Text = "Nathanmcgee@gmail.com";
             // 
             // Cust_DOB_Label
             // 
             this.Cust_DOB_Label.AutoSize = true;
-            this.Cust_DOB_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_DOB_Label.Location = new System.Drawing.Point(6, 20);
+            this.Cust_DOB_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_DOB_Label.Location = new System.Drawing.Point(45, 20);
             this.Cust_DOB_Label.Name = "Cust_DOB_Label";
-            this.Cust_DOB_Label.Size = new System.Drawing.Size(133, 21);
+            this.Cust_DOB_Label.Size = new System.Drawing.Size(86, 21);
             this.Cust_DOB_Label.TabIndex = 1;
-            this.Cust_DOB_Label.Text = "DOB: 26/03/2008";
+            this.Cust_DOB_Label.Text = "26/03/2008";
             // 
             // Cust_Tel_Label
             // 
             this.Cust_Tel_Label.AutoSize = true;
-            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Tel_Label.Location = new System.Drawing.Point(6, 41);
+            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Tel_Label.Location = new System.Drawing.Point(32, 41);
             this.Cust_Tel_Label.Name = "Cust_Tel_Label";
-            this.Cust_Tel_Label.Size = new System.Drawing.Size(125, 21);
+            this.Cust_Tel_Label.Size = new System.Drawing.Size(90, 21);
             this.Cust_Tel_Label.TabIndex = 0;
-            this.Cust_Tel_Label.Text = "Tel: 0965736467";
+            this.Cust_Tel_Label.Text = "0965736467";
             // 
             // Employee_GroupBox
             // 
             this.Employee_GroupBox.Controls.Add(this.Employee_Username_Label);
+            this.Employee_GroupBox.Controls.Add(this.label16);
             this.Employee_GroupBox.Controls.Add(this.Employee_Email_Label);
-            this.Employee_GroupBox.Controls.Add(this.Employee_DOB_Label);
+            this.Employee_GroupBox.Controls.Add(this.label15);
             this.Employee_GroupBox.Controls.Add(this.Employee_Tel_Label);
-            this.Employee_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_GroupBox.Controls.Add(this.label14);
+            this.Employee_GroupBox.Controls.Add(this.Employee_DOB_Label);
+            this.Employee_GroupBox.Controls.Add(this.label13);
+            this.Employee_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employee_GroupBox.Location = new System.Drawing.Point(884, 323);
             this.Employee_GroupBox.Name = "Employee_GroupBox";
             this.Employee_GroupBox.Size = new System.Drawing.Size(294, 108);
@@ -220,52 +252,58 @@ namespace Year_14_CA_SSD
             // Employee_Username_Label
             // 
             this.Employee_Username_Label.AutoSize = true;
-            this.Employee_Username_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Username_Label.Location = new System.Drawing.Point(6, 83);
+            this.Employee_Username_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Username_Label.Location = new System.Drawing.Point(84, 83);
             this.Employee_Username_Label.Name = "Employee_Username_Label";
-            this.Employee_Username_Label.Size = new System.Drawing.Size(188, 21);
+            this.Employee_Username_Label.Size = new System.Drawing.Size(104, 21);
             this.Employee_Username_Label.TabIndex = 3;
-            this.Employee_Username_Label.Text = "Username: NAMCGEE782";
+            this.Employee_Username_Label.Text = "NAMCGEE782";
             // 
             // Employee_Email_Label
             // 
             this.Employee_Email_Label.AutoSize = true;
-            this.Employee_Email_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Email_Label.Location = new System.Drawing.Point(6, 62);
+            this.Employee_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Email_Label.Location = new System.Drawing.Point(51, 62);
             this.Employee_Email_Label.Name = "Employee_Email_Label";
-            this.Employee_Email_Label.Size = new System.Drawing.Size(239, 21);
+            this.Employee_Email_Label.Size = new System.Drawing.Size(189, 21);
             this.Employee_Email_Label.TabIndex = 2;
-            this.Employee_Email_Label.Text = "Email: Nathanmcgee@gmail.com";
+            this.Employee_Email_Label.Text = "Nathanmcgee@gmail.com";
             // 
             // Employee_DOB_Label
             // 
             this.Employee_DOB_Label.AutoSize = true;
-            this.Employee_DOB_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_DOB_Label.Location = new System.Drawing.Point(6, 20);
+            this.Employee_DOB_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_DOB_Label.Location = new System.Drawing.Point(45, 20);
             this.Employee_DOB_Label.Name = "Employee_DOB_Label";
-            this.Employee_DOB_Label.Size = new System.Drawing.Size(133, 21);
+            this.Employee_DOB_Label.Size = new System.Drawing.Size(86, 21);
             this.Employee_DOB_Label.TabIndex = 1;
-            this.Employee_DOB_Label.Text = "DOB: 26/03/2008";
+            this.Employee_DOB_Label.Text = "26/03/2008";
             // 
             // Employee_Tel_Label
             // 
             this.Employee_Tel_Label.AutoSize = true;
-            this.Employee_Tel_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Tel_Label.Location = new System.Drawing.Point(6, 41);
+            this.Employee_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Tel_Label.Location = new System.Drawing.Point(31, 41);
             this.Employee_Tel_Label.Name = "Employee_Tel_Label";
-            this.Employee_Tel_Label.Size = new System.Drawing.Size(125, 21);
+            this.Employee_Tel_Label.Size = new System.Drawing.Size(90, 21);
             this.Employee_Tel_Label.TabIndex = 0;
-            this.Employee_Tel_Label.Text = "Tel: 0965736467";
+            this.Employee_Tel_Label.Text = "0965736467";
             // 
             // Test_Drive_GroupBox
             // 
-            this.Test_Drive_GroupBox.Controls.Add(this.Paid_Label);
             this.Test_Drive_GroupBox.Controls.Add(this.Damaged_Returned);
-            this.Test_Drive_GroupBox.Controls.Add(this.Returned_Label);
             this.Test_Drive_GroupBox.Controls.Add(this.Cancelled_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.label22);
+            this.Test_Drive_GroupBox.Controls.Add(this.label21);
+            this.Test_Drive_GroupBox.Controls.Add(this.Returned_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.label20);
+            this.Test_Drive_GroupBox.Controls.Add(this.label19);
+            this.Test_Drive_GroupBox.Controls.Add(this.label18);
             this.Test_Drive_GroupBox.Controls.Add(this.Test_Drive_Length_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.label17);
+            this.Test_Drive_GroupBox.Controls.Add(this.Paid_Label);
             this.Test_Drive_GroupBox.Controls.Add(this.Cost_Label);
-            this.Test_Drive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Test_Drive_GroupBox.Location = new System.Drawing.Point(884, 437);
             this.Test_Drive_GroupBox.Name = "Test_Drive_GroupBox";
             this.Test_Drive_GroupBox.Size = new System.Drawing.Size(294, 153);
@@ -276,62 +314,63 @@ namespace Year_14_CA_SSD
             // Paid_Label
             // 
             this.Paid_Label.AutoSize = true;
-            this.Paid_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Paid_Label.Location = new System.Drawing.Point(6, 64);
+            this.Paid_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Paid_Label.Location = new System.Drawing.Point(112, 64);
             this.Paid_Label.Name = "Paid_Label";
-            this.Paid_Label.Size = new System.Drawing.Size(135, 21);
+            this.Paid_Label.Size = new System.Drawing.Size(30, 21);
             this.Paid_Label.TabIndex = 6;
-            this.Paid_Label.Text = "Has Been Paid: No";
+            this.Paid_Label.Text = "No";
             // 
             // Damaged_Returned
             // 
             this.Damaged_Returned.AutoSize = true;
-            this.Damaged_Returned.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Damaged_Returned.Location = new System.Drawing.Point(6, 113);
+            this.Damaged_Returned.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Damaged_Returned.Location = new System.Drawing.Point(108, 111);
             this.Damaged_Returned.Name = "Damaged_Returned";
-            this.Damaged_Returned.Size = new System.Drawing.Size(133, 21);
+            this.Damaged_Returned.Size = new System.Drawing.Size(30, 21);
             this.Damaged_Returned.TabIndex = 5;
-            this.Damaged_Returned.Text = "Car Damaged: No";
+            this.Damaged_Returned.Text = "No";
             // 
             // Returned_Label
             // 
             this.Returned_Label.AutoSize = true;
-            this.Returned_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Returned_Label.Location = new System.Drawing.Point(6, 92);
+            this.Returned_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Returned_Label.Location = new System.Drawing.Point(144, 89);
             this.Returned_Label.Name = "Returned_Label";
-            this.Returned_Label.Size = new System.Drawing.Size(130, 21);
+            this.Returned_Label.Size = new System.Drawing.Size(30, 21);
             this.Returned_Label.TabIndex = 4;
-            this.Returned_Label.Text = "Car Returned: No";
+            this.Returned_Label.Text = "No";
             // 
             // Cancelled_Label
             // 
             this.Cancelled_Label.AutoSize = true;
-            this.Cancelled_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelled_Label.Location = new System.Drawing.Point(6, 134);
+            this.Cancelled_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelled_Label.Location = new System.Drawing.Point(153, 132);
             this.Cancelled_Label.Name = "Cancelled_Label";
-            this.Cancelled_Label.Size = new System.Drawing.Size(176, 21);
+            this.Cancelled_Label.Size = new System.Drawing.Size(30, 21);
             this.Cancelled_Label.TabIndex = 3;
-            this.Cancelled_Label.Text = "Test Drive Cancelled: No";
+            this.Cancelled_Label.Text = "No";
             // 
             // Test_Drive_Length_Label
             // 
             this.Test_Drive_Length_Label.AutoSize = true;
-            this.Test_Drive_Length_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Test_Drive_Length_Label.Location = new System.Drawing.Point(6, 22);
+            this.Test_Drive_Length_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_Length_Label.Location = new System.Drawing.Point(132, 22);
             this.Test_Drive_Length_Label.Name = "Test_Drive_Length_Label";
-            this.Test_Drive_Length_Label.Size = new System.Drawing.Size(200, 21);
+            this.Test_Drive_Length_Label.Size = new System.Drawing.Size(72, 21);
             this.Test_Drive_Length_Label.TabIndex = 1;
-            this.Test_Drive_Length_Label.Text = "Test Drive Length: Weekend";
+            this.Test_Drive_Length_Label.Text = "Weekend";
             // 
             // Cost_Label
             // 
             this.Cost_Label.AutoSize = true;
-            this.Cost_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cost_Label.Location = new System.Drawing.Point(6, 43);
+            this.Cost_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cost_Label.Location = new System.Drawing.Point(45, 43);
             this.Cost_Label.Name = "Cost_Label";
-            this.Cost_Label.Size = new System.Drawing.Size(84, 21);
+            this.Cost_Label.Size = new System.Drawing.Size(40, 21);
             this.Cost_Label.TabIndex = 0;
-            this.Cost_Label.Text = "Cost: £180";
+            this.Cost_Label.Text = "£180";
+            this.Cost_Label.Click += new System.EventHandler(this.Cost_Label_Click);
             // 
             // Searching_Group_ComboBox
             // 
@@ -344,7 +383,7 @@ namespace Year_14_CA_SSD
             "Employee",
             "Car",
             "Test Drive"});
-            this.Searching_Group_ComboBox.Location = new System.Drawing.Point(451, 543);
+            this.Searching_Group_ComboBox.Location = new System.Drawing.Point(521, 542);
             this.Searching_Group_ComboBox.Name = "Searching_Group_ComboBox";
             this.Searching_Group_ComboBox.Size = new System.Drawing.Size(139, 33);
             this.Searching_Group_ComboBox.TabIndex = 51;
@@ -353,14 +392,22 @@ namespace Year_14_CA_SSD
             // Car_GroupBox
             // 
             this.Car_GroupBox.Controls.Add(this.Power_Label);
-            this.Car_GroupBox.Controls.Add(this.Engine_Size_Label);
+            this.Car_GroupBox.Controls.Add(this.label12);
+            this.Car_GroupBox.Controls.Add(this.label11);
             this.Car_GroupBox.Controls.Add(this.Fuel_Type_Label);
-            this.Car_GroupBox.Controls.Add(this.Transmission_Label);
+            this.Car_GroupBox.Controls.Add(this.label10);
+            this.Car_GroupBox.Controls.Add(this.label9);
             this.Car_GroupBox.Controls.Add(this.Colour_Label);
+            this.Car_GroupBox.Controls.Add(this.label8);
             this.Car_GroupBox.Controls.Add(this.Body_Style_Label);
-            this.Car_GroupBox.Controls.Add(this.Reg_Label);
+            this.Car_GroupBox.Controls.Add(this.label7);
             this.Car_GroupBox.Controls.Add(this.Mileage_Label);
-            this.Car_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Car_GroupBox.Controls.Add(this.label6);
+            this.Car_GroupBox.Controls.Add(this.Reg_Label);
+            this.Car_GroupBox.Controls.Add(this.label5);
+            this.Car_GroupBox.Controls.Add(this.Engine_Size_Label);
+            this.Car_GroupBox.Controls.Add(this.Transmission_Label);
+            this.Car_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Car_GroupBox.Location = new System.Drawing.Point(884, 116);
             this.Car_GroupBox.Name = "Car_GroupBox";
             this.Car_GroupBox.Size = new System.Drawing.Size(294, 201);
@@ -371,89 +418,89 @@ namespace Year_14_CA_SSD
             // Power_Label
             // 
             this.Power_Label.AutoSize = true;
-            this.Power_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Power_Label.Location = new System.Drawing.Point(6, 176);
+            this.Power_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Power_Label.Location = new System.Drawing.Point(101, 177);
             this.Power_Label.Name = "Power_Label";
-            this.Power_Label.Size = new System.Drawing.Size(105, 21);
+            this.Power_Label.Size = new System.Drawing.Size(52, 21);
             this.Power_Label.TabIndex = 7;
-            this.Power_Label.Text = "Power: 435hp";
+            this.Power_Label.Text = "435hp";
             // 
             // Engine_Size_Label
             // 
             this.Engine_Size_Label.AutoSize = true;
-            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Engine_Size_Label.Location = new System.Drawing.Point(6, 155);
+            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Engine_Size_Label.Location = new System.Drawing.Point(92, 155);
             this.Engine_Size_Label.Name = "Engine_Size_Label";
-            this.Engine_Size_Label.Size = new System.Drawing.Size(121, 21);
+            this.Engine_Size_Label.Size = new System.Drawing.Size(31, 21);
             this.Engine_Size_Label.TabIndex = 6;
-            this.Engine_Size_Label.Text = "Engine Size: 1.3l";
+            this.Engine_Size_Label.Text = "1.3l";
             // 
             // Fuel_Type_Label
             // 
             this.Fuel_Type_Label.AutoSize = true;
-            this.Fuel_Type_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fuel_Type_Label.Location = new System.Drawing.Point(6, 134);
+            this.Fuel_Type_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fuel_Type_Label.Location = new System.Drawing.Point(78, 134);
             this.Fuel_Type_Label.Name = "Fuel_Type_Label";
-            this.Fuel_Type_Label.Size = new System.Drawing.Size(124, 21);
+            this.Fuel_Type_Label.Size = new System.Drawing.Size(49, 21);
             this.Fuel_Type_Label.TabIndex = 5;
-            this.Fuel_Type_Label.Text = "Fuel Type: Diesel";
+            this.Fuel_Type_Label.Text = "Diesel";
             // 
             // Transmission_Label
             // 
             this.Transmission_Label.AutoSize = true;
-            this.Transmission_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Transmission_Label.Location = new System.Drawing.Point(6, 113);
+            this.Transmission_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Transmission_Label.Location = new System.Drawing.Point(106, 113);
             this.Transmission_Label.Name = "Transmission_Label";
-            this.Transmission_Label.Size = new System.Drawing.Size(179, 21);
+            this.Transmission_Label.Size = new System.Drawing.Size(79, 21);
             this.Transmission_Label.TabIndex = 4;
-            this.Transmission_Label.Text = "Transmission: Automatic";
+            this.Transmission_Label.Text = "Automatic";
             // 
             // Colour_Label
             // 
             this.Colour_Label.AutoSize = true;
-            this.Colour_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Colour_Label.Location = new System.Drawing.Point(6, 83);
+            this.Colour_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Colour_Label.Location = new System.Drawing.Point(60, 83);
             this.Colour_Label.Name = "Colour_Label";
-            this.Colour_Label.Size = new System.Drawing.Size(100, 21);
+            this.Colour_Label.Size = new System.Drawing.Size(44, 21);
             this.Colour_Label.TabIndex = 3;
-            this.Colour_Label.Text = "Colour: Black";
+            this.Colour_Label.Text = "Black";
             // 
             // Body_Style_Label
             // 
             this.Body_Style_Label.AutoSize = true;
-            this.Body_Style_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Body_Style_Label.Location = new System.Drawing.Point(6, 62);
+            this.Body_Style_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Body_Style_Label.Location = new System.Drawing.Point(85, 62);
             this.Body_Style_Label.Name = "Body_Style_Label";
-            this.Body_Style_Label.Size = new System.Drawing.Size(119, 21);
+            this.Body_Style_Label.Size = new System.Drawing.Size(38, 21);
             this.Body_Style_Label.TabIndex = 2;
-            this.Body_Style_Label.Text = "Body Style: SUV";
+            this.Body_Style_Label.Text = "SUV";
             // 
             // Reg_Label
             // 
             this.Reg_Label.AutoSize = true;
-            this.Reg_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reg_Label.Location = new System.Drawing.Point(6, 20);
+            this.Reg_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reg_Label.Location = new System.Drawing.Point(40, 20);
             this.Reg_Label.Name = "Reg_Label";
-            this.Reg_Label.Size = new System.Drawing.Size(121, 21);
+            this.Reg_Label.Size = new System.Drawing.Size(82, 21);
             this.Reg_Label.TabIndex = 1;
-            this.Reg_Label.Text = "Reg: WD472AW";
+            this.Reg_Label.Text = "WD472AW";
             // 
             // Mileage_Label
             // 
             this.Mileage_Label.AutoSize = true;
-            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mileage_Label.Location = new System.Drawing.Point(6, 41);
+            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Label.Location = new System.Drawing.Point(68, 41);
             this.Mileage_Label.Name = "Mileage_Label";
-            this.Mileage_Label.Size = new System.Drawing.Size(151, 21);
+            this.Mileage_Label.Size = new System.Drawing.Size(78, 21);
             this.Mileage_Label.TabIndex = 0;
-            this.Mileage_Label.Text = "Mileage: 310,910km";
+            this.Mileage_Label.Text = "310,910km";
             // 
             // Sort_End_Date
             // 
             this.Sort_End_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_End_Date.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_End_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_End_Date.Location = new System.Drawing.Point(785, 7);
+            this.Sort_End_Date.Location = new System.Drawing.Point(855, 6);
             this.Sort_End_Date.Name = "Sort_End_Date";
             this.Sort_End_Date.Size = new System.Drawing.Size(20, 20);
             this.Sort_End_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -467,7 +514,7 @@ namespace Year_14_CA_SSD
             this.Sort_Start_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Start_Date.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Start_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Start_Date.Location = new System.Drawing.Point(644, 7);
+            this.Sort_Start_Date.Location = new System.Drawing.Point(714, 6);
             this.Sort_Start_Date.Name = "Sort_Start_Date";
             this.Sort_Start_Date.Size = new System.Drawing.Size(20, 20);
             this.Sort_Start_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -481,7 +528,7 @@ namespace Year_14_CA_SSD
             this.Sort_Car.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Car.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Car.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Car.Location = new System.Drawing.Point(506, 7);
+            this.Sort_Car.Location = new System.Drawing.Point(576, 6);
             this.Sort_Car.Name = "Sort_Car";
             this.Sort_Car.Size = new System.Drawing.Size(20, 20);
             this.Sort_Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -495,7 +542,7 @@ namespace Year_14_CA_SSD
             this.Sort_Employee.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Employee.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Employee.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Employee.Location = new System.Drawing.Point(320, 7);
+            this.Sort_Employee.Location = new System.Drawing.Point(390, 6);
             this.Sort_Employee.Name = "Sort_Employee";
             this.Sort_Employee.Size = new System.Drawing.Size(20, 20);
             this.Sort_Employee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -509,7 +556,7 @@ namespace Year_14_CA_SSD
             this.Sort_Customer.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Customer.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Customer.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Customer.Location = new System.Drawing.Point(160, 7);
+            this.Sort_Customer.Location = new System.Drawing.Point(230, 6);
             this.Sort_Customer.Name = "Sort_Customer";
             this.Sort_Customer.Size = new System.Drawing.Size(20, 20);
             this.Sort_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -521,7 +568,7 @@ namespace Year_14_CA_SSD
             // Show_Cancelled_Button
             // 
             this.Show_Cancelled_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
-            this.Show_Cancelled_Button.Location = new System.Drawing.Point(814, 72);
+            this.Show_Cancelled_Button.Location = new System.Drawing.Point(12, 88);
             this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
             this.Show_Cancelled_Button.Size = new System.Drawing.Size(64, 64);
             this.Show_Cancelled_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -533,7 +580,7 @@ namespace Year_14_CA_SSD
             // Refresh_Button
             // 
             this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(815, 2);
+            this.Refresh_Button.Location = new System.Drawing.Point(13, 3);
             this.Refresh_Button.Name = "Refresh_Button";
             this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
             this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -545,7 +592,7 @@ namespace Year_14_CA_SSD
             // Search_Button
             // 
             this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(814, 526);
+            this.Search_Button.Location = new System.Drawing.Point(12, 526);
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(64, 64);
             this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -557,7 +604,7 @@ namespace Year_14_CA_SSD
             // Cancel_Button
             // 
             this.Cancel_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(814, 316);
+            this.Cancel_Button.Location = new System.Drawing.Point(12, 260);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(64, 64);
             this.Cancel_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -569,7 +616,7 @@ namespace Year_14_CA_SSD
             // Delete_Button
             // 
             this.Delete_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Delete_Button.Location = new System.Drawing.Point(814, 456);
+            this.Delete_Button.Location = new System.Drawing.Point(12, 433);
             this.Delete_Button.Name = "Delete_Button";
             this.Delete_Button.Size = new System.Drawing.Size(64, 64);
             this.Delete_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -581,7 +628,7 @@ namespace Year_14_CA_SSD
             // Add_Button
             // 
             this.Add_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Button.Location = new System.Drawing.Point(814, 246);
+            this.Add_Button.Location = new System.Drawing.Point(12, 174);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(64, 64);
             this.Add_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -593,7 +640,7 @@ namespace Year_14_CA_SSD
             // Edit_Button
             // 
             this.Edit_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Button.Location = new System.Drawing.Point(814, 386);
+            this.Edit_Button.Location = new System.Drawing.Point(12, 346);
             this.Edit_Button.Name = "Edit_Button";
             this.Edit_Button.Size = new System.Drawing.Size(64, 64);
             this.Edit_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -605,7 +652,7 @@ namespace Year_14_CA_SSD
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox11.Location = new System.Drawing.Point(588, 531);
+            this.pictureBox11.Location = new System.Drawing.Point(657, 531);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(5, 53);
             this.pictureBox11.TabIndex = 56;
@@ -614,7 +661,7 @@ namespace Year_14_CA_SSD
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox6.Location = new System.Drawing.Point(453, 570);
+            this.pictureBox6.Location = new System.Drawing.Point(523, 569);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(138, 10);
             this.pictureBox6.TabIndex = 55;
@@ -623,7 +670,7 @@ namespace Year_14_CA_SSD
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox8.Location = new System.Drawing.Point(445, 531);
+            this.pictureBox8.Location = new System.Drawing.Point(515, 530);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(10, 53);
             this.pictureBox8.TabIndex = 54;
@@ -632,7 +679,7 @@ namespace Year_14_CA_SSD
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox9.Location = new System.Drawing.Point(451, 535);
+            this.pictureBox9.Location = new System.Drawing.Point(521, 534);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(138, 10);
             this.pictureBox9.TabIndex = 53;
@@ -642,7 +689,7 @@ namespace Year_14_CA_SSD
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(442, 529);
+            this.pictureBox10.Location = new System.Drawing.Point(512, 528);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(154, 61);
             this.pictureBox10.TabIndex = 52;
@@ -651,7 +698,7 @@ namespace Year_14_CA_SSD
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox3.Location = new System.Drawing.Point(800, 532);
+            this.pictureBox3.Location = new System.Drawing.Point(869, 531);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(5, 53);
             this.pictureBox3.TabIndex = 46;
@@ -660,7 +707,7 @@ namespace Year_14_CA_SSD
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox1.Location = new System.Drawing.Point(611, 571);
+            this.pictureBox1.Location = new System.Drawing.Point(681, 570);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(190, 10);
             this.pictureBox1.TabIndex = 45;
@@ -669,7 +716,7 @@ namespace Year_14_CA_SSD
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox7.Location = new System.Drawing.Point(608, 531);
+            this.pictureBox7.Location = new System.Drawing.Point(678, 530);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(5, 53);
             this.pictureBox7.TabIndex = 44;
@@ -678,7 +725,7 @@ namespace Year_14_CA_SSD
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(611, 532);
+            this.pictureBox5.Location = new System.Drawing.Point(681, 531);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(190, 10);
             this.pictureBox5.TabIndex = 43;
@@ -688,7 +735,7 @@ namespace Year_14_CA_SSD
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(602, 529);
+            this.pictureBox4.Location = new System.Drawing.Point(672, 528);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(206, 61);
             this.pictureBox4.TabIndex = 42;
@@ -698,11 +745,240 @@ namespace Year_14_CA_SSD
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 529);
+            this.pictureBox2.Location = new System.Drawing.Point(82, 528);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(424, 61);
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Location = new System.Drawing.Point(10, 1);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(68, 591);
+            this.pictureBox12.TabIndex = 88;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "DOB:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 21);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Tel:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 21);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Email:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 21);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Postcode:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 21);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Reg:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 21);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Mileage:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 21);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Body Style:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 83);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 21);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Colour:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 21);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Transmission:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 21);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Fuel Type:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 21);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Engine Size:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 176);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(101, 21);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Horse Power:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 21);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "DOB:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 41);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 21);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Tel:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 62);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 21);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Email:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 83);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 21);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Username:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 22);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 21);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Test Drive Length:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(6, 43);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 21);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Cost:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(6, 64);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 21);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "Has Been Paid:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(6, 89);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(143, 21);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Car Been Returned:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(6, 111);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(108, 21);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "Car Damaged:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(6, 132);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(151, 21);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "Test Drive Cancelled:";
             // 
             // TestDriveDataForm
             // 
@@ -740,6 +1016,7 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.Edit_Button);
             this.Controls.Add(this.Test_Drives_ListView);
+            this.Controls.Add(this.pictureBox12);
             this.Name = "TestDriveDataForm";
             this.Text = "TestDriveDataForm";
             this.Load += new System.EventHandler(this.TestDriveDataForm_Load);
@@ -774,6 +1051,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -835,5 +1113,28 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.PictureBox Sort_Car;
         private System.Windows.Forms.PictureBox Sort_Start_Date;
         private System.Windows.Forms.PictureBox Sort_End_Date;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }

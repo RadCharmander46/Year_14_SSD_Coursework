@@ -161,7 +161,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                if (phoneNumber.Length != 7 && phoneNumber.Length != 9 && phoneNumber.Length != 10)
+                if (phoneNumber.Length != 10 && phoneNumber.Length != 11)
                 {
                     return false;
                 }
@@ -173,10 +173,10 @@ namespace Year_14_CA_SSD
                 {
                     return false;
                 }
-                int number = Convert.ToInt32(phoneNumber);
+                long number = Convert.ToInt64(phoneNumber);
                 return true;
             }
-            catch
+            catch (Exception e)
             {
                 return false;
             }

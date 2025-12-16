@@ -30,28 +30,19 @@ namespace Year_14_CA_SSD
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Contact_Information_Label = new System.Windows.Forms.Label();
             this.Telephone_Label = new System.Windows.Forms.Label();
             this.Email_Label = new System.Windows.Forms.Label();
-            this.Address_Label = new System.Windows.Forms.Label();
             this.Address_Line1_Label = new System.Windows.Forms.Label();
             this.Address_Line2_Label = new System.Windows.Forms.Label();
             this.Address_Line3_Label = new System.Windows.Forms.Label();
             this.Postcode_Label = new System.Windows.Forms.Label();
-            this.License_Label = new System.Windows.Forms.Label();
             this.License_Number_Label = new System.Windows.Forms.Label();
             this.Expiry_Label = new System.Windows.Forms.Label();
             this.Verified_Label = new System.Windows.Forms.Label();
             this.Issue_Label = new System.Windows.Forms.Label();
-            this.History_Label = new System.Windows.Forms.Label();
             this.Previous_Label = new System.Windows.Forms.Label();
             this.Damaged_Label = new System.Windows.Forms.Label();
             this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Contact_PictureBox = new System.Windows.Forms.PictureBox();
-            this.Address_PictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.History_PictureBox = new System.Windows.Forms.PictureBox();
             this.Sort_FirstName = new System.Windows.Forms.PictureBox();
             this.Sort_Middle_Name = new System.Windows.Forms.PictureBox();
             this.Sort_Last_Name = new System.Windows.Forms.PictureBox();
@@ -64,6 +55,7 @@ namespace Year_14_CA_SSD
             this.Archive_Button = new System.Windows.Forms.PictureBox();
             this.Remove_Customer_Button = new System.Windows.Forms.PictureBox();
             this.Search_Button = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -72,11 +64,19 @@ namespace Year_14_CA_SSD
             this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
             this.Filter_TextBox = new System.Windows.Forms.TextBox();
             this.ListViewCustomers = new System.Windows.Forms.ListView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Contact_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.History_PictureBox)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_FirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Middle_Name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).BeginInit();
@@ -89,225 +89,147 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Customer_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Contact_Information_Label
-            // 
-            this.Contact_Information_Label.AutoSize = true;
-            this.Contact_Information_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Contact_Information_Label.Location = new System.Drawing.Point(890, 22);
-            this.Contact_Information_Label.Name = "Contact_Information_Label";
-            this.Contact_Information_Label.Size = new System.Drawing.Size(208, 30);
-            this.Contact_Information_Label.TabIndex = 10;
-            this.Contact_Information_Label.Text = "Contact Information";
             // 
             // Telephone_Label
             // 
             this.Telephone_Label.AutoSize = true;
-            this.Telephone_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Telephone_Label.Location = new System.Drawing.Point(890, 55);
+            this.Telephone_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Telephone_Label.Location = new System.Drawing.Point(46, 25);
             this.Telephone_Label.Name = "Telephone_Label";
-            this.Telephone_Label.Size = new System.Drawing.Size(170, 30);
+            this.Telephone_Label.Size = new System.Drawing.Size(134, 30);
             this.Telephone_Label.TabIndex = 11;
-            this.Telephone_Label.Text = "Tel: 09549998823";
+            this.Telephone_Label.Text = "09549998823";
             // 
             // Email_Label
             // 
-            this.Email_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_Label.Location = new System.Drawing.Point(890, 85);
+            this.Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_Label.Location = new System.Drawing.Point(67, 55);
             this.Email_Label.MinimumSize = new System.Drawing.Size(70, 0);
             this.Email_Label.Name = "Email_Label";
-            this.Email_Label.Size = new System.Drawing.Size(275, 61);
+            this.Email_Label.Size = new System.Drawing.Size(222, 66);
             this.Email_Label.TabIndex = 12;
-            this.Email_Label.Text = "Email: ethanbarret@gmailco\r\n";
-            // 
-            // Address_Label
-            // 
-            this.Address_Label.AutoSize = true;
-            this.Address_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_Label.Location = new System.Drawing.Point(886, 163);
-            this.Address_Label.Name = "Address_Label";
-            this.Address_Label.Size = new System.Drawing.Size(90, 30);
-            this.Address_Label.TabIndex = 13;
-            this.Address_Label.Text = "Address";
+            this.Email_Label.Text = "ethanbarret\r\n@gmail.com\r\n";
             // 
             // Address_Line1_Label
             // 
             this.Address_Line1_Label.AutoSize = true;
-            this.Address_Line1_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_Line1_Label.Location = new System.Drawing.Point(886, 194);
+            this.Address_Line1_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address_Line1_Label.Location = new System.Drawing.Point(10, 25);
             this.Address_Line1_Label.Name = "Address_Line1_Label";
-            this.Address_Line1_Label.Size = new System.Drawing.Size(166, 30);
+            this.Address_Line1_Label.Size = new System.Drawing.Size(155, 30);
             this.Address_Line1_Label.TabIndex = 14;
             this.Address_Line1_Label.Text = "17 Church Street";
             // 
             // Address_Line2_Label
             // 
             this.Address_Line2_Label.AutoSize = true;
-            this.Address_Line2_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_Line2_Label.Location = new System.Drawing.Point(886, 224);
+            this.Address_Line2_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address_Line2_Label.Location = new System.Drawing.Point(10, 55);
             this.Address_Line2_Label.Name = "Address_Line2_Label";
-            this.Address_Line2_Label.Size = new System.Drawing.Size(119, 30);
+            this.Address_Line2_Label.Size = new System.Drawing.Size(112, 30);
             this.Address_Line2_Label.TabIndex = 15;
             this.Address_Line2_Label.Text = "Killyclogher";
             // 
             // Address_Line3_Label
             // 
             this.Address_Line3_Label.AutoSize = true;
-            this.Address_Line3_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_Line3_Label.Location = new System.Drawing.Point(886, 254);
+            this.Address_Line3_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address_Line3_Label.Location = new System.Drawing.Point(10, 85);
             this.Address_Line3_Label.Name = "Address_Line3_Label";
-            this.Address_Line3_Label.Size = new System.Drawing.Size(82, 30);
+            this.Address_Line3_Label.Size = new System.Drawing.Size(79, 30);
             this.Address_Line3_Label.TabIndex = 16;
             this.Address_Line3_Label.Text = "Omagh";
             // 
             // Postcode_Label
             // 
             this.Postcode_Label.AutoSize = true;
-            this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Postcode_Label.Location = new System.Drawing.Point(886, 284);
+            this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Postcode_Label.Location = new System.Drawing.Point(10, 115);
             this.Postcode_Label.Name = "Postcode_Label";
-            this.Postcode_Label.Size = new System.Drawing.Size(101, 30);
+            this.Postcode_Label.Size = new System.Drawing.Size(98, 30);
             this.Postcode_Label.TabIndex = 17;
             this.Postcode_Label.Text = "BT78 3BD";
-            // 
-            // License_Label
-            // 
-            this.License_Label.AutoSize = true;
-            this.License_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.License_Label.Location = new System.Drawing.Point(886, 327);
-            this.License_Label.Name = "License_Label";
-            this.License_Label.Size = new System.Drawing.Size(81, 30);
-            this.License_Label.TabIndex = 18;
-            this.License_Label.Text = "License";
             // 
             // License_Number_Label
             // 
             this.License_Number_Label.AutoSize = true;
-            this.License_Number_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.License_Number_Label.Location = new System.Drawing.Point(886, 355);
+            this.License_Number_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.License_Number_Label.Location = new System.Drawing.Point(45, 25);
             this.License_Number_Label.Name = "License_Number_Label";
-            this.License_Number_Label.Size = new System.Drawing.Size(140, 30);
+            this.License_Number_Label.Size = new System.Drawing.Size(100, 30);
             this.License_Number_Label.TabIndex = 19;
-            this.License_Number_Label.Text = "No: 08234578";
+            this.License_Number_Label.Text = "08234578";
             // 
             // Expiry_Label
             // 
             this.Expiry_Label.AutoSize = true;
-            this.Expiry_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Expiry_Label.Location = new System.Drawing.Point(886, 415);
+            this.Expiry_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Expiry_Label.Location = new System.Drawing.Point(71, 85);
             this.Expiry_Label.Name = "Expiry_Label";
-            this.Expiry_Label.Size = new System.Drawing.Size(161, 30);
+            this.Expiry_Label.Size = new System.Drawing.Size(90, 30);
             this.Expiry_Label.TabIndex = 20;
-            this.Expiry_Label.Text = "Expiry: 24/10/27";
+            this.Expiry_Label.Text = "24/10/27";
             // 
             // Verified_Label
             // 
             this.Verified_Label.AutoSize = true;
-            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Verified_Label.Location = new System.Drawing.Point(886, 445);
+            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Verified_Label.Location = new System.Drawing.Point(85, 115);
             this.Verified_Label.Name = "Verified_Label";
-            this.Verified_Label.Size = new System.Drawing.Size(124, 30);
+            this.Verified_Label.Size = new System.Drawing.Size(40, 30);
             this.Verified_Label.TabIndex = 21;
-            this.Verified_Label.Text = "Verified: Yes";
+            this.Verified_Label.Text = "Yes";
             // 
             // Issue_Label
             // 
             this.Issue_Label.AutoSize = true;
-            this.Issue_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Issue_Label.Location = new System.Drawing.Point(886, 385);
+            this.Issue_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Issue_Label.Location = new System.Drawing.Point(71, 55);
             this.Issue_Label.Name = "Issue_Label";
-            this.Issue_Label.Size = new System.Drawing.Size(153, 30);
+            this.Issue_Label.Size = new System.Drawing.Size(81, 30);
             this.Issue_Label.TabIndex = 22;
-            this.Issue_Label.Text = "Issue: 17/10/17";
-            // 
-            // History_Label
-            // 
-            this.History_Label.AutoSize = true;
-            this.History_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.History_Label.Location = new System.Drawing.Point(887, 488);
-            this.History_Label.Name = "History_Label";
-            this.History_Label.Size = new System.Drawing.Size(83, 30);
-            this.History_Label.TabIndex = 23;
-            this.History_Label.Text = "History";
+            this.Issue_Label.Text = "17/10/17";
             // 
             // Previous_Label
             // 
             this.Previous_Label.AutoSize = true;
-            this.Previous_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Previous_Label.Location = new System.Drawing.Point(886, 518);
+            this.Previous_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Previous_Label.Location = new System.Drawing.Point(189, 24);
             this.Previous_Label.Name = "Previous_Label";
-            this.Previous_Label.Size = new System.Drawing.Size(227, 30);
+            this.Previous_Label.Size = new System.Drawing.Size(40, 30);
             this.Previous_Label.TabIndex = 24;
-            this.Previous_Label.Text = "Previous Customer: Yes";
+            this.Previous_Label.Text = "Yes";
+            this.Previous_Label.Click += new System.EventHandler(this.Previous_Label_Click);
             // 
             // Damaged_Label
             // 
             this.Damaged_Label.AutoSize = true;
-            this.Damaged_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Damaged_Label.Location = new System.Drawing.Point(887, 548);
+            this.Damaged_Label.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Damaged_Label.Location = new System.Drawing.Point(179, 53);
             this.Damaged_Label.Name = "Damaged_Label";
-            this.Damaged_Label.Size = new System.Drawing.Size(214, 30);
+            this.Damaged_Label.Size = new System.Drawing.Size(40, 30);
             this.Damaged_Label.TabIndex = 25;
-            this.Damaged_Label.Text = "Damaged Vehicle: No";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 523);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(598, 61);
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
-            // 
-            // Contact_PictureBox
-            // 
-            this.Contact_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contact_PictureBox.Location = new System.Drawing.Point(878, 12);
-            this.Contact_PictureBox.Name = "Contact_PictureBox";
-            this.Contact_PictureBox.Size = new System.Drawing.Size(297, 139);
-            this.Contact_PictureBox.TabIndex = 26;
-            this.Contact_PictureBox.TabStop = false;
-            // 
-            // Address_PictureBox
-            // 
-            this.Address_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Address_PictureBox.Location = new System.Drawing.Point(878, 157);
-            this.Address_PictureBox.Name = "Address_PictureBox";
-            this.Address_PictureBox.Size = new System.Drawing.Size(297, 162);
-            this.Address_PictureBox.TabIndex = 27;
-            this.Address_PictureBox.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(878, 325);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(297, 151);
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
-            // 
-            // History_PictureBox
-            // 
-            this.History_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.History_PictureBox.Location = new System.Drawing.Point(878, 482);
-            this.History_PictureBox.Name = "History_PictureBox";
-            this.History_PictureBox.Size = new System.Drawing.Size(297, 102);
-            this.History_PictureBox.TabIndex = 29;
-            this.History_PictureBox.TabStop = false;
+            this.Damaged_Label.Text = "No";
+            this.Damaged_Label.Click += new System.EventHandler(this.Damaged_Label_Click);
             // 
             // Sort_FirstName
             // 
             this.Sort_FirstName.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_FirstName.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_FirstName.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_FirstName.Location = new System.Drawing.Point(140, 17);
+            this.Sort_FirstName.Location = new System.Drawing.Point(215, 17);
             this.Sort_FirstName.Name = "Sort_FirstName";
             this.Sort_FirstName.Size = new System.Drawing.Size(20, 20);
             this.Sort_FirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,7 +243,7 @@ namespace Year_14_CA_SSD
             this.Sort_Middle_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Middle_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Middle_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Middle_Name.Location = new System.Drawing.Point(290, 17);
+            this.Sort_Middle_Name.Location = new System.Drawing.Point(365, 17);
             this.Sort_Middle_Name.Name = "Sort_Middle_Name";
             this.Sort_Middle_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Middle_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +257,7 @@ namespace Year_14_CA_SSD
             this.Sort_Last_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Last_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Last_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Last_Name.Location = new System.Drawing.Point(441, 17);
+            this.Sort_Last_Name.Location = new System.Drawing.Point(516, 17);
             this.Sort_Last_Name.Name = "Sort_Last_Name";
             this.Sort_Last_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Last_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -349,7 +271,7 @@ namespace Year_14_CA_SSD
             this.Sort_DOB.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_DOB.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_DOB.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_DOB.Location = new System.Drawing.Point(589, 17);
+            this.Sort_DOB.Location = new System.Drawing.Point(664, 17);
             this.Sort_DOB.Name = "Sort_DOB";
             this.Sort_DOB.Size = new System.Drawing.Size(20, 20);
             this.Sort_DOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -363,7 +285,7 @@ namespace Year_14_CA_SSD
             this.Sort_Phone_Number.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Phone_Number.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Phone_Number.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Phone_Number.Location = new System.Drawing.Point(770, 17);
+            this.Sort_Phone_Number.Location = new System.Drawing.Point(845, 17);
             this.Sort_Phone_Number.Name = "Sort_Phone_Number";
             this.Sort_Phone_Number.Size = new System.Drawing.Size(20, 20);
             this.Sort_Phone_Number.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,7 +297,7 @@ namespace Year_14_CA_SSD
             // Refresh_Button
             // 
             this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(806, 12);
+            this.Refresh_Button.Location = new System.Drawing.Point(13, 12);
             this.Refresh_Button.Name = "Refresh_Button";
             this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
             this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -387,7 +309,7 @@ namespace Year_14_CA_SSD
             // Show_Archive_Button
             // 
             this.Show_Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive_not_visible;
-            this.Show_Archive_Button.Location = new System.Drawing.Point(806, 82);
+            this.Show_Archive_Button.Location = new System.Drawing.Point(13, 346);
             this.Show_Archive_Button.Name = "Show_Archive_Button";
             this.Show_Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Show_Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,7 +321,7 @@ namespace Year_14_CA_SSD
             // Add_Customer_Button
             // 
             this.Add_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Customer_Button.Location = new System.Drawing.Point(806, 237);
+            this.Add_Customer_Button.Location = new System.Drawing.Point(13, 95);
             this.Add_Customer_Button.Name = "Add_Customer_Button";
             this.Add_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Add_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -411,7 +333,7 @@ namespace Year_14_CA_SSD
             // Edit_Customer_Button
             // 
             this.Edit_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Customer_Button.Location = new System.Drawing.Point(806, 307);
+            this.Edit_Customer_Button.Location = new System.Drawing.Point(13, 179);
             this.Edit_Customer_Button.Name = "Edit_Customer_Button";
             this.Edit_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Edit_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -423,7 +345,7 @@ namespace Year_14_CA_SSD
             // Archive_Button
             // 
             this.Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive;
-            this.Archive_Button.Location = new System.Drawing.Point(806, 377);
+            this.Archive_Button.Location = new System.Drawing.Point(13, 263);
             this.Archive_Button.Name = "Archive_Button";
             this.Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -435,7 +357,7 @@ namespace Year_14_CA_SSD
             // Remove_Customer_Button
             // 
             this.Remove_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Remove_Customer_Button.Location = new System.Drawing.Point(806, 447);
+            this.Remove_Customer_Button.Location = new System.Drawing.Point(13, 429);
             this.Remove_Customer_Button.Name = "Remove_Customer_Button";
             this.Remove_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Remove_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -447,7 +369,7 @@ namespace Year_14_CA_SSD
             // Search_Button
             // 
             this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(806, 520);
+            this.Search_Button.Location = new System.Drawing.Point(12, 518);
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(64, 64);
             this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -456,51 +378,67 @@ namespace Year_14_CA_SSD
             this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(87, 523);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(598, 61);
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(616, 523);
+            this.pictureBox4.Location = new System.Drawing.Point(691, 523);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(180, 61);
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox6.Location = new System.Drawing.Point(625, 568);
+            this.pictureBox6.Location = new System.Drawing.Point(700, 568);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(164, 10);
             this.pictureBox6.TabIndex = 36;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Location = new System.Drawing.Point(625, 526);
+            this.pictureBox5.Location = new System.Drawing.Point(700, 526);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(164, 10);
             this.pictureBox5.TabIndex = 35;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox8.Location = new System.Drawing.Point(788, 528);
+            this.pictureBox8.Location = new System.Drawing.Point(863, 528);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(5, 53);
             this.pictureBox8.TabIndex = 38;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox7.Location = new System.Drawing.Point(621, 525);
+            this.pictureBox7.Location = new System.Drawing.Point(696, 525);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(5, 53);
             this.pictureBox7.TabIndex = 37;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // Filter_ComboBox
             // 
@@ -515,26 +453,29 @@ namespace Year_14_CA_SSD
             "Phone Number",
             "Email Address",
             "Postcode"});
-            this.Filter_ComboBox.Location = new System.Drawing.Point(625, 532);
+            this.Filter_ComboBox.Location = new System.Drawing.Point(700, 532);
             this.Filter_ComboBox.Name = "Filter_ComboBox";
             this.Filter_ComboBox.Size = new System.Drawing.Size(165, 38);
             this.Filter_ComboBox.TabIndex = 31;
+            this.Filter_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Filter_ComboBox_SelectedIndexChanged);
             // 
             // Filter_TextBox
             // 
             this.Filter_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Filter_TextBox.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Filter_TextBox.Location = new System.Drawing.Point(17, 531);
+            this.Filter_TextBox.Location = new System.Drawing.Point(92, 531);
             this.Filter_TextBox.Name = "Filter_TextBox";
             this.Filter_TextBox.Size = new System.Drawing.Size(587, 39);
             this.Filter_TextBox.TabIndex = 30;
+            this.Filter_TextBox.TextChanged += new System.EventHandler(this.Filter_TextBox_TextChanged);
             // 
             // ListViewCustomers
             // 
             this.ListViewCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewCustomers.ForeColor = System.Drawing.Color.DarkRed;
             this.ListViewCustomers.FullRowSelect = true;
             this.ListViewCustomers.HideSelection = false;
-            this.ListViewCustomers.Location = new System.Drawing.Point(12, 12);
+            this.ListViewCustomers.Location = new System.Drawing.Point(87, 12);
             this.ListViewCustomers.Name = "ListViewCustomers";
             this.ListViewCustomers.Scrollable = false;
             this.ListViewCustomers.Size = new System.Drawing.Size(784, 499);
@@ -543,17 +484,171 @@ namespace Year_14_CA_SSD
             this.ListViewCustomers.View = System.Windows.Forms.View.Details;
             this.ListViewCustomers.SelectedIndexChanged += new System.EventHandler(this.ListViewCustomers_SelectedIndexChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Address_Line3_Label);
+            this.groupBox1.Controls.Add(this.Address_Line1_Label);
+            this.groupBox1.Controls.Add(this.Address_Line2_Label);
+            this.groupBox1.Controls.Add(this.Postcode_Label);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(877, 157);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(299, 162);
+            this.groupBox1.TabIndex = 86;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Address";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Telephone_Label);
+            this.groupBox2.Controls.Add(this.Email_Label);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(877, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(299, 134);
+            this.groupBox2.TabIndex = 87;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Contact Details";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 30);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Tel:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 55);
+            this.label1.MinimumSize = new System.Drawing.Size(70, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 30);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Email:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Verified_Label);
+            this.groupBox3.Controls.Add(this.Expiry_Label);
+            this.groupBox3.Controls.Add(this.Issue_Label);
+            this.groupBox3.Controls.Add(this.License_Number_Label);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(877, 325);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(299, 151);
+            this.groupBox3.TabIndex = 87;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "License";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 30);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Verified:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 30);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Expiry:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 30);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Isssue:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 30);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "No:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.Previous_Label);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.Damaged_Label);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(877, 482);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(299, 102);
+            this.groupBox4.TabIndex = 88;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "History";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(180, 30);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Damaged Vehicle:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(191, 30);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Previous Customer:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 573);
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
             // CustomerDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Show_Archive_Button);
             this.Controls.Add(this.Sort_Phone_Number);
             this.Controls.Add(this.Sort_DOB);
             this.Controls.Add(this.Sort_Last_Name);
             this.Controls.Add(this.Sort_Middle_Name);
             this.Controls.Add(this.Sort_FirstName);
-            this.Controls.Add(this.Show_Archive_Button);
             this.Controls.Add(this.Archive_Button);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -564,39 +659,15 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Filter_TextBox);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Search_Button);
-            this.Controls.Add(this.Damaged_Label);
-            this.Controls.Add(this.Previous_Label);
-            this.Controls.Add(this.History_Label);
-            this.Controls.Add(this.Issue_Label);
-            this.Controls.Add(this.Verified_Label);
-            this.Controls.Add(this.Expiry_Label);
-            this.Controls.Add(this.License_Number_Label);
-            this.Controls.Add(this.License_Label);
-            this.Controls.Add(this.Postcode_Label);
-            this.Controls.Add(this.Address_Line3_Label);
-            this.Controls.Add(this.Address_Line2_Label);
-            this.Controls.Add(this.Address_Line1_Label);
-            this.Controls.Add(this.Address_Label);
-            this.Controls.Add(this.Email_Label);
-            this.Controls.Add(this.Telephone_Label);
-            this.Controls.Add(this.Contact_Information_Label);
             this.Controls.Add(this.Refresh_Button);
             this.Controls.Add(this.Edit_Customer_Button);
             this.Controls.Add(this.Remove_Customer_Button);
             this.Controls.Add(this.Add_Customer_Button);
             this.Controls.Add(this.ListViewCustomers);
-            this.Controls.Add(this.Contact_PictureBox);
-            this.Controls.Add(this.Address_PictureBox);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.History_PictureBox);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "CustomerDataForm";
             this.Text = "CustomerDataForm";
             this.Load += new System.EventHandler(this.CustomerDataForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Contact_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.History_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_FirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Middle_Name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).EndInit();
@@ -609,37 +680,39 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Archive_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Remove_Customer_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label Contact_Information_Label;
         private System.Windows.Forms.Label Telephone_Label;
         private System.Windows.Forms.Label Email_Label;
-        private System.Windows.Forms.Label Address_Label;
         private System.Windows.Forms.Label Address_Line1_Label;
         private System.Windows.Forms.Label Address_Line2_Label;
         private System.Windows.Forms.Label Address_Line3_Label;
         private System.Windows.Forms.Label Postcode_Label;
-        private System.Windows.Forms.Label License_Label;
         private System.Windows.Forms.Label License_Number_Label;
         private System.Windows.Forms.Label Expiry_Label;
         private System.Windows.Forms.Label Verified_Label;
         private System.Windows.Forms.Label Issue_Label;
-        private System.Windows.Forms.Label History_Label;
         private System.Windows.Forms.Label Previous_Label;
         private System.Windows.Forms.Label Damaged_Label;
-        private System.Windows.Forms.PictureBox Contact_PictureBox;
-        private System.Windows.Forms.PictureBox Address_PictureBox;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox History_PictureBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolTip Tool_Tip;
         private System.Windows.Forms.PictureBox Sort_FirstName;
@@ -662,5 +735,18 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.ComboBox Filter_ComboBox;
         private System.Windows.Forms.TextBox Filter_TextBox;
         private System.Windows.Forms.ListView ListViewCustomers;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

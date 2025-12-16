@@ -26,7 +26,7 @@ namespace Year_14_CA_SSD
         private void AddCustomerForm_Load(object sender, EventArgs e)
         {
             DOB_DateTimePicker.MaxDate = DateTime.Now.AddYears(-16);
-            DOB_DateTimePicker.MinDate = DateTime.Now.AddYears(-120);
+            DOB_DateTimePicker.MinDate = new DateTime(1900,1,1);
             Issue_DateTimePicker.MaxDate = DateTime.Now;
             Issue_DateTimePicker.MinDate = new DateTime(1970, 1, 1);
             Expiry_DateTimePicker.MinDate = new DateTime(1970, 1, 1);

@@ -285,16 +285,16 @@ namespace Year_14_CA_SSD
             for(int i = 0;i < eventTimes.Length; i++)
             {
                 bool eventForThisDay = false; //so a event that starts and ends on the same day is only counted once
-                if(startOfDay <= eventTimes[i][0] && eventTimes[i][0] <= endOfDay)
+                if( (startOfDay <= eventTimes[i][0] && eventTimes[i][0] <= endOfDay) || (eventTimes[i][0] <= startOfDay && startOfDay <= eventTimes[i][1]))
                 {
                     eventForThisDay = true;
                 }
-                if (startOfDay <= eventTimes[i][1] && eventTimes[i][1] <= endOfDay)
+                if ( ( startOfDay <= eventTimes[i][1] && eventTimes[i][1] <= endOfDay) || (eventTimes[i][0] <= endOfDay && endOfDay <=  eventTimes[i][1]))
                 {
                     eventForThisDay = true;
                 }
 
-                if(eventForThisDay)
+                if (eventForThisDay)
                 {
                     number += 1;
                 }
@@ -424,11 +424,11 @@ namespace Year_14_CA_SSD
                 DateTime unavailabiltyStartTime = Convert.ToDateTime(carUnavailabilty[i][0]);
                 DateTime unavailabiltyEndTime = Convert.ToDateTime(carUnavailabilty[i][1]);
                 bool includeTime = false;
-                if (unavailabiltyStartTime >= startDate && unavailabiltyStartTime < endDate)
+                if (startDate <= unavailabiltyStartTime && unavailabiltyStartTime < endDate || unavailabiltyStartTime <= startDate && startDate < unavailabiltyEndTime)
                 {
                     includeTime = true;
                 }
-                if (unavailabiltyEndTime >= startDate && unavailabiltyEndTime < endDate)
+                if (unavailabiltyEndTime >= startDate && unavailabiltyEndTime < endDate || unavailabiltyStartTime <= endDate && endDate < unavailabiltyEndTime)
                 {
                     includeTime = true;
                 }

@@ -38,6 +38,7 @@ namespace Year_14_CA_SSD
         }
         void Setup_Columns()
         {
+            Payments_ListView.Font = new Font(Payments_ListView.Font, FontStyle.Bold);
             Payments_ListView.Columns.Add("Customer Name",200);
             Payments_ListView.Columns.Add("Transaction Time",200);
             Payments_ListView.Columns.Add("Transaction Type",200);
@@ -121,6 +122,7 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(payment[1]);
                 row.SubItems.Add(payment[4]);
                 row.SubItems.Add("£" + payment[3]);
+                row.Font = new Font(Payments_ListView.Font, FontStyle.Regular);
                 Payments_ListView.Items.Add(row);
             }
         }
@@ -175,21 +177,21 @@ namespace Year_14_CA_SSD
                 string[] payment = payments[displayedIndexes[Payments_ListView.SelectedItems[0].Index]];
                 string[] customer = Get_Customer_Values(payment[Get_Payment_Column_Index("CustomerId")]);
 
-                Cust_DOB_Label.Text = "DOB: " + Globals.removeTime(customer[Get_Customer_Column_Index("Date Of Birth")]);
-                Cust_Email_Label.Text = "Email: " + customer[Get_Customer_Column_Index("Email Address")];
-                Cust_Tel_Label.Text = "Tel: " + customer[Get_Customer_Column_Index("Phone Number")];
-                Cust_Postcode_Label.Text = "Postcode: " + customer[Get_Customer_Column_Index("Postcode")];
-                PrevCust_Label.Text = "Previous Customer: " + Globals.boolToYN(customer[Get_Customer_Column_Index("Previous Customer")]);
-                Cust_LicenseNo_Label.Text = "License No: " + customer[Get_Customer_Column_Index("License No")];
-                Cust_Issue_Label.Text = "Issue: " + Globals.removeTime(customer[Get_Customer_Column_Index("Issue Date")]);
-                Cust_Expiry_Label.Text = "Expiry: " + Globals.removeTime(customer[Get_Customer_Column_Index("Expiry Date")]);
-                Verified_Label.Text = "Verified: " + Globals.boolToYN(customer[Get_Customer_Column_Index("Verified License")]);
+                Cust_DOB_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Date Of Birth")]);
+                Cust_Email_Label.Text = customer[Get_Customer_Column_Index("Email Address")];
+                Cust_Tel_Label.Text = customer[Get_Customer_Column_Index("Phone Number")];
+                Cust_Postcode_Label.Text = customer[Get_Customer_Column_Index("Postcode")];
+                PrevCust_Label.Text = Globals.boolToYN(customer[Get_Customer_Column_Index("Previous Customer")]);
+                Cust_LicenseNo_Label.Text = customer[Get_Customer_Column_Index("License No")];
+                Cust_Issue_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Issue Date")]);
+                Cust_Expiry_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Expiry Date")]);
+                Verified_Label.Text = Globals.boolToYN(customer[Get_Customer_Column_Index("Verified License")]);
 
-                Transaction_Time_Label.Text = "Transaction Time: " + payment[Get_Payment_Column_Index("Transaction Time")];
-                Amount_Label.Text = "Amount: £" + payment[Get_Payment_Column_Index("Amount")];
-                Transaction_Type_Label.Text = "Transaction Type: " + payment[Get_Payment_Column_Index("Transaction Type")];
-                Paid_Label.Text = "Has Been Paid: " + Globals.boolToYN(payment[Get_Payment_Column_Index("Has Been Paid")]);
-                Cancelled_Label.Text = "Cancelled: " + Globals.boolToYN(payment[Get_Payment_Column_Index("Cancelled")]);
+                Transaction_Time_Label.Text = payment[Get_Payment_Column_Index("Transaction Time")];
+                Amount_Label.Text = payment[Get_Payment_Column_Index("Amount")];
+                Transaction_Type_Label.Text = payment[Get_Payment_Column_Index("Transaction Type")];
+                Paid_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Has Been Paid")]);
+                Cancelled_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Cancelled")]);
                 Description_Text_Label.Text = payment[Get_Payment_Column_Index("Description")];
 
             }
@@ -200,21 +202,21 @@ namespace Year_14_CA_SSD
         }
         void Reset_Labels()
         {
-            Cust_DOB_Label.Text = "DOB: ";
-            Cust_Email_Label.Text = "Email:";
-            Cust_Tel_Label.Text = "Tel:";
-            Cust_Postcode_Label.Text = "Postcode:";
-            PrevCust_Label.Text = "Previous Customer:";
-            Cust_LicenseNo_Label.Text = "License No:";
-            Cust_Issue_Label.Text = "Issue:";
-            Cust_Expiry_Label.Text = "Expiry:";
-            Verified_Label.Text = "Verified:";
+            Cust_DOB_Label.Text = "";
+            Cust_Email_Label.Text = "";
+            Cust_Tel_Label.Text = "";
+            Cust_Postcode_Label.Text = "";
+            PrevCust_Label.Text = "";
+            Cust_LicenseNo_Label.Text = "";
+            Cust_Issue_Label.Text = "";
+            Cust_Expiry_Label.Text = "";
+            Verified_Label.Text = "";
 
-            Transaction_Time_Label.Text = "Transaction Time:";
-            Amount_Label.Text = "Amount: £";
-            Transaction_Type_Label.Text = "Transaction Type: ";
-            Paid_Label.Text = "Has Been Paid:";
-            Cancelled_Label.Text = "Cancelled:";
+            Transaction_Time_Label.Text = "";
+            Amount_Label.Text = "";
+            Transaction_Type_Label.Text = "";
+            Paid_Label.Text = "";
+            Cancelled_Label.Text = "";
             Description_Text_Label.Text = "";
         }
         int Get_Customer_Column_Index(string column)
@@ -459,6 +461,11 @@ namespace Year_14_CA_SSD
                 }
             }
             displayedIndexes = tempIndexes;
+        }
+
+        private void Paid_Label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
