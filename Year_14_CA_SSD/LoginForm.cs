@@ -119,18 +119,16 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string query = $"SELECT Role FROM EmployeeTable WHERE Username ='{Username_TextBox.Text}'";
+                    string query = $"SELECT ManagerAccess FROM EmployeeTable WHERE Username ='{Username_TextBox.Text}'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        if(reader["Role"].ToString().Trim() == "Manager")
-                        {
-                            conn.Close();
-                            return true;
-                        }
+                        bool manager = Convert.ToBoolean(reader["ManagerAccess"].ToString().Trim());
+                        conn.Close();
+                        return manager;
                     }
                     throw new Exception();
                 }

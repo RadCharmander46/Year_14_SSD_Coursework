@@ -30,7 +30,7 @@ namespace Year_14_CA_SSD
         private void InitializeComponent()
         {
             this.License_Details_GroupBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Generate_Username_Button = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Password_TextBox = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@ namespace Year_14_CA_SSD
             // License_Details_GroupBox
             // 
             this.License_Details_GroupBox.BackColor = System.Drawing.SystemColors.Control;
-            this.License_Details_GroupBox.Controls.Add(this.button1);
+            this.License_Details_GroupBox.Controls.Add(this.Generate_Username_Button);
             this.License_Details_GroupBox.Controls.Add(this.textBox2);
             this.License_Details_GroupBox.Controls.Add(this.label1);
             this.License_Details_GroupBox.Controls.Add(this.Password_TextBox);
@@ -95,15 +95,16 @@ namespace Year_14_CA_SSD
             this.License_Details_GroupBox.TabStop = false;
             this.License_Details_GroupBox.Text = "Account";
             // 
-            // button1
+            // Generate_Username_Button
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(184, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 33);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Generate Username";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Generate_Username_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Generate_Username_Button.Location = new System.Drawing.Point(184, 72);
+            this.Generate_Username_Button.Name = "Generate_Username_Button";
+            this.Generate_Username_Button.Size = new System.Drawing.Size(188, 33);
+            this.Generate_Username_Button.TabIndex = 42;
+            this.Generate_Username_Button.Text = "Generate Username";
+            this.Generate_Username_Button.UseVisualStyleBackColor = true;
+            this.Generate_Username_Button.Click += new System.EventHandler(this.Generate_Username_Button_Click);
             // 
             // textBox2
             // 
@@ -340,6 +341,7 @@ namespace Year_14_CA_SSD
             this.DOB_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DOB_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DOB_DateTimePicker.Location = new System.Drawing.Point(142, 148);
+            this.DOB_DateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.DOB_DateTimePicker.Name = "DOB_DateTimePicker";
             this.DOB_DateTimePicker.Size = new System.Drawing.Size(128, 35);
             this.DOB_DateTimePicker.TabIndex = 26;
@@ -523,7 +525,7 @@ namespace Year_14_CA_SSD
         #endregion
 
         private System.Windows.Forms.GroupBox License_Details_GroupBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Generate_Username_Button;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Password_TextBox;

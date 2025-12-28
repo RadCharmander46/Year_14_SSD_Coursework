@@ -19,7 +19,7 @@ namespace Year_14_CA_SSD
         }
         public bool addMode = true;
         public int Id = 0;
-        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Unavailable","Next Time Available","Manager Access" };
+        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Manager Access" };
         public string[] updatedValues;
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
@@ -28,11 +28,12 @@ namespace Year_14_CA_SSD
             {
                 Load_Employee_Data();
             }
+            DOB_DateTimePicker.MaxDate = DateTime.Today.AddYears(-16);
         }
 
         private void Add_Employee_Button_Click(object sender, EventArgs e)
         {
-            updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Usernname_TextBox.Text, Password_TextBox.Text, "False", "False", "", Convert.ToString(Manager_Access_CheckBox.Checked) };
+            updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Usernname_TextBox.Text, Password_TextBox.Text, "False", Convert.ToString(Manager_Access_CheckBox.Checked) };
             if (addMode)
             {
                 Add_Employee();
@@ -120,8 +121,22 @@ namespace Year_14_CA_SSD
             }
             this.Close();
         }
-        
 
-        
+        private void Generate_Username_Button_Click(object sender, EventArgs e)
+        {
+            string username;
+            if(First_Name_TextBox.Text == "")
+            {
+                MessageBox.Show("Please fill in your first name");
+                return;
+            }
+            if(Last_Name_TextBox.Text == "")
+            {
+                MessageBox.Show("Please fill in your last name");
+            }
+            Random rd = new Random();
+            username = First_Name_TextBox.Text.ToUpper().Substring(0, 2) + Last_Name_TextBox.Text.ToUpper().Substring(0, 5) + rd.Next(100, 1000).ToString();
+            Usernname_TextBox.Text = username;
+        }
     }
 }

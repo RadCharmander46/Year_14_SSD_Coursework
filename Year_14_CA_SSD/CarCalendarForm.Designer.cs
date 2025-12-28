@@ -79,10 +79,10 @@ namespace Year_14_CA_SSD
             // Title_Label
             // 
             this.Title_Label.AutoSize = true;
-            this.Title_Label.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Label.Location = new System.Drawing.Point(9, 4);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(219, 47);
+            this.Title_Label.Size = new System.Drawing.Size(223, 47);
             this.Title_Label.TabIndex = 0;
             this.Title_Label.Text = "Car Calendar";
             // 

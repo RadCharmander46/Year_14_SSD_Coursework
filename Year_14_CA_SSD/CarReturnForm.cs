@@ -212,16 +212,27 @@ namespace Year_14_CA_SSD
         {
             Clear_Details();
             Date_DateTimePicker.MaxDate = DateTime.Now.AddDays(7);
-            Get_Times();
         }
-        void Get_Times()
+        
+        string Get_Opening_Times()
         {
-            Start_Time_ComboBox.Items.Clear();
-            DateTime time = new DateTime(1970, 1, 1);
-            for (int minutes = Convert_Time_To_Minutes(Globals.openningTime); minutes <= Convert_Time_To_Minutes(Globals.closingTime); minutes += 5)
+            int dayOfWeek = (int)Date_DateTimePicker.Value.DayOfWeek;
+            if (dayOfWeek == 0)
             {
-                Start_Time_ComboBox.Items.Add(time.AddMinutes(minutes).ToShortTimeString());
+                dayOfWeek = 7;
             }
+            dayOfWeek--;
+            return Globals.settings.OpenningTimes[dayOfWeek];
+        }
+        string Get_Closing_Times()
+        {
+            int dayOfWeek = (int)Date_DateTimePicker.Value.DayOfWeek;
+            if (dayOfWeek == 0)
+            {
+                dayOfWeek = 7;
+            }
+            dayOfWeek--;
+            return Globals.settings.ClosingTimes[dayOfWeek];
         }
         int Convert_Time_To_Minutes(string time)
         {
@@ -284,13 +295,12 @@ namespace Year_14_CA_SSD
         private void Find_Test_Drive_Button_Click(object sender, EventArgs e)
         {
             Find_Test_Drive();
-            Mileage_NumericUpDown.Minimum = mileage;
         }
         DateTime? Get_Start_Date()
         {
             try
             {
-                return Convert.ToDateTime(Date_DateTimePicker.Value.ToString("d") + " " + Start_Time_ComboBox.Text);
+                return Convert.ToDateTime(Date_DateTimePicker.Value.ToString("d"));
             }
             catch
             {
@@ -302,18 +312,18 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                DateTime startDate = (DateTime)Get_Start_Date();
+                DateTime startDate = (DateTime)Get_Start_Date(); //add extra day to each to compensate for lack in time of day
                 if (Length_ComboBox.Text == "30 Minutes")
-                {
-                    return startDate.AddMinutes(30);
-                }
-                else if (Length_ComboBox.Text == "1 Day")
                 {
                     return startDate.AddDays(1);
                 }
+                else if (Length_ComboBox.Text == "1 Day")
+                {
+                    return startDate.AddDays(2);
+                }
                 else if (Length_ComboBox.Text == "Weekend")
                 {
-                    return startDate.AddDays(3);
+                    return startDate.AddDays(4);
                 }
                 else
                 {
@@ -337,11 +347,6 @@ namespace Year_14_CA_SSD
                 MessageBox.Show("Length must be picked");
                 return;
             }
-            if(Start_Time_ComboBox.Text == "")
-            {
-                MessageBox.Show("Start time must be picked");
-                return;
-            }
             DateTime startDate = (DateTime)Get_Start_Date();
             DateTime endDate = (DateTime)Get_End_Date();
 
@@ -352,7 +357,7 @@ namespace Year_14_CA_SSD
                     conn.Open();
                     string cmdText = $"SELECT TestDriveTable.TestDriveId,TestDriveTable.CustomerId,TestDriveTable.EmployeeId FROM TestDriveTable " +
                         $"INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
-                        $"WHERE CarUnavailabiltyTable.CarId = '{CarId}' AND CarUnavailabiltyTable.StartTime = '{startDate.ToString("yyyy/MM/dd HH:mm:ss")}' AND CarUnavailabiltyTable.EndTime = '{endDate.ToString("yyyy/MM/dd HH:mm:ss")}' ";
+                        $"WHERE CarUnavailabiltyTable.CarId = '{CarId}' AND CarUnavailabiltyTable.StartTime >= '{startDate.ToString("yyyy/MM/dd HH:mm:ss")}' AND CarUnavailabiltyTable.EndTime <= '{endDate.ToString("yyyy/MM/dd HH:mm:ss")}' ";
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -360,10 +365,14 @@ namespace Year_14_CA_SSD
                     reader.Read();
                     TestDriveId = Convert.ToInt32(reader["TestDriveId"]);
                     CustomerId = Convert.ToInt32(reader["CustomerId"]);
-                    EmployeeId = Convert.ToInt32(reader["EmployeeId"]);
+                    string employeeIdText = reader["EmployeeId"].ToString();
                     conn.Close();
                     Load_Customer_Data();
-                    Load_Employee_Data();
+                    if (employeeIdText != "")
+                    {
+                        EmployeeId = Convert.ToInt32(employeeIdText);
+                        Load_Employee_Data();
+                    }
                 }
                 catch (SqlException e)
                 {
@@ -377,6 +386,8 @@ namespace Year_14_CA_SSD
                 }
                 
             }
+            Mileage_NumericUpDown.Minimum = mileage;
+
         }
 
         private void Return_Button_Click(object sender, EventArgs e)
@@ -401,7 +412,6 @@ namespace Year_14_CA_SSD
                     MessageBox.Show("An error occured when updating the test drive database");
                     return;
                 }
-
             }
             catch
             {
@@ -409,6 +419,26 @@ namespace Year_14_CA_SSD
                 return;
             }
 
+            Calculate_Mileage_Fee();
+
+        }
+        void Calculate_Mileage_Fee()
+        {
+            int mileageIncrease = Convert.ToInt32(Mileage_NumericUpDown.Value - Mileage_NumericUpDown.Minimum);
+            int typeOfBooking = Length_ComboBox.SelectedIndex;
+            int mileageLimit = Globals.settings.MileageLimits[typeOfBooking];
+            if(mileageIncrease <= mileageLimit || mileageLimit == 0)
+            {
+                return;
+            }
+            int mileageOver = mileageIncrease - mileageLimit;
+            decimal mileageFee = mileageOver * Globals.settings.MileageFee;
+            MessageBox.Show($"Mileage is over the allocated limit, the following fee must be paid: £{mileageFee}");
+            string[] paymentValues = { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),CustomerId.ToString(),mileageFee.ToString(),"Fee","Fee for going over the allocated mileage limit","False","False"};
+            if(!SQL_Operation.CreateEntry(paymentValues, "PaymentTable"))
+            {
+                MessageBox.Show("An error occurred");
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)

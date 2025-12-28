@@ -28,6 +28,7 @@ namespace Year_14_CA_SSD
         private void PaymentDataForm_Load(object sender, EventArgs e)
         {
             Setup_ListView();
+            Reset_Labels();
         }
         void Setup_ListView()
         {
@@ -123,8 +124,20 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(payment[4]);
                 row.SubItems.Add("£" + payment[3]);
                 row.Font = new Font(Payments_ListView.Font, FontStyle.Regular);
+                if(Payment_Is_Cancelled(payment))
+                {
+                    row.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    row.ForeColor = Color.Black;
+                }
                 Payments_ListView.Items.Add(row);
             }
+        }
+        bool Payment_Is_Cancelled(string[] payment)
+        {
+            return Convert.ToBoolean(payment[Get_Payment_Column_Index("Cancelled")]);
         }
         string Get_Customer_Name(string id)
         {

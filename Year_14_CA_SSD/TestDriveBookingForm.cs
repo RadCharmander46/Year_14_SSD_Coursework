@@ -241,7 +241,7 @@ namespace Year_14_CA_SSD
                 Start_Time_ComboBox.Items.Add("Pick a length");
                 return;
             }
-            for (int minutes = Convert_Time_To_Minutes(Globals.openningTime); minutes <= Convert_Time_To_Minutes(Globals.closingTime); minutes += 5)
+            for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
             {
                 DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
                 if (!Time_Is_Unavailable(time, time.AddHours(hoursOffset), unavailabiltyTimes) && Globals.timeIsInFuture(time))
@@ -254,6 +254,26 @@ namespace Year_14_CA_SSD
                 Start_Time_ComboBox.Items.Add("No times available");
             }
 
+        }
+        string Get_Opening_Time()
+        {
+            int dayOfWeek = (int)Date_DateTimePicker.Value.DayOfWeek;
+            if(dayOfWeek == 0)
+            {
+                dayOfWeek = 7;
+            }
+            dayOfWeek--;
+            return Globals.settings.OpenningTimes[dayOfWeek];
+        }
+        string Get_Closing_Time()
+        {
+            int dayOfWeek = (int)Date_DateTimePicker.Value.DayOfWeek;
+            if (dayOfWeek == 0)
+            {
+                dayOfWeek = 7;
+            }
+            dayOfWeek--;
+            return Globals.settings.ClosingTimes[dayOfWeek];
         }
         private void Customer_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -422,6 +442,12 @@ namespace Year_14_CA_SSD
                     MessageBox.Show("TIme is Unavailabile");
                     throw new Exception();
                 }
+                DateTime[][] employeeAvailabilty = Get_Employee_Unavailabilty((int)EmployeeId);
+                if (Time_Is_Unavailable((DateTime)Get_Start_Date(),(DateTime)Get_End_Date(),employeeAvailabilty,false))
+                {
+                    MessageBox.Show("Employee is unavailable");
+                    throw new Exception();
+                }
                 int? CarUnavailabityId = Create_Car_Unavailabilty();
                 if (!CarUnavailabityId.HasValue)
                 {
@@ -501,6 +527,14 @@ namespace Year_14_CA_SSD
                 int oldEmployeeId = Convert.ToInt32(SQL_Operation.ReadColumn(TestDriveId, "TestDriveId", "EmployeeId", "TestDriveTable"));
                 if (oldEmployeeId != Convert.ToInt32(EmployeeId) && Length_ComboBox.Text == "30 Minutes")
                 {
+                    DateTime[][] unavailabiltyForDay = Get_Reduced_Employee_Availabilty(EmployeeId.Value,TestDriveId);
+                    DateTime startTime = (DateTime)Get_Start_Date();
+                    DateTime endTime = (DateTime)Get_End_Date();
+                    if (Time_Is_Unavailable(startTime, endTime, unavailabiltyForDay,false))
+                    {
+                        MessageBox.Show("Employee is unavailable");
+                        return;
+                    }
                     if (!SQL_Operation.UpdateEntryVariable(TestDriveId, "TestDriveId", "EmployeeId", EmployeeId.ToString(), "TestDriveTable"))
                     {
                         throw new Exception();
@@ -521,7 +555,7 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 int carUnavailabiltyId = Convert.ToInt32(idText);
-                DateTime[][] unavailabiltyForDay = Get_Unavailabilty_For_Day();
+                DateTime[][] unavailabiltyForDay = Get_Reduced_Car_Unavailabilty(carUnavailabiltyId);
                 DateTime startTime = (DateTime)Get_Start_Date();
                 DateTime endTime = (DateTime)Get_End_Date();
                 if (Time_Is_Unavailable(startTime,endTime, unavailabiltyForDay))
@@ -548,6 +582,74 @@ namespace Year_14_CA_SSD
             }
             this.Close();
 
+        }
+
+        DateTime[][] Get_Employee_Unavailabilty(int employeeId)
+        {
+            List<DateTime[]> employeeUnavailabilties = new List<DateTime[]>();
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        DateTime[] unavailabilty = new DateTime[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            unavailabilty[i] = Convert.ToDateTime(reader.GetValue(i).ToString().Trim());
+                        }
+                        employeeUnavailabilties.Add(unavailabilty);
+                    }
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occured");
+                }
+            }
+            return employeeUnavailabilties.ToArray();
+        }
+
+        DateTime[][] Get_Reduced_Employee_Availabilty(int employeeId, int testDriveId)
+        {
+            List<DateTime[]> employeeUnavailabilties = new List<DateTime[]>();
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}' AND TestDriveTable.TestDriveId != '{testDriveId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        DateTime[] unavailabilty = new DateTime[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            unavailabilty[i] = Convert.ToDateTime(reader.GetValue(i).ToString().Trim());
+                        }
+                        employeeUnavailabilties.Add(unavailabilty);
+                    }
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occured");
+                }
+            }
+            return employeeUnavailabilties.ToArray();
         }
 
         private void Book_Test_Drive_Button_Click(object sender, EventArgs e)
@@ -630,7 +732,7 @@ namespace Year_14_CA_SSD
                     Start_Time_ComboBox.Items.Add("Pick a length");
                     return;
                 }
-                for (int minutes = Convert_Time_To_Minutes(Globals.openningTime); minutes <= Convert_Time_To_Minutes(Globals.closingTime); minutes += 5)
+                for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
                 {
                     DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
                     if (!Time_Is_Unavailable(time,time.AddHours(hoursOffset), unavailabiltyTimes) && Globals.timeIsInFuture(time))
@@ -709,7 +811,7 @@ namespace Year_14_CA_SSD
                 }
             }
         }
-        bool Time_Is_Unavailable(DateTime startTime,DateTime endTime,DateTime[][] unavailabiltyTimes)
+        bool Time_Is_Unavailable(DateTime startTime,DateTime endTime,DateTime[][] unavailabiltyTimes, bool haveCleaningTime = true)
         {
             try
             {
@@ -717,10 +819,15 @@ namespace Year_14_CA_SSD
                 {
                     throw new Exception();
                 }
+                if(haveCleaningTime)
+                {
+                    endTime += Globals.settings.CleaningTimeBetweeenTestDrives;
+                }
                 for (int i = 0; i < unavailabiltyTimes.Length; i++)
                 {
                     DateTime startUnavail = unavailabiltyTimes[i][0];
                     DateTime endUnavail = unavailabiltyTimes[i][1];
+                    if(haveCleaningTime) { endUnavail += Globals.settings.CleaningTimeBetweeenTestDrives; }
                     if ( (startTime >= startUnavail && startTime <= endUnavail) || (endTime >= startUnavail && endTime <= endUnavail)) //time is during an unavailabilty period
                     {
                         return true;

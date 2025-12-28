@@ -26,6 +26,7 @@ namespace Year_14_CA_SSD
         private void CustomerDataForm_Load(object sender, EventArgs e)
         {
             Setup_Form();
+            Reset_Labels();
         }
         private void ListViewCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -33,7 +34,7 @@ namespace Year_14_CA_SSD
             {
                 string[] customer = customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]];
                 Telephone_Label.Text = customer[5];
-                Email_Label.Text = Globals.splitEmailTwoRows(customer[6], 20);
+                Email_Label.Text = Globals.splitEmailTwoRows(customer[6], 15);
                 Address_Line1_Label.Text = customer[7];
                 Address_Line2_Label.Text = customer[8];
                 Address_Line3_Label.Text = customer[9];
@@ -47,19 +48,23 @@ namespace Year_14_CA_SSD
             }
             else
             {
-                Telephone_Label.Text = "";
-                Email_Label.Text = "";
-                Address_Line1_Label.Text = "";
-                Address_Line2_Label.Text = "";
-                Address_Line3_Label.Text = "";
-                Postcode_Label.Text = "";
-                License_Number_Label.Text = "";
-                Issue_Label.Text = "";
-                Expiry_Label.Text = "";
-                Verified_Label.Text = "";
-                Previous_Label.Text = "";
-                Damaged_Label.Text = "";
+                Reset_Labels();
             }
+        }
+        void Reset_Labels()
+        {
+            Telephone_Label.Text = "";
+            Email_Label.Text = "";
+            Address_Line1_Label.Text = "";
+            Address_Line2_Label.Text = "";
+            Address_Line3_Label.Text = "";
+            Postcode_Label.Text = "";
+            License_Number_Label.Text = "";
+            Issue_Label.Text = "";
+            Expiry_Label.Text = "";
+            Verified_Label.Text = "";
+            Previous_Label.Text = "";
+            Damaged_Label.Text = "";
         }
         private void Search_Button_Click(object sender, EventArgs e)
         {
@@ -96,14 +101,22 @@ namespace Year_14_CA_SSD
                 int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
                 if(Can_Delete(id))
                 {
-                    if (!SQL_Operation.DeleteEntry(id, "CustomerId", "CustomerTable"))
+                    ConfirmationForm deleteConfirm = new ConfirmationForm() { text = "Warning: Deleting is a permanent action \n Only continue if you are certain" };
+                    if (deleteConfirm.ShowDialog() == DialogResult.OK)
                     {
-                        MessageBox.Show("And error occured");
+                        if (!SQL_Operation.DeleteEntry(id, "CustomerId", "CustomerTable"))
+                        {
+                            MessageBox.Show("And error occured");
+                        }
+                        else
+                        {
+                            Refresh_Page();
+                        }
                     }
-                    else
-                    {
-                        Refresh_Page();
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Customer cannot be deleted, please archive instead");
                 }
             }
         }
@@ -319,9 +332,34 @@ namespace Year_14_CA_SSD
                 }
             }
         }
-        bool Can_Delete(int id)
+        bool Can_Delete(int customerId)
         {
-            return true;
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM TestDriveTable WHERE CustomerId = '{ customerId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    string[] testDrive = new string[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        testDrive[i] = reader.GetValue(i).ToString().Trim();
+                    }
+
+                    conn.Close();
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -493,6 +531,11 @@ namespace Year_14_CA_SSD
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

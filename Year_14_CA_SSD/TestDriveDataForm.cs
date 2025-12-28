@@ -28,7 +28,7 @@ namespace Year_14_CA_SSD
         public List<string[]> carUnavailabilities = new List<string[]>();
         public string[] testDriveColumns = { "TestDriveId", "CustomerId", "EmployeeId", "CarUnavailabiltyId", "PaymentId", "TestDriveType", "HasBeenReturned", "ReturnedDamaged", "IsCancelled" };
         public string[] customerColumns = { "CustomerId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "License No", "Issue Date", "Expiry Date", "Verified License", "Previous Customer", "Damaged Vehicle", "Archived" };
-        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Unavailable","Next Time Available" };
+        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Manager Access" };
         public string[] carColumns = { "CarId", "Make", "Model", "Registration", "Year Of Manufacture", "Mileage", "Transmission", "Fuel Type", "Engine Size", "Power", "Colour", "Body Style", "No Of Seats", "Insurance Group", "Previous Owners", "Needs Cleaned", "Needs Inspected", "Price", "Has Been Sold" };
         public string[] carUnavailabiltyColumns = { "CarUnavailabiltyId", "CarId", "StartTime", "EndTime", "Description" };
         public string[] testDriveTypes = { "30 Minutes", "1 Day", "Weekend" };
@@ -55,6 +55,7 @@ namespace Year_14_CA_SSD
         void Setup_Columns()
         {
             Test_Drives_ListView.Items.Clear();
+            Test_Drives_ListView.Font = new Font(Test_Drives_ListView.Font, FontStyle.Bold);
             Test_Drives_ListView.Columns.Add("Customer Name", 170);
             Test_Drives_ListView.Columns.Add("Employee Name", 170);
             Test_Drives_ListView.Columns.Add("Car", 172);
@@ -391,8 +392,21 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(Get_Car_Name(Get_Car_Id(testDrive[3])));
                 row.SubItems.Add(Get_Start_Time(testDrive[3]));
                 row.SubItems.Add(Get_End_Time(testDrive[3]));
+                row.Font = new Font(Test_Drives_ListView.Font, FontStyle.Regular);
+                if(Test_Drive_Is_Cancelled(testDrive))
+                {
+                    row.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    row.ForeColor = Color.Black;
+                }
                 Test_Drives_ListView.Items.Add(row);
             }
+        }
+        bool Test_Drive_Is_Cancelled(string[] testDrive)
+        {
+            return Convert.ToBoolean(testDrive[Get_TestDrive_Column_Index("IsCancelled")]);
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -603,18 +617,18 @@ namespace Year_14_CA_SSD
                 Display_Customer(customerId);
                 Display_Car(carId);
 
-                Returned_Label.Text = "Car Returned: " + Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("HasBeenReturned")]);
-                Damaged_Returned.Text = "Car Damaged: " + Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("ReturnedDamaged")]);
-                Cancelled_Label.Text = "Test Drive Cancelled: " + Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("IsCancelled")]);
+                Returned_Label.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("HasBeenReturned")]);
+                Damaged_Returned.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("ReturnedDamaged")]);
+                Cancelled_Label.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("IsCancelled")]);
 
                 int testDriveTypeId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("TestDriveType")]);
-                Test_Drive_Length_Label.Text = "Test Drive Length: " + Get_Test_Drive_Type_Name(testDriveTypeId);
+                Test_Drive_Length_Label.Text = Get_Test_Drive_Type_Name(testDriveTypeId);
 
                 int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
                 string[] paymentValues = Get_Payment_Values(paymentId);
                 
-                Cost_Label.Text = "Cost: £" +  paymentValues[3];
-                Paid_Label.Text = "Paid: " + Globals.boolToYN(paymentValues[6]);
+                Cost_Label.Text = "£" +  paymentValues[3];
+                Paid_Label.Text = Globals.boolToYN(paymentValues[6]);
 
             }
             else
@@ -631,37 +645,37 @@ namespace Year_14_CA_SSD
         }
         void Reset_Customer_Labels()
         {
-            Cust_DOB_Label.Text = "DOB: ";
-            Cust_Tel_Label.Text = "Tel: ";
-            Cust_Email_Label.Text = "Email: ";
-            Cust_Postcode_Label.Text = "Postcode: ";
+            Cust_DOB_Label.Text = "";
+            Cust_Tel_Label.Text = "";
+            Cust_Email_Label.Text = "";
+            Cust_Postcode_Label.Text = "";
         }
         void Reset_Car_Labels()
         {
-            Reg_Label.Text = "Reg: ";
-            Mileage_Label.Text = "Mileage: ";
-            Transmission_Label.Text = "Transmission: ";
-            Fuel_Type_Label.Text = "Fuel Type: ";
-            Engine_Size_Label.Text = "Engine Size: ";
-            Power_Label.Text = "Power: ";
-            Colour_Label.Text = "Colour: ";
-            Body_Style_Label.Text = "Body Style: ";
+            Reg_Label.Text = "";
+            Mileage_Label.Text = "";
+            Transmission_Label.Text = "";
+            Fuel_Type_Label.Text = "";
+            Engine_Size_Label.Text = "";
+            Power_Label.Text = "";
+            Colour_Label.Text = "";
+            Body_Style_Label.Text = "";
         }
         void Reset_Test_Drive_Labels()
         {
-            Returned_Label.Text = "Car Returned: ";
-            Damaged_Returned.Text = "Car Damaged: ";
-            Cancelled_Label.Text = "Test Drive Cancelled: ";
-            Test_Drive_Length_Label.Text = "Test Drive Length: ";
-            Cost_Label.Text = "Cost: ";
-            Paid_Label.Text = "Paid: ";
+            Returned_Label.Text = "";
+            Damaged_Returned.Text = "";
+            Cancelled_Label.Text = "";
+            Test_Drive_Length_Label.Text = "";
+            Cost_Label.Text = "";
+            Paid_Label.Text = "";
         }
         void Reset_Employee_Labels()
         {
-            Employee_DOB_Label.Text = "DOB: ";
-            Employee_Tel_Label.Text = "Tel: ";
-            Employee_Email_Label.Text = "Email: ";
-            Employee_Username_Label.Text = "Username: ";
+            Employee_DOB_Label.Text = "";
+            Employee_Tel_Label.Text = "";
+            Employee_Email_Label.Text = "";
+            Employee_Username_Label.Text = "";
         }
         void Display_Customer(int customerId)
         {
@@ -670,10 +684,10 @@ namespace Year_14_CA_SSD
                 string[] customer = Get_Customer_Values(customerId);
                 if (customer != null)
                 {
-                    Cust_DOB_Label.Text = "DOB: " + Globals.removeTime(customer[4]);
-                    Cust_Tel_Label.Text = "Tel: " + customer[5];
-                    Cust_Email_Label.Text = "Email: " + customer[6];
-                    Cust_Postcode_Label.Text = "Postcode: " + customer[10];
+                    Cust_DOB_Label.Text = Globals.removeTime(customer[4]);
+                    Cust_Tel_Label.Text = customer[5];
+                    Cust_Email_Label.Text = customer[6];
+                    Cust_Postcode_Label.Text = customer[10];
                 }
                 else
                 {
@@ -682,10 +696,10 @@ namespace Year_14_CA_SSD
             }
             catch
             {
-                Cust_DOB_Label.Text = "DOB: ";
-                Cust_Tel_Label.Text = "Tel: ";
-                Cust_Email_Label.Text = "Email: ";
-                Cust_Postcode_Label.Text = "Postcode: ";
+                Cust_DOB_Label.Text = "";
+                Cust_Tel_Label.Text = "";
+                Cust_Email_Label.Text = "";
+                Cust_Postcode_Label.Text = "";
             }
         }
         void Display_Car(int carId)
@@ -695,14 +709,14 @@ namespace Year_14_CA_SSD
                 string[] car = Get_Car_Values(carId);
                 if (car != null)
                 {
-                    Reg_Label.Text = "Reg: " + car[3];
-                    Mileage_Label.Text = "Mileage: " + Globals.addCommaToNumber(car[5]) + "km";
-                    Transmission_Label.Text = "Transmission: " + car[6];
-                    Fuel_Type_Label.Text = "Fuel Type: " + car[7];
-                    Engine_Size_Label.Text = "Engine Size: " + car[8] + "l";
-                    Power_Label.Text = "Power: " + car[9] + "hp";
-                    Colour_Label.Text = "Colour: " + car[10];
-                    Body_Style_Label.Text = "Body Style: " + car[11];
+                    Reg_Label.Text = car[3];
+                    Mileage_Label.Text = Globals.addCommaToNumber(car[5]) + "km";
+                    Transmission_Label.Text = car[6];
+                    Fuel_Type_Label.Text = car[7];
+                    Engine_Size_Label.Text = car[8] + "l";
+                    Power_Label.Text = car[9] + "hp";
+                    Colour_Label.Text = car[10];
+                    Body_Style_Label.Text = car[11];
                 }
                 else
                 {
@@ -711,14 +725,14 @@ namespace Year_14_CA_SSD
             }
             catch
             {
-                Reg_Label.Text = "Reg: ";
-                Mileage_Label.Text = "Mileage: ";
-                Transmission_Label.Text = "Transmission: ";
-                Fuel_Type_Label.Text = "Fuel Type: ";
-                Engine_Size_Label.Text = "Engine Size: ";
-                Power_Label.Text = "Power: ";
-                Colour_Label.Text = "Colour: ";
-                Body_Style_Label.Text = "Body Style: ";
+                Reg_Label.Text = "";
+                Mileage_Label.Text = "";
+                Transmission_Label.Text = "";
+                Fuel_Type_Label.Text = "";
+                Engine_Size_Label.Text = "";
+                Power_Label.Text = "";
+                Colour_Label.Text = "";
+                Body_Style_Label.Text = "";
             }
         }
         void Display_Employee(int employeeId)
@@ -728,10 +742,10 @@ namespace Year_14_CA_SSD
                 string[] employee = Get_Employee_Values(employeeId);
                 if (employee != null)
                 {
-                    Employee_DOB_Label.Text = "DOB: " + Globals.removeTime(employee[4]);
-                    Employee_Tel_Label.Text = "Tel: " + employee[5];
-                    Employee_Email_Label.Text = "Email: " + employee[6];
-                    Employee_Username_Label.Text = "Username: " + employee[13];
+                    Employee_DOB_Label.Text = Globals.removeTime(employee[4]);
+                    Employee_Tel_Label.Text = employee[5];
+                    Employee_Email_Label.Text = employee[6];
+                    Employee_Username_Label.Text = employee[13];
                 }
                 else
                 {
@@ -740,10 +754,10 @@ namespace Year_14_CA_SSD
             }
             catch
             {
-                Employee_DOB_Label.Text = "DOB: ";
-                Employee_Tel_Label.Text = "Tel: ";
-                Employee_Email_Label.Text = "Email: ";
-                Employee_Username_Label.Text = "Username: ";
+                Employee_DOB_Label.Text = "";
+                Employee_Tel_Label.Text = "";
+                Employee_Email_Label.Text = "";
+                Employee_Username_Label.Text = "";
             }
         }
 
@@ -963,19 +977,93 @@ namespace Year_14_CA_SSD
             if (Test_Drives_ListView.SelectedItems.Count == 1)
             {
                 int testDriveId = Convert.ToInt32(testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]][0]);
-                if (Can_Be_Deleted(testDriveId))
+                if(Test_Drive_Can_Be_Deleted(testDriveId))
                 {
                     if (!SQL_Operation.DeleteEntry(testDriveId, "TestDriveId", "TestDriveTable"))
                     {
                         MessageBox.Show("An error ocurred");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Test Drive cannot be deleted, please cancel instead if applicable");
+                }
             }
         }
-        bool Can_Be_Deleted(int id)
+
+        bool Test_Drive_Can_Be_Deleted(int testDriveId)
         {
-            return true;
+            int nulls = 0;
+            try
+            {
+                string[] testDrive = Get_Test_Drive_Values(testDriveId);
+                using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+                {
+                    try
+                    {
+                        int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
+                        conn.Open();
+                        string query = $"SELECT * FROM PaymentTable WHERE PaymentId = '{paymentId}'";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        reader.Read();
+                        string[] payment = new string[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            testDrive[i] = reader.GetValue(i).ToString().Trim();
+                        }
+
+                        conn.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        nulls++;
+                    }
+                }
+
+                using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+                {
+                    try
+                    {
+                        int carUnavailabiltyId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("CarUnavailabiltyId")]);
+                        conn.Open();
+                        string query = $"SELECT * FROM CarUnavailabiltyTable WHERE CarUnavailabiltyId = '{carUnavailabiltyId}'";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        reader.Read();
+                        string[] payment = new string[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            testDrive[i] = reader.GetValue(i).ToString().Trim();
+                        }
+
+                        conn.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        nulls++;
+                    }
+                }
+
+                if(nulls >= 2)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return true;
+            }
         }
+       
 
         void Show_Cancelled(object sender, EventArgs e)
         {
@@ -1142,6 +1230,16 @@ namespace Year_14_CA_SSD
         }
 
         private void Cost_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Paid_Label_Click(object sender, EventArgs e)
         {
 
         }

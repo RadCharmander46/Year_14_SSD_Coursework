@@ -77,6 +77,7 @@ namespace Year_14_CA_SSD
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Title_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_FirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Middle_Name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).BeginInit();
@@ -229,7 +230,7 @@ namespace Year_14_CA_SSD
             this.Sort_FirstName.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_FirstName.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_FirstName.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_FirstName.Location = new System.Drawing.Point(215, 17);
+            this.Sort_FirstName.Location = new System.Drawing.Point(215, 63);
             this.Sort_FirstName.Name = "Sort_FirstName";
             this.Sort_FirstName.Size = new System.Drawing.Size(20, 20);
             this.Sort_FirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +244,7 @@ namespace Year_14_CA_SSD
             this.Sort_Middle_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Middle_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Middle_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Middle_Name.Location = new System.Drawing.Point(365, 17);
+            this.Sort_Middle_Name.Location = new System.Drawing.Point(365, 63);
             this.Sort_Middle_Name.Name = "Sort_Middle_Name";
             this.Sort_Middle_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Middle_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -257,7 +258,7 @@ namespace Year_14_CA_SSD
             this.Sort_Last_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Last_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Last_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Last_Name.Location = new System.Drawing.Point(516, 17);
+            this.Sort_Last_Name.Location = new System.Drawing.Point(516, 63);
             this.Sort_Last_Name.Name = "Sort_Last_Name";
             this.Sort_Last_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Last_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -271,7 +272,7 @@ namespace Year_14_CA_SSD
             this.Sort_DOB.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_DOB.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_DOB.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_DOB.Location = new System.Drawing.Point(664, 17);
+            this.Sort_DOB.Location = new System.Drawing.Point(664, 63);
             this.Sort_DOB.Name = "Sort_DOB";
             this.Sort_DOB.Size = new System.Drawing.Size(20, 20);
             this.Sort_DOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,7 +286,7 @@ namespace Year_14_CA_SSD
             this.Sort_Phone_Number.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Phone_Number.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Phone_Number.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Phone_Number.Location = new System.Drawing.Point(845, 17);
+            this.Sort_Phone_Number.Location = new System.Drawing.Point(845, 63);
             this.Sort_Phone_Number.Name = "Sort_Phone_Number";
             this.Sort_Phone_Number.Size = new System.Drawing.Size(20, 20);
             this.Sort_Phone_Number.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -297,9 +298,9 @@ namespace Year_14_CA_SSD
             // Refresh_Button
             // 
             this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(13, 12);
+            this.Refresh_Button.Location = new System.Drawing.Point(13, 60);
             this.Refresh_Button.Name = "Refresh_Button";
-            this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
+            this.Refresh_Button.Size = new System.Drawing.Size(64, 64);
             this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh_Button.TabIndex = 9;
             this.Refresh_Button.TabStop = false;
@@ -309,7 +310,7 @@ namespace Year_14_CA_SSD
             // Show_Archive_Button
             // 
             this.Show_Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive_not_visible;
-            this.Show_Archive_Button.Location = new System.Drawing.Point(13, 346);
+            this.Show_Archive_Button.Location = new System.Drawing.Point(13, 366);
             this.Show_Archive_Button.Name = "Show_Archive_Button";
             this.Show_Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Show_Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +322,7 @@ namespace Year_14_CA_SSD
             // Add_Customer_Button
             // 
             this.Add_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Customer_Button.Location = new System.Drawing.Point(13, 95);
+            this.Add_Customer_Button.Location = new System.Drawing.Point(13, 138);
             this.Add_Customer_Button.Name = "Add_Customer_Button";
             this.Add_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Add_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +334,7 @@ namespace Year_14_CA_SSD
             // Edit_Customer_Button
             // 
             this.Edit_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Customer_Button.Location = new System.Drawing.Point(13, 179);
+            this.Edit_Customer_Button.Location = new System.Drawing.Point(13, 214);
             this.Edit_Customer_Button.Name = "Edit_Customer_Button";
             this.Edit_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Edit_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -345,7 +346,7 @@ namespace Year_14_CA_SSD
             // Archive_Button
             // 
             this.Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive;
-            this.Archive_Button.Location = new System.Drawing.Point(13, 263);
+            this.Archive_Button.Location = new System.Drawing.Point(13, 290);
             this.Archive_Button.Name = "Archive_Button";
             this.Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -357,7 +358,7 @@ namespace Year_14_CA_SSD
             // Remove_Customer_Button
             // 
             this.Remove_Customer_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Remove_Customer_Button.Location = new System.Drawing.Point(13, 429);
+            this.Remove_Customer_Button.Location = new System.Drawing.Point(13, 442);
             this.Remove_Customer_Button.Name = "Remove_Customer_Button";
             this.Remove_Customer_Button.Size = new System.Drawing.Size(64, 64);
             this.Remove_Customer_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -369,7 +370,7 @@ namespace Year_14_CA_SSD
             // Search_Button
             // 
             this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(12, 518);
+            this.Search_Button.Location = new System.Drawing.Point(13, 518);
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(64, 64);
             this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -475,10 +476,10 @@ namespace Year_14_CA_SSD
             this.ListViewCustomers.ForeColor = System.Drawing.Color.DarkRed;
             this.ListViewCustomers.FullRowSelect = true;
             this.ListViewCustomers.HideSelection = false;
-            this.ListViewCustomers.Location = new System.Drawing.Point(87, 12);
+            this.ListViewCustomers.Location = new System.Drawing.Point(87, 59);
             this.ListViewCustomers.Name = "ListViewCustomers";
             this.ListViewCustomers.Scrollable = false;
-            this.ListViewCustomers.Size = new System.Drawing.Size(784, 499);
+            this.ListViewCustomers.Size = new System.Drawing.Size(784, 452);
             this.ListViewCustomers.TabIndex = 1;
             this.ListViewCustomers.UseCompatibleStateImageBehavior = false;
             this.ListViewCustomers.View = System.Windows.Forms.View.Details;
@@ -491,9 +492,9 @@ namespace Year_14_CA_SSD
             this.groupBox1.Controls.Add(this.Address_Line2_Label);
             this.groupBox1.Controls.Add(this.Postcode_Label);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(877, 157);
+            this.groupBox1.Location = new System.Drawing.Point(877, 187);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 162);
+            this.groupBox1.Size = new System.Drawing.Size(299, 146);
             this.groupBox1.TabIndex = 86;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Address";
@@ -505,12 +506,13 @@ namespace Year_14_CA_SSD
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(877, 12);
+            this.groupBox2.Location = new System.Drawing.Point(877, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(299, 134);
+            this.groupBox2.Size = new System.Drawing.Size(299, 131);
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contact Details";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label2
             // 
@@ -544,7 +546,7 @@ namespace Year_14_CA_SSD
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(877, 325);
+            this.groupBox3.Location = new System.Drawing.Point(877, 339);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(299, 151);
             this.groupBox3.TabIndex = 87;
@@ -598,9 +600,9 @@ namespace Year_14_CA_SSD
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.Damaged_Label);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(877, 482);
+            this.groupBox4.Location = new System.Drawing.Point(877, 496);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 102);
+            this.groupBox4.Size = new System.Drawing.Size(299, 88);
             this.groupBox4.TabIndex = 88;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "History";
@@ -628,17 +630,28 @@ namespace Year_14_CA_SSD
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 573);
+            this.pictureBox1.Size = new System.Drawing.Size(68, 525);
             this.pictureBox1.TabIndex = 89;
             this.pictureBox1.TabStop = false;
+            // 
+            // Title_Label
+            // 
+            this.Title_Label.AutoSize = true;
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Location = new System.Drawing.Point(12, 9);
+            this.Title_Label.Name = "Title_Label";
+            this.Title_Label.Size = new System.Drawing.Size(331, 47);
+            this.Title_Label.TabIndex = 90;
+            this.Title_Label.Text = "Customer Database";
             // 
             // CustomerDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -748,5 +761,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Title_Label;
     }
 }

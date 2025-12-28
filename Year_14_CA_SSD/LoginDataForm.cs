@@ -56,5 +56,34 @@ namespace Year_14_CA_SSD
             }
             this.Close();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reset_Password_Button_Click(object sender, EventArgs e)
+        {
+            if(New_Password_TextBox.Text != Retype_Password_TextBox.Text)
+            {
+                MessageBox.Show("Passwords must match");
+                return;
+            }
+            if(!Password_Is_Secure(New_Password_TextBox.Text))
+            {
+                MessageBox.Show("Password doesn't meet the requirements");
+                return;
+            }
+            if(!SQL_Operation.UpdateEntryVariable(Globals.loginId.Value, "EmployeeId", "Password", New_Password_TextBox.Text, "EmployeeTable"))
+            {
+                MessageBox.Show("An error occured ");
+                return;
+            }
+
+        }
+        bool Password_Is_Secure(string password)
+        {
+            return true;
+        }
     }
 }

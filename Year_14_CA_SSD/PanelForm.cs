@@ -127,6 +127,7 @@ namespace Year_14_CA_SSD
             Home_Object.Dock = DockStyle.Fill;
             Screen_Panel.Controls.Add(Home_Object);
             Home_Object.SignIn += new EventHandler(Login_Button_Click);
+            Home_Object.ReturnCar += new EventHandler(Load_ReturnCarForm);
             Home_Object.Show();
         }
         void Load_ReturnCarForm(object sender, EventArgs e)
@@ -188,17 +189,37 @@ namespace Year_14_CA_SSD
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)
         {
+            Clear_To_HomeScreen();
+            Reset_Highlights();
+            Adding_Cars_Button.BackColor = SystemColors.ActiveBorder;
+            Sidebar_FlowPanel.Controls.Clear();
             MessageBox.Show("Not part of program");
         }
 
         private void Selling_Cars_Button_Click(object sender, EventArgs e)
         {
+            Clear_To_HomeScreen();
+            Reset_Highlights();
+            Selling_Cars_Button.BackColor = SystemColors.ActiveBorder;
+            Sidebar_FlowPanel.Controls.Clear();
             MessageBox.Show("Not part of program");
+        }
+
+        void Reset_Highlights()
+        {
+            Moving_Cars_Button.BackColor = SystemColors.ControlLight;
+            Adding_Cars_Button.BackColor = SystemColors.ControlLight;
+            Selling_Cars_Button.BackColor = SystemColors.ControlLight;
+            Staff_Button.BackColor = SystemColors.ControlLight;
+            Customers_Button.BackColor = SystemColors.ControlLight;
+            Payment_Button.BackColor = SystemColors.ControlLight;
         }
 
         private void Moving_Cars_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
+            Reset_Highlights();
+            Moving_Cars_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Test_Drive_Button);
             Sidebar_FlowPanel.Controls.Add(Car_Servicing_Button);
@@ -210,6 +231,8 @@ namespace Year_14_CA_SSD
         private void Staff_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
+            Reset_Highlights();
+            Staff_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Reports_Button);
             Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
@@ -218,6 +241,8 @@ namespace Year_14_CA_SSD
         private void Customers_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
+            Reset_Highlights();
+            Customers_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Customer_Database_Button);
         }
@@ -263,7 +288,10 @@ namespace Year_14_CA_SSD
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
+            Clear_To_HomeScreen();
             Wipe_Panel();
+            Reset_Highlights();
+            Sidebar_FlowPanel.Controls.Clear();
             if (!Globals.signedIn)
             {
                 Load_LoginForm(this, EventArgs.Empty);
@@ -307,6 +335,8 @@ namespace Year_14_CA_SSD
         private void Payment_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
+            Reset_Highlights();
+            Payment_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Sidebar_FlowPanel.Controls.Add(Payment_Database_Button);
         }

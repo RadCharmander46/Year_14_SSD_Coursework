@@ -48,7 +48,6 @@ namespace Year_14_CA_SSD
             this.Address_Line3_Label = new System.Windows.Forms.Label();
             this.Address_Line2_Label = new System.Windows.Forms.Label();
             this.Address_Line1_Label = new System.Windows.Forms.Label();
-            this.Address_PictureBox = new System.Windows.Forms.PictureBox();
             this.Employee_ListView = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -75,6 +74,7 @@ namespace Year_14_CA_SSD
             this.Show_Archive_Button = new System.Windows.Forms.PictureBox();
             this.Refresh_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Title_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Phone_Number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_DOB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sort_Last_Name)).BeginInit();
@@ -86,7 +86,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,7 +104,7 @@ namespace Year_14_CA_SSD
             this.Sort_Phone_Number.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Phone_Number.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Phone_Number.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Phone_Number.Location = new System.Drawing.Point(844, 16);
+            this.Sort_Phone_Number.Location = new System.Drawing.Point(844, 63);
             this.Sort_Phone_Number.Name = "Sort_Phone_Number";
             this.Sort_Phone_Number.Size = new System.Drawing.Size(20, 20);
             this.Sort_Phone_Number.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +117,7 @@ namespace Year_14_CA_SSD
             this.Sort_DOB.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_DOB.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_DOB.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_DOB.Location = new System.Drawing.Point(663, 16);
+            this.Sort_DOB.Location = new System.Drawing.Point(663, 63);
             this.Sort_DOB.Name = "Sort_DOB";
             this.Sort_DOB.Size = new System.Drawing.Size(20, 20);
             this.Sort_DOB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +130,7 @@ namespace Year_14_CA_SSD
             this.Sort_Last_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Last_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Last_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Last_Name.Location = new System.Drawing.Point(515, 16);
+            this.Sort_Last_Name.Location = new System.Drawing.Point(515, 63);
             this.Sort_Last_Name.Name = "Sort_Last_Name";
             this.Sort_Last_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Last_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,7 +143,7 @@ namespace Year_14_CA_SSD
             this.Sort_Middle_Name.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_Middle_Name.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_Middle_Name.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Middle_Name.Location = new System.Drawing.Point(364, 16);
+            this.Sort_Middle_Name.Location = new System.Drawing.Point(364, 63);
             this.Sort_Middle_Name.Name = "Sort_Middle_Name";
             this.Sort_Middle_Name.Size = new System.Drawing.Size(20, 20);
             this.Sort_Middle_Name.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +156,7 @@ namespace Year_14_CA_SSD
             this.Sort_FirstName.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
             this.Sort_FirstName.BackColor = System.Drawing.SystemColors.Window;
             this.Sort_FirstName.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_FirstName.Location = new System.Drawing.Point(214, 16);
+            this.Sort_FirstName.Location = new System.Drawing.Point(214, 63);
             this.Sort_FirstName.Name = "Sort_FirstName";
             this.Sort_FirstName.Size = new System.Drawing.Size(20, 20);
             this.Sort_FirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,24 +309,15 @@ namespace Year_14_CA_SSD
             this.Address_Line1_Label.TabIndex = 69;
             this.Address_Line1_Label.Text = "17 Church Street";
             // 
-            // Address_PictureBox
-            // 
-            this.Address_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Address_PictureBox.Location = new System.Drawing.Point(878, 157);
-            this.Address_PictureBox.Name = "Address_PictureBox";
-            this.Address_PictureBox.Size = new System.Drawing.Size(297, 162);
-            this.Address_PictureBox.TabIndex = 81;
-            this.Address_PictureBox.TabStop = false;
-            // 
             // Employee_ListView
             // 
             this.Employee_ListView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employee_ListView.FullRowSelect = true;
             this.Employee_ListView.HideSelection = false;
-            this.Employee_ListView.Location = new System.Drawing.Point(86, 11);
+            this.Employee_ListView.Location = new System.Drawing.Point(86, 59);
             this.Employee_ListView.Name = "Employee_ListView";
             this.Employee_ListView.Scrollable = false;
-            this.Employee_ListView.Size = new System.Drawing.Size(784, 499);
+            this.Employee_ListView.Size = new System.Drawing.Size(784, 451);
             this.Employee_ListView.TabIndex = 47;
             this.Employee_ListView.UseCompatibleStateImageBehavior = false;
             this.Employee_ListView.View = System.Windows.Forms.View.Details;
@@ -340,9 +330,9 @@ namespace Year_14_CA_SSD
             this.groupBox1.Controls.Add(this.Address_Line1_Label);
             this.groupBox1.Controls.Add(this.Postcode_Label);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(878, 157);
+            this.groupBox1.Location = new System.Drawing.Point(878, 188);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(299, 162);
+            this.groupBox1.Size = new System.Drawing.Size(299, 146);
             this.groupBox1.TabIndex = 85;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Address";
@@ -354,9 +344,9 @@ namespace Year_14_CA_SSD
             this.groupBox2.Controls.Add(this.Telephone_Label);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(878, 11);
+            this.groupBox2.Location = new System.Drawing.Point(878, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(299, 145);
+            this.groupBox2.Size = new System.Drawing.Size(299, 122);
             this.groupBox2.TabIndex = 86;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contact Information";
@@ -398,9 +388,9 @@ namespace Year_14_CA_SSD
             this.groupBox3.Controls.Add(this.Next_Available_Label);
             this.groupBox3.Controls.Add(this.Archived_Label);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(878, 325);
+            this.groupBox3.Location = new System.Drawing.Point(878, 340);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(299, 259);
+            this.groupBox3.Size = new System.Drawing.Size(299, 244);
             this.groupBox3.TabIndex = 86;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Employee";
@@ -534,22 +524,24 @@ namespace Year_14_CA_SSD
             // Delete_Button
             // 
             this.Delete_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Delete_Button.Location = new System.Drawing.Point(12, 438);
+            this.Delete_Button.Location = new System.Drawing.Point(12, 442);
             this.Delete_Button.Name = "Delete_Button";
             this.Delete_Button.Size = new System.Drawing.Size(64, 64);
             this.Delete_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Delete_Button.TabIndex = 63;
             this.Delete_Button.TabStop = false;
+            this.Delete_Button.Click += new System.EventHandler(this.Delete_Button_Click);
             // 
             // Edit_Button
             // 
             this.Edit_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Button.Location = new System.Drawing.Point(12, 183);
+            this.Edit_Button.Location = new System.Drawing.Point(12, 214);
             this.Edit_Button.Name = "Edit_Button";
             this.Edit_Button.Size = new System.Drawing.Size(64, 64);
             this.Edit_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Edit_Button.TabIndex = 64;
             this.Edit_Button.TabStop = false;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
             // Search_Button
             // 
@@ -560,61 +552,77 @@ namespace Year_14_CA_SSD
             this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Search_Button.TabIndex = 66;
             this.Search_Button.TabStop = false;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // Add_Button
             // 
             this.Add_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Button.Location = new System.Drawing.Point(12, 99);
+            this.Add_Button.Location = new System.Drawing.Point(12, 137);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(64, 64);
             this.Add_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Add_Button.TabIndex = 62;
             this.Add_Button.TabStop = false;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // Archive_Button
             // 
             this.Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive;
-            this.Archive_Button.Location = new System.Drawing.Point(12, 270);
+            this.Archive_Button.Location = new System.Drawing.Point(12, 289);
             this.Archive_Button.Name = "Archive_Button";
             this.Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Archive_Button.TabIndex = 67;
             this.Archive_Button.TabStop = false;
+            this.Archive_Button.Click += new System.EventHandler(this.Archive_Button_Click);
             // 
             // Show_Archive_Button
             // 
             this.Show_Archive_Button.Image = global::Year_14_CA_SSD.Properties.Resources.archive_not_visible;
-            this.Show_Archive_Button.Location = new System.Drawing.Point(12, 356);
+            this.Show_Archive_Button.Location = new System.Drawing.Point(12, 366);
             this.Show_Archive_Button.Name = "Show_Archive_Button";
             this.Show_Archive_Button.Size = new System.Drawing.Size(64, 64);
             this.Show_Archive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Show_Archive_Button.TabIndex = 68;
             this.Show_Archive_Button.TabStop = false;
+            this.Show_Archive_Button.Click += new System.EventHandler(this.Show_Archive);
             // 
             // Refresh_Button
             // 
             this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(12, 14);
+            this.Refresh_Button.Location = new System.Drawing.Point(12, 61);
             this.Refresh_Button.Name = "Refresh_Button";
-            this.Refresh_Button.Size = new System.Drawing.Size(63, 64);
+            this.Refresh_Button.Size = new System.Drawing.Size(64, 64);
             this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Refresh_Button.TabIndex = 65;
             this.Refresh_Button.TabStop = false;
+            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 573);
+            this.pictureBox1.Size = new System.Drawing.Size(68, 525);
             this.pictureBox1.TabIndex = 87;
             this.pictureBox1.TabStop = false;
+            // 
+            // Title_Label
+            // 
+            this.Title_Label.AutoSize = true;
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Location = new System.Drawing.Point(12, 9);
+            this.Title_Label.Name = "Title_Label";
+            this.Title_Label.Size = new System.Drawing.Size(333, 47);
+            this.Title_Label.TabIndex = 92;
+            this.Title_Label.Text = "Employee Database";
             // 
             // EmployeeDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.Refresh_Button);
             this.Controls.Add(this.Show_Archive_Button);
             this.Controls.Add(this.groupBox3);
@@ -624,7 +632,6 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Edit_Button);
-            this.Controls.Add(this.Address_PictureBox);
             this.Controls.Add(this.Delete_Button);
             this.Controls.Add(this.Sort_Phone_Number);
             this.Controls.Add(this.Sort_DOB);
@@ -655,7 +662,6 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Address_PictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -696,7 +702,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Address_Line3_Label;
         private System.Windows.Forms.Label Address_Line2_Label;
         private System.Windows.Forms.Label Address_Line1_Label;
-        private System.Windows.Forms.PictureBox Address_PictureBox;
         private System.Windows.Forms.ListView Employee_ListView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -723,5 +728,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Title_Label;
     }
 }

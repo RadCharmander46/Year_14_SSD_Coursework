@@ -55,6 +55,7 @@ namespace Year_14_CA_SSD
             if (nextMonth > 12)
             {
                 nextMonth = 1;
+                year++;
             }
 
             DateTime[][] carUnavailabiltyTimes = Get_Car_Unavailabilty_Times();

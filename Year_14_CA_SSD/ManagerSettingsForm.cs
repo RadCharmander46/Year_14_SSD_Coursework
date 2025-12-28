@@ -46,6 +46,7 @@ namespace Year_14_CA_SSD
             Globals.settings.Set_Closing_Time(6, Sunday_Closing_TimePicker.Text);
 
             Globals.settings.TestDriveCancelNotice = new TimeSpan((int)Cancel_Days_NumericUpDown.Value,0,0,0);
+            Globals.settings.CleaningTimeBetweeenTestDrives = new TimeSpan((int)Cleaning_Time_NumericUpDown.Value, 0, 0);
             Globals.settings.MinTestDriveAge = (int)Min_Age_NumericUpDown.Value;
 
             Globals.settings.Set_Test_Drive_Cost(0, Half_Hour_Cost_NumericUpDown.Value);
@@ -77,6 +78,11 @@ namespace Year_14_CA_SSD
         }
 
         private void Tuesday_TimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManagerSettingsForm_Load(object sender, EventArgs e)
         {
 
         }

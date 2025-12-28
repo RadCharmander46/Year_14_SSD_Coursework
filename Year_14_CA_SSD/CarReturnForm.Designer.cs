@@ -51,8 +51,6 @@ namespace Year_14_CA_SSD
             this.Employee_Tel_Label = new System.Windows.Forms.Label();
             this.Date_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.Start_Time_ComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Length_ComboBox = new System.Windows.Forms.ComboBox();
             this.TestDrive_GroupBox = new System.Windows.Forms.GroupBox();
@@ -92,10 +90,10 @@ namespace Year_14_CA_SSD
             // Title_Label
             // 
             this.Title_Label.AutoSize = true;
-            this.Title_Label.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Label.Location = new System.Drawing.Point(12, 9);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(194, 47);
+            this.Title_Label.Size = new System.Drawing.Size(199, 47);
             this.Title_Label.TabIndex = 1;
             this.Title_Label.Text = "Car Return ";
             // 
@@ -323,92 +321,11 @@ namespace Year_14_CA_SSD
             this.label2.Text = "Start Date";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Start_Time_ComboBox
-            // 
-            this.Start_Time_ComboBox.BackColor = System.Drawing.SystemColors.Window;
-            this.Start_Time_ComboBox.DropDownHeight = 85;
-            this.Start_Time_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Start_Time_ComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Start_Time_ComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start_Time_ComboBox.FormattingEnabled = true;
-            this.Start_Time_ComboBox.IntegralHeight = false;
-            this.Start_Time_ComboBox.Items.AddRange(new object[] {
-            "07:00",
-            "07:15",
-            "07:30",
-            "07:45",
-            "08:00",
-            "08:15",
-            "08:30",
-            "08:45",
-            "09:00",
-            "09:15",
-            "09:30",
-            "09:45",
-            "10:00",
-            "10:15",
-            "10:30",
-            "10:45",
-            "11:00",
-            "11:15",
-            "11:30",
-            "11:45",
-            "12:00",
-            "12:15",
-            "12:30",
-            "12:45",
-            "13:00",
-            "13:15",
-            "13:30",
-            "13:45",
-            "14:00",
-            "14:15",
-            "14:30",
-            "14:45",
-            "15:00",
-            "15:15",
-            "15:30",
-            "15:45",
-            "16:00",
-            "16:15",
-            "16:30",
-            "16:45",
-            "17:00",
-            "17:15",
-            "17:30",
-            "17:45",
-            "18:00",
-            "18:15",
-            "18:30",
-            "18:45",
-            "19:00",
-            "19:15",
-            "19:30",
-            "19:45",
-            "20:00"});
-            this.Start_Time_ComboBox.Location = new System.Drawing.Point(125, 67);
-            this.Start_Time_ComboBox.Name = "Start_Time_ComboBox";
-            this.Start_Time_ComboBox.Size = new System.Drawing.Size(130, 29);
-            this.Start_Time_ComboBox.Sorted = true;
-            this.Start_Time_ComboBox.TabIndex = 8;
-            this.Start_Time_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Start_Time_ComboBox_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Start Time ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 104);
+            this.label4.Location = new System.Drawing.Point(18, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 25);
             this.label4.TabIndex = 10;
@@ -425,7 +342,7 @@ namespace Year_14_CA_SSD
             "30 Minutes",
             "1 Day",
             "Weekend"});
-            this.Length_ComboBox.Location = new System.Drawing.Point(125, 104);
+            this.Length_ComboBox.Location = new System.Drawing.Point(125, 64);
             this.Length_ComboBox.Name = "Length_ComboBox";
             this.Length_ComboBox.Size = new System.Drawing.Size(130, 29);
             this.Length_ComboBox.TabIndex = 11;
@@ -434,14 +351,12 @@ namespace Year_14_CA_SSD
             // 
             this.TestDrive_GroupBox.Controls.Add(this.Length_ComboBox);
             this.TestDrive_GroupBox.Controls.Add(this.label4);
-            this.TestDrive_GroupBox.Controls.Add(this.label3);
             this.TestDrive_GroupBox.Controls.Add(this.label2);
             this.TestDrive_GroupBox.Controls.Add(this.Date_DateTimePicker);
-            this.TestDrive_GroupBox.Controls.Add(this.Start_Time_ComboBox);
             this.TestDrive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestDrive_GroupBox.Location = new System.Drawing.Point(288, 56);
             this.TestDrive_GroupBox.Name = "TestDrive_GroupBox";
-            this.TestDrive_GroupBox.Size = new System.Drawing.Size(301, 159);
+            this.TestDrive_GroupBox.Size = new System.Drawing.Size(301, 104);
             this.TestDrive_GroupBox.TabIndex = 14;
             this.TestDrive_GroupBox.TabStop = false;
             this.TestDrive_GroupBox.Text = "Time";
@@ -449,7 +364,7 @@ namespace Year_14_CA_SSD
             // Find_Test_Drive_Button
             // 
             this.Find_Test_Drive_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Find_Test_Drive_Button.Location = new System.Drawing.Point(288, 226);
+            this.Find_Test_Drive_Button.Location = new System.Drawing.Point(288, 161);
             this.Find_Test_Drive_Button.Name = "Find_Test_Drive_Button";
             this.Find_Test_Drive_Button.Size = new System.Drawing.Size(301, 63);
             this.Find_Test_Drive_Button.TabIndex = 15;
@@ -786,8 +701,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Employee_Tel_Label;
         private System.Windows.Forms.DateTimePicker Date_DateTimePicker;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox Start_Time_ComboBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox Length_ComboBox;
         private System.Windows.Forms.GroupBox TestDrive_GroupBox;

@@ -19,6 +19,7 @@ namespace Year_14_CA_SSD
         public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Unavailable","Next Time Available" };
         public bool showArchived;
         public string lastSort;
+        public DateTime nextAvailable;
         public EmployeeDataForm()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Year_14_CA_SSD
         private void EmployeeDataForm_Load(object sender, EventArgs e)
         {
             Setup_Form();
+            Reset_Labels();
         }
 
         void Setup_Form()
@@ -56,8 +58,20 @@ namespace Year_14_CA_SSD
                 row.SubItems.Add(Globals.removeTime(employee[4]));
                 row.SubItems.Add(employee[5]);
                 row.Font = new Font(Employee_ListView.Font, FontStyle.Regular);
+                if(Employee_Is_Archived(employee))
+                {
+                    row.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    row.ForeColor = Color.Black;
+                }
                 Employee_ListView.Items.Add(row);
             }
+        }
+        bool Employee_Is_Archived(string[] employee)
+        {
+            return Convert.ToBoolean(employee[Get_Employee_Column_Index("Archived")]);
         }
         void Display_Employees()
         {
@@ -228,6 +242,55 @@ namespace Year_14_CA_SSD
                 lastSort = "Inverse Phone Number";
             }
         }
+        bool Employee_Is_Available(int employeeId)
+        {
+            DateTime[][] unavailabiltyTimes = Get_Employee_Unavailabilty(employeeId);
+            for (int i = 0; i < unavailabiltyTimes.Length; i++)
+            {
+                DateTime startUnavail = unavailabiltyTimes[i][0];
+                DateTime endUnavail = unavailabiltyTimes[i][1];
+                if (startUnavail <= DateTime.Now && DateTime.Now <= endUnavail)
+                {
+                    nextAvailable = endUnavail;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        DateTime[][] Get_Employee_Unavailabilty(int employeeId)
+        {
+            List<DateTime[]> employeeUnavailabilties = new List<DateTime[]>();
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        DateTime[] unavailabilty = new DateTime[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            unavailabilty[i] = Convert.ToDateTime(reader.GetValue(i).ToString().Trim());
+                        }
+                        employeeUnavailabilties.Add(unavailabilty);
+                    }
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occured");
+                }
+            }
+            return employeeUnavailabilties.ToArray();
+        }
 
         private void Employee_ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -243,17 +306,22 @@ namespace Year_14_CA_SSD
                 Username_Label.Text = employee[13];
                 Department_Label.Text = employee[11];
                 Role_Label.Text = employee[12];
-                Archived_Label.Text = Globals.boolToYN(employee[15]);
-                bool available = !Convert.ToBoolean(employee[16]);
+
+                bool archived = Convert.ToBoolean(employee[15]);
+                Archived_Label.Text = Globals.boolToYN(archived);
+
+                bool available = Employee_Is_Available(Convert.ToInt32(employee[0]));
+                if(archived) { available = false; }
+
                 Available_Label.Text = Globals.boolToYN(available); //stored as unavailable check in database
                 if(available)
                 {
                     Next_Available_Label.Text = "Now";
                     return;
                 }
-                if (employee[17] != "")
+                if (nextAvailable != null)
                 {
-                    Next_Available_Label.Text = Globals.removeSeconds(employee[17]);
+                    Next_Available_Label.Text = Globals.removeSeconds(nextAvailable.ToString());
                 }
                 else
                 {
@@ -324,20 +392,52 @@ namespace Year_14_CA_SSD
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
                 if (Employee_Can_Be_Deleted(id))
                 {
-                    if (!SQL_Operation.DeleteEntry(id, "EmployeeId", "EmployeeTable"))
+                    ConfirmationForm deleteConfirm = new ConfirmationForm() { text = "Warning: Deleting is a permanent action \n Only continue if you are certain" };
+                    if (deleteConfirm.ShowDialog() == DialogResult.OK)
                     {
-                        MessageBox.Show("And error occured");                                                                                                                                                   
+                        if (!SQL_Operation.DeleteEntry(id, "EmployeeId", "EmployeeTable"))
+                        {
+                            MessageBox.Show("And error occured");
+                        }
+                        else
+                        {
+                            Refresh_Page();
+                        }
                     }
-                    else
-                    {
-                        Refresh_Page();
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Employee cannot be deleted, please archive instead");
                 }
             }
         }
-        bool Employee_Can_Be_Deleted(int id)
+        bool Employee_Can_Be_Deleted(int employeeId)
         {
-            return true;
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM TestDriveTable WHERE EmployeeId = '{employeeId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    string[] testDrive = new string[reader.FieldCount]; 
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        testDrive[i] = reader.GetValue(i).ToString().Trim();
+                    }
+
+                    conn.Close();
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }
         }
 
         private void Archive_Button_Click(object sender, EventArgs e)

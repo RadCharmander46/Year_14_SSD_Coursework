@@ -79,6 +79,9 @@ namespace Year_14_CA_SSD
             this.Saturday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
             this.Sunday_Closing_TimePicker = new System.Windows.Forms.DateTimePicker();
             this.Sunday_Opening_TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Hours_Unit_Label = new System.Windows.Forms.Label();
+            this.Cleaning_Time_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Cleaning_TIme_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Day_Cost_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Cost_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Cost_NumericUpDown)).BeginInit();
@@ -89,6 +92,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Day_Mileage_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cleaning_Time_NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Back_Button
@@ -155,7 +159,7 @@ namespace Year_14_CA_SSD
             // 
             this.Monday_Label.AutoSize = true;
             this.Monday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Monday_Label.Location = new System.Drawing.Point(59, 176);
+            this.Monday_Label.Location = new System.Drawing.Point(59, 137);
             this.Monday_Label.Name = "Monday_Label";
             this.Monday_Label.Size = new System.Drawing.Size(67, 21);
             this.Monday_Label.TabIndex = 28;
@@ -165,7 +169,7 @@ namespace Year_14_CA_SSD
             // 
             this.Tuesday_Label.AutoSize = true;
             this.Tuesday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tuesday_Label.Location = new System.Drawing.Point(141, 176);
+            this.Tuesday_Label.Location = new System.Drawing.Point(141, 137);
             this.Tuesday_Label.Name = "Tuesday_Label";
             this.Tuesday_Label.Size = new System.Drawing.Size(67, 21);
             this.Tuesday_Label.TabIndex = 29;
@@ -175,7 +179,7 @@ namespace Year_14_CA_SSD
             // 
             this.Wednesday_Label.AutoSize = true;
             this.Wednesday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Wednesday_Label.Location = new System.Drawing.Point(222, 176);
+            this.Wednesday_Label.Location = new System.Drawing.Point(222, 137);
             this.Wednesday_Label.Name = "Wednesday_Label";
             this.Wednesday_Label.Size = new System.Drawing.Size(90, 21);
             this.Wednesday_Label.TabIndex = 30;
@@ -185,7 +189,7 @@ namespace Year_14_CA_SSD
             // 
             this.Thursday_Label.AutoSize = true;
             this.Thursday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Thursday_Label.Location = new System.Drawing.Point(318, 176);
+            this.Thursday_Label.Location = new System.Drawing.Point(318, 137);
             this.Thursday_Label.Name = "Thursday_Label";
             this.Thursday_Label.Size = new System.Drawing.Size(74, 21);
             this.Thursday_Label.TabIndex = 31;
@@ -195,7 +199,7 @@ namespace Year_14_CA_SSD
             // 
             this.Friday_Label.AutoSize = true;
             this.Friday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Friday_Label.Location = new System.Drawing.Point(425, 176);
+            this.Friday_Label.Location = new System.Drawing.Point(425, 137);
             this.Friday_Label.Name = "Friday_Label";
             this.Friday_Label.Size = new System.Drawing.Size(53, 21);
             this.Friday_Label.TabIndex = 32;
@@ -205,7 +209,7 @@ namespace Year_14_CA_SSD
             // 
             this.Saturday_Label.AutoSize = true;
             this.Saturday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Saturday_Label.Location = new System.Drawing.Point(514, 176);
+            this.Saturday_Label.Location = new System.Drawing.Point(514, 137);
             this.Saturday_Label.Name = "Saturday_Label";
             this.Saturday_Label.Size = new System.Drawing.Size(72, 21);
             this.Saturday_Label.TabIndex = 33;
@@ -215,7 +219,7 @@ namespace Year_14_CA_SSD
             // 
             this.Sunday_Label.AutoSize = true;
             this.Sunday_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sunday_Label.Location = new System.Drawing.Point(601, 176);
+            this.Sunday_Label.Location = new System.Drawing.Point(601, 137);
             this.Sunday_Label.Name = "Sunday_Label";
             this.Sunday_Label.Size = new System.Drawing.Size(62, 21);
             this.Sunday_Label.TabIndex = 34;
@@ -226,7 +230,7 @@ namespace Year_14_CA_SSD
             // 
             this.Test_Drive_Cancel_Label.AutoSize = true;
             this.Test_Drive_Cancel_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Test_Drive_Cancel_Label.Location = new System.Drawing.Point(41, 284);
+            this.Test_Drive_Cancel_Label.Location = new System.Drawing.Point(41, 245);
             this.Test_Drive_Cancel_Label.Name = "Test_Drive_Cancel_Label";
             this.Test_Drive_Cancel_Label.Size = new System.Drawing.Size(218, 21);
             this.Test_Drive_Cancel_Label.TabIndex = 42;
@@ -236,7 +240,7 @@ namespace Year_14_CA_SSD
             // 
             this.Min_Age_Label.AutoSize = true;
             this.Min_Age_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min_Age_Label.Location = new System.Drawing.Point(41, 311);
+            this.Min_Age_Label.Location = new System.Drawing.Point(41, 272);
             this.Min_Age_Label.Name = "Min_Age_Label";
             this.Min_Age_Label.Size = new System.Drawing.Size(210, 21);
             this.Min_Age_Label.TabIndex = 43;
@@ -398,7 +402,7 @@ namespace Year_14_CA_SSD
             this.Min_Age_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
             this.Min_Age_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Min_Age_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Min_Age_NumericUpDown.Location = new System.Drawing.Point(257, 311);
+            this.Min_Age_NumericUpDown.Location = new System.Drawing.Point(298, 272);
             this.Min_Age_NumericUpDown.Maximum = new decimal(new int[] {
             99,
             0,
@@ -424,7 +428,7 @@ namespace Year_14_CA_SSD
             this.Cancel_Days_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
             this.Cancel_Days_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Cancel_Days_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel_Days_NumericUpDown.Location = new System.Drawing.Point(257, 284);
+            this.Cancel_Days_NumericUpDown.Location = new System.Drawing.Point(298, 245);
             this.Cancel_Days_NumericUpDown.Maximum = new decimal(new int[] {
             31,
             0,
@@ -446,7 +450,7 @@ namespace Year_14_CA_SSD
             // 
             this.Day_Unit_Label.AutoSize = true;
             this.Day_Unit_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Day_Unit_Label.Location = new System.Drawing.Point(297, 284);
+            this.Day_Unit_Label.Location = new System.Drawing.Point(338, 245);
             this.Day_Unit_Label.Name = "Day_Unit_Label";
             this.Day_Unit_Label.Size = new System.Drawing.Size(50, 21);
             this.Day_Unit_Label.TabIndex = 57;
@@ -559,13 +563,18 @@ namespace Year_14_CA_SSD
             this.Mileage_Fee_NumericUpDown.Size = new System.Drawing.Size(69, 25);
             this.Mileage_Fee_NumericUpDown.TabIndex = 64;
             this.Mileage_Fee_NumericUpDown.ThousandsSeparator = true;
+            this.Mileage_Fee_NumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             // 
             // Monday_Opening_TimePicker
             // 
             this.Monday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Monday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Monday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Monday_Opening_TimePicker.Location = new System.Drawing.Point(60, 204);
+            this.Monday_Opening_TimePicker.Location = new System.Drawing.Point(60, 165);
             this.Monday_Opening_TimePicker.Name = "Monday_Opening_TimePicker";
             this.Monday_Opening_TimePicker.ShowUpDown = true;
             this.Monday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -577,7 +586,7 @@ namespace Year_14_CA_SSD
             this.Monday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Monday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Monday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Monday_Closing_TimePicker.Location = new System.Drawing.Point(60, 239);
+            this.Monday_Closing_TimePicker.Location = new System.Drawing.Point(60, 200);
             this.Monday_Closing_TimePicker.Name = "Monday_Closing_TimePicker";
             this.Monday_Closing_TimePicker.ShowUpDown = true;
             this.Monday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -589,7 +598,7 @@ namespace Year_14_CA_SSD
             this.Tuesday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Tuesday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tuesday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Tuesday_Closing_TimePicker.Location = new System.Drawing.Point(145, 239);
+            this.Tuesday_Closing_TimePicker.Location = new System.Drawing.Point(145, 200);
             this.Tuesday_Closing_TimePicker.Name = "Tuesday_Closing_TimePicker";
             this.Tuesday_Closing_TimePicker.ShowUpDown = true;
             this.Tuesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -602,7 +611,7 @@ namespace Year_14_CA_SSD
             this.Tuesday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Tuesday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tuesday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Tuesday_Opening_TimePicker.Location = new System.Drawing.Point(145, 204);
+            this.Tuesday_Opening_TimePicker.Location = new System.Drawing.Point(145, 165);
             this.Tuesday_Opening_TimePicker.Name = "Tuesday_Opening_TimePicker";
             this.Tuesday_Opening_TimePicker.ShowUpDown = true;
             this.Tuesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -614,7 +623,7 @@ namespace Year_14_CA_SSD
             this.Wednesday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Wednesday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Wednesday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Wednesday_Closing_TimePicker.Location = new System.Drawing.Point(237, 239);
+            this.Wednesday_Closing_TimePicker.Location = new System.Drawing.Point(237, 200);
             this.Wednesday_Closing_TimePicker.Name = "Wednesday_Closing_TimePicker";
             this.Wednesday_Closing_TimePicker.ShowUpDown = true;
             this.Wednesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -626,7 +635,7 @@ namespace Year_14_CA_SSD
             this.Wednesday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Wednesday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Wednesday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Wednesday_Opening_TimePicker.Location = new System.Drawing.Point(237, 204);
+            this.Wednesday_Opening_TimePicker.Location = new System.Drawing.Point(237, 165);
             this.Wednesday_Opening_TimePicker.Name = "Wednesday_Opening_TimePicker";
             this.Wednesday_Opening_TimePicker.ShowUpDown = true;
             this.Wednesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -638,7 +647,7 @@ namespace Year_14_CA_SSD
             this.Thursday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Thursday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thursday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Thursday_Closing_TimePicker.Location = new System.Drawing.Point(322, 239);
+            this.Thursday_Closing_TimePicker.Location = new System.Drawing.Point(322, 200);
             this.Thursday_Closing_TimePicker.Name = "Thursday_Closing_TimePicker";
             this.Thursday_Closing_TimePicker.ShowUpDown = true;
             this.Thursday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -650,7 +659,7 @@ namespace Year_14_CA_SSD
             this.Thursday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Thursday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Thursday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Thursday_Opening_TimePicker.Location = new System.Drawing.Point(322, 204);
+            this.Thursday_Opening_TimePicker.Location = new System.Drawing.Point(322, 165);
             this.Thursday_Opening_TimePicker.Name = "Thursday_Opening_TimePicker";
             this.Thursday_Opening_TimePicker.ShowUpDown = true;
             this.Thursday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -662,7 +671,7 @@ namespace Year_14_CA_SSD
             this.Friday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Friday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Friday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Friday_Closing_TimePicker.Location = new System.Drawing.Point(418, 239);
+            this.Friday_Closing_TimePicker.Location = new System.Drawing.Point(418, 200);
             this.Friday_Closing_TimePicker.Name = "Friday_Closing_TimePicker";
             this.Friday_Closing_TimePicker.ShowUpDown = true;
             this.Friday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -674,7 +683,7 @@ namespace Year_14_CA_SSD
             this.Friday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Friday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Friday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Friday_Opening_TimePicker.Location = new System.Drawing.Point(418, 204);
+            this.Friday_Opening_TimePicker.Location = new System.Drawing.Point(418, 165);
             this.Friday_Opening_TimePicker.Name = "Friday_Opening_TimePicker";
             this.Friday_Opening_TimePicker.ShowUpDown = true;
             this.Friday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -686,7 +695,7 @@ namespace Year_14_CA_SSD
             this.Saturday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Saturday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Saturday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Saturday_Closing_TimePicker.Location = new System.Drawing.Point(518, 239);
+            this.Saturday_Closing_TimePicker.Location = new System.Drawing.Point(518, 200);
             this.Saturday_Closing_TimePicker.Name = "Saturday_Closing_TimePicker";
             this.Saturday_Closing_TimePicker.ShowUpDown = true;
             this.Saturday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -698,7 +707,7 @@ namespace Year_14_CA_SSD
             this.Saturday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Saturday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Saturday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Saturday_Opening_TimePicker.Location = new System.Drawing.Point(518, 204);
+            this.Saturday_Opening_TimePicker.Location = new System.Drawing.Point(518, 165);
             this.Saturday_Opening_TimePicker.Name = "Saturday_Opening_TimePicker";
             this.Saturday_Opening_TimePicker.ShowUpDown = true;
             this.Saturday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -710,7 +719,7 @@ namespace Year_14_CA_SSD
             this.Sunday_Closing_TimePicker.CustomFormat = "HH:mm";
             this.Sunday_Closing_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sunday_Closing_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Sunday_Closing_TimePicker.Location = new System.Drawing.Point(597, 239);
+            this.Sunday_Closing_TimePicker.Location = new System.Drawing.Point(597, 200);
             this.Sunday_Closing_TimePicker.Name = "Sunday_Closing_TimePicker";
             this.Sunday_Closing_TimePicker.ShowUpDown = true;
             this.Sunday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
@@ -722,18 +731,63 @@ namespace Year_14_CA_SSD
             this.Sunday_Opening_TimePicker.CustomFormat = "HH:mm";
             this.Sunday_Opening_TimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sunday_Opening_TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Sunday_Opening_TimePicker.Location = new System.Drawing.Point(597, 204);
+            this.Sunday_Opening_TimePicker.Location = new System.Drawing.Point(597, 165);
             this.Sunday_Opening_TimePicker.Name = "Sunday_Opening_TimePicker";
             this.Sunday_Opening_TimePicker.ShowUpDown = true;
             this.Sunday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
             this.Sunday_Opening_TimePicker.TabIndex = 77;
             this.Sunday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 9, 0, 0, 0);
             // 
+            // Hours_Unit_Label
+            // 
+            this.Hours_Unit_Label.AutoSize = true;
+            this.Hours_Unit_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hours_Unit_Label.Location = new System.Drawing.Point(338, 300);
+            this.Hours_Unit_Label.Name = "Hours_Unit_Label";
+            this.Hours_Unit_Label.Size = new System.Drawing.Size(65, 21);
+            this.Hours_Unit_Label.TabIndex = 81;
+            this.Hours_Unit_Label.Text = "Hours/s";
+            // 
+            // Cleaning_Time_NumericUpDown
+            // 
+            this.Cleaning_Time_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Cleaning_Time_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Cleaning_Time_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cleaning_Time_NumericUpDown.Location = new System.Drawing.Point(298, 300);
+            this.Cleaning_Time_NumericUpDown.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.Cleaning_Time_NumericUpDown.Name = "Cleaning_Time_NumericUpDown";
+            this.Cleaning_Time_NumericUpDown.Size = new System.Drawing.Size(37, 25);
+            this.Cleaning_Time_NumericUpDown.TabIndex = 80;
+            this.Cleaning_Time_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Cleaning_Time_NumericUpDown.ThousandsSeparator = true;
+            this.Cleaning_Time_NumericUpDown.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // Cleaning_TIme_Label
+            // 
+            this.Cleaning_TIme_Label.AutoSize = true;
+            this.Cleaning_TIme_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cleaning_TIme_Label.Location = new System.Drawing.Point(41, 300);
+            this.Cleaning_TIme_Label.Name = "Cleaning_TIme_Label";
+            this.Cleaning_TIme_Label.Size = new System.Drawing.Size(253, 21);
+            this.Cleaning_TIme_Label.TabIndex = 79;
+            this.Cleaning_TIme_Label.Text = "Cleaning Time Between Test Drives:";
+            // 
             // ManagerSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
+            this.Controls.Add(this.Hours_Unit_Label);
+            this.Controls.Add(this.Cleaning_Time_NumericUpDown);
+            this.Controls.Add(this.Cleaning_TIme_Label);
             this.Controls.Add(this.Sunday_Closing_TimePicker);
             this.Controls.Add(this.Sunday_Opening_TimePicker);
             this.Controls.Add(this.Saturday_Closing_TimePicker);
@@ -786,6 +840,7 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Back_Button);
             this.Name = "ManagerSettingsForm";
             this.Text = "ManagerSettingsForm";
+            this.Load += new System.EventHandler(this.ManagerSettingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Day_Cost_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Cost_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Cost_NumericUpDown)).EndInit();
@@ -796,6 +851,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Day_Mileage_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cleaning_Time_NumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -853,5 +909,8 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.DateTimePicker Saturday_Opening_TimePicker;
         private System.Windows.Forms.DateTimePicker Sunday_Closing_TimePicker;
         private System.Windows.Forms.DateTimePicker Sunday_Opening_TimePicker;
+        private System.Windows.Forms.Label Hours_Unit_Label;
+        private System.Windows.Forms.NumericUpDown Cleaning_Time_NumericUpDown;
+        private System.Windows.Forms.Label Cleaning_TIme_Label;
     }
 }

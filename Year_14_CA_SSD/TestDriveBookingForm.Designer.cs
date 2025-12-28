@@ -87,12 +87,12 @@ namespace Year_14_CA_SSD
             // Title_Label
             // 
             this.Title_Label.AutoSize = true;
-            this.Title_Label.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Label.Location = new System.Drawing.Point(12, 5);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(287, 47);
+            this.Title_Label.Size = new System.Drawing.Size(318, 47);
             this.Title_Label.TabIndex = 0;
-            this.Title_Label.Text = "Book a Test Drive";
+            this.Title_Label.Text = "Test Drive Booking";
             // 
             // Customer_GroupBox
             // 

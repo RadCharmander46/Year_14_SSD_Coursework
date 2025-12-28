@@ -10,8 +10,6 @@ namespace Year_14_CA_SSD
     static class Globals
     {
         public static string connectionString;
-        public const string openningTime = "7:00";
-        public const string closingTime = "18:00";
         public static bool signedIn = false;
         public static int? loginId = 0;
         public static bool isManager = false;
