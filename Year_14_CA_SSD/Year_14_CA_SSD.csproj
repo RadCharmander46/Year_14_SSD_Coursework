@@ -324,6 +324,12 @@
       <DependentUpon>MyDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\left arrow.png" />
+    <None Include="resources\sidebar function 5.png" />
+    <None Include="resources\sidebar function 4.png" />
+    <None Include="resources\sidebar function 3.png" />
+    <None Include="resources\sidebar function 2.png" />
+    <None Include="resources\sidebar function 1.png" />
     <None Include="resources\paid.png" />
     <None Include="resources\doherty cars.png" />
     <None Include="resources\sort.png" />

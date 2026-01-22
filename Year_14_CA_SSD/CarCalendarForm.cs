@@ -29,7 +29,10 @@ namespace Year_14_CA_SSD
                 month = 11;
             }
             Month_Label.Text = months[month];
+            int year = DateTime.Now.Year;
+            Year_Label.Text = year.ToString();
             Load_Calendar();
+            Reset_Labels();
         }
         async void Load_Calendar()
         {
@@ -156,6 +159,7 @@ namespace Year_14_CA_SSD
                 }
             }
             date.Click += new EventHandler(Date_Selected);
+            date.TabStop = true;
             
             return date;
         }
@@ -449,6 +453,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
+                Car_Tool_Tip.RemoveAll();
                 PickerForm carPicker = new PickerForm() { Table = "Cars" };
                 carPicker.ShowDialog();
                 if (carPicker.DialogResult == DialogResult.OK)
@@ -473,26 +478,78 @@ namespace Year_14_CA_SSD
             {
                 string[] values = SQL_Operation.ReadEntry((int)CarId, "CarId", "CarTable");
                 Car_TextBox.Text = Globals.getYear(values[4]) + " " + values[1] + " " + values[2];
-                Registration_Label.Text = "Registration: " + values[3];
-                Mileage_Label.Text = "Mileage: " + Globals.addCommaToNumber(values[5]) +"km";
-                Bodystyle_Label.Text = "Body Style: " + values[11];
-                Colour_Label.Text = "Colour: " + values[10];
-                NoOfSeats_Label.Text = "Number of seats: " + values[12];
-                Transmission_Label.Text = "Transmission: " + values[6];
-                FuelType_Label.Text = "Fuel Type: " + values[7];
-                Engine_Size_Label.Text = "Engine Size: " + values[8] + "l";
-                Power_Label.Text = "Power: " + values[9] + "hp";
+                Car_Tool_Tip.SetToolTip(Car_TextBox, Car_TextBox.Text);
+
+                Registration_Label.Text = values[3];
+                Car_Tool_Tip.SetToolTip(Registration_Label, Registration_Label.Text);
+
+                Mileage_Label.Text = Globals.addCommaToNumber(values[5]) +"km";
+                Car_Tool_Tip.SetToolTip(Mileage_Label, Mileage_Label.Text);
+
+                Bodystyle_Label.Text = values[11];
+                Car_Tool_Tip.SetToolTip(Bodystyle_Label, Bodystyle_Label.Text);
+
+                Colour_Label.Text = values[10];
+                Car_Tool_Tip.SetToolTip(Colour_Label, Colour_Label.Text);
+
+                NoOfSeats_Label.Text = values[12];
+                Car_Tool_Tip.SetToolTip(NoOfSeats_Label, NoOfSeats_Label.Text);
+
+                Transmission_Label.Text = values[6];
+                Car_Tool_Tip.SetToolTip(Transmission_Label, Transmission_Label.Text);
+
+                FuelType_Label.Text = values[7];
+                Car_Tool_Tip.SetToolTip(FuelType_Label, FuelType_Label.Text);
+
+                Engine_Size_Label.Text = values[8] + "l";
+                Car_Tool_Tip.SetToolTip(Engine_Size_Label, Engine_Size_Label.Text);
+
+                Power_Label.Text = values[9] + "hp";
+                Car_Tool_Tip.SetToolTip(Power_Label, Power_Label.Text);
                 Load_Calendar();
             }
             catch
             {
+                Car_Tool_Tip.RemoveAll();
                 MessageBox.Show("An error occured when reading car information");
+                Reset_Labels();
             }
+        }
+        void Reset_Labels()
+        {
+            Car_TextBox.Text = "";
+            Registration_Label.Text = "";
+            Bodystyle_Label.Text = "";
+            Colour_Label.Text = "";
+            NoOfSeats_Label.Text = "";
+            Transmission_Label.Text = "";
+            FuelType_Label.Text = "";
+            Engine_Size_Label.Text = "";
+            Power_Label.Text = "";
         }
 
         private void Car_TextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Previous_Month_Tab_Button_EnabledChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Previous_Month_Tab_Button_TabIndexChanged(object sender, EventArgs e)
+        {
+            Previous_Month_Button.BackColor = SystemColors.ControlDark;
+        }
+
+        private void Car_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Year_14_CA_SSD
     public partial class LoginDataForm : Form
     {
         public event EventHandler ManagerSettings;
+        public event EventHandler HomeScreen;
         public LoginDataForm()
         {
             InitializeComponent();
@@ -29,7 +30,18 @@ namespace Year_14_CA_SSD
         void Display_Employee_Data()
         {
             Load_Employee_Data();
-            Username_Value_Label.Text = employeeData[13];
+            Name_Label.Text = employeeData[1] + " " + employeeData[2] + " " + employeeData[3];
+            DOB_Label.Text = Globals.removeTime(employeeData[4]);
+            Phone_Number_Label.Text = employeeData[5];
+            Email_Label.Text = employeeData[6];
+            Address_Line1_Label.Text = employeeData[7];
+            Address_Line2_Label.Text = employeeData[8];
+            Address_Line3_Label.Text = employeeData[9];
+            Postcode_Label.Text = employeeData[10];
+            Department_Label.Text = employeeData[11];
+            Role_Label.Text = employeeData[12];
+            Username_Label.Text = employeeData[13];
+            Manager_Label.Text = Globals.boolToYN(employeeData[16]);
         }
         void Load_Employee_Data()
         {
@@ -45,6 +57,10 @@ namespace Year_14_CA_SSD
             Globals.loginId = null;
             Globals.isManager = false;
             Globals.signedIn = false;
+            if(HomeScreen != null)
+            {
+                HomeScreen.Invoke(this, EventArgs.Empty);
+            }
             this.Close();
         }
 
@@ -64,14 +80,19 @@ namespace Year_14_CA_SSD
 
         private void Reset_Password_Button_Click(object sender, EventArgs e)
         {
+            Error_ToolTip.RemoveAll();
+            Retype_Password_TextBox.BackColor = SystemColors.Window;
+            New_Password_TextBox.BackColor = SystemColors.Window;
             if(New_Password_TextBox.Text != Retype_Password_TextBox.Text)
             {
-                MessageBox.Show("Passwords must match");
+                Retype_Password_TextBox.BackColor = Color.Salmon;
+                Error_ToolTip.SetToolTip(Retype_Password_TextBox, "Passwords must match");
                 return;
             }
-            if(!Password_Is_Secure(New_Password_TextBox.Text))
+            if(Globals.validPassword(New_Password_TextBox.Text))
             {
-                MessageBox.Show("Password doesn't meet the requirements");
+                New_Password_TextBox.BackColor = Color.Salmon;
+                Error_ToolTip.SetToolTip(New_Password_TextBox, "Password does not meet the requirements \n Needs to be between 8 and 50 characters, \n Have mixed case, a digit and a special character \n Also cannot contain spaces");
                 return;
             }
             if(!SQL_Operation.UpdateEntryVariable(Globals.loginId.Value, "EmployeeId", "Password", New_Password_TextBox.Text, "EmployeeTable"))
@@ -81,9 +102,30 @@ namespace Year_14_CA_SSD
             }
 
         }
-        bool Password_Is_Secure(string password)
+
+        private void label15_Click(object sender, EventArgs e)
         {
-            return true;
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void New_Password_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Retype_Password_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void New_Password_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

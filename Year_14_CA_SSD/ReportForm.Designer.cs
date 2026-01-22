@@ -35,7 +35,6 @@ namespace Year_14_CA_SSD
             this.sqlConnectionCustomer = new System.Data.SqlClient.SqlConnection();
             this.sqlDataAdapterCustomer = new System.Data.SqlClient.SqlDataAdapter();
             this.dsTestDriveCustomer = new Year_14_CA_SSD.dsTestDriveBookings();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Customer_TextBox = new System.Windows.Forms.ComboBox();
             this.View_Report_Button = new System.Windows.Forms.Button();
             this.sqlSelectCommand2 = new System.Data.SqlClient.SqlCommand();
@@ -44,6 +43,7 @@ namespace Year_14_CA_SSD
             this.dsTestDriveTimes = new Year_14_CA_SSD.dsTestDriveTimes();
             this.Time_RadioButton = new System.Windows.Forms.RadioButton();
             this.Customer_RadioButton = new System.Windows.Forms.RadioButton();
+            this.Customer_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dsTestDriveCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTestDriveTimes)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,7 @@ namespace Year_14_CA_SSD
             this.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
             this.crystalReportViewer1.Size = new System.Drawing.Size(1175, 583);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.TabStop = false;
             // 
             // sqlSelectCommand1
             // 
@@ -96,22 +97,16 @@ namespace Year_14_CA_SSD
             this.dsTestDriveCustomer.DataSetName = "dsTestDriveBookings";
             this.dsTestDriveCustomer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // Customer_TextBox
             // 
             this.Customer_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Customer_TextBox.FormattingEnabled = true;
-            this.Customer_TextBox.Location = new System.Drawing.Point(9, 56);
+            this.Customer_TextBox.Location = new System.Drawing.Point(12, 59);
             this.Customer_TextBox.Name = "Customer_TextBox";
             this.Customer_TextBox.Size = new System.Drawing.Size(182, 29);
             this.Customer_TextBox.TabIndex = 2;
             this.Customer_TextBox.Click += new System.EventHandler(this.Customer_TextBox_Click);
+            this.Customer_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Customer_TextBox_KeyDown);
             // 
             // View_Report_Button
             // 
@@ -119,7 +114,7 @@ namespace Year_14_CA_SSD
             this.View_Report_Button.Location = new System.Drawing.Point(11, 501);
             this.View_Report_Button.Name = "View_Report_Button";
             this.View_Report_Button.Size = new System.Drawing.Size(180, 52);
-            this.View_Report_Button.TabIndex = 3;
+            this.View_Report_Button.TabIndex = 5;
             this.View_Report_Button.Text = "View Report";
             this.View_Report_Button.UseVisualStyleBackColor = true;
             this.View_Report_Button.Click += new System.EventHandler(this.View_Report_Button_Click);
@@ -169,6 +164,7 @@ namespace Year_14_CA_SSD
             this.Time_RadioButton.TabStop = true;
             this.Time_RadioButton.Text = "Time Select Report";
             this.Time_RadioButton.UseVisualStyleBackColor = true;
+            this.Time_RadioButton.CheckedChanged += new System.EventHandler(this.Time_RadioButton_CheckedChanged);
             // 
             // Customer_RadioButton
             // 
@@ -178,21 +174,33 @@ namespace Year_14_CA_SSD
             this.Customer_RadioButton.Location = new System.Drawing.Point(12, 439);
             this.Customer_RadioButton.Name = "Customer_RadioButton";
             this.Customer_RadioButton.Size = new System.Drawing.Size(147, 25);
-            this.Customer_RadioButton.TabIndex = 5;
+            this.Customer_RadioButton.TabIndex = 3;
             this.Customer_RadioButton.TabStop = true;
             this.Customer_RadioButton.Text = "Customer Report";
             this.Customer_RadioButton.UseVisualStyleBackColor = true;
+            this.Customer_RadioButton.CheckedChanged += new System.EventHandler(this.Customer_RadioButton_CheckedChanged);
+            // 
+            // Customer_Label
+            // 
+            this.Customer_Label.AutoSize = true;
+            this.Customer_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Customer_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_Label.Location = new System.Drawing.Point(13, 35);
+            this.Customer_Label.Name = "Customer_Label";
+            this.Customer_Label.Size = new System.Drawing.Size(81, 21);
+            this.Customer_Label.TabIndex = 6;
+            this.Customer_Label.Text = "Customer:";
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 583);
+            this.Controls.Add(this.Customer_Label);
             this.Controls.Add(this.Customer_RadioButton);
             this.Controls.Add(this.Time_RadioButton);
             this.Controls.Add(this.View_Report_Button);
             this.Controls.Add(this.Customer_TextBox);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "ReportForm";
             this.Text = "ReportForm";
@@ -210,7 +218,6 @@ namespace Year_14_CA_SSD
         private System.Data.SqlClient.SqlConnection sqlConnectionCustomer;
         private System.Data.SqlClient.SqlDataAdapter sqlDataAdapterCustomer;
         private dsTestDriveBookings dsTestDriveCustomer;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox Customer_TextBox;
         private System.Windows.Forms.Button View_Report_Button;
         private System.Data.SqlClient.SqlCommand sqlSelectCommand2;
@@ -219,5 +226,6 @@ namespace Year_14_CA_SSD
         private dsTestDriveTimes dsTestDriveTimes;
         private System.Windows.Forms.RadioButton Time_RadioButton;
         private System.Windows.Forms.RadioButton Customer_RadioButton;
+        private System.Windows.Forms.Label Customer_Label;
     }
 }

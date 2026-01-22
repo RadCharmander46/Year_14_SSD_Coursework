@@ -29,6 +29,7 @@ namespace Year_14_CA_SSD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Payments_ListView = new System.Windows.Forms.ListView();
             this.Customer_GroupBox = new System.Windows.Forms.GroupBox();
             this.Verified_Label = new System.Windows.Forms.Label();
@@ -64,38 +65,32 @@ namespace Year_14_CA_SSD
             this.Description_Label = new System.Windows.Forms.Label();
             this.Filter_ComboBox = new System.Windows.Forms.ComboBox();
             this.Filter_TextBox = new System.Windows.Forms.TextBox();
-            this.Mark_Paid_Button = new System.Windows.Forms.PictureBox();
-            this.Show_Cancelled_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Sort_Amount = new System.Windows.Forms.PictureBox();
-            this.Sort_Transaction_Type = new System.Windows.Forms.PictureBox();
-            this.Sort_Transaction_Time = new System.Windows.Forms.PictureBox();
-            this.Sort_Customer = new System.Windows.Forms.PictureBox();
-            this.Search_Button = new System.Windows.Forms.PictureBox();
-            this.Refresh_Button = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Title_Label = new System.Windows.Forms.Label();
+            this.Refresh_Button = new System.Windows.Forms.Button();
+            this.Show_Cancelled_Button = new System.Windows.Forms.Button();
+            this.Mark_Paid_Button = new System.Windows.Forms.Button();
+            this.Search_Button = new System.Windows.Forms.Button();
+            this.Sort_Customer_Button = new System.Windows.Forms.Button();
+            this.Sort_Transaction_Time_Button = new System.Windows.Forms.Button();
+            this.Sort_Transaction_Type_Button = new System.Windows.Forms.Button();
+            this.Sort_Amount_Button = new System.Windows.Forms.Button();
+            this.Value_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
             this.Customer_GroupBox.SuspendLayout();
             this.Payment_Label.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Mark_Paid_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Amount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Transaction_Type)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Transaction_Time)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +102,7 @@ namespace Year_14_CA_SSD
             this.Payments_ListView.Location = new System.Drawing.Point(82, 59);
             this.Payments_ListView.Name = "Payments_ListView";
             this.Payments_ListView.Scrollable = false;
+            this.Payments_ListView.ShowItemToolTips = true;
             this.Payments_ListView.Size = new System.Drawing.Size(784, 452);
             this.Payments_ListView.TabIndex = 2;
             this.Payments_ListView.UseCompatibleStateImageBehavior = false;
@@ -173,11 +169,11 @@ namespace Year_14_CA_SSD
             // 
             // Cust_LicenseNo_Label
             // 
-            this.Cust_LicenseNo_Label.AutoSize = true;
+            this.Cust_LicenseNo_Label.AutoEllipsis = true;
             this.Cust_LicenseNo_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cust_LicenseNo_Label.Location = new System.Drawing.Point(150, 170);
             this.Cust_LicenseNo_Label.Name = "Cust_LicenseNo_Label";
-            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(108, 25);
+            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(132, 25);
             this.Cust_LicenseNo_Label.TabIndex = 52;
             this.Cust_LicenseNo_Label.Text = "1946835735";
             // 
@@ -223,6 +219,7 @@ namespace Year_14_CA_SSD
             // 
             // Cust_Email_Label
             // 
+            this.Cust_Email_Label.AutoEllipsis = true;
             this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cust_Email_Label.Location = new System.Drawing.Point(63, 91);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
@@ -446,6 +443,7 @@ namespace Year_14_CA_SSD
             // 
             // Description_Text_Label
             // 
+            this.Description_Text_Label.AutoEllipsis = true;
             this.Description_Text_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Description_Text_Label.Location = new System.Drawing.Point(24, 194);
             this.Description_Text_Label.Name = "Description_Text_Label";
@@ -487,28 +485,6 @@ namespace Year_14_CA_SSD
             this.Filter_TextBox.Name = "Filter_TextBox";
             this.Filter_TextBox.Size = new System.Drawing.Size(587, 39);
             this.Filter_TextBox.TabIndex = 55;
-            // 
-            // Mark_Paid_Button
-            // 
-            this.Mark_Paid_Button.Image = global::Year_14_CA_SSD.Properties.Resources.paid;
-            this.Mark_Paid_Button.Location = new System.Drawing.Point(12, 446);
-            this.Mark_Paid_Button.Name = "Mark_Paid_Button";
-            this.Mark_Paid_Button.Size = new System.Drawing.Size(64, 64);
-            this.Mark_Paid_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Mark_Paid_Button.TabIndex = 64;
-            this.Mark_Paid_Button.TabStop = false;
-            this.Mark_Paid_Button.Click += new System.EventHandler(this.Mark_Paid_Button_Click);
-            // 
-            // Show_Cancelled_Button
-            // 
-            this.Show_Cancelled_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
-            this.Show_Cancelled_Button.Location = new System.Drawing.Point(12, 131);
-            this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
-            this.Show_Cancelled_Button.Size = new System.Drawing.Size(64, 64);
-            this.Show_Cancelled_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Show_Cancelled_Button.TabIndex = 63;
-            this.Show_Cancelled_Button.TabStop = false;
-            this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
             // 
             // pictureBox8
             // 
@@ -566,80 +542,6 @@ namespace Year_14_CA_SSD
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
             // 
-            // Sort_Amount
-            // 
-            this.Sort_Amount.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Amount.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Amount.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Amount.Location = new System.Drawing.Point(838, 64);
-            this.Sort_Amount.Name = "Sort_Amount";
-            this.Sort_Amount.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Amount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Amount.TabIndex = 54;
-            this.Sort_Amount.TabStop = false;
-            this.Sort_Amount.Click += new System.EventHandler(this.Sort_Amount_Click);
-            // 
-            // Sort_Transaction_Type
-            // 
-            this.Sort_Transaction_Type.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Transaction_Type.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Transaction_Type.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Transaction_Type.Location = new System.Drawing.Point(647, 64);
-            this.Sort_Transaction_Type.Name = "Sort_Transaction_Type";
-            this.Sort_Transaction_Type.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Transaction_Type.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Transaction_Type.TabIndex = 53;
-            this.Sort_Transaction_Type.TabStop = false;
-            this.Sort_Transaction_Type.Click += new System.EventHandler(this.Sort_Transaction_Type_Click);
-            // 
-            // Sort_Transaction_Time
-            // 
-            this.Sort_Transaction_Time.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Transaction_Time.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Transaction_Time.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Transaction_Time.Location = new System.Drawing.Point(460, 64);
-            this.Sort_Transaction_Time.Name = "Sort_Transaction_Time";
-            this.Sort_Transaction_Time.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Transaction_Time.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Transaction_Time.TabIndex = 52;
-            this.Sort_Transaction_Time.TabStop = false;
-            this.Sort_Transaction_Time.Click += new System.EventHandler(this.Sort_Transaction_Time_Click);
-            // 
-            // Sort_Customer
-            // 
-            this.Sort_Customer.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Customer.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Customer.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Customer.Location = new System.Drawing.Point(258, 64);
-            this.Sort_Customer.Name = "Sort_Customer";
-            this.Sort_Customer.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Customer.TabIndex = 51;
-            this.Sort_Customer.TabStop = false;
-            this.Sort_Customer.Click += new System.EventHandler(this.Sort_Customer_Click);
-            // 
-            // Search_Button
-            // 
-            this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(12, 519);
-            this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(64, 64);
-            this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Search_Button.TabIndex = 41;
-            this.Search_Button.TabStop = false;
-            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
-            // 
-            // Refresh_Button
-            // 
-            this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(12, 61);
-            this.Refresh_Button.Name = "Refresh_Button";
-            this.Refresh_Button.Size = new System.Drawing.Size(64, 64);
-            this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Refresh_Button.TabIndex = 50;
-            this.Refresh_Button.TabStop = false;
-            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -655,18 +557,136 @@ namespace Year_14_CA_SSD
             this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Label.Location = new System.Drawing.Point(12, 9);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(315, 47);
+            this.Title_Label.Size = new System.Drawing.Size(294, 47);
             this.Title_Label.TabIndex = 91;
-            this.Title_Label.Text = "Payment Database";
+            this.Title_Label.Text = "Payment Records";
+            // 
+            // Refresh_Button
+            // 
+            this.Refresh_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
+            this.Refresh_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Refresh_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Refresh_Button.FlatAppearance.BorderSize = 0;
+            this.Refresh_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_Button.Location = new System.Drawing.Point(11, 60);
+            this.Refresh_Button.Name = "Refresh_Button";
+            this.Refresh_Button.Size = new System.Drawing.Size(66, 62);
+            this.Refresh_Button.TabIndex = 95;
+            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh Payments");
+            this.Refresh_Button.UseVisualStyleBackColor = true;
+            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
+            // 
+            // Show_Cancelled_Button
+            // 
+            this.Show_Cancelled_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
+            this.Show_Cancelled_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_Cancelled_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Show_Cancelled_Button.FlatAppearance.BorderSize = 0;
+            this.Show_Cancelled_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_Cancelled_Button.Location = new System.Drawing.Point(11, 133);
+            this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
+            this.Show_Cancelled_Button.Size = new System.Drawing.Size(66, 62);
+            this.Show_Cancelled_Button.TabIndex = 96;
+            this.Tool_Tip.SetToolTip(this.Show_Cancelled_Button, "Toggle Visibilty Of Cancelled Payments");
+            this.Show_Cancelled_Button.UseVisualStyleBackColor = true;
+            this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
+            // 
+            // Mark_Paid_Button
+            // 
+            this.Mark_Paid_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.paid;
+            this.Mark_Paid_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Mark_Paid_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Mark_Paid_Button.FlatAppearance.BorderSize = 0;
+            this.Mark_Paid_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Mark_Paid_Button.Location = new System.Drawing.Point(11, 448);
+            this.Mark_Paid_Button.Name = "Mark_Paid_Button";
+            this.Mark_Paid_Button.Size = new System.Drawing.Size(66, 62);
+            this.Mark_Paid_Button.TabIndex = 97;
+            this.Tool_Tip.SetToolTip(this.Mark_Paid_Button, "Mark Payment Paid");
+            this.Mark_Paid_Button.UseVisualStyleBackColor = true;
+            this.Mark_Paid_Button.Click += new System.EventHandler(this.Mark_Paid_Button_Click);
+            // 
+            // Search_Button
+            // 
+            this.Search_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.search_icon;
+            this.Search_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Search_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Search_Button.FlatAppearance.BorderSize = 0;
+            this.Search_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Search_Button.Location = new System.Drawing.Point(11, 521);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(66, 62);
+            this.Search_Button.TabIndex = 98;
+            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
+            this.Search_Button.UseVisualStyleBackColor = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
+            // 
+            // Sort_Customer_Button
+            // 
+            this.Sort_Customer_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Customer_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Customer_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Customer_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Customer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Customer_Button.Location = new System.Drawing.Point(256, 61);
+            this.Sort_Customer_Button.Name = "Sort_Customer_Button";
+            this.Sort_Customer_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Customer_Button.TabIndex = 103;
+            this.Sort_Customer_Button.UseVisualStyleBackColor = false;
+            this.Sort_Customer_Button.Click += new System.EventHandler(this.Sort_Customer_Click);
+            // 
+            // Sort_Transaction_Time_Button
+            // 
+            this.Sort_Transaction_Time_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Transaction_Time_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Transaction_Time_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Transaction_Time_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Transaction_Time_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Transaction_Time_Button.Location = new System.Drawing.Point(460, 61);
+            this.Sort_Transaction_Time_Button.Name = "Sort_Transaction_Time_Button";
+            this.Sort_Transaction_Time_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Transaction_Time_Button.TabIndex = 104;
+            this.Sort_Transaction_Time_Button.UseVisualStyleBackColor = false;
+            this.Sort_Transaction_Time_Button.Click += new System.EventHandler(this.Sort_Transaction_Time_Click);
+            // 
+            // Sort_Transaction_Type_Button
+            // 
+            this.Sort_Transaction_Type_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Transaction_Type_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Transaction_Type_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Transaction_Type_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Transaction_Type_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Transaction_Type_Button.Location = new System.Drawing.Point(646, 61);
+            this.Sort_Transaction_Type_Button.Name = "Sort_Transaction_Type_Button";
+            this.Sort_Transaction_Type_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Transaction_Type_Button.TabIndex = 105;
+            this.Sort_Transaction_Type_Button.UseVisualStyleBackColor = false;
+            this.Sort_Transaction_Type_Button.Click += new System.EventHandler(this.Sort_Transaction_Type_Click);
+            // 
+            // Sort_Amount_Button
+            // 
+            this.Sort_Amount_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Amount_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Amount_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Amount_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Amount_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Amount_Button.Location = new System.Drawing.Point(834, 61);
+            this.Sort_Amount_Button.Name = "Sort_Amount_Button";
+            this.Sort_Amount_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Amount_Button.TabIndex = 106;
+            this.Sort_Amount_Button.UseVisualStyleBackColor = false;
+            this.Sort_Amount_Button.Click += new System.EventHandler(this.Sort_Amount_Click);
             // 
             // PaymentDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
-            this.Controls.Add(this.Title_Label);
+            this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Mark_Paid_Button);
             this.Controls.Add(this.Show_Cancelled_Button);
+            this.Controls.Add(this.Refresh_Button);
+            this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -675,16 +695,14 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Filter_TextBox);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Sort_Amount);
-            this.Controls.Add(this.Sort_Transaction_Type);
-            this.Controls.Add(this.Sort_Transaction_Time);
-            this.Controls.Add(this.Sort_Customer);
-            this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Payment_Label);
-            this.Controls.Add(this.Refresh_Button);
             this.Controls.Add(this.Customer_GroupBox);
-            this.Controls.Add(this.Payments_ListView);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Sort_Customer_Button);
+            this.Controls.Add(this.Sort_Transaction_Time_Button);
+            this.Controls.Add(this.Sort_Transaction_Type_Button);
+            this.Controls.Add(this.Sort_Amount_Button);
+            this.Controls.Add(this.Payments_ListView);
             this.Name = "PaymentDataForm";
             this.Text = "PaymentDataForm";
             this.Load += new System.EventHandler(this.PaymentDataForm_Load);
@@ -692,20 +710,12 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.PerformLayout();
             this.Payment_Label.ResumeLayout(false);
             this.Payment_Label.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Mark_Paid_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Amount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Transaction_Type)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Transaction_Time)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -720,7 +730,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Cust_Email_Label;
         private System.Windows.Forms.Label Cust_DOB_Label;
         private System.Windows.Forms.Label Cust_Tel_Label;
-        private System.Windows.Forms.PictureBox Refresh_Button;
         private System.Windows.Forms.GroupBox Payment_Label;
         private System.Windows.Forms.Label Transaction_Type_Label;
         private System.Windows.Forms.Label Transaction_Time_Label;
@@ -729,16 +738,11 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Description_Label;
         private System.Windows.Forms.Label Cancelled_Label;
         private System.Windows.Forms.Label Paid_Label;
-        private System.Windows.Forms.PictureBox Search_Button;
         private System.Windows.Forms.Label Verified_Label;
         private System.Windows.Forms.Label Cust_Expiry_Label;
         private System.Windows.Forms.Label Cust_Issue_Label;
         private System.Windows.Forms.Label Cust_LicenseNo_Label;
         private System.Windows.Forms.Label PrevCust_Label;
-        private System.Windows.Forms.PictureBox Sort_Amount;
-        private System.Windows.Forms.PictureBox Sort_Transaction_Type;
-        private System.Windows.Forms.PictureBox Sort_Transaction_Time;
-        private System.Windows.Forms.PictureBox Sort_Customer;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -747,8 +751,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox Filter_TextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox Show_Cancelled_Button;
-        private System.Windows.Forms.PictureBox Mark_Paid_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -765,5 +767,15 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label Title_Label;
+        private System.Windows.Forms.Button Refresh_Button;
+        private System.Windows.Forms.Button Show_Cancelled_Button;
+        private System.Windows.Forms.Button Mark_Paid_Button;
+        private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.Button Sort_Customer_Button;
+        private System.Windows.Forms.Button Sort_Transaction_Time_Button;
+        private System.Windows.Forms.Button Sort_Transaction_Type_Button;
+        private System.Windows.Forms.Button Sort_Amount_Button;
+        private System.Windows.Forms.ToolTip Value_Tool_Tip;
+        private System.Windows.Forms.ToolTip Tool_Tip;
     }
 }

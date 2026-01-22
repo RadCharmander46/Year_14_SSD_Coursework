@@ -20,6 +20,8 @@ namespace Year_14_CA_SSD
             InitializeComponent();
         }
         int carId;
+        int customerId;
+        int? employeeId;
         int testDriveId;
         DateTime endTime;
 
@@ -50,7 +52,7 @@ namespace Year_14_CA_SSD
             {
                 if(ReturnCar != null)
                 {
-                    ReturnCar.Invoke(this, new Car_Return_EventArgs() { testDriveId = testDriveId, carId = carId });
+                    ReturnCar.Invoke(this, new Car_Return_EventArgs() { testDriveId = testDriveId, carId = carId, employeeId = employeeId, customerId = customerId });
                 }
                 this.Close();
             }
@@ -63,7 +65,8 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string cmdText = $"SELECT CarUnavailabiltyTable.EndTime,CarUnavailabiltyTable.CarId, TestDriveTable.TestDriveId FROM TestDriveTable " +
+                    string cmdText = $"SELECT CarUnavailabiltyTable.EndTime,CarUnavailabiltyTable.CarId, TestDriveTable.TestDriveId, TestDriveTable.CustomerId," +
+                        $"TestDriveTable.EmployeeId FROM TestDriveTable " +
                         $"INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
                         $"WHERE TestDriveTable.HasBeenReturned = 'FALSE' AND CarUnavailabiltyTable.EndTime <= '{DateTime.Now.AddMinutes(-5).ToString("yyyy-MM-dd HH:mm:ss")}'";
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
@@ -75,6 +78,9 @@ namespace Year_14_CA_SSD
                         endTime = Convert.ToDateTime(reader["EndTime"].ToString());
                         carId = Convert.ToInt32(reader["CarId"].ToString());
                         testDriveId = Convert.ToInt32(reader["TestDriveId"].ToString());
+                        customerId = Convert.ToInt32(reader["CustomerId"].ToString());
+                        try { employeeId = Convert.ToInt32(reader["EmployeeId"].ToString()); }
+                        catch { employeeId = null; }
                         conn.Close();
                         Show_Car_Return_Message();
                         return;
@@ -113,5 +119,7 @@ namespace Year_14_CA_SSD
     {
         public int testDriveId;
         public int carId;
+        public int customerId;
+        public int? employeeId;
     }
 }

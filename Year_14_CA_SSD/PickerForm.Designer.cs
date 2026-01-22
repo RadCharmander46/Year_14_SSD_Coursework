@@ -45,10 +45,12 @@ namespace Year_14_CA_SSD
             this.Table_ListView.HideSelection = false;
             this.Table_ListView.Location = new System.Drawing.Point(7, 4);
             this.Table_ListView.Name = "Table_ListView";
+            this.Table_ListView.ShowItemToolTips = true;
             this.Table_ListView.Size = new System.Drawing.Size(371, 209);
             this.Table_ListView.TabIndex = 0;
             this.Table_ListView.UseCompatibleStateImageBehavior = false;
             this.Table_ListView.View = System.Windows.Forms.View.Details;
+            this.Table_ListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Table_ListView_KeyDown);
             // 
             // Search_TextBox
             // 
@@ -116,7 +118,7 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Continue_Button);
             this.Controls.Add(this.Table_ListView);
             this.Name = "PickerForm";
-            this.Text = "PickerForm";
+            this.Text = "Picker Form";
             this.Load += new System.EventHandler(this.PickerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Change_Columm_Button)).EndInit();
             this.ResumeLayout(false);

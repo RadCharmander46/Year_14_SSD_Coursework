@@ -14,12 +14,17 @@ namespace Year_14_CA_SSD
 
     public partial class CarReturnForm : Form
     {
+        public event EventHandler Return;
         public int? CarId;
         public int? EmployeeId;
         public int? CustomerId;
         public int? TestDriveId;
 
+        public bool UseTestDriveId = false;
+
         public int mileage;
+        public DateTime endTime;
+        public decimal? carPrice;
 
         public CarReturnForm()
         {
@@ -89,6 +94,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
+                Customer_Tool_Tip.RemoveAll();
                 int id = (int)CustomerId;
                 string[] values = SQL_Operation.ReadEntry(id, "CustomerId", "CustomerTable");
                 if (values == null)
@@ -96,18 +102,38 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 Customer_Name_Label.Text = Globals.removeWhitespace(values[1] + " " + values[2] + " " + values[3]);
-                Cust_Tel_Label.Text = "Tel: " + values[5];
-                Cust_DOB_Label.Text = "Date Of Birth: " + Globals.removeTime(values[4]);
-                Postcode_Label.Text = "Postcode: " + values[10];
-                Cust_Email_Label.Text = "Email: " + values[6];
-                PrevCust_Label.Text = "Previous Customer: " + Globals.boolToYN(values[15]);
-                Cust_LicenseNo_Label.Text = "License No: " + values[11];
-                Cust_Issue_Label.Text = "Issue: " + Globals.removeTime(values[12]);
-                Cust_Expiry_Label.Text = "Expiry: " + Globals.removeTime(values[13]);
-                Verified_Label.Text = "Verified: " + Globals.boolToYN(values[14]);
+                Customer_Tool_Tip.SetToolTip(Customer_Name_Label, Customer_Name_Label.Text);
+
+                Cust_Tel_Label.Text = values[5];
+                Customer_Tool_Tip.SetToolTip(Cust_Tel_Label, Cust_Tel_Label.Text);
+
+                Cust_DOB_Label.Text = Globals.removeTime(values[4]);
+                Customer_Tool_Tip.SetToolTip(Cust_DOB_Label, Cust_DOB_Label.Text);
+
+                Postcode_Label.Text = values[10];
+                Customer_Tool_Tip.SetToolTip(Postcode_Label, Postcode_Label.Text);
+
+                Cust_Email_Label.Text = values[6];
+                Customer_Tool_Tip.SetToolTip(Cust_Email_Label, Cust_Email_Label.Text);
+
+                PrevCust_Label.Text = Globals.boolToYN(values[15]);
+                Customer_Tool_Tip.SetToolTip(PrevCust_Label, PrevCust_Label.Text);
+
+                Cust_LicenseNo_Label.Text = values[11];
+                Customer_Tool_Tip.SetToolTip(Cust_LicenseNo_Label, Cust_LicenseNo_Label.Text);
+
+                Cust_Issue_Label.Text = Globals.removeTime(values[12]);
+                Customer_Tool_Tip.SetToolTip(Cust_Issue_Label, Cust_Issue_Label.Text);
+
+                Cust_Expiry_Label.Text = Globals.removeTime(values[13]);
+                Customer_Tool_Tip.SetToolTip(Cust_Expiry_Label, Cust_Expiry_Label.Text);
+
+                Verified_Label.Text = Globals.boolToYN(values[14]);
+                Customer_Tool_Tip.SetToolTip(Verified_Label, Verified_Label.Text);
             }
             catch
             {
+                Customer_Tool_Tip.RemoveAll();
                 CustomerId = null;
                 Customer_Name_Label.Text = " ";
                 Cust_Tel_Label.Text = "";
@@ -126,6 +152,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
+                Employee_Tool_Tip.RemoveAll();
                 int id = (int)EmployeeId;
                 string[] values = SQL_Operation.ReadEntry(id, "EmployeeId", "EmployeeTable");
                 if (values == null)
@@ -133,13 +160,23 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 Employee_Name_Label.Text = Globals.removeWhitespace(values[1] + " " + values[2] + " " + values[3]);
-                Employee_DOB_Label.Text = "Date Of Birth: " + Globals.removeTime(values[4]);
-                Employee_Tel_Label.Text = "Tel: " + values[5];
-                Employee_Email_Label.Text = "Email: " + values[6];
-                Employee_Username_Label.Text = "Username: " + values[13];
+                Employee_Tool_Tip.SetToolTip(Employee_Name_Label, Employee_Name_Label.Text);
+
+                Employee_DOB_Label.Text = Globals.removeTime(values[4]);
+                Employee_Tool_Tip.SetToolTip(Employee_DOB_Label, Employee_DOB_Label.Text);
+
+                Employee_Tel_Label.Text = values[5];
+                Employee_Tool_Tip.SetToolTip(Employee_Tel_Label, Employee_Tel_Label.Text);
+
+                Employee_Email_Label.Text = values[6];
+                Employee_Tool_Tip.SetToolTip(Employee_Email_Label, Employee_Email_Label.Text);
+
+                Employee_Username_Label.Text = values[13];
+                Employee_Tool_Tip.SetToolTip(Employee_Username_Label, Employee_Username_Label.Text);
             }
             catch
             {
+                Employee_Tool_Tip.RemoveAll();
                 EmployeeId = null;
                 Employee_Name_Label.Text = "";
                 Employee_DOB_Label.Text = "";
@@ -153,26 +190,48 @@ namespace Year_14_CA_SSD
         {
             try
             {
+                Car_Tool_Tip.RemoveAll();
                 int id = (int)CarId;
                 string[] values = SQL_Operation.ReadEntry(id, "CarId", "CarTable");
                 if (values == null)
                 {
                     throw new Exception();
                 }
+
                 Car_TextBox.Text = Globals.removeWhitespace(Globals.getYear(values[4]) + " " + values[1] + " " + values[2]);
-                Registration_Label.Text = "Reg: " + values[3];
+                Car_Tool_Tip.SetToolTip(Car_TextBox, Car_TextBox.Text);
+
+                Registration_Label.Text = values[3];
+                Car_Tool_Tip.SetToolTip(Registration_Label, Registration_Label.Text);
+
                 mileage = Convert.ToInt32(values[5]);
-                Mileage_Label.Text = "Mileage: " + Globals.addCommaToNumber(values[5]) + "km";
-                Bodystyle_Label.Text = "Body Style: " + values[11];
-                Colour_Label.Text = "Colour: " + values[10];
-                NoOfSeats_Label.Text = "Number Of Seats: " + values[12];
-                Transmission_Label.Text = "Transmission: " + values[6];
-                FuelType_Label.Text = "Fuel Type: " + values[7];
-                Engine_Size_Label.Text = "Engine Size: " + values[8] + "l";
-                Power_Label.Text = "Power: " + values[9] + "hp";
+                Mileage_Label.Text = Globals.addCommaToNumber(values[5]) + "km";
+                Car_Tool_Tip.SetToolTip(Mileage_Label, Mileage_Label.Text);
+
+                Bodystyle_Label.Text = values[11];
+                Car_Tool_Tip.SetToolTip(Bodystyle_Label, Bodystyle_Label.Text);
+
+                Colour_Label.Text = values[10];
+                Car_Tool_Tip.SetToolTip(Colour_Label, Colour_Label.Text);
+
+                NoOfSeats_Label.Text = values[12];
+                Car_Tool_Tip.SetToolTip(NoOfSeats_Label, NoOfSeats_Label.Text);
+
+                Transmission_Label.Text = values[6];
+                Car_Tool_Tip.SetToolTip(Transmission_Label, Transmission_Label.Text);
+
+                FuelType_Label.Text = values[7];
+                Car_Tool_Tip.SetToolTip(FuelType_Label, FuelType_Label.Text);
+
+                Engine_Size_Label.Text = values[8] + "l";
+                Car_Tool_Tip.SetToolTip(Engine_Size_Label, Engine_Size_Label.Text);
+
+                Power_Label.Text = values[9] + "hp";
+                Car_Tool_Tip.SetToolTip(Power_Label, Power_Label.Text);
             }
             catch
             {
+                Car_Tool_Tip.RemoveAll();
                 MessageBox.Show("Error in reading car data");
                 CarId = null;
                 Car_TextBox.Text = "";
@@ -187,10 +246,39 @@ namespace Year_14_CA_SSD
                 Power_Label.Text = "";
             }
         }
+        void Load_Test_Drive_Data()
+        {
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string cmdText = $"SELECT TestDriveTypeTable.Description, CarUnavailabiltyTable.StartTime " +
+                        $"FROM TestDriveTable " +
+                        $"INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"INNER JOIN TestDriveTypeTable ON TestDriveTable.TestDriveType = TestDriveTypeTable.TestDriveTypeId " +
+                        $"WHERE TestDriveTable.TestDriveId = '{TestDriveId}'";
+                    SqlCommand cmd = new SqlCommand(cmdText, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    Length_ComboBox.Text = reader["Description"].ToString();
+                    Date_DateTimePicker.Value = Convert.ToDateTime(reader["StartTime"].ToString());
+                    conn.Close();
+                    return;
+                }
+                catch (SqlException e)
+                {
+                    MessageBox.Show("An error occured");
+                    return;
+                }
+            }
+        }
 
         private void Car_TextBox_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Car_TextBox_Click(object sender, EventArgs e)
@@ -212,6 +300,22 @@ namespace Year_14_CA_SSD
         {
             Clear_Details();
             Date_DateTimePicker.MaxDate = DateTime.Now.AddDays(7);
+            Time_Returned_DateTimePicker.MaxDate = DateTime.Now;
+            if (UseTestDriveId)
+            {
+                Load_Car_Data();
+                Load_Customer_Data();
+                Load_Employee_Data();
+                Load_Test_Drive_Data();
+                Mileage_NumericUpDown.Minimum = mileage;
+            }
+            else
+            {
+                CarId = null;
+                CustomerId = null;
+                EmployeeId = null;
+                TestDriveId = null;
+            }
         }
         
         string Get_Opening_Times()
@@ -260,36 +364,33 @@ namespace Year_14_CA_SSD
         }
         void Clear_Details()
         {
-            CustomerId = null;
-            Customer_Name_Label.Text = "Name";
-            Cust_Tel_Label.Text = "Tel: ";
-            Cust_DOB_Label.Text = "Date Of Birth: ";
-            Postcode_Label.Text = "Postcode: ";
-            Cust_Email_Label.Text = "Email: ";
-            PrevCust_Label.Text = "Previous Customer:";
-            Cust_LicenseNo_Label.Text = "License No:";
-            Cust_Issue_Label.Text = "Issue:";
-            Cust_Expiry_Label.Text = "Expiry";
-            Verified_Label.Text = "Verified License:";
+            Customer_Name_Label.Text = "Customer Name";
+            Cust_Tel_Label.Text = "";
+            Cust_DOB_Label.Text = "";
+            Postcode_Label.Text = "";
+            Cust_Email_Label.Text = "";
+            PrevCust_Label.Text = "";
+            Cust_LicenseNo_Label.Text = "";
+            Cust_Issue_Label.Text = "";
+            Cust_Expiry_Label.Text = "";
+            Verified_Label.Text = "";
 
-            EmployeeId = null;
-            Employee_Name_Label.Text = "Name";
-            Employee_DOB_Label.Text = "Date Of Birth:";
-            Employee_Tel_Label.Text = "Tel:";
-            Employee_Email_Label.Text = "Email:";
-            Employee_Username_Label.Text = "Username:";
+            Employee_Name_Label.Text = "Employee Name";
+            Employee_DOB_Label.Text = "";
+            Employee_Tel_Label.Text = "";
+            Employee_Email_Label.Text = "";
+            Employee_Username_Label.Text = "";
 
-            CarId = null;
             Car_TextBox.Text = "";
-            Registration_Label.Text = "Reg:";
-            Mileage_Label.Text = "Mileage:";
-            Bodystyle_Label.Text = "Body Style:";
-            Colour_Label.Text = "Colour:";
-            NoOfSeats_Label.Text = "Numebr Of Seats:";
-            Transmission_Label.Text = "Transmission";
-            FuelType_Label.Text = "Fuel Type:";
-            Engine_Size_Label.Text = "Engine Size:";
-            Power_Label.Text = "Power:";
+            Registration_Label.Text = "";
+            Mileage_Label.Text = "";
+            Bodystyle_Label.Text = "";
+            Colour_Label.Text = "";
+            NoOfSeats_Label.Text = "";
+            Transmission_Label.Text = "";
+            FuelType_Label.Text = "";
+            Engine_Size_Label.Text = "";
+            Power_Label.Text = "";
         }
 
         private void Find_Test_Drive_Button_Click(object sender, EventArgs e)
@@ -312,7 +413,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                DateTime startDate = (DateTime)Get_Start_Date(); //add extra day to each to compensate for lack in time of day
+                DateTime startDate = (DateTime)Get_Start_Date(); 
                 if (Length_ComboBox.Text == "30 Minutes")
                 {
                     return startDate.AddDays(1);
@@ -335,7 +436,7 @@ namespace Year_14_CA_SSD
                 return null;
             }
         }
-        void Find_Test_Drive()
+        void Find_Test_Drive() 
         {
             if(CarId == null)
             {
@@ -381,7 +482,7 @@ namespace Year_14_CA_SSD
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("An error occured");
+                    MessageBox.Show("Test Drive cannot be found");
                     return;
                 }
                 
@@ -395,6 +496,12 @@ namespace Year_14_CA_SSD
             if (TestDriveId == null)
             {
                 MessageBox.Show("Test Drive hasn't been found");
+                return;
+            }
+            if(!Car_Returned_CheckBox.Checked)
+            {
+                MessageBox.Show("Car has not been marked as returned");
+                return;
             }
             try
             {
@@ -406,7 +513,7 @@ namespace Year_14_CA_SSD
                     return;
                 }
                 string[] testColumns = { "HasBeenReturned", "ReturnedDamaged" };
-                string[] testValues = { Car_Returned_CheckBox.Checked.ToString(), Convert.ToString(!Car_Not_Damaged_CheckBox.Checked) };
+                string[] testValues = { Car_Returned_CheckBox.Checked.ToString(), Convert.ToString(Car_Damaged_CheckBox.Checked) };
                 if (!SQL_Operation.UpdateEntryVariables((int)TestDriveId, "TestDriveId",testColumns,testValues,"TestDriveTable"))
                 {
                     MessageBox.Show("An error occured when updating the test drive database");
@@ -419,23 +526,56 @@ namespace Year_14_CA_SSD
                 return;
             }
 
-            Calculate_Mileage_Fee();
-
-        }
-        void Calculate_Mileage_Fee()
-        {
-            int mileageIncrease = Convert.ToInt32(Mileage_NumericUpDown.Value - Mileage_NumericUpDown.Minimum);
-            int typeOfBooking = Length_ComboBox.SelectedIndex;
-            int mileageLimit = Globals.settings.MileageLimits[typeOfBooking];
-            if(mileageIncrease <= mileageLimit || mileageLimit == 0)
+            decimal mileageFee = Calculate_Mileage_Fee();
+            if(mileageFee != 0)
             {
-                return;
+                Create_Fee(mileageFee, "Fee for going over the mileage limit");
             }
-            int mileageOver = mileageIncrease - mileageLimit;
-            decimal mileageFee = mileageOver * Globals.settings.MileageFee;
-            MessageBox.Show($"Mileage is over the allocated limit, the following fee must be paid: £{mileageFee}");
-            string[] paymentValues = { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),CustomerId.ToString(),mileageFee.ToString(),"Fee","Fee for going over the allocated mileage limit","False","False"};
-            if(!SQL_Operation.CreateEntry(paymentValues, "PaymentTable"))
+            int hoursLate = Calculate_Hours_Late();
+            if(hoursLate > 0)
+            {
+                decimal lateFee = Calculate_Late_Fee(hoursLate);
+                Create_Fee(lateFee, "Fee for returning car late");
+            }
+            decimal damageFee = Get_Car_Damage_Fee();
+            if(damageFee > 0)
+            {
+                Create_Fee(damageFee, "Fee for damaging a car");
+            }
+            if(Return != null)
+            {
+                Return.Invoke(this, EventArgs.Empty);
+            }
+            this.Close();
+        }
+        decimal Calculate_Mileage_Fee()
+        {
+            int mileageOver = Calculate_Mileage_Over_Limit();
+            return mileageOver * Globals.settings.MileageFee;
+            
+        }
+        int Calculate_Mileage_Over_Limit()
+        {
+            try
+            {
+                int mileageIncrease = Convert.ToInt32(Mileage_NumericUpDown.Value - Mileage_NumericUpDown.Minimum);
+                int typeOfBooking = Length_ComboBox.SelectedIndex;
+                int mileageLimit = Globals.settings.MileageLimits[typeOfBooking];
+                if (mileageIncrease <= mileageLimit || mileageLimit == 0)
+                {
+                    return 0;
+                }
+                return mileageIncrease - mileageLimit;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        void Create_Fee(decimal amount, string description)
+        {
+            string[] paymentValues = { DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), CustomerId.ToString(), amount.ToString("F"), "Fee",description, "False", "False" };
+            if (!SQL_Operation.CreateEntry(paymentValues, "PaymentTable"))
             {
                 MessageBox.Show("An error occurred");
             }
@@ -463,12 +603,117 @@ namespace Year_14_CA_SSD
 
         private void Car_Not_Damaged_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(Car_Damaged_CheckBox.Checked)
+            {
+                decimal carPrice = Get_Car_Price();
+                if(carPrice == 0)
+                {
+                    Fee_FlowLayoutPanel.Controls.Remove(Damage_Fee_Label);
+                    Damage_Fee_Label.Visible = false;
+                    return;
+                }
+                Damage_Fee_Label.Text = $"Damage Fee: £{Get_Car_Damage_Fee().ToString("F")}";
+                Fee_FlowLayoutPanel.Controls.Add(Damage_Fee_Label);
+                Damage_Fee_Label.Visible = true;
+            }
+            else
+            {
+                Fee_FlowLayoutPanel.Controls.Remove(Damage_Fee_Label);
+            }
+        }
+        decimal Get_Car_Damage_Fee()
+        {
+            return Get_Car_Price() * Convert.ToDecimal(Globals.settings.DepositPercent) / 100;
+        }
+        decimal Get_Car_Price()
+        {
+            if (!carPrice.HasValue)
+            {
+                if (!CarId.HasValue)
+                {
+                    return 0;
+                }
+                carPrice = Convert.ToDecimal(SQL_Operation.ReadColumn(CarId.Value, "CarId", "Price", "CarTable"));
+            }
+            return carPrice.Value;
         }
 
         private void Car_Returned_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+            e.Handled = true;
+        }
+
+        private void Mileage_NumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            int mileageOver = Calculate_Mileage_Over_Limit();
+            if (mileageOver > 0)
+            {
+                Mileage_Fee_Label.Text = $"Mileage Fee ({mileageOver} Miles): £{Calculate_Mileage_Fee().ToString("F")}";
+                if (!Fee_FlowLayoutPanel.Controls.Contains(Mileage_Fee_Label))
+                {
+                    Fee_FlowLayoutPanel.Controls.Add(Mileage_Fee_Label);
+                    Mileage_Fee_Label.Visible = true;
+                }
+            }
+            else
+            {
+                if (Fee_FlowLayoutPanel.Controls.Contains(Mileage_Fee_Label))
+                {
+                    Fee_FlowLayoutPanel.Controls.Remove(Mileage_Fee_Label);
+                }
+                Mileage_Fee_Label.Visible = false;
+            }
+        }
+
+        private void Time_Returned_DateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            int hoursLate = Calculate_Hours_Late();
+            if(hoursLate > 0)
+            {
+                Late_Fee_Label.Text = $"Late Fee ({hoursLate} Hours): £{Calculate_Late_Fee(hoursLate).ToString("F")}";
+                if(!Fee_FlowLayoutPanel.Controls.Contains(Late_Fee_Label))
+                {
+                    Fee_FlowLayoutPanel.Controls.Add(Late_Fee_Label);
+                    Late_Fee_Label.Visible = true;
+                }
+            }
+            else
+            {
+                if(Fee_FlowLayoutPanel.Controls.Contains(Late_Fee_Label))
+                {
+                    Fee_FlowLayoutPanel.Controls.Remove(Late_Fee_Label);
+                }
+                Late_Fee_Label.Visible = false;
+            }
+        }
+        decimal Calculate_Late_Fee(int hoursLate)
+        {
+            return hoursLate * Globals.settings.LateFee; //5.0m to be replaced with setting
+        }
+        int Calculate_Hours_Late()
+        {
+            if(endTime == DateTime.MinValue)
+            {
+                if (!TestDriveId.HasValue)
+                {
+                    return 0;
+                }
+                int carUnavailId = Convert.ToInt32(SQL_Operation.ReadColumn(TestDriveId.Value, "TestDriveId", "CarUnavailabiltyId", "TestDriveTable"));
+                endTime = Convert.ToDateTime(SQL_Operation.ReadColumn(carUnavailId, "CarUnavailabiltyId", "EndTime", "CarUnavailabiltyTable"));
+            }
+            TimeSpan hoursDiff = Time_Returned_DateTimePicker.Value - endTime.AddHours(Globals.settings.TimeBeforeLate.TotalHours); //2 to be replaced with setting
+            double lateHoursRaw = hoursDiff.TotalHours;
+            int hoursLate = Convert.ToInt32(Math.Ceiling(lateHoursRaw));
+            
+
+            if(hoursLate < 0) { hoursLate = 0; }
+            return hoursLate;
         }
     }
 }

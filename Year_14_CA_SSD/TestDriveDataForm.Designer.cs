@@ -34,6 +34,7 @@ namespace Year_14_CA_SSD
             this.Search_ComboBox = new System.Windows.Forms.ComboBox();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Customer_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Cust_Tel_Label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace Year_14_CA_SSD
             this.label1 = new System.Windows.Forms.Label();
             this.Cust_Postcode_Label = new System.Windows.Forms.Label();
             this.Cust_Email_Label = new System.Windows.Forms.Label();
-            this.Cust_Tel_Label = new System.Windows.Forms.Label();
             this.Employee_GroupBox = new System.Windows.Forms.GroupBox();
             this.Employee_Username_Label = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -66,6 +66,9 @@ namespace Year_14_CA_SSD
             this.Cost_Label = new System.Windows.Forms.Label();
             this.Searching_Group_ComboBox = new System.Windows.Forms.ComboBox();
             this.Car_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Body_Style_Label = new System.Windows.Forms.Label();
+            this.Mileage_Label = new System.Windows.Forms.Label();
+            this.Engine_Size_Label = new System.Windows.Forms.Label();
             this.Power_Label = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,27 +77,12 @@ namespace Year_14_CA_SSD
             this.label9 = new System.Windows.Forms.Label();
             this.Colour_Label = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Body_Style_Label = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Mileage_Label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Reg_Label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Engine_Size_Label = new System.Windows.Forms.Label();
             this.Transmission_Label = new System.Windows.Forms.Label();
-            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
-            this.Sort_End_Date = new System.Windows.Forms.PictureBox();
-            this.Sort_Start_Date = new System.Windows.Forms.PictureBox();
-            this.Sort_Car = new System.Windows.Forms.PictureBox();
-            this.Sort_Employee = new System.Windows.Forms.PictureBox();
-            this.Sort_Customer = new System.Windows.Forms.PictureBox();
-            this.Show_Cancelled_Button = new System.Windows.Forms.PictureBox();
-            this.Refresh_Button = new System.Windows.Forms.PictureBox();
-            this.Search_Button = new System.Windows.Forms.PictureBox();
-            this.Cancel_Button = new System.Windows.Forms.PictureBox();
-            this.Delete_Button = new System.Windows.Forms.PictureBox();
-            this.Add_Button = new System.Windows.Forms.PictureBox();
-            this.Edit_Button = new System.Windows.Forms.PictureBox();
+            this.Value_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -106,24 +94,24 @@ namespace Year_14_CA_SSD
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.Icon_ToolBox_PictureBox = new System.Windows.Forms.PictureBox();
             this.Title_Label = new System.Windows.Forms.Label();
+            this.Sort_Customer_Button = new System.Windows.Forms.Button();
+            this.Sort_Employee_Button = new System.Windows.Forms.Button();
+            this.Sort_Car_Button = new System.Windows.Forms.Button();
+            this.Sort_Start_Date_Button = new System.Windows.Forms.Button();
+            this.Sort_End_Date_Button = new System.Windows.Forms.Button();
+            this.Refresh_Button = new System.Windows.Forms.Button();
+            this.Show_Cancelled_Button = new System.Windows.Forms.Button();
+            this.Add_Button = new System.Windows.Forms.Button();
+            this.Cancel_Button = new System.Windows.Forms.Button();
+            this.Edit_Button = new System.Windows.Forms.Button();
+            this.Delete_Button = new System.Windows.Forms.Button();
+            this.Search_Button = new System.Windows.Forms.Button();
             this.Customer_GroupBox.SuspendLayout();
             this.Employee_GroupBox.SuspendLayout();
             this.Test_Drive_GroupBox.SuspendLayout();
             this.Car_GroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delete_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -135,7 +123,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Icon_ToolBox_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Test_Drives_ListView
@@ -145,6 +133,7 @@ namespace Year_14_CA_SSD
             this.Test_Drives_ListView.HideSelection = false;
             this.Test_Drives_ListView.Location = new System.Drawing.Point(82, 59);
             this.Test_Drives_ListView.Name = "Test_Drives_ListView";
+            this.Test_Drives_ListView.ShowItemToolTips = true;
             this.Test_Drives_ListView.Size = new System.Drawing.Size(796, 463);
             this.Test_Drives_ListView.TabIndex = 0;
             this.Test_Drives_ListView.UseCompatibleStateImageBehavior = false;
@@ -172,7 +161,7 @@ namespace Year_14_CA_SSD
             this.Search_TextBox.Location = new System.Drawing.Point(92, 536);
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(408, 39);
-            this.Search_TextBox.TabIndex = 38;
+            this.Search_TextBox.TabIndex = 25;
             // 
             // Customer_GroupBox
             // 
@@ -191,6 +180,16 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.TabIndex = 48;
             this.Customer_GroupBox.TabStop = false;
             this.Customer_GroupBox.Text = "Customer";
+            // 
+            // Cust_Tel_Label
+            // 
+            this.Cust_Tel_Label.AutoSize = true;
+            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Tel_Label.Location = new System.Drawing.Point(169, 20);
+            this.Cust_Tel_Label.Name = "Cust_Tel_Label";
+            this.Cust_Tel_Label.Size = new System.Drawing.Size(90, 21);
+            this.Cust_Tel_Label.TabIndex = 0;
+            this.Cust_Tel_Label.Text = "0965736467";
             // 
             // label4
             // 
@@ -254,23 +253,13 @@ namespace Year_14_CA_SSD
             // 
             // Cust_Email_Label
             // 
-            this.Cust_Email_Label.AutoSize = true;
+            this.Cust_Email_Label.AutoEllipsis = true;
             this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cust_Email_Label.Location = new System.Drawing.Point(53, 41);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
-            this.Cust_Email_Label.Size = new System.Drawing.Size(189, 21);
+            this.Cust_Email_Label.Size = new System.Drawing.Size(235, 21);
             this.Cust_Email_Label.TabIndex = 2;
             this.Cust_Email_Label.Text = "Nathanmcgee@gmail.com";
-            // 
-            // Cust_Tel_Label
-            // 
-            this.Cust_Tel_Label.AutoSize = true;
-            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Tel_Label.Location = new System.Drawing.Point(169, 20);
-            this.Cust_Tel_Label.Name = "Cust_Tel_Label";
-            this.Cust_Tel_Label.Size = new System.Drawing.Size(90, 21);
-            this.Cust_Tel_Label.TabIndex = 0;
-            this.Cust_Tel_Label.Text = "0965736467";
             // 
             // Employee_GroupBox
             // 
@@ -312,11 +301,11 @@ namespace Year_14_CA_SSD
             // 
             // Employee_Email_Label
             // 
-            this.Employee_Email_Label.AutoSize = true;
+            this.Employee_Email_Label.AutoEllipsis = true;
             this.Employee_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employee_Email_Label.Location = new System.Drawing.Point(51, 41);
             this.Employee_Email_Label.Name = "Employee_Email_Label";
-            this.Employee_Email_Label.Size = new System.Drawing.Size(189, 21);
+            this.Employee_Email_Label.Size = new System.Drawing.Size(237, 21);
             this.Employee_Email_Label.TabIndex = 2;
             this.Employee_Email_Label.Text = "Nathanmcgee@gmail.com";
             // 
@@ -529,7 +518,7 @@ namespace Year_14_CA_SSD
             this.Searching_Group_ComboBox.Location = new System.Drawing.Point(521, 542);
             this.Searching_Group_ComboBox.Name = "Searching_Group_ComboBox";
             this.Searching_Group_ComboBox.Size = new System.Drawing.Size(139, 33);
-            this.Searching_Group_ComboBox.TabIndex = 51;
+            this.Searching_Group_ComboBox.TabIndex = 31;
             this.Searching_Group_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Sorting_Group_ComboBox_SelectedIndexChanged);
             // 
             // Car_GroupBox
@@ -557,6 +546,36 @@ namespace Year_14_CA_SSD
             this.Car_GroupBox.TabIndex = 49;
             this.Car_GroupBox.TabStop = false;
             this.Car_GroupBox.Text = "Car";
+            // 
+            // Body_Style_Label
+            // 
+            this.Body_Style_Label.AutoSize = true;
+            this.Body_Style_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Body_Style_Label.Location = new System.Drawing.Point(85, 62);
+            this.Body_Style_Label.Name = "Body_Style_Label";
+            this.Body_Style_Label.Size = new System.Drawing.Size(38, 21);
+            this.Body_Style_Label.TabIndex = 2;
+            this.Body_Style_Label.Text = "SUV";
+            // 
+            // Mileage_Label
+            // 
+            this.Mileage_Label.AutoSize = true;
+            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Label.Location = new System.Drawing.Point(68, 41);
+            this.Mileage_Label.Name = "Mileage_Label";
+            this.Mileage_Label.Size = new System.Drawing.Size(78, 21);
+            this.Mileage_Label.TabIndex = 0;
+            this.Mileage_Label.Text = "310,910km";
+            // 
+            // Engine_Size_Label
+            // 
+            this.Engine_Size_Label.AutoSize = true;
+            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Engine_Size_Label.Location = new System.Drawing.Point(92, 155);
+            this.Engine_Size_Label.Name = "Engine_Size_Label";
+            this.Engine_Size_Label.Size = new System.Drawing.Size(31, 21);
+            this.Engine_Size_Label.TabIndex = 6;
+            this.Engine_Size_Label.Text = "1.3l";
             // 
             // Power_Label
             // 
@@ -638,16 +657,6 @@ namespace Year_14_CA_SSD
             this.label8.TabIndex = 15;
             this.label8.Text = "Colour:";
             // 
-            // Body_Style_Label
-            // 
-            this.Body_Style_Label.AutoSize = true;
-            this.Body_Style_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Body_Style_Label.Location = new System.Drawing.Point(85, 62);
-            this.Body_Style_Label.Name = "Body_Style_Label";
-            this.Body_Style_Label.Size = new System.Drawing.Size(38, 21);
-            this.Body_Style_Label.TabIndex = 2;
-            this.Body_Style_Label.Text = "SUV";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -657,16 +666,6 @@ namespace Year_14_CA_SSD
             this.label7.Size = new System.Drawing.Size(85, 21);
             this.label7.TabIndex = 14;
             this.label7.Text = "Body Style:";
-            // 
-            // Mileage_Label
-            // 
-            this.Mileage_Label.AutoSize = true;
-            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mileage_Label.Location = new System.Drawing.Point(68, 41);
-            this.Mileage_Label.Name = "Mileage_Label";
-            this.Mileage_Label.Size = new System.Drawing.Size(78, 21);
-            this.Mileage_Label.TabIndex = 0;
-            this.Mileage_Label.Text = "310,910km";
             // 
             // label6
             // 
@@ -698,16 +697,6 @@ namespace Year_14_CA_SSD
             this.label5.TabIndex = 12;
             this.label5.Text = "Reg:";
             // 
-            // Engine_Size_Label
-            // 
-            this.Engine_Size_Label.AutoSize = true;
-            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Engine_Size_Label.Location = new System.Drawing.Point(92, 155);
-            this.Engine_Size_Label.Name = "Engine_Size_Label";
-            this.Engine_Size_Label.Size = new System.Drawing.Size(31, 21);
-            this.Engine_Size_Label.TabIndex = 6;
-            this.Engine_Size_Label.Text = "1.3l";
-            // 
             // Transmission_Label
             // 
             this.Transmission_Label.AutoSize = true;
@@ -717,160 +706,6 @@ namespace Year_14_CA_SSD
             this.Transmission_Label.Size = new System.Drawing.Size(79, 21);
             this.Transmission_Label.TabIndex = 4;
             this.Transmission_Label.Text = "Automatic";
-            // 
-            // Sort_End_Date
-            // 
-            this.Sort_End_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_End_Date.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_End_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_End_Date.Location = new System.Drawing.Point(855, 64);
-            this.Sort_End_Date.Name = "Sort_End_Date";
-            this.Sort_End_Date.Size = new System.Drawing.Size(20, 20);
-            this.Sort_End_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_End_Date.TabIndex = 62;
-            this.Sort_End_Date.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_End_Date, "Sort End Date");
-            this.Sort_End_Date.Click += new System.EventHandler(this.Sort_End_Date_Click);
-            // 
-            // Sort_Start_Date
-            // 
-            this.Sort_Start_Date.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Start_Date.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Start_Date.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Start_Date.Location = new System.Drawing.Point(714, 64);
-            this.Sort_Start_Date.Name = "Sort_Start_Date";
-            this.Sort_Start_Date.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Start_Date.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Start_Date.TabIndex = 61;
-            this.Sort_Start_Date.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Start_Date, "Sort Start Date");
-            this.Sort_Start_Date.Click += new System.EventHandler(this.Sort_Start_Date_Click);
-            // 
-            // Sort_Car
-            // 
-            this.Sort_Car.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Car.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Car.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Car.Location = new System.Drawing.Point(576, 64);
-            this.Sort_Car.Name = "Sort_Car";
-            this.Sort_Car.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Car.TabIndex = 60;
-            this.Sort_Car.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Car, "Sort Car Name");
-            this.Sort_Car.Click += new System.EventHandler(this.Sort_Car_Click);
-            // 
-            // Sort_Employee
-            // 
-            this.Sort_Employee.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Employee.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Employee.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Employee.Location = new System.Drawing.Point(390, 64);
-            this.Sort_Employee.Name = "Sort_Employee";
-            this.Sort_Employee.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Employee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Employee.TabIndex = 59;
-            this.Sort_Employee.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Employee, "Sort Employee Name");
-            this.Sort_Employee.Click += new System.EventHandler(this.Sort_Employee_Click);
-            // 
-            // Sort_Customer
-            // 
-            this.Sort_Customer.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDownGrid;
-            this.Sort_Customer.BackColor = System.Drawing.SystemColors.Window;
-            this.Sort_Customer.Image = global::Year_14_CA_SSD.Properties.Resources.sort;
-            this.Sort_Customer.Location = new System.Drawing.Point(230, 64);
-            this.Sort_Customer.Name = "Sort_Customer";
-            this.Sort_Customer.Size = new System.Drawing.Size(20, 20);
-            this.Sort_Customer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Sort_Customer.TabIndex = 58;
-            this.Sort_Customer.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Sort_Customer, "Sort Customer Name");
-            this.Sort_Customer.Click += new System.EventHandler(this.Sort_Customer_Click);
-            // 
-            // Show_Cancelled_Button
-            // 
-            this.Show_Cancelled_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
-            this.Show_Cancelled_Button.Location = new System.Drawing.Point(12, 141);
-            this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
-            this.Show_Cancelled_Button.Size = new System.Drawing.Size(64, 64);
-            this.Show_Cancelled_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Show_Cancelled_Button.TabIndex = 57;
-            this.Show_Cancelled_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Show_Cancelled_Button, "Toggle Cancelled Visibility");
-            this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
-            // 
-            // Refresh_Button
-            // 
-            this.Refresh_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
-            this.Refresh_Button.Location = new System.Drawing.Point(12, 62);
-            this.Refresh_Button.Name = "Refresh_Button";
-            this.Refresh_Button.Size = new System.Drawing.Size(64, 64);
-            this.Refresh_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Refresh_Button.TabIndex = 47;
-            this.Refresh_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh");
-            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
-            // 
-            // Search_Button
-            // 
-            this.Search_Button.Image = global::Year_14_CA_SSD.Properties.Resources.search_icon;
-            this.Search_Button.Location = new System.Drawing.Point(12, 526);
-            this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(64, 64);
-            this.Search_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Search_Button.TabIndex = 40;
-            this.Search_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
-            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
-            // 
-            // Cancel_Button
-            // 
-            this.Cancel_Button.Image = global::Year_14_CA_SSD.Properties.Resources.cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(12, 295);
-            this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(64, 64);
-            this.Cancel_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Cancel_Button.TabIndex = 12;
-            this.Cancel_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Cancel_Button, "Cancel Test Drive");
-            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
-            // 
-            // Delete_Button
-            // 
-            this.Delete_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
-            this.Delete_Button.Location = new System.Drawing.Point(12, 449);
-            this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(64, 64);
-            this.Delete_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Delete_Button.TabIndex = 11;
-            this.Delete_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Delete_Button, "Delete Test Drive");
-            this.Delete_Button.Click += new System.EventHandler(this.Remove_Test_Drive_Button_Click);
-            // 
-            // Add_Button
-            // 
-            this.Add_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
-            this.Add_Button.Location = new System.Drawing.Point(12, 218);
-            this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(64, 64);
-            this.Add_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Add_Button.TabIndex = 10;
-            this.Add_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Add_Button, "Add Test Drive");
-            this.Add_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
-            // 
-            // Edit_Button
-            // 
-            this.Edit_Button.Image = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
-            this.Edit_Button.Location = new System.Drawing.Point(12, 372);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Size = new System.Drawing.Size(64, 64);
-            this.Edit_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Edit_Button.TabIndex = 9;
-            this.Edit_Button.TabStop = false;
-            this.Tool_Tip.SetToolTip(this.Edit_Button, "Edit Test Drive");
-            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
             // pictureBox11
             // 
@@ -974,14 +809,14 @@ namespace Year_14_CA_SSD
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox12
+            // Icon_ToolBox_PictureBox
             // 
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Location = new System.Drawing.Point(10, 59);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(68, 533);
-            this.pictureBox12.TabIndex = 88;
-            this.pictureBox12.TabStop = false;
+            this.Icon_ToolBox_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Icon_ToolBox_PictureBox.Location = new System.Drawing.Point(10, 59);
+            this.Icon_ToolBox_PictureBox.Name = "Icon_ToolBox_PictureBox";
+            this.Icon_ToolBox_PictureBox.Size = new System.Drawing.Size(68, 533);
+            this.Icon_ToolBox_PictureBox.TabIndex = 88;
+            this.Icon_ToolBox_PictureBox.TabStop = false;
             // 
             // Title_Label
             // 
@@ -989,22 +824,186 @@ namespace Year_14_CA_SSD
             this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title_Label.Location = new System.Drawing.Point(12, 9);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(334, 47);
+            this.Title_Label.Size = new System.Drawing.Size(333, 47);
             this.Title_Label.TabIndex = 92;
-            this.Title_Label.Text = "Test Drive Database";
+            this.Title_Label.Text = "Test Drive Bookings";
+            // 
+            // Sort_Customer_Button
+            // 
+            this.Sort_Customer_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Customer_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Customer_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Customer_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Customer_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Customer_Button.Location = new System.Drawing.Point(230, 63);
+            this.Sort_Customer_Button.Name = "Sort_Customer_Button";
+            this.Sort_Customer_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Customer_Button.TabIndex = 100;
+            this.Sort_Customer_Button.UseVisualStyleBackColor = false;
+            this.Sort_Customer_Button.Click += new System.EventHandler(this.Sort_Customer_Click);
+            // 
+            // Sort_Employee_Button
+            // 
+            this.Sort_Employee_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Employee_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Employee_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Employee_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Employee_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Employee_Button.Location = new System.Drawing.Point(393, 63);
+            this.Sort_Employee_Button.Name = "Sort_Employee_Button";
+            this.Sort_Employee_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Employee_Button.TabIndex = 101;
+            this.Sort_Employee_Button.UseVisualStyleBackColor = false;
+            this.Sort_Employee_Button.Click += new System.EventHandler(this.Sort_Employee_Click);
+            // 
+            // Sort_Car_Button
+            // 
+            this.Sort_Car_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Car_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Car_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Car_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Car_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Car_Button.Location = new System.Drawing.Point(574, 62);
+            this.Sort_Car_Button.Name = "Sort_Car_Button";
+            this.Sort_Car_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Car_Button.TabIndex = 102;
+            this.Sort_Car_Button.UseVisualStyleBackColor = false;
+            this.Sort_Car_Button.Click += new System.EventHandler(this.Sort_Car_Click);
+            // 
+            // Sort_Start_Date_Button
+            // 
+            this.Sort_Start_Date_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_Start_Date_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_Start_Date_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_Start_Date_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_Start_Date_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_Start_Date_Button.Location = new System.Drawing.Point(712, 62);
+            this.Sort_Start_Date_Button.Name = "Sort_Start_Date_Button";
+            this.Sort_Start_Date_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_Start_Date_Button.TabIndex = 103;
+            this.Sort_Start_Date_Button.UseVisualStyleBackColor = false;
+            this.Sort_Start_Date_Button.Click += new System.EventHandler(this.Sort_Start_Date_Click);
+            // 
+            // Sort_End_Date_Button
+            // 
+            this.Sort_End_Date_Button.BackColor = System.Drawing.SystemColors.Window;
+            this.Sort_End_Date_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.sort;
+            this.Sort_End_Date_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Sort_End_Date_Button.FlatAppearance.BorderSize = 0;
+            this.Sort_End_Date_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sort_End_Date_Button.Location = new System.Drawing.Point(851, 63);
+            this.Sort_End_Date_Button.Name = "Sort_End_Date_Button";
+            this.Sort_End_Date_Button.Size = new System.Drawing.Size(25, 25);
+            this.Sort_End_Date_Button.TabIndex = 104;
+            this.Sort_End_Date_Button.UseVisualStyleBackColor = false;
+            this.Sort_End_Date_Button.Click += new System.EventHandler(this.Sort_End_Date_Click);
+            // 
+            // Refresh_Button
+            // 
+            this.Refresh_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.grey_thin_refresh;
+            this.Refresh_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Refresh_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Refresh_Button.FlatAppearance.BorderSize = 0;
+            this.Refresh_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_Button.Location = new System.Drawing.Point(11, 60);
+            this.Refresh_Button.Name = "Refresh_Button";
+            this.Refresh_Button.Size = new System.Drawing.Size(66, 62);
+            this.Refresh_Button.TabIndex = 45;
+            this.Refresh_Button.UseVisualStyleBackColor = true;
+            this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
+            // 
+            // Show_Cancelled_Button
+            // 
+            this.Show_Cancelled_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.cancel_not_visible;
+            this.Show_Cancelled_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_Cancelled_Button.FlatAppearance.BorderSize = 0;
+            this.Show_Cancelled_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_Cancelled_Button.Location = new System.Drawing.Point(11, 138);
+            this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
+            this.Show_Cancelled_Button.Size = new System.Drawing.Size(66, 62);
+            this.Show_Cancelled_Button.TabIndex = 46;
+            this.Show_Cancelled_Button.UseVisualStyleBackColor = true;
+            this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
+            // 
+            // Add_Button
+            // 
+            this.Add_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.grey_plus;
+            this.Add_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Add_Button.FlatAppearance.BorderSize = 0;
+            this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_Button.Location = new System.Drawing.Point(11, 214);
+            this.Add_Button.Name = "Add_Button";
+            this.Add_Button.Size = new System.Drawing.Size(66, 62);
+            this.Add_Button.TabIndex = 47;
+            this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
+            // 
+            // Cancel_Button
+            // 
+            this.Cancel_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.cancel;
+            this.Cancel_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Cancel_Button.FlatAppearance.BorderSize = 0;
+            this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cancel_Button.Location = new System.Drawing.Point(11, 291);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(66, 62);
+            this.Cancel_Button.TabIndex = 48;
+            this.Cancel_Button.UseVisualStyleBackColor = true;
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.grey_pencil;
+            this.Edit_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Edit_Button.FlatAppearance.BorderSize = 0;
+            this.Edit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Edit_Button.Location = new System.Drawing.Point(11, 370);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Size = new System.Drawing.Size(66, 62);
+            this.Edit_Button.TabIndex = 49;
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            // 
+            // Delete_Button
+            // 
+            this.Delete_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.grey_delete;
+            this.Delete_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Delete_Button.FlatAppearance.BorderSize = 0;
+            this.Delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete_Button.Location = new System.Drawing.Point(11, 448);
+            this.Delete_Button.Name = "Delete_Button";
+            this.Delete_Button.Size = new System.Drawing.Size(66, 62);
+            this.Delete_Button.TabIndex = 50;
+            this.Delete_Button.UseVisualStyleBackColor = true;
+            this.Delete_Button.Click += new System.EventHandler(this.Remove_Test_Drive_Button_Click);
+            // 
+            // Search_Button
+            // 
+            this.Search_Button.BackgroundImage = global::Year_14_CA_SSD.Properties.Resources.search_icon;
+            this.Search_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Search_Button.FlatAppearance.BorderSize = 0;
+            this.Search_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Search_Button.Location = new System.Drawing.Point(11, 528);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(66, 62);
+            this.Search_Button.TabIndex = 51;
+            this.Search_Button.UseVisualStyleBackColor = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // TestDriveDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 596);
-            this.Controls.Add(this.Title_Label);
-            this.Controls.Add(this.Sort_End_Date);
-            this.Controls.Add(this.Sort_Start_Date);
-            this.Controls.Add(this.Sort_Car);
-            this.Controls.Add(this.Sort_Employee);
-            this.Controls.Add(this.Sort_Customer);
+            this.Controls.Add(this.Search_Button);
+            this.Controls.Add(this.Delete_Button);
+            this.Controls.Add(this.Edit_Button);
+            this.Controls.Add(this.Cancel_Button);
+            this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.Show_Cancelled_Button);
+            this.Controls.Add(this.Sort_End_Date_Button);
+            this.Controls.Add(this.Sort_Start_Date_Button);
+            this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.Car_GroupBox);
             this.Controls.Add(this.pictureBox6);
@@ -1015,7 +1014,6 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Test_Drive_GroupBox);
             this.Controls.Add(this.Employee_GroupBox);
             this.Controls.Add(this.Customer_GroupBox);
-            this.Controls.Add(this.Refresh_Button);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox7);
@@ -1024,13 +1022,12 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Search_TextBox);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Search_Button);
-            this.Controls.Add(this.Cancel_Button);
-            this.Controls.Add(this.Delete_Button);
-            this.Controls.Add(this.Add_Button);
-            this.Controls.Add(this.Edit_Button);
+            this.Controls.Add(this.Sort_Customer_Button);
+            this.Controls.Add(this.Sort_Employee_Button);
+            this.Controls.Add(this.Sort_Car_Button);
             this.Controls.Add(this.Test_Drives_ListView);
-            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.Refresh_Button);
+            this.Controls.Add(this.Icon_ToolBox_PictureBox);
             this.Name = "TestDriveDataForm";
             this.Text = "TestDriveDataForm";
             this.Load += new System.EventHandler(this.TestDriveDataForm_Load);
@@ -1042,18 +1039,6 @@ namespace Year_14_CA_SSD
             this.Test_Drive_GroupBox.PerformLayout();
             this.Car_GroupBox.ResumeLayout(false);
             this.Car_GroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_End_Date)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Start_Date)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Car)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Employee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sort_Customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Show_Cancelled_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Refresh_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Search_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cancel_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delete_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Add_Button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Edit_Button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -1065,7 +1050,7 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Icon_ToolBox_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1074,20 +1059,14 @@ namespace Year_14_CA_SSD
         #endregion
 
         private System.Windows.Forms.ListView Test_Drives_ListView;
-        private System.Windows.Forms.PictureBox Edit_Button;
-        private System.Windows.Forms.PictureBox Add_Button;
-        private System.Windows.Forms.PictureBox Delete_Button;
-        private System.Windows.Forms.PictureBox Cancel_Button;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.ComboBox Search_ComboBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox Search_TextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox Search_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox Refresh_Button;
         private System.Windows.Forms.GroupBox Customer_GroupBox;
         private System.Windows.Forms.Label Cust_Email_Label;
         private System.Windows.Forms.Label Cust_DOB_Label;
@@ -1120,14 +1099,8 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Fuel_Type_Label;
         private System.Windows.Forms.Label Power_Label;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox Show_Cancelled_Button;
-        private System.Windows.Forms.PictureBox Sort_Customer;
-        private System.Windows.Forms.ToolTip Tool_Tip;
-        private System.Windows.Forms.PictureBox Sort_Employee;
-        private System.Windows.Forms.PictureBox Sort_Car;
-        private System.Windows.Forms.PictureBox Sort_Start_Date;
-        private System.Windows.Forms.PictureBox Sort_End_Date;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.ToolTip Value_Tool_Tip;
+        private System.Windows.Forms.PictureBox Icon_ToolBox_PictureBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -1151,5 +1124,17 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label Title_Label;
+        private System.Windows.Forms.Button Sort_Customer_Button;
+        private System.Windows.Forms.Button Sort_Employee_Button;
+        private System.Windows.Forms.Button Sort_Car_Button;
+        private System.Windows.Forms.Button Sort_Start_Date_Button;
+        private System.Windows.Forms.Button Sort_End_Date_Button;
+        private System.Windows.Forms.Button Refresh_Button;
+        private System.Windows.Forms.Button Show_Cancelled_Button;
+        private System.Windows.Forms.Button Add_Button;
+        private System.Windows.Forms.Button Cancel_Button;
+        private System.Windows.Forms.Button Edit_Button;
+        private System.Windows.Forms.Button Delete_Button;
+        private System.Windows.Forms.Button Search_Button;
     }
 }

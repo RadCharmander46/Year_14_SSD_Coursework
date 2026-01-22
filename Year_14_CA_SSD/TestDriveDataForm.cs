@@ -401,6 +401,7 @@ namespace Year_14_CA_SSD
                 {
                     row.ForeColor = Color.Black;
                 }
+                row.ToolTipText = row.Text;
                 Test_Drives_ListView.Items.Add(row);
             }
         }
@@ -597,6 +598,7 @@ namespace Year_14_CA_SSD
 
         private void Test_Drives_ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Value_Tool_Tip.RemoveAll();
             if (Test_Drives_ListView.SelectedItems.Count == 1)
             {
                 string[] testDrive = testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]];
@@ -618,17 +620,23 @@ namespace Year_14_CA_SSD
                 Display_Car(carId);
 
                 Returned_Label.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("HasBeenReturned")]);
+                Value_Tool_Tip.SetToolTip(Returned_Label, Returned_Label.Text);
                 Damaged_Returned.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("ReturnedDamaged")]);
+                Value_Tool_Tip.SetToolTip(Damaged_Returned, Damaged_Returned.Text);
                 Cancelled_Label.Text = Globals.boolToYN(testDrive[Get_TestDrive_Column_Index("IsCancelled")]);
+                Value_Tool_Tip.SetToolTip(Cancelled_Label, Cancelled_Label.Text);
 
                 int testDriveTypeId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("TestDriveType")]);
                 Test_Drive_Length_Label.Text = Get_Test_Drive_Type_Name(testDriveTypeId);
+                Value_Tool_Tip.SetToolTip(Test_Drive_Length_Label, Test_Drive_Length_Label.Text);
 
                 int paymentId = Convert.ToInt32(testDrive[Get_TestDrive_Column_Index("PaymentId")]);
                 string[] paymentValues = Get_Payment_Values(paymentId);
                 
                 Cost_Label.Text = "£" +  paymentValues[3];
+                Value_Tool_Tip.SetToolTip(Cost_Label, Cost_Label.Text);
                 Paid_Label.Text = Globals.boolToYN(paymentValues[6]);
+                Value_Tool_Tip.SetToolTip(Paid_Label, Paid_Label.Text);
 
             }
             else
@@ -685,9 +693,16 @@ namespace Year_14_CA_SSD
                 if (customer != null)
                 {
                     Cust_DOB_Label.Text = Globals.removeTime(customer[4]);
+                    Value_Tool_Tip.SetToolTip(Cust_DOB_Label, Cust_DOB_Label.Text);
+
                     Cust_Tel_Label.Text = customer[5];
+                    Value_Tool_Tip.SetToolTip(Cust_Tel_Label, customer[5]);
+
                     Cust_Email_Label.Text = customer[6];
+                    Value_Tool_Tip.SetToolTip(Cust_Email_Label, customer[6]);
+
                     Cust_Postcode_Label.Text = customer[10];
+                    Value_Tool_Tip.SetToolTip(Cust_Postcode_Label, customer[10]);
                 }
                 else
                 {
@@ -710,13 +725,28 @@ namespace Year_14_CA_SSD
                 if (car != null)
                 {
                     Reg_Label.Text = car[3];
+                    Value_Tool_Tip.SetToolTip(Reg_Label, car[3]);
+
                     Mileage_Label.Text = Globals.addCommaToNumber(car[5]) + "km";
+                    Value_Tool_Tip.SetToolTip(Mileage_Label, Mileage_Label.Text);
+
                     Transmission_Label.Text = car[6];
+                    Value_Tool_Tip.SetToolTip(Transmission_Label, car[6]);
+
                     Fuel_Type_Label.Text = car[7];
+                    Value_Tool_Tip.SetToolTip(Fuel_Type_Label, car[7]);
+
                     Engine_Size_Label.Text = car[8] + "l";
+                    Value_Tool_Tip.SetToolTip(Engine_Size_Label, Engine_Size_Label.Text);
+
                     Power_Label.Text = car[9] + "hp";
+                    Value_Tool_Tip.SetToolTip(Power_Label, Power_Label.Text);
+
                     Colour_Label.Text = car[10];
+                    Value_Tool_Tip.SetToolTip(Colour_Label, car[10]);
+
                     Body_Style_Label.Text = car[11];
+                    Value_Tool_Tip.SetToolTip(Body_Style_Label, car[11]);
                 }
                 else
                 {
@@ -743,9 +773,16 @@ namespace Year_14_CA_SSD
                 if (employee != null)
                 {
                     Employee_DOB_Label.Text = Globals.removeTime(employee[4]);
+                    Value_Tool_Tip.SetToolTip(Employee_DOB_Label, Globals.removeTime(employee[4]));
+
                     Employee_Tel_Label.Text = employee[5];
+                    Value_Tool_Tip.SetToolTip(Employee_Tel_Label, employee[5]);
+
                     Employee_Email_Label.Text = employee[6];
+                    Value_Tool_Tip.SetToolTip(Employee_Email_Label, employee[6]);
+
                     Employee_Username_Label.Text = employee[13];
+                    Value_Tool_Tip.SetToolTip(Employee_Username_Label, employee[13]);
                 }
                 else
                 {
@@ -1070,7 +1107,7 @@ namespace Year_14_CA_SSD
             showCancelled = true;
             Show_Cancelled_Button.Click -= new EventHandler(Show_Cancelled);
             Show_Cancelled_Button.Click += new EventHandler(Hide_Cancelled);
-            Show_Cancelled_Button.Image = Properties.Resources.cancel_visible;
+            Show_Cancelled_Button.BackgroundImage = Properties.Resources.cancel_visible;
             Display_TestDrives();
         }
         void Hide_Cancelled(object sender, EventArgs e)
@@ -1078,7 +1115,7 @@ namespace Year_14_CA_SSD
             showCancelled = false;
             Show_Cancelled_Button.Click -= new EventHandler(Hide_Cancelled);
             Show_Cancelled_Button.Click += new EventHandler(Show_Cancelled);
-            Show_Cancelled_Button.Image = Properties.Resources.cancel_not_visible;
+            Show_Cancelled_Button.BackgroundImage = Properties.Resources.cancel_not_visible;
             Display_TestDrives();
         }
 

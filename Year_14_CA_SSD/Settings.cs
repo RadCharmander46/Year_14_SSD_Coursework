@@ -18,6 +18,10 @@ namespace Year_14_CA_SSD
         private decimal[] testDriveCosts = { 0, 80, 175 };
         private int previousCustDiscount = 15;
         private TimeSpan cleaningTimeBetweenTestDrives = new TimeSpan(4, 0, 0);
+        private TimeSpan licenseExpiryAdvance = new TimeSpan(30, 0, 0, 0);
+        private int depositPercent = 10;
+        private decimal lateFee = 5.0M;
+        private TimeSpan timeBeforeLate = new TimeSpan(2, 0, 0);
 
         public string[] OpenningTimes
         {
@@ -45,7 +49,7 @@ namespace Year_14_CA_SSD
             set { mileageLimits = value; }
         }
         public decimal MileageFee
-        { 
+        {
             get { return mileageFee; }
             set { mileageFee = value; }
         }
@@ -59,7 +63,7 @@ namespace Year_14_CA_SSD
             get { return previousCustDiscount; }
             set
             {
-                if(value >= 0 && value <= 100)
+                if (value >= 0 && value <= 100)
                 {
                     previousCustDiscount = value;
                 }
@@ -73,6 +77,26 @@ namespace Year_14_CA_SSD
         {
             get { return cleaningTimeBetweenTestDrives; }
             set { cleaningTimeBetweenTestDrives = value; }
+        }
+        public TimeSpan LicenseExpiryAdvance
+        {
+            get { return licenseExpiryAdvance; }
+            set { licenseExpiryAdvance = value; }
+        }
+        public int DepositPercent
+        {
+            get { return depositPercent; }
+            set { depositPercent = value; }
+        }
+        public decimal LateFee
+        {
+            get { return lateFee; }
+            set { lateFee = value; }
+        }
+        public TimeSpan TimeBeforeLate
+        {
+            get { return timeBeforeLate; }
+            set { timeBeforeLate = value; }
         }
         public void Set_Opening_Time(int day,string time)
         {
@@ -94,7 +118,7 @@ namespace Year_14_CA_SSD
         {
 
         }
-        public Settings(string[] iOpenningTimes,string[] iClosingTimes, TimeSpan iTestDriveCancelNotice,int iMinTestDriveAge,int[] iMileageLimits,decimal iMileageFee,decimal[] iTestDriveCosts,int iPreviousCustDiscount)
+        public Settings(string[] iOpenningTimes,string[] iClosingTimes, TimeSpan iTestDriveCancelNotice,int iMinTestDriveAge,int[] iMileageLimits,decimal iMileageFee,decimal[] iTestDriveCosts,int iPreviousCustDiscount,TimeSpan iCleaningTimeBetweenTestDrives, TimeSpan iLicenseExpiryAdvance,int iDepositPercent, decimal iLateFee, TimeSpan ITimeBeforeLate)
         {
             this.OpenningTimes = iOpenningTimes;
             this.ClosingTimes = iClosingTimes;
@@ -104,6 +128,11 @@ namespace Year_14_CA_SSD
             this.MileageFee = iMileageFee;
             this.TestDriveCosts = iTestDriveCosts;
             this.PreviousCustDiscount = iPreviousCustDiscount;
+            this.CleaningTimeBetweeenTestDrives = iCleaningTimeBetweenTestDrives;
+            this.LicenseExpiryAdvance = iLicenseExpiryAdvance;
+            this.LateFee = iLateFee;
+            this.TimeBeforeLate = ITimeBeforeLate;
+            this.DepositPercent = iDepositPercent;
         }
         public void Save()
         {

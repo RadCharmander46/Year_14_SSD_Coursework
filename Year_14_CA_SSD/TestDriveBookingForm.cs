@@ -43,30 +43,30 @@ namespace Year_14_CA_SSD
         void Wipe_GroupBoxes()
         {
             Customer_TextBox.Text = " ";
-            Cust_Tel_Label.Text = "Tel:";
-            Cust_DOB_Label.Text = "Date Of Birth:";
+            Cust_Tel_Label.Text = "";
+            Cust_DOB_Label.Text = "";
             Postcode_Label.Text = "";
-            Cust_Email_Label.Text = "Email:";
-            PrevCust_Label.Text = "Previous Customer:";
-            Cust_LicenseNo_Label.Text = "License No:";
-            Cust_Issue_Label.Text = "Issue:";
-            Cust_Expiry_Label.Text = "Expiry:";
+            Cust_Email_Label.Text = "";
+            PrevCust_Label.Text = "";
+            Cust_LicenseNo_Label.Text = "";
+            Cust_Issue_Label.Text = "";
+            Cust_Expiry_Label.Text = "";
             Verified_Label.Text = "";
             Employee_TextBox.Text = "";
-            Employee_DOB_Label.Text = "Date Of Birth:";
-            Employee_Tel_Label.Text = "Tel:";
-            Employee_Email_Label.Text = "Email:";
-            Employee_Username_Label.Text = "Username:";
+            Employee_DOB_Label.Text = "";
+            Employee_Tel_Label.Text = "";
+            Employee_Email_Label.Text = "";
+            Employee_Username_Label.Text = "";
             Car_TextBox.Text = "";
-            Reg_Label.Text = "Reg:";
-            Mileage_Label.Text = "Mileage:";
-            BodyStyle_Label.Text = "Body Style:";
-            Colour_Label.Text = "Colour:";
-            NoOfSeats_Label.Text = "Number Of Seats";
-            Transmission_Label.Text = "Transmission:";
-            FuelType_Label.Text = "Fuel Type:";
-            EngineSize_Label.Text = "Engine Size:";
-            Power_Label.Text = "Power: ";
+            Reg_Label.Text = "";
+            Mileage_Label.Text = "";
+            BodyStyle_Label.Text = "";
+            Colour_Label.Text = "";
+            NoOfSeats_Label.Text = "";
+            Transmission_Label.Text = "";
+            FuelType_Label.Text = "";
+            EngineSize_Label.Text = "";
+            Power_Label.Text = "";
         }
         void Setup_Edit_Mode()
         {
@@ -84,18 +84,49 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 Customer_TextBox.Text = Globals.removeWhitespace(values[1] + " "+ values[2] + " " + values[3]);
-                Cust_Tel_Label.Text = "Tel: " + values[5];
-                Cust_DOB_Label.Text = "Date Of Birth: " + Globals.removeTime(values[4]);
-                Postcode_Label.Text = "Postcode: " + values[10];
-                Cust_Email_Label.Text = "Email: " + values[6];
-                PrevCust_Label.Text = "Previous Customer: " + Globals.boolToYN(values[15]);
-                Cust_LicenseNo_Label.Text = "License No: " + values[11];
-                Cust_Issue_Label.Text = "Issue: " + Globals.removeTime(values[12]);
-                Cust_Expiry_Label.Text = "Expiry: " + Globals.removeTime(values[13]);
-                Verified_Label.Text = "Verified: " + Globals.boolToYN(values[14]);
+                Customer_Tool_Tip.SetToolTip(Customer_TextBox, Customer_TextBox.Text);
+
+                Cust_Tel_Label.Text = values[5];
+                Customer_Tool_Tip.SetToolTip(Cust_Tel_Label, Cust_Tel_Label.Text);
+
+                Cust_DOB_Label.Text = Globals.removeTime(values[4]);
+                Customer_Tool_Tip.SetToolTip(Cust_DOB_Label, Cust_DOB_Label.Text);
+
+                Postcode_Label.Text = values[10];
+                Customer_Tool_Tip.SetToolTip(Postcode_Label, Postcode_Label.Text);
+
+                Cust_Email_Label.Text = values[6];
+
+                PrevCust_Label.Text = Globals.boolToYN(values[15]);
+                Customer_Tool_Tip.SetToolTip(PrevCust_Label, PrevCust_Label.Text);
+
+                Cust_LicenseNo_Label.Text = values[11];
+                Customer_Tool_Tip.SetToolTip(Cust_LicenseNo_Label, Cust_LicenseNo_Label.Text);
+
+                Cust_Issue_Label.Text = Globals.removeTime(values[12]);
+                Customer_Tool_Tip.SetToolTip(Cust_Issue_Label, Cust_Issue_Label.Text);
+
+                Cust_Expiry_Label.Text = Globals.removeTime(values[13]);
+                Customer_Tool_Tip.SetToolTip(Cust_Expiry_Label, Cust_Expiry_Label.Text);
+
+                Verified_Label.Text = Globals.boolToYN(values[14]);
+                Customer_Tool_Tip.SetToolTip(Verified_Label, Verified_Label.Text);
+
+                bool damagedVehicle = Convert.ToBoolean(values[16]);
+                if(damagedVehicle)
+                {
+                    Customer_GroupBox.BackColor = Color.Salmon;
+                    Tool_Tip.SetToolTip(Customer_GroupBox, "Customer has previous damaged a vehicle \nManager permission is needed for a test drive to be made");
+                }
+                else
+                {
+                    Customer_GroupBox.BackColor = SystemColors.Control;
+                    Tool_Tip.SetToolTip(Customer_GroupBox, "");
+                }
             }
             catch
             {
+                Customer_Tool_Tip.RemoveAll();
                 CustomerId = null;
                 Customer_TextBox.Text = " ";
                 Cust_Tel_Label.Text = "";
@@ -121,24 +152,39 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 Employee_TextBox.Text = Globals.removeWhitespace(values[1] + " " + values[2] + " " + values[3]);
-                Employee_DOB_Label.Text = "Date Of Birth: " + Globals.removeTime(values[4]);
-                Employee_Tel_Label.Text = "Tel: " + values[5];
-                Employee_Email_Label.Text = "Email: " + values[6];
-                Employee_Username_Label.Text = "Username: " + values[13];
+                Employee_Tool_Tip.SetToolTip(Employee_TextBox, Employee_TextBox.Text);
+
+                Employee_DOB_Label.Text = Globals.removeTime(values[4]);
+                Employee_Tool_Tip.SetToolTip(Employee_DOB_Label, Employee_DOB_Label.Text);
+
+                Employee_Tel_Label.Text = values[5];
+                Employee_Tool_Tip.SetToolTip(Employee_Tel_Label, Employee_Tel_Label.Text);
+
+                Employee_Email_Label.Text = values[6];
+                Employee_Tool_Tip.SetToolTip(Employee_Email_Label, Employee_Email_Label.Text);
+
+                Employee_Username_Label.Text = values[13];
+                Employee_Tool_Tip.SetToolTip(Employee_Username_Label, Employee_Username_Label.Text);
             }
             catch
             {
+                Employee_Tool_Tip.RemoveAll();
                 EmployeeId = null;
-                Employee_TextBox.Text = "";
-                Employee_DOB_Label.Text = "";
-                Employee_Tel_Label.Text = "";
-                Employee_Email_Label.Text = "";
-                Employee_Username_Label.Text = "";
+                Reset_Employee_Labels();
             }
+        }
+        void Reset_Employee_Labels()
+        {
+            Employee_TextBox.Text = "";
+            Employee_DOB_Label.Text = "";
+            Employee_Tel_Label.Text = "";
+            Employee_Email_Label.Text = "";
+            Employee_Username_Label.Text = "";
         }
 
         void Load_Car_Data()
         {
+            Car_Tool_Tip.RemoveAll();
             try
             {
                 int id = (int)CarId;
@@ -148,18 +194,38 @@ namespace Year_14_CA_SSD
                     throw new Exception();
                 }
                 Car_TextBox.Text = Globals.removeWhitespace(Globals.getYear(values[4]) + " " + values[1] + " " + values[2]);
-                Reg_Label.Text = "Reg: " + values[3];
-                Mileage_Label.Text = "Mileage: " + Globals.addCommaToNumber(values[5]) + "km";
-                BodyStyle_Label.Text = "Body Style: " + values[11];
-                Colour_Label.Text = "Colour: " + values[10];
-                NoOfSeats_Label.Text = "Number Of Seats: " + values[12];
-                Transmission_Label.Text = "Transmission: " + values[6];
-                FuelType_Label.Text = "Fuel Type: " + values[7];
-                EngineSize_Label.Text = "Engine Size: " + values[8] + "l";
-                Power_Label.Text = "Power: " + values[9] + "hp";
+                Car_Tool_Tip.SetToolTip(Car_TextBox, Car_TextBox.Text);
+
+                Reg_Label.Text = values[3];
+                Car_Tool_Tip.SetToolTip(Reg_Label, Reg_Label.Text);
+
+                Mileage_Label.Text = Globals.addCommaToNumber(values[5]) + "km";
+                Car_Tool_Tip.SetToolTip(Mileage_Label, Mileage_Label.Text);
+
+                BodyStyle_Label.Text = values[11];
+                Car_Tool_Tip.SetToolTip(BodyStyle_Label, BodyStyle_Label.Text);
+
+                Colour_Label.Text = values[10];
+                Car_Tool_Tip.SetToolTip(Colour_Label, Colour_Label.Text);
+
+                NoOfSeats_Label.Text = values[12];
+                Car_Tool_Tip.SetToolTip(NoOfSeats_Label, NoOfSeats_Label.Text);
+                
+                Transmission_Label.Text = values[6];
+                Car_Tool_Tip.SetToolTip(Transmission_Label, Transmission_Label.Text);
+
+                FuelType_Label.Text = values[7];
+                Car_Tool_Tip.SetToolTip(FuelType_Label, FuelType_Label.Text);
+
+                EngineSize_Label.Text = values[8] + "l";
+                Car_Tool_Tip.SetToolTip(EngineSize_Label, EngineSize_Label.Text);
+
+                Power_Label.Text = values[9] + "hp";
+                Car_Tool_Tip.SetToolTip(Power_Label, Power_Label.Text);
             }
             catch
             {
+                Car_Tool_Tip.RemoveAll();
                 MessageBox.Show("Error in reading car data");
                 CarId = null;
                 Car_TextBox.Text = "";
@@ -305,6 +371,7 @@ namespace Year_14_CA_SSD
                 MessageBox.Show("Weekend test drive must start on friday");
                 Length_ComboBox.Text = "";
                 Length_ComboBox.SelectedItem = null;
+                Length_ComboBox.SelectedIndex = 0;
             }
         }
 
@@ -428,25 +495,52 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                if (CustomerId == null || CarId == null)
+                if (CustomerId == null)
                 {
-                    throw new Exception();
+                    MessageBox.Show("A customer must be selected");
+                    return;
+                }
+                if (CarId == null)
+                {
+                    MessageBox.Show("A car must be selected");
+                    return;
                 }
                 if(EmployeeId == null && Employee_Accom.Checked)
                 {
-                    throw new Exception();
+                    MessageBox.Show("An employee must be selected");
+                    return;
+                }
+                if(Length_ComboBox.Text == "")
+                {
+                    MessageBox.Show("A test drive length must be selected");
+                    return;
+                }
+                if(Start_Time_ComboBox.Text == "")
+                {
+                    MessageBox.Show("A time must be selected");
+                    return;
+                }
+                if(Customer_Invalid())
+                {
+                    return;
                 }
                 DateTime[][] unavailabiltyForDay = Get_Unavailabilty_For_Day();
                 if (Time_Is_Unavailable((DateTime)Get_Start_Date(), (DateTime)Get_End_Date() ,unavailabiltyForDay))
                 {
-                    MessageBox.Show("TIme is Unavailabile");
-                    throw new Exception();
+                    MessageBox.Show("Time is Unavailabile");
+                    return;
                 }
                 DateTime[][] employeeAvailabilty = Get_Employee_Unavailabilty((int)EmployeeId);
                 if (Time_Is_Unavailable((DateTime)Get_Start_Date(),(DateTime)Get_End_Date(),employeeAvailabilty,false))
                 {
                     MessageBox.Show("Employee is unavailable");
-                    throw new Exception();
+                    return;
+                }
+                DateTime[][] customerAvailabilty = Get_Customer_Unavailabilty(CustomerId.Value);
+                if(Time_Is_Unavailable((DateTime)Get_Start_Date(),(DateTime)Get_End_Date(),customerAvailabilty,false))
+                {
+                    MessageBox.Show("Customer is unavailable");
+                    return;
                 }
                 int? CarUnavailabityId = Create_Car_Unavailabilty();
                 if (!CarUnavailabityId.HasValue)
@@ -508,6 +602,46 @@ namespace Year_14_CA_SSD
                 MessageBox.Show("An error occurred in creating the test drive");
             }
         }
+        bool Customer_Invalid()
+        {
+            //needs to be at or above the minimum age for a test drive
+            //needs to have a verified license that must not be within a month of expiry
+            //needs to be a manager if customer has a bad record
+            string[] customer = SQL_Operation.ReadEntry(CustomerId.Value, "CustomerId", "CustomerTable");
+
+            DateTime dob = Convert.ToDateTime(customer[4]);
+            int age = DateTime.Now.Year - dob.Year;
+            if(dob > DateTime.Now.AddYears(-age)) //if the birthday hasn't happened yet this year
+            {
+                age--;
+            }
+
+            if(age < Globals.settings.MinTestDriveAge) 
+            {
+                MessageBox.Show($"Customer is aged {age} which is below the minimum age for a test drive ({Globals.settings.MinTestDriveAge})"); 
+                return true;
+            }
+            bool verifiedLicense = Convert.ToBoolean(customer[14]);
+            if(!verifiedLicense)
+            {
+                MessageBox.Show("Customer's license has not been verified");
+                return true;
+            }
+            DateTime expiryDate = Convert.ToDateTime(customer[13]);
+            if(expiryDate < DateTime.Now.AddDays(Globals.settings.LicenseExpiryAdvance.TotalDays))
+            {
+                MessageBox.Show("Customer's license is too close to expiry, please renew it");
+                return true;
+            }
+            bool damagedVehicle = Convert.ToBoolean(customer[16]);
+            if(damagedVehicle && !Globals.isManager)
+            {
+                MessageBox.Show("Customer has previously damaged a vehicle. \nManager permission is required to book a test drive with this customer");
+                return true;
+            }
+            return false;
+
+        }
         private void Employee_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load_Employee_Data();
@@ -562,6 +696,11 @@ namespace Year_14_CA_SSD
                 {
                     MessageBox.Show("Time is unavailable");
                     return;
+                }
+                DateTime[][] customerAvailabilty = Get_Reduced_Customer_Availabilty(CustomerId.Value,TestDriveId);
+                if(Time_Is_Unavailable(startTime,endTime,customerAvailabilty,false))
+                {
+                    MessageBox.Show("Customer is unavailable for selected time");
                 }
                 string[] values = { startTime.ToString(), endTime.ToString() };
                 string[] columns = { "StartTime", "EndTime" };
@@ -629,6 +768,74 @@ namespace Year_14_CA_SSD
                     string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
                         "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
                         $"WHERE TestDriveTable.EmployeeId = '{employeeId}' AND TestDriveTable.TestDriveId != '{testDriveId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        DateTime[] unavailabilty = new DateTime[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            unavailabilty[i] = Convert.ToDateTime(reader.GetValue(i).ToString().Trim());
+                        }
+                        employeeUnavailabilties.Add(unavailabilty);
+                    }
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occured");
+                }
+            }
+            return employeeUnavailabilties.ToArray();
+        }
+
+        DateTime[][] Get_Customer_Unavailabilty(int customerId)
+        {
+            List<DateTime[]> employeeUnavailabilties = new List<DateTime[]>();
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE TestDriveTable.CustomerId = '{customerId}'";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        DateTime[] unavailabilty = new DateTime[reader.FieldCount];
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            unavailabilty[i] = Convert.ToDateTime(reader.GetValue(i).ToString().Trim());
+                        }
+                        employeeUnavailabilties.Add(unavailabilty);
+                    }
+                    conn.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occured");
+                }
+            }
+            return employeeUnavailabilties.ToArray();
+        }
+
+        DateTime[][] Get_Reduced_Customer_Availabilty(int customerId, int testDriveId)
+        {
+            List<DateTime[]> employeeUnavailabilties = new List<DateTime[]>();
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE TestDriveTable.CustomerId = '{customerId}' AND TestDriveTable.TestDriveId != '{testDriveId}'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -819,7 +1026,11 @@ namespace Year_14_CA_SSD
                 {
                     throw new Exception();
                 }
-                if(haveCleaningTime)
+                if (!Dealership_Is_Open(startTime) || !Dealership_Is_Open(endTime))
+                {
+                    return true;
+                }
+                if (haveCleaningTime)
                 {
                     endTime += Globals.settings.CleaningTimeBetweeenTestDrives;
                 }
@@ -844,7 +1055,17 @@ namespace Year_14_CA_SSD
                 return false;
             }
         }
-
+        bool Dealership_Is_Open(DateTime time)
+        {
+            int dayOfWeek = ((int)time.DayOfWeek);
+            if (dayOfWeek == 0) { dayOfWeek = 7; }//sunday is 0 so move to 7 to be 1-7 monday-sunday
+            dayOfWeek--;                         //minus so 0-6 = monday-sunday
+            if (Convert.ToDateTime(Globals.settings.OpenningTimes[dayOfWeek]).TimeOfDay < time.TimeOfDay && time.TimeOfDay < Convert.ToDateTime(Globals.settings.ClosingTimes[dayOfWeek]).TimeOfDay)
+            {
+                return true;
+            }
+            return false;
+        }
         private void Date_DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             Start_Time_ComboBox.Items.Clear();
@@ -858,6 +1079,7 @@ namespace Year_14_CA_SSD
         }
         void Customer_Picker()
         {
+            Customer_Tool_Tip.RemoveAll();
             if (AddMode)
             {
                 try
@@ -887,6 +1109,7 @@ namespace Year_14_CA_SSD
         }
         void Employee_Picker()
         {
+            Employee_Tool_Tip.RemoveAll();
             try
             {
                 PickerForm customerPicker = new PickerForm() { Table = "Employees" };
@@ -909,8 +1132,10 @@ namespace Year_14_CA_SSD
         }
         void Car_Picker()
         {
+
             if (AddMode)
             {
+
                 try
                 {
                     PickerForm customerPicker = new PickerForm() { Table = "Cars" };
@@ -972,6 +1197,14 @@ namespace Year_14_CA_SSD
         void Update_Employee_Accom()
         {
             Employee_Accom.Checked = Need_Employee();
+            if(Employee_Accom.Checked && EmployeeId.HasValue)
+            {
+                Load_Employee_Data();
+            }
+            else
+            {
+                Reset_Employee_Labels();
+            }
         }
 
         private void Employee_TextBox_TextChanged(object sender, EventArgs e)
@@ -1019,6 +1252,36 @@ namespace Year_14_CA_SSD
         }
 
         private void Show_Text_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Customer_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void Employee_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void Car_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void Customer_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Employee_TextBox_TextChanged_1(object sender, EventArgs e)
         {
 
         }

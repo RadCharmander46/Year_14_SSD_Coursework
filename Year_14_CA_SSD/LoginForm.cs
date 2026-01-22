@@ -34,13 +34,11 @@ namespace Year_14_CA_SSD
                 }
                 if(password == "") //no username was found
                 {
-                    MessageBox.Show("Incorrect Username");
-                    return;
+                    throw new Exception();
                 }
                 if(password != Password_TextBox.Text)
                 {
-                    MessageBox.Show("Incorrect Password");
-                    return;
+                    throw new Exception();
                 }
                 int id = (int)Load_Employee_Id();
                 Globals.loginId = id;
@@ -55,7 +53,7 @@ namespace Year_14_CA_SSD
             }
             catch
             {
-                MessageBox.Show("An error occured");
+                Incorrect_Label.Visible = true;
             }
         }
         string Load_Employee_Password()
@@ -152,6 +150,60 @@ namespace Year_14_CA_SSD
         private void Forgotten_Password_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please contact an admistrator to reset your password");
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            Username_TextBox.Focus();
+        }
+
+        private void Username_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Username_TextBox.TextChanged -= new EventHandler(Username_TextBox_TextChanged);
+            int index = Username_TextBox.SelectionStart;
+            Username_TextBox.Text = Username_TextBox.Text.ToUpper();
+            Username_TextBox.SelectionStart = index;
+            Globals.Remove_Illegal_Characters(Username_TextBox, Globals.typedUsernameInvalid);
+            Username_TextBox.TextChanged += new EventHandler(Username_TextBox_TextChanged);
+        }
+
+        private void Username_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Username_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Login_Button.PerformClick();
+            }
+        }
+
+        private void Show_Password_Tab_Button_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Password_TextBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void Show_Password_Tab_Button_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Password_TextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void Show_Password_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Show_Password_Tab_Button_Click(object sender, EventArgs e)
+        {
+            Password_TextBox.UseSystemPasswordChar = !Password_TextBox.UseSystemPasswordChar;
         }
     }
 }

@@ -30,26 +30,50 @@ namespace Year_14_CA_SSD
         }
         private void ListViewCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListViewCustomers.SelectedItems.Count == 1)
-            {
-                string[] customer = customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]];
-                Telephone_Label.Text = customer[5];
-                Email_Label.Text = Globals.splitEmailTwoRows(customer[6], 15);
-                Address_Line1_Label.Text = customer[7];
-                Address_Line2_Label.Text = customer[8];
-                Address_Line3_Label.Text = customer[9];
-                Postcode_Label.Text = customer[10];
-                License_Number_Label.Text = customer[11];
-                Issue_Label.Text = customer[12];
-                Expiry_Label.Text = customer[13];
-                Verified_Label.Text = Globals.boolToYN(customer[14]);
-                Previous_Label.Text = Globals.boolToYN(customer[15]);
-                Damaged_Label.Text = Globals.boolToYN(customer[16]);
-            }
-            else
+            if (ListViewCustomers.SelectedItems.Count != 1)
             {
                 Reset_Labels();
+                return;
             }
+            Value_Tool_Tip.RemoveAll();
+            string[] customer = customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]];
+
+            Telephone_Label.Text = customer[5];
+            Value_Tool_Tip.SetToolTip(Telephone_Label, customer[5]);
+
+            Email_Label.Text = Globals.splitEmailTwoRows(customer[6], 15);
+            Value_Tool_Tip.SetToolTip(Email_Label, customer[6]);
+
+            Address_Line1_Label.Text = customer[7];
+            Value_Tool_Tip.SetToolTip(Address_Line1_Label, customer[7]);
+
+            Address_Line2_Label.Text = customer[8];
+            Value_Tool_Tip.SetToolTip(Address_Line2_Label, customer[8]);
+
+            Address_Line3_Label.Text = customer[9];
+            Value_Tool_Tip.SetToolTip(Address_Line3_Label, customer[9]);
+
+            Postcode_Label.Text = customer[10];
+            Value_Tool_Tip.SetToolTip(Postcode_Label, customer[10]);
+
+            License_Number_Label.Text = customer[11];
+            Value_Tool_Tip.SetToolTip(License_Number_Label, customer[11]);
+
+            Issue_Label.Text = customer[12];
+            Value_Tool_Tip.SetToolTip(Issue_Label, customer[12]);
+
+            Expiry_Label.Text = customer[13];
+            Value_Tool_Tip.SetToolTip(Expiry_Label, customer[13]);
+
+            Verified_Label.Text = Globals.boolToYN(customer[14]);
+            Value_Tool_Tip.SetToolTip(Verified_Label, Globals.boolToYN(customer[14]));
+
+            Previous_Label.Text = Globals.boolToYN(customer[15]);
+            Value_Tool_Tip.SetToolTip(Previous_Label, Globals.boolToYN(customer[15]));
+
+            Damaged_Label.Text = Globals.boolToYN(customer[16]);
+            Value_Tool_Tip.SetToolTip(Damaged_Label, Globals.boolToYN(customer[16]));
+            
         }
         void Reset_Labels()
         {
@@ -87,6 +111,11 @@ namespace Year_14_CA_SSD
             if(ListViewCustomers.SelectedItems.Count == 1)
             {
                 int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
+                if (ListViewCustomers.SelectedItems[0].ForeColor == Color.DarkGray)
+                {
+                    MessageBox.Show("Customer is archived, so they cannot be edited");
+                    return;
+                }
                 if(AddCustomer != null)
                 {
                     AddCustomer.Invoke(this, new Add_Customer_EventArgs { AddMode = false, Id = id });
@@ -96,28 +125,33 @@ namespace Year_14_CA_SSD
         }
         private void Remove_Customer_Button_Click(object sender, EventArgs e)
         {
-            if (ListViewCustomers.SelectedItems.Count == 1)
+            if (ListViewCustomers.SelectedItems.Count != 1)
             {
-                int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
-                if(Can_Delete(id))
+                MessageBox.Show("One customer must be selected");
+                return;
+            }
+            if (ListViewCustomers.SelectedItems[0].ForeColor == Color.DarkGray)
+            {
+                MessageBox.Show("Customer is archived, so they cannot be deleted");
+                return;
+            }
+            int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
+            if(!Can_Delete(id))
+            {
+                MessageBox.Show("Customer cannot be deleted, please archive instead");
+                return;
+            }
+            ConfirmationForm deleteConfirm = new ConfirmationForm() { text = "Warning: Deleting is a permanent action \n Only continue if you are certain" };
+            deleteConfirm.StartPosition = FormStartPosition.Manual;
+            deleteConfirm.Location = new Point(Cursor.Position.X - deleteConfirm.Size.Width / 2 + 100, Cursor.Position.Y - deleteConfirm.Size.Height / 2);
+            if (deleteConfirm.ShowDialog() == DialogResult.OK)
+            {
+                if (!SQL_Operation.DeleteEntry(id, "CustomerId", "CustomerTable"))
                 {
-                    ConfirmationForm deleteConfirm = new ConfirmationForm() { text = "Warning: Deleting is a permanent action \n Only continue if you are certain" };
-                    if (deleteConfirm.ShowDialog() == DialogResult.OK)
-                    {
-                        if (!SQL_Operation.DeleteEntry(id, "CustomerId", "CustomerTable"))
-                        {
-                            MessageBox.Show("And error occured");
-                        }
-                        else
-                        {
-                            Refresh_Page();
-                        }
-                    }
+                    MessageBox.Show("And error occured");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Customer cannot be deleted, please archive instead");
-                }
+                Refresh_Page();
             }
         }
         private void Add_Customer_Button_Click(object sender, EventArgs e)
@@ -197,6 +231,7 @@ namespace Year_14_CA_SSD
                 {
                     row.ForeColor = Color.Black;
                 }
+                row.ToolTipText = row.Text;
                 ListViewCustomers.Items.Add(row);
             }
         }
@@ -301,7 +336,7 @@ namespace Year_14_CA_SSD
             showArchive = true;
             Show_Archive_Button.Click -= new EventHandler(Show_Archive);
             Show_Archive_Button.Click += new EventHandler(Hide_Archive);
-            Show_Archive_Button.Image = Properties.Resources.archive_visible;
+            Show_Archive_Button.BackgroundImage = Properties.Resources.archive_visible;
             Display_Archived();
         }
         void Hide_Archive(object sender,EventArgs e)
@@ -309,26 +344,45 @@ namespace Year_14_CA_SSD
             showArchive = false;
             Show_Archive_Button.Click -= new EventHandler(Hide_Archive);
             Show_Archive_Button.Click += new EventHandler(Show_Archive);
-            Show_Archive_Button.Image = Properties.Resources.archive_not_visible;
+            Show_Archive_Button.BackgroundImage = Properties.Resources.archive_not_visible;
             Display_Archived();
         }
 
         private void Archive_Button_Click(object sender, EventArgs e)
         {
-            if(ListViewCustomers.SelectedItems.Count == 1)
+            if(!Globals.isManager)
             {
-                int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
-                ConfirmationForm archiveConfirm = new ConfirmationForm() {text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
-                if(archiveConfirm.ShowDialog() == DialogResult.OK)
+                MessageBox.Show("Needs manager approval");
+                return;
+            }
+            if(ListViewCustomers.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("One customer must be selected");
+                return;
+            }
+            if (ListViewCustomers.SelectedItems[0].ForeColor == Color.DarkGray)
+            {
+                MessageBox.Show("Customer is already archived");
+                return;
+            }
+            int id = Convert.ToInt32(customers[displayedIndexes[ListViewCustomers.SelectedItems[0].Index]][0]);
+            if(!Can_Archive(id))
+            {
+                MessageBox.Show("Customer can't be archived");
+                return;
+            }
+            ConfirmationForm archiveConfirm = new ConfirmationForm() { text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
+            archiveConfirm.StartPosition = FormStartPosition.Manual;
+            archiveConfirm.Location = new Point(Cursor.Position.X - archiveConfirm.Size.Width / 2 + 100, Cursor.Position.Y - archiveConfirm.Size.Height / 2);
+            if (archiveConfirm.ShowDialog() == DialogResult.OK)
+            {
+                if (!SQL_Operation.UpdateEntryVariable(id, "CustomerId", "Archived", "True", "CustomerTable"))
                 {
-                    if(!SQL_Operation.UpdateEntryVariable(id,"CustomerId","Archived","True","CustomerTable"))
-                    {
-                        MessageBox.Show("An error ocurred");
-                    }
-                    else
-                    {
-                        Refresh_Page();
-                    }
+                    MessageBox.Show("An error ocurred");
+                }
+                else
+                {
+                    Refresh_Page();
                 }
             }
         }
@@ -360,6 +414,34 @@ namespace Year_14_CA_SSD
                 }
             }
 
+        }
+        bool Can_Archive(int customerId)
+        {
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM TestDriveTable WHERE CustomerId = '{ customerId}' AND StartTime > {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    string[] testDrive = new string[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        testDrive[i] = reader.GetValue(i).ToString().Trim();
+                    }
+
+                    conn.Close();
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

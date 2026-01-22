@@ -24,7 +24,7 @@ namespace Year_14_CA_SSD
                 sqlConnectionCustomer.Open();
 
                 sqlDataAdapterCustomer.SelectCommand.Parameters.Clear();
-                sqlDataAdapterCustomer.SelectCommand.Parameters.AddWithValue("@CustId", 3);
+                sqlDataAdapterCustomer.SelectCommand.Parameters.AddWithValue("@CustId", customerId.Value);
                 dsTestDriveCustomer.Clear();
 
                 dsTestDriveCustomer.EnforceConstraints = false;
@@ -78,11 +78,17 @@ namespace Year_14_CA_SSD
         {
             PickerForm customerPicker = new PickerForm() { Table = "Customers" };
             customerPicker.ShowDialog();
-            if(customerPicker.DialogResult == DialogResult.OK)
+            if (customerPicker.DialogResult == DialogResult.OK)
             {
                 customerId = Convert.ToInt32(customerPicker.SelectedId);
+                Load_Customer_Name(customerId.Value);
             }
                 
+        }
+        void Load_Customer_Name(int customerId)
+        {
+            string[] customerValues = SQL_Operation.ReadEntry(customerId, "CustomerId", "CustomerTable");
+            Customer_TextBox.Text = customerValues[1] + " " + customerValues[3];
         }
 
         private void View_Report_Button_Click(object sender, EventArgs e)
@@ -105,6 +111,29 @@ namespace Year_14_CA_SSD
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Time_RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Time_RadioButton.Checked)
+            {
+                Customer_Label.Visible = false;
+                Customer_TextBox.Visible = false;
+            }
+        }
+
+        private void Customer_RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Customer_RadioButton.Checked)
+            {
+                Customer_Label.Visible = true;
+                Customer_TextBox.Visible = true;
+            }
+        }
+
+        private void Customer_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

@@ -192,10 +192,17 @@ namespace Year_14_CA_SSD
 
         private void Continue_Button_Click(object sender, EventArgs e)
         {
-            int index = Table_ListView.SelectedItems[0].Index;
-            SelectedId = Ids[index];
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (Table_ListView.SelectedItems.Count == 1)
+            {
+                int index = Table_ListView.SelectedItems[0].Index;
+                SelectedId = Ids[index];
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Nothing is selected");
+            }    
         }
 
         private void Table_ListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -218,7 +225,7 @@ namespace Year_14_CA_SSD
                     row.SubItems.Add(values[1]);
                     row.SubItems.Add(values[2]);
                     row.SubItems.Add(values[3]);
-
+                    row.ToolTipText = row.Text;
                     Table_ListView.Items.Add(row);
                 }
             }
@@ -315,6 +322,14 @@ namespace Year_14_CA_SSD
             else
             {
                 MessageBox.Show("Unknown Table");
+            }
+        }
+
+        private void Table_ListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Continue_Button.PerformClick();
             }
         }
     }

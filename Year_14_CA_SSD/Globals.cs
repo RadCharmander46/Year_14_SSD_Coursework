@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,11 @@ namespace Year_14_CA_SSD
                 {
                     return false;
                 }
+               if(minLength != 0 && (testString[0] == ' ' || testString[testString.Length-1] == ' ') )//can't have leading or lagging whitespace
+                {
+                    return false;
+                }
+
                 foreach(char character in testString)
                 {
                     if (!Char.IsLetter(character) && lettersOnly)
@@ -64,7 +70,15 @@ namespace Year_14_CA_SSD
                     {
                         return false;
                     }
+                    if(Char.IsPunctuation(character) && !specialCharactersAllowed)
+                    {
+                        return false;
+                    }
                     if(Char.IsSymbol(character) && !specialCharactersAllowed)
+                    {
+                        return false;
+                    }
+                    if(Char.IsSeparator(character) && !Char.IsWhiteSpace(character))
                     {
                         return false;
                     }
@@ -76,11 +90,191 @@ namespace Year_14_CA_SSD
                 return false;
             }
         }
+        public static char[] baseLetters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        public static bool containsAccentedCharacters(string testString)
+        {
+            for(int i = 0;i< testString.Length;i++)
+            {
+                if(Char.IsLetter(testString[i])) //need to check
+                {
+                    if(!baseLetters.Contains(Char.ToLower(testString[i])))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public static bool validName(string name)
+        {
+            bool validString = Globals.validString(name, 50, 1, false, false, true, true);
+            if(!validString)
+            {
+                return false;
+            }
+            Regex doubleSpaceRg = new Regex("\\s{2,}");
+            if(doubleSpaceRg.IsMatch(name))
+            {
+                return false;
+            }
+            foreach(char character in name)
+            {
+                if(Char.IsLetter(character))
+                {
+                    continue;
+                }
+                if(character == '\'')
+                {
+                    continue;
+                }
+                if(Char.IsWhiteSpace(character))
+                {
+                    continue;
+                }
+                return false;
+            }
+            return true;
+        }
+        public static bool typedNameInvalid(string name)
+        {
+            bool validString = Globals.validString(name, 50, 0, false, false, true, true);
+            if (!validString)
+            {
+                return true;
+            }
+            Regex doubleSpaceRg = new Regex("\\s{2,}");
+            if (doubleSpaceRg.IsMatch(name))
+            {
+                return true;
+            }
+            Regex doubleApostRg = new Regex("'{2,}");
+            if (doubleApostRg.IsMatch(name))
+            {
+                return true;
+            }
+            foreach (char character in name)
+            {
+                if (Char.IsLetter(character))
+                {
+                    continue;
+                }
+                if(character == ' ')
+                {
+                    continue;
+                }
+                if (character == '\'')
+                {
+                    continue;
+                }
+                return true;
+            }
+            return false;
+        }
+        public static bool validAddress(string address)
+        {
+            bool validString = Globals.validString(address, 50, 1, false, true, true, true);
+            if(!validString)
+            {
+                return false;
+            }
+            if( !isAlphaNumeric(address[0].ToString(), true) || !isAlphaNumeric(address[address.Length - 1].ToString(), true)) // first or last character can't be a special character
+            {
+                return false;
+            }
+            bool lastCharacterSpecial = false;
+            foreach(char character in address)
+            {
+                if(Char.IsLetter(character))
+                {
+                    lastCharacterSpecial = false;
+                    continue;
+                }
+                if(Char.IsDigit(character))
+                {
+                    lastCharacterSpecial = false;
+                    continue;
+                }
+                if(character == ' ')
+                {
+                    lastCharacterSpecial = false;
+                    continue;
+                }
+                if(character == '/' || character == '.' || character == '\'' || character == '-')
+                {
+                    if (lastCharacterSpecial)
+                    {
+                        return true;
+                    }
+                    lastCharacterSpecial = true;
+                    continue;
+                }
+                return false;
+            }
+            return true;
+        }
+        public static bool typedAddressInvalid(string address)
+        {
+            if(address.Length > 50)
+            {
+                return true;
+            }
+            if(address.Length == 0)
+            {
+                return false;
+            }
+            if (!isAlphaNumeric(address[0].ToString(), true))
+            {
+                return true;
+            }
+            bool lastCharacterSpecial = false;
+            bool lastCharSpace = false;
+            foreach (char character in address)
+            {
+                if (Char.IsLetter(character))
+                {
+                    lastCharacterSpecial = false;
+                    lastCharSpace = false;
+                    continue;
+                }
+                if (Char.IsDigit(character))
+                {
+                    lastCharacterSpecial = false;
+                    lastCharSpace = false;
+                    continue;
+                }
+                if (character == ' ')
+                {
+                    if(lastCharSpace)
+                    {
+                        return true;
+                    }
+                    lastCharSpace = true;
+                    lastCharacterSpecial = false;
+                    continue;
+                }
+                if (character == '/' || character == '.' || character == '\'' || character == '-')
+                {
+                    if(lastCharacterSpecial)
+                    {
+                        return true;
+                    }
+                    lastCharacterSpecial = true;
+                    lastCharSpace = false;
+                    continue;
+                }
+                return true;
+            }
+            return false;
+        }
         public static bool validPostCode(string postCode)
         {
             try
             {
                 if (!validString(postCode, 8, 5, false, true, false, true)) //checks only contains numbers and lettera
+                {
+                    return false;
+                }
+                if(containsAccentedCharacters(postCode))
                 {
                     return false;
                 }
@@ -179,6 +373,21 @@ namespace Year_14_CA_SSD
                 return false;
             }
         }
+        public static bool typedPhoneNumberInvalid(string phoneNumber)
+        {
+            try
+            {
+                foreach(char character in phoneNumber)
+                {
+                    int num = Convert.ToInt32(character);
+                }
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
         public static bool validDriversNumber(string text, DateTime DOB = new DateTime(), string firstName = null, string middleName = null, string lastName = null)
         {
             if (text.Length == 8)
@@ -187,9 +396,16 @@ namespace Year_14_CA_SSD
             }
             else if (text.Length == 16 || text.Length == 18)
             {
-                if (firstName != "" && lastName != "" && DOB > new DateTime(1900, 0, 0))
+                try
                 {
-                    return validGBDriversNumber(text, DOB, firstName, middleName, lastName);
+                    if (firstName != "" && lastName != "" && DOB > new DateTime(1900, 0, 0))
+                    {
+                        return validGBDriversNumber(text, DOB, firstName, middleName, lastName);
+                    }
+                }
+                catch
+                {
+                    return false;
                 }
             }
             else if(text.Length == 9)
@@ -362,6 +578,120 @@ namespace Year_14_CA_SSD
                 return email;
             }
         }
+        public static bool validEmail(string email)
+        {
+            string[] splitEmail = email.Split('@');
+            if(splitEmail.Length != 2) //doesn't have 1 @ symbol
+            {
+                return false;
+            }
+            string localAddress = splitEmail[0];
+            string domain = splitEmail[1];
+
+            if(localAddress.Length > 64 || localAddress.Length < 1)
+            {
+                return false;
+            }
+            Regex validCharactersRg = new Regex("[!#$%&'*+\\-/=?^_`{|}~A-Za-z0-9.]+");
+            if(validCharactersRg.Match(localAddress).Value != localAddress) //checking the entire address follows the regex statement
+            {
+                return false;
+            }
+            Regex doubleDotRg = new Regex("[.]{2,}");
+            if(doubleDotRg.IsMatch(localAddress)) //checking if there are consecutive '.'s which is not allowed
+            {
+                return false;
+            }
+
+            if(domain.Length > 255 || domain.Length < 1)
+            {
+                return false;
+            }
+            string[] dnsLabels = domain.Split('.');
+            if(!domain.Contains('.'))
+            {
+                return false;
+            }
+            foreach(string label in dnsLabels)
+            {
+                if(label.Length > 63 || label.Length < 1)
+                {
+                    return false;
+                }
+                if(label[0] == '-' || label[label.Length-1] == '-') //hypen can't be first of last letter of a dns label
+                {
+                    return false;
+                }
+                Regex validRg = new Regex("[A-Za-z0-9\\-]+");
+                if(validRg.Match(label).Value != label)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+
+
+        }
+        public static bool typedEmailInvalid(string email) //checking if the email is invalid as it is being typed
+        {
+            string[] splitEmail = email.Split('@');
+            if (splitEmail.Length > 2) //doesn't have 2@s symbol
+            {
+                return true;
+            }
+            string localAddress = splitEmail[0];
+
+            if (localAddress.Length > 64)
+            {
+                return true;
+            }
+            Regex validCharactersRg = new Regex("[!#$%&'*+\\-/=?^_`{|}~A-Za-z0-9.]+");
+            if (validCharactersRg.Match(localAddress).Value != localAddress) //checking the entire address follows the regex statement
+            {
+                return true;
+            }
+            Regex doubleDotRg = new Regex("[.]{2,}");
+            if (doubleDotRg.IsMatch(localAddress)) //checking if there are consecutive '.'s which is not allowed
+            {
+                return true;
+            }
+
+            try
+            {
+                string domain = splitEmail[1];
+
+                if (domain.Length > 255)
+                {
+                    return true;
+                }
+                string[] dnsLabels = domain.Split('.');
+                foreach (string label in dnsLabels)
+                {
+                    if (label.Length > 63)
+                    {
+                        return true;
+                    }
+                    if (label[0] == '-' || label[label.Length - 1] == '-') //hypen can't be first of last letter of a dns label
+                    {
+                        return true;
+                    }
+                    Regex validRg = new Regex("[A-Za-z0-9\\-]+");
+                    if (validRg.Match(label).Value != label)
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+
+            return false;
+
+
+        }
         public static string capitaliseString(string text)
         {
             try
@@ -461,6 +791,107 @@ namespace Year_14_CA_SSD
             {
                 return dateTime2;
             }
+        }
+        public static bool isAlphaNumeric(string testString,bool unicodeCharacters)
+        {
+            foreach(char character in testString)
+            {
+                if(baseLetters.Contains(Char.ToLower(character)))
+                {
+                    continue;
+                }
+                if(char.IsDigit(character))
+                {
+                    continue;
+                }
+                if(char.IsLetter(character) && unicodeCharacters)
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public static bool typedLicenseInvalid(string testString)
+        {
+            if(testString.Length > 16)
+            {
+                return true;
+            }
+            return !(isAlphaNumeric(testString, false));
+        }
+        public static void Remove_Illegal_Characters(TextBox textBox, Func<string, bool> illegalEvaulator)
+        {
+            int index = textBox.SelectionStart;
+            if (illegalEvaulator(textBox.Text))
+            {
+                textBox.Text = (string)textBox.Tag;
+                index--;
+            }
+            textBox.SelectionStart = index;
+            textBox.SelectionLength = 0;
+            textBox.Tag = textBox.Text;
+        }
+        public static bool typedUsernameInvalid(string testString)
+        {
+            if (testString.Length > 10)
+            {
+                return true;
+            }
+            return !(isAlphaNumeric(testString, false));
+        }
+        public static bool validPassword(string password)
+        {
+            //must be longer than 8 characters
+            //can't be longer than 50 characters
+            //needs mixed case
+            //needs a digit
+            //needs a special character
+            //no whitespace
+            if(password.Length < 8)
+            {
+                return false;
+            }
+
+            if (password.Length > 50)
+            {
+                return false;
+            }
+            bool lowerCaseCharacter = false;
+            bool upperCaseCharacter = false;
+            bool specialCharacter = false;
+            bool numberCharacter = false;
+            foreach(char character in  password)
+            {
+                if(Char.IsDigit(character))
+                {
+                    numberCharacter = true;
+                    continue;
+                }
+                if(Char.IsWhiteSpace(character))
+                {
+                    return false;
+                }
+                if(Char.IsLetter(character))
+                {
+                    if(Char.ToUpper(character) == character)
+                    {
+                        upperCaseCharacter = true;
+                        continue;
+                    }
+                    else
+                    {
+                        lowerCaseCharacter = true;
+                        continue;
+                    }
+                }
+                specialCharacter = true;
+            }
+
+            return lowerCaseCharacter && upperCaseCharacter && numberCharacter && specialCharacter;
         }
     }
 }

@@ -52,11 +52,11 @@ namespace Year_14_CA_SSD
             this.Verified_License_CheckBox = new System.Windows.Forms.CheckBox();
             this.Previous_Customer_CheckBox = new System.Windows.Forms.CheckBox();
             this.Back_Button = new System.Windows.Forms.Button();
-            this.DOB_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Date_Of_Birth_Label = new System.Windows.Forms.Label();
             this.Title_Label = new System.Windows.Forms.Label();
             this.Contact_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.Personal_Details_GroupBox = new System.Windows.Forms.GroupBox();
+            this.DOB_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Address_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.License_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.Expiry_Invalid_Text = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace Year_14_CA_SSD
             this.Add_Customer_Button.Location = new System.Drawing.Point(954, 520);
             this.Add_Customer_Button.Name = "Add_Customer_Button";
             this.Add_Customer_Button.Size = new System.Drawing.Size(221, 64);
-            this.Add_Customer_Button.TabIndex = 0;
+            this.Add_Customer_Button.TabIndex = 37;
             this.Add_Customer_Button.Text = "Add Customer";
             this.Add_Customer_Button.UseVisualStyleBackColor = true;
             this.Add_Customer_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
@@ -93,8 +93,10 @@ namespace Year_14_CA_SSD
             this.First_Name_TextBox.Location = new System.Drawing.Point(142, 29);
             this.First_Name_TextBox.Name = "First_Name_TextBox";
             this.First_Name_TextBox.Size = new System.Drawing.Size(241, 35);
-            this.First_Name_TextBox.TabIndex = 1;
+            this.First_Name_TextBox.TabIndex = 0;
             this.First_Name_TextBox.TextChanged += new System.EventHandler(this.First_Name_TextBox_TextChanged);
+            this.First_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
+            this.First_Name_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.First_Name_TextBox_KeyPress);
             // 
             // Middle_Name_TextBox
             // 
@@ -104,6 +106,7 @@ namespace Year_14_CA_SSD
             this.Middle_Name_TextBox.Size = new System.Drawing.Size(156, 35);
             this.Middle_Name_TextBox.TabIndex = 2;
             this.Middle_Name_TextBox.TextChanged += new System.EventHandler(this.Middle_Name_TextBox_TextChanged);
+            this.Middle_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Last_Name_TextBox
             // 
@@ -113,6 +116,7 @@ namespace Year_14_CA_SSD
             this.Last_Name_TextBox.Size = new System.Drawing.Size(241, 35);
             this.Last_Name_TextBox.TabIndex = 3;
             this.Last_Name_TextBox.TextChanged += new System.EventHandler(this.Last_Name_TextBox_TextChanged);
+            this.Last_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // First_Name_Label
             // 
@@ -152,8 +156,9 @@ namespace Year_14_CA_SSD
             this.Phone_Number_TextBox.Location = new System.Drawing.Point(92, 26);
             this.Phone_Number_TextBox.Name = "Phone_Number_TextBox";
             this.Phone_Number_TextBox.Size = new System.Drawing.Size(151, 35);
-            this.Phone_Number_TextBox.TabIndex = 7;
+            this.Phone_Number_TextBox.TabIndex = 32;
             this.Phone_Number_TextBox.TextChanged += new System.EventHandler(this.Phone_Number_TextBox_TextChanged);
+            this.Phone_Number_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Phone_Number_Label
             // 
@@ -171,9 +176,10 @@ namespace Year_14_CA_SSD
             this.Email_Address_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_Address_TextBox.Location = new System.Drawing.Point(92, 67);
             this.Email_Address_TextBox.Name = "Email_Address_TextBox";
-            this.Email_Address_TextBox.Size = new System.Drawing.Size(317, 35);
-            this.Email_Address_TextBox.TabIndex = 9;
+            this.Email_Address_TextBox.Size = new System.Drawing.Size(492, 35);
+            this.Email_Address_TextBox.TabIndex = 33;
             this.Email_Address_TextBox.TextChanged += new System.EventHandler(this.Email_Address_TextBox_TextChanged);
+            this.Email_Address_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Email_Address_Label
             // 
@@ -193,6 +199,7 @@ namespace Year_14_CA_SSD
             this.Address_Line1_TextBox.Size = new System.Drawing.Size(317, 35);
             this.Address_Line1_TextBox.TabIndex = 11;
             this.Address_Line1_TextBox.TextChanged += new System.EventHandler(this.Address_Line1_TextBox_TextChanged);
+            this.Address_Line1_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line1_Label
             // 
@@ -213,6 +220,7 @@ namespace Year_14_CA_SSD
             this.Address_Line2_TextBox.Size = new System.Drawing.Size(260, 35);
             this.Address_Line2_TextBox.TabIndex = 13;
             this.Address_Line2_TextBox.TextChanged += new System.EventHandler(this.Address_Line2_TextBox_TextChanged);
+            this.Address_Line2_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line2_Label
             // 
@@ -233,6 +241,7 @@ namespace Year_14_CA_SSD
             this.Address_Line3_TextBox.Size = new System.Drawing.Size(317, 35);
             this.Address_Line3_TextBox.TabIndex = 15;
             this.Address_Line3_TextBox.TextChanged += new System.EventHandler(this.Address_Line3_TextBox_TextChanged);
+            this.Address_Line3_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line3_Label
             // 
@@ -252,6 +261,7 @@ namespace Year_14_CA_SSD
             this.PostCode_TextBox.Size = new System.Drawing.Size(156, 35);
             this.PostCode_TextBox.TabIndex = 17;
             this.PostCode_TextBox.TextChanged += new System.EventHandler(this.PostCode_TextBox_TextChanged);
+            this.PostCode_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // PostCode_Label
             // 
@@ -272,11 +282,12 @@ namespace Year_14_CA_SSD
             this.Verified_License_CheckBox.Name = "Verified_License_CheckBox";
             this.Verified_License_CheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Verified_License_CheckBox.Size = new System.Drawing.Size(102, 34);
-            this.Verified_License_CheckBox.TabIndex = 19;
+            this.Verified_License_CheckBox.TabIndex = 31;
             this.Verified_License_CheckBox.Text = "Verified";
             this.Verified_License_CheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Verified_License_CheckBox.UseVisualStyleBackColor = false;
             this.Verified_License_CheckBox.CheckedChanged += new System.EventHandler(this.Verified_License_CheckBox_CheckedChanged);
+            this.Verified_License_CheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Previous_Customer_CheckBox
             // 
@@ -286,10 +297,11 @@ namespace Year_14_CA_SSD
             this.Previous_Customer_CheckBox.Name = "Previous_Customer_CheckBox";
             this.Previous_Customer_CheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Previous_Customer_CheckBox.Size = new System.Drawing.Size(205, 34);
-            this.Previous_Customer_CheckBox.TabIndex = 20;
+            this.Previous_Customer_CheckBox.TabIndex = 34;
             this.Previous_Customer_CheckBox.Text = "Previous Customer";
             this.Previous_Customer_CheckBox.UseVisualStyleBackColor = true;
             this.Previous_Customer_CheckBox.CheckedChanged += new System.EventHandler(this.Previous_Customer_CheckBox_CheckedChanged);
+            this.Previous_Customer_CheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Back_Button
             // 
@@ -297,21 +309,10 @@ namespace Year_14_CA_SSD
             this.Back_Button.Location = new System.Drawing.Point(842, 520);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(106, 64);
-            this.Back_Button.TabIndex = 21;
+            this.Back_Button.TabIndex = 36;
             this.Back_Button.Text = "Back";
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
-            // 
-            // DOB_DateTimePicker
-            // 
-            this.DOB_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DOB_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DOB_DateTimePicker.Location = new System.Drawing.Point(142, 148);
-            this.DOB_DateTimePicker.Name = "DOB_DateTimePicker";
-            this.DOB_DateTimePicker.Size = new System.Drawing.Size(128, 35);
-            this.DOB_DateTimePicker.TabIndex = 26;
-            this.DOB_DateTimePicker.TabStop = false;
-            this.DOB_DateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // Date_Of_Birth_Label
             // 
@@ -326,10 +327,10 @@ namespace Year_14_CA_SSD
             // Title_Label
             // 
             this.Title_Label.AutoSize = true;
-            this.Title_Label.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title_Label.Location = new System.Drawing.Point(12, 9);
+            this.Title_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title_Label.Location = new System.Drawing.Point(13, 9);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(245, 47);
+            this.Title_Label.Size = new System.Drawing.Size(250, 47);
             this.Title_Label.TabIndex = 28;
             this.Title_Label.Text = "Add Customer";
             // 
@@ -339,11 +340,11 @@ namespace Year_14_CA_SSD
             this.Contact_Details_GroupBox.Controls.Add(this.Email_Address_Label);
             this.Contact_Details_GroupBox.Controls.Add(this.Phone_Number_TextBox);
             this.Contact_Details_GroupBox.Controls.Add(this.Phone_Number_Label);
-            this.Contact_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contact_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contact_Details_GroupBox.Location = new System.Drawing.Point(493, 264);
             this.Contact_Details_GroupBox.Name = "Contact_Details_GroupBox";
-            this.Contact_Details_GroupBox.Size = new System.Drawing.Size(415, 118);
-            this.Contact_Details_GroupBox.TabIndex = 29;
+            this.Contact_Details_GroupBox.Size = new System.Drawing.Size(590, 118);
+            this.Contact_Details_GroupBox.TabIndex = 30;
             this.Contact_Details_GroupBox.TabStop = false;
             this.Contact_Details_GroupBox.Text = "Contact Details";
             this.Contact_Details_GroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -358,13 +359,24 @@ namespace Year_14_CA_SSD
             this.Personal_Details_GroupBox.Controls.Add(this.DOB_DateTimePicker);
             this.Personal_Details_GroupBox.Controls.Add(this.Middle_Name_Label);
             this.Personal_Details_GroupBox.Controls.Add(this.Last_Name_Label);
-            this.Personal_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personal_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personal_Details_GroupBox.Location = new System.Drawing.Point(12, 53);
             this.Personal_Details_GroupBox.Name = "Personal_Details_GroupBox";
             this.Personal_Details_GroupBox.Size = new System.Drawing.Size(465, 204);
-            this.Personal_Details_GroupBox.TabIndex = 30;
+            this.Personal_Details_GroupBox.TabIndex = 0;
             this.Personal_Details_GroupBox.TabStop = false;
             this.Personal_Details_GroupBox.Text = "Personal Details";
+            // 
+            // DOB_DateTimePicker
+            // 
+            this.DOB_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOB_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DOB_DateTimePicker.Location = new System.Drawing.Point(142, 148);
+            this.DOB_DateTimePicker.Name = "DOB_DateTimePicker";
+            this.DOB_DateTimePicker.Size = new System.Drawing.Size(128, 35);
+            this.DOB_DateTimePicker.TabIndex = 4;
+            this.DOB_DateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.DOB_DateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Details_GroupBox
             // 
@@ -376,11 +388,11 @@ namespace Year_14_CA_SSD
             this.Address_Details_GroupBox.Controls.Add(this.Address_Line3_Label);
             this.Address_Details_GroupBox.Controls.Add(this.PostCode_TextBox);
             this.Address_Details_GroupBox.Controls.Add(this.PostCode_Label);
-            this.Address_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_Details_GroupBox.Location = new System.Drawing.Point(12, 264);
             this.Address_Details_GroupBox.Name = "Address_Details_GroupBox";
             this.Address_Details_GroupBox.Size = new System.Drawing.Size(465, 230);
-            this.Address_Details_GroupBox.TabIndex = 31;
+            this.Address_Details_GroupBox.TabIndex = 10;
             this.Address_Details_GroupBox.TabStop = false;
             this.Address_Details_GroupBox.Text = "Address Details";
             // 
@@ -395,12 +407,12 @@ namespace Year_14_CA_SSD
             this.License_Details_GroupBox.Controls.Add(this.Verified_License_CheckBox);
             this.License_Details_GroupBox.Controls.Add(this.Issue_DateTimePicker);
             this.License_Details_GroupBox.Controls.Add(this.License_Number_Label);
-            this.License_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.License_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.License_Details_GroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.License_Details_GroupBox.Location = new System.Drawing.Point(493, 53);
             this.License_Details_GroupBox.Name = "License_Details_GroupBox";
-            this.License_Details_GroupBox.Size = new System.Drawing.Size(416, 204);
-            this.License_Details_GroupBox.TabIndex = 32;
+            this.License_Details_GroupBox.Size = new System.Drawing.Size(590, 204);
+            this.License_Details_GroupBox.TabIndex = 20;
             this.License_Details_GroupBox.TabStop = false;
             this.License_Details_GroupBox.Text = "License Details";
             // 
@@ -445,16 +457,17 @@ namespace Year_14_CA_SSD
             this.Expiry_DateTimePicker.Name = "Expiry_DateTimePicker";
             this.Expiry_DateTimePicker.Size = new System.Drawing.Size(130, 35);
             this.Expiry_DateTimePicker.TabIndex = 30;
-            this.Expiry_DateTimePicker.TabStop = false;
+            this.Expiry_DateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // License_Number_TextBox
             // 
             this.License_Number_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.License_Number_TextBox.Location = new System.Drawing.Point(93, 26);
             this.License_Number_TextBox.Name = "License_Number_TextBox";
-            this.License_Number_TextBox.Size = new System.Drawing.Size(114, 35);
+            this.License_Number_TextBox.Size = new System.Drawing.Size(211, 35);
             this.License_Number_TextBox.TabIndex = 28;
             this.License_Number_TextBox.TextChanged += new System.EventHandler(this.License_Number_TextBox_TextChanged);
+            this.License_Number_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Issue_DateTimePicker
             // 
@@ -463,8 +476,8 @@ namespace Year_14_CA_SSD
             this.Issue_DateTimePicker.Location = new System.Drawing.Point(93, 65);
             this.Issue_DateTimePicker.Name = "Issue_DateTimePicker";
             this.Issue_DateTimePicker.Size = new System.Drawing.Size(130, 35);
-            this.Issue_DateTimePicker.TabIndex = 28;
-            this.Issue_DateTimePicker.TabStop = false;
+            this.Issue_DateTimePicker.TabIndex = 29;
+            this.Issue_DateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // License_Number_Label
             // 
@@ -481,11 +494,11 @@ namespace Year_14_CA_SSD
             // 
             this.History_GroupBox.Controls.Add(this.Damaged_Vehicle_CheckBox);
             this.History_GroupBox.Controls.Add(this.Previous_Customer_CheckBox);
-            this.History_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.History_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.History_GroupBox.Location = new System.Drawing.Point(493, 388);
             this.History_GroupBox.Name = "History_GroupBox";
-            this.History_GroupBox.Size = new System.Drawing.Size(416, 106);
-            this.History_GroupBox.TabIndex = 33;
+            this.History_GroupBox.Size = new System.Drawing.Size(590, 106);
+            this.History_GroupBox.TabIndex = 31;
             this.History_GroupBox.TabStop = false;
             this.History_GroupBox.Text = "History";
             // 
@@ -497,9 +510,11 @@ namespace Year_14_CA_SSD
             this.Damaged_Vehicle_CheckBox.Name = "Damaged_Vehicle_CheckBox";
             this.Damaged_Vehicle_CheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Damaged_Vehicle_CheckBox.Size = new System.Drawing.Size(194, 34);
-            this.Damaged_Vehicle_CheckBox.TabIndex = 21;
+            this.Damaged_Vehicle_CheckBox.TabIndex = 35;
             this.Damaged_Vehicle_CheckBox.Text = "Damaged Vehicle";
             this.Damaged_Vehicle_CheckBox.UseVisualStyleBackColor = true;
+            this.Damaged_Vehicle_CheckBox.CheckedChanged += new System.EventHandler(this.Damaged_Vehicle_CheckBox_CheckedChanged);
+            this.Damaged_Vehicle_CheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Error_ToolTip
             // 
@@ -564,7 +579,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.CheckBox Verified_License_CheckBox;
         private System.Windows.Forms.CheckBox Previous_Customer_CheckBox;
         private System.Windows.Forms.Button Back_Button;
-        private System.Windows.Forms.DateTimePicker DOB_DateTimePicker;
         private System.Windows.Forms.Label Date_Of_Birth_Label;
         private System.Windows.Forms.Label Title_Label;
         private System.Windows.Forms.GroupBox Contact_Details_GroupBox;
@@ -581,5 +595,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.CheckBox Damaged_Vehicle_CheckBox;
         private System.Windows.Forms.ToolTip Error_ToolTip;
         private System.Windows.Forms.Label Expiry_Invalid_Text;
+        private System.Windows.Forms.DateTimePicker DOB_DateTimePicker;
     }
 }

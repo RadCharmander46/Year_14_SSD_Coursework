@@ -16,14 +16,33 @@ namespace Year_14_CA_SSD
         {
             InitializeComponent();
             Sidebar_FlowPanel.Controls.Clear();
+            Fill_Sidebar_Filler();
             Clear_To_HomeScreen();
+        }
+        public Action<object,EventArgs>[] sidebarEvents = new Action<object, EventArgs>[5];
+        void Reset_SidebarEvents()
+        {
+            sidebarEvents = new Action<object, EventArgs>[5];
+        }
+        void Fill_Sidebar_Filler()
+        {
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button1_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button2_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
         }
 
         private void PanelForm_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             Update_Clock();
-
+           
         }
         void Load_CustomerDataForm(object sender, EventArgs e)
         {
@@ -116,6 +135,7 @@ namespace Year_14_CA_SSD
             Login_Object.Dock = DockStyle.Fill;
             Screen_Panel.Controls.Add(Login_Object);
             Login_Object.ManagerSettings += new EventHandler(Load_ManagerSettingsForm);
+            Login_Object.HomeScreen += new EventHandler(Load_HomeScreenForm);
             Login_Object.Show();
         }
         void Load_HomeScreenForm(object sender, EventArgs e)
@@ -132,13 +152,38 @@ namespace Year_14_CA_SSD
         }
         void Load_ReturnCarForm(object sender, EventArgs e)
         {
-            CarReturnForm Return_Object = new CarReturnForm();
-            Return_Object.TopLevel = false;
-            Return_Object.AutoScroll = true;
-            Return_Object.FormBorderStyle = FormBorderStyle.None;
-            Return_Object.Dock = DockStyle.Fill;
-            Screen_Panel.Controls.Add(Return_Object);
-            Return_Object.Show();
+            try
+            {
+                Car_Return_EventArgs carArgs = (Car_Return_EventArgs)e;
+                Moving_Cars_Button_Click(this, EventArgs.Empty); //setting up the sidebar and highlighting
+                Wipe_Panel();
+                Reset_Sidebar_Highlights();
+                Car_Return_Button.BackColor = Color.FromArgb(145, 145, 145);
+                CarReturnForm Return_Object = new CarReturnForm();
+                Return_Object.TestDriveId = carArgs.testDriveId;
+                Return_Object.CarId = carArgs.carId;
+                Return_Object.CustomerId = carArgs.customerId;
+                Return_Object.EmployeeId = carArgs.employeeId;
+                Return_Object.UseTestDriveId = true;
+                Return_Object.TopLevel = false;
+                Return_Object.AutoScroll = true;
+                Return_Object.FormBorderStyle = FormBorderStyle.None;
+                Return_Object.Dock = DockStyle.Fill;
+                Screen_Panel.Controls.Add(Return_Object);
+                Return_Object.Show();
+                Return_Object.Return += new EventHandler(Load_HomeScreenForm);
+            }
+            catch
+            {
+                CarReturnForm Return_Object = new CarReturnForm();
+                Return_Object.TopLevel = false;
+                Return_Object.AutoScroll = true;
+                Return_Object.FormBorderStyle = FormBorderStyle.None;
+                Return_Object.Dock = DockStyle.Fill;
+                Screen_Panel.Controls.Add(Return_Object);
+                Return_Object.Show();
+                Return_Object.Return += new EventHandler(Load_HomeScreenForm);
+            }
         }
 
         void Load_PaymentDataForm(object sender, EventArgs e)
@@ -185,27 +230,34 @@ namespace Year_14_CA_SSD
             Manager_Object.Dock = DockStyle.Fill;
             Screen_Panel.Controls.Add(Manager_Object);
             Manager_Object.Show();
+            Manager_Object.Back += new EventHandler(Load_LoginDataForm);
         }
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
-            Reset_Highlights();
+            Reset_Taskbar_Highlights();
+            Reset_Sidebar_Highlights();
+            Reset_SidebarEvents();
             Adding_Cars_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
+            Fill_Sidebar_Filler();
             MessageBox.Show("Not part of program");
         }
 
         private void Selling_Cars_Button_Click(object sender, EventArgs e)
         {
             Clear_To_HomeScreen();
-            Reset_Highlights();
+            Reset_Taskbar_Highlights();
+            Reset_Sidebar_Highlights();
+            Reset_SidebarEvents();
             Selling_Cars_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
+            Fill_Sidebar_Filler();
             MessageBox.Show("Not part of program");
         }
 
-        void Reset_Highlights()
+        void Reset_Taskbar_Highlights()
         {
             Moving_Cars_Button.BackColor = SystemColors.ControlLight;
             Adding_Cars_Button.BackColor = SystemColors.ControlLight;
@@ -214,42 +266,114 @@ namespace Year_14_CA_SSD
             Customers_Button.BackColor = SystemColors.ControlLight;
             Payment_Button.BackColor = SystemColors.ControlLight;
         }
+        void Reset_Sidebar_Highlights()
+        {
+            foreach(PictureBox button in Sidebar_FlowPanel.Controls)
+            {
+                button.BackColor = SystemColors.ControlDark;
+            }
+        }
 
         private void Moving_Cars_Button_Click(object sender, EventArgs e)
         {
-            Clear_To_HomeScreen();
-            Reset_Highlights();
-            Moving_Cars_Button.BackColor = SystemColors.ActiveBorder;
-            Sidebar_FlowPanel.Controls.Clear();
-            Sidebar_FlowPanel.Controls.Add(Test_Drive_Button);
-            Sidebar_FlowPanel.Controls.Add(Car_Servicing_Button);
-            Sidebar_FlowPanel.Controls.Add(Calender_Button);
-            Sidebar_FlowPanel.Controls.Add(Test_Drive_Data_Button);
-            Sidebar_FlowPanel.Controls.Add(Car_Return_Button);
+            if (Globals.signedIn)
+            {
+                Clear_To_HomeScreen();
+                Reset_Taskbar_Highlights();
+                Reset_Sidebar_Highlights();
+                Reset_SidebarEvents();
+                Moving_Cars_Button.BackColor = SystemColors.ActiveBorder;
+
+                Sidebar_FlowPanel.Controls.Clear();
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Test_Drive_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Car_Servicing_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Calender_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Test_Drive_Data_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Car_Return_Button);
+
+                sidebarEvents[0] = Test_Drive_Button_Click;
+                sidebarEvents[1] = Car_Servicing_Button_Click;
+                sidebarEvents[2] = Calender_Button_Click;
+                sidebarEvents[3] = Test_Drive_Data_Button_Click;
+                sidebarEvents[4] = Car_Return_Button_Click;
+            }
+            else
+            {
+                MessageBox.Show("Please Sign In");
+            }
         }
 
         private void Staff_Button_Click(object sender, EventArgs e)
         {
-            Clear_To_HomeScreen();
-            Reset_Highlights();
-            Staff_Button.BackColor = SystemColors.ActiveBorder;
-            Sidebar_FlowPanel.Controls.Clear();
-            Sidebar_FlowPanel.Controls.Add(Reports_Button);
-            Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
+            if (Globals.signedIn)
+            {
+                Clear_To_HomeScreen();
+                Reset_Taskbar_Highlights();
+                Reset_Sidebar_Highlights();
+                Reset_SidebarEvents();
+                Staff_Button.BackColor = SystemColors.ActiveBorder;
+
+                Sidebar_FlowPanel.Controls.Clear();
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Reports_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
+
+                sidebarEvents[0] = Reports_Button_Click;
+                sidebarEvents[1] = Employee_Database_Button_Click;
+            }
+            else
+            {
+                MessageBox.Show("Please Sign In");
+            }
         }
 
         private void Customers_Button_Click(object sender, EventArgs e)
         {
-            Clear_To_HomeScreen();
-            Reset_Highlights();
-            Customers_Button.BackColor = SystemColors.ActiveBorder;
-            Sidebar_FlowPanel.Controls.Clear();
-            Sidebar_FlowPanel.Controls.Add(Customer_Database_Button);
+            if (Globals.signedIn)
+            {
+                Clear_To_HomeScreen();
+                Reset_Taskbar_Highlights();
+                Reset_Sidebar_Highlights();
+                Reset_SidebarEvents();
+                Customers_Button.BackColor = SystemColors.ActiveBorder;
+
+                Sidebar_FlowPanel.Controls.Clear();
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Customer_Database_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
+
+                sidebarEvents[0] = Customer_Database_Button_Click;
+            }
+            else
+            {
+                MessageBox.Show("Please Sign In");
+            }
         }
 
         private void Customer_Database_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Customer_Database_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_CustomerDataForm(this, EventArgs.Empty);
         }
         void Wipe_Panel()
@@ -265,24 +389,32 @@ namespace Year_14_CA_SSD
         private void Test_Drive_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Test_Drive_Button.BackColor = Color.FromArgb(145,145,145);
             Load_TestDriveBookingForm(this, new TestDrive_EventArgs { AddMode = true }); ;
         }
 
         private void Calender_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Calender_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_CarCalenderForm(this, EventArgs.Empty);
         }
 
         private void Test_Drive_Data_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Test_Drive_Data_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_TestDriveDataForm(this, EventArgs.Empty);
         }
 
         private void Reports_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Reports_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_ReportForm(this, EventArgs.Empty);
         }
 
@@ -290,8 +422,10 @@ namespace Year_14_CA_SSD
         {
             Clear_To_HomeScreen();
             Wipe_Panel();
-            Reset_Highlights();
+            Reset_Taskbar_Highlights();
+            Reset_Sidebar_Highlights();
             Sidebar_FlowPanel.Controls.Clear();
+            Fill_Sidebar_Filler();
             if (!Globals.signedIn)
             {
                 Load_LoginForm(this, EventArgs.Empty);
@@ -323,28 +457,143 @@ namespace Year_14_CA_SSD
         private void Car_Return_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Car_Return_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_ReturnCarForm(this, EventArgs.Empty);
         }
 
         private void Payment_Database_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Payment_Database_Button.BackColor = Color.FromArgb(145, 145, 145);
             Load_PaymentDataForm(this, EventArgs.Empty);
         }
 
         private void Payment_Button_Click(object sender, EventArgs e)
-        {
-            Clear_To_HomeScreen();
-            Reset_Highlights();
-            Payment_Button.BackColor = SystemColors.ActiveBorder;
-            Sidebar_FlowPanel.Controls.Clear();
-            Sidebar_FlowPanel.Controls.Add(Payment_Database_Button);
+        {if (Globals.signedIn)
+            {
+                Clear_To_HomeScreen();
+                Reset_Taskbar_Highlights();
+                Reset_Sidebar_Highlights();
+                Reset_SidebarEvents();
+                Payment_Button.BackColor = SystemColors.ActiveBorder;
+
+                Sidebar_FlowPanel.Controls.Clear();
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Payment_Database_Button);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button2_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+                Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
+
+                sidebarEvents[0] = Payment_Database_Button_Click;
+            }
+            else
+            {
+                MessageBox.Show("Please Sign In");
+            }
         }
 
         private void Employee_Database_Button_Click(object sender, EventArgs e)
         {
             Wipe_Panel();
-            Load_EmployeeDataForm(this, EventArgs.Empty);
+            Reset_Sidebar_Highlights();
+            Employee_Database_Button.BackColor = Color.FromArgb(145, 145, 145);
+            if (Globals.isManager)
+            {
+                Load_EmployeeDataForm(this, EventArgs.Empty);
+            }
+            else
+            {
+                Clear_To_HomeScreen();
+                MessageBox.Show("Needs Manager access");
+            }
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) 
+        {
+            if (keyData == Keys.F1)
+            {
+                Moving_Cars_Button_Click(this,EventArgs.Empty);
+            }
+            if (keyData == Keys.F2)
+            {
+                Adding_Cars_Button_Click(this, EventArgs.Empty);
+            }
+            if (keyData == Keys.F3)
+            {
+                Selling_Cars_Button_Click(this, EventArgs.Empty);
+            }
+            if (keyData == Keys.F4)
+            {
+                Staff_Button_Click(this, EventArgs.Empty);
+            }
+            if (keyData == Keys.F5)
+            {
+                Customers_Button_Click(this, EventArgs.Empty);
+            }
+            if (keyData == Keys.F6)
+            {
+                Payment_Button_Click(this, EventArgs.Empty);
+            }
+            if (keyData == Keys.F7)
+            {
+                Login_Button_Click(this, EventArgs.Empty);
+            }
+
+            if (sidebarEvents == null)
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+
+            if (keyData == (Keys.F1 | Keys.Shift) && sidebarEvents[0] != null)
+            {
+                sidebarEvents[0](this, EventArgs.Empty);
+            }
+            if (keyData == (Keys.F2 | Keys.Shift) && sidebarEvents[1] != null)
+            {
+                sidebarEvents[1](this, EventArgs.Empty);
+            }
+            if (keyData == (Keys.F3 | Keys.Shift) && sidebarEvents[2] != null)
+            {
+                sidebarEvents[2](this, EventArgs.Empty);
+            }
+            if (keyData == (Keys.F4 | Keys.Shift) && sidebarEvents[3] != null)
+            {
+                sidebarEvents[3](this, EventArgs.Empty);
+            }
+            if (keyData == (Keys.F5 | Keys.Shift) && sidebarEvents[4] != null)
+            {
+                sidebarEvents[4](this, EventArgs.Empty);
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+
+        }
+
+        private void Car_Servicing_Button_Click(object sender, EventArgs e)
+        {
+            Wipe_Panel();
+            Reset_Sidebar_Highlights();
+            Car_Servicing_Button.BackColor = Color.FromArgb(145, 145, 145);
+        }
+
+        private void Sidebar_FlowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Taskbar_FlowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Filler_Button2_PictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

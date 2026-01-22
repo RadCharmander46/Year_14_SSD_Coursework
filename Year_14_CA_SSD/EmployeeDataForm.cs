@@ -294,26 +294,47 @@ namespace Year_14_CA_SSD
 
         private void Employee_ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Value_Tool_Tip.RemoveAll();
             if (Employee_ListView.SelectedItems.Count == 1)
             {
                 string[] employee = employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]];
                 Telephone_Label.Text = employee[5];
+                Value_Tool_Tip.SetToolTip(Telephone_Label, Telephone_Label.Text);
+
                 Email_Label.Text = Globals.splitEmailTwoRows(employee[6], 20);
+                Value_Tool_Tip.SetToolTip(Email_Label, Email_Label.Text);
+
                 Address_Line1_Label.Text = employee[7];
+                Value_Tool_Tip.SetToolTip(Address_Line1_Label, employee[7]);
+
                 Address_Line2_Label.Text = employee[8];
+                Value_Tool_Tip.SetToolTip(Address_Line2_Label, employee[8]);
+
                 Address_Line3_Label.Text = employee[9];
+                Value_Tool_Tip.SetToolTip(Address_Line3_Label, employee[9]);
+
                 Postcode_Label.Text = employee[10];
+                Value_Tool_Tip.SetToolTip(Postcode_Label, employee[10]);
+
                 Username_Label.Text = employee[13];
+                Value_Tool_Tip.SetToolTip(Username_Label, employee[13]);
+
                 Department_Label.Text = employee[11];
+                Value_Tool_Tip.SetToolTip(Department_Label, employee[11]);
+
                 Role_Label.Text = employee[12];
+                Value_Tool_Tip.SetToolTip(Role_Label, employee[12]);
 
                 bool archived = Convert.ToBoolean(employee[15]);
                 Archived_Label.Text = Globals.boolToYN(archived);
+                Value_Tool_Tip.SetToolTip(Archived_Label, Archived_Label.Text);
 
                 bool available = Employee_Is_Available(Convert.ToInt32(employee[0]));
                 if(archived) { available = false; }
 
                 Available_Label.Text = Globals.boolToYN(available); //stored as unavailable check in database
+                Value_Tool_Tip.SetToolTip(Available_Label, Available_Label.Text);
+
                 if(available)
                 {
                     Next_Available_Label.Text = "Now";
@@ -327,6 +348,8 @@ namespace Year_14_CA_SSD
                 {
                     Next_Available_Label.Text = "Unknown";
                 }
+                Value_Tool_Tip.SetToolTip(Next_Available_Label, Next_Available_Label.Text);
+                
             }
             else
             {
@@ -390,9 +413,16 @@ namespace Year_14_CA_SSD
             if (Employee_ListView.SelectedItems.Count == 1)
             {
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
+                if (Employee_ListView.SelectedItems[0].ForeColor == Color.DarkGray)
+                {
+                    MessageBox.Show("Employee is archived, and so cannot be deleted");
+                    return;
+                }
                 if (Employee_Can_Be_Deleted(id))
                 {
                     ConfirmationForm deleteConfirm = new ConfirmationForm() { text = "Warning: Deleting is a permanent action \n Only continue if you are certain" };
+                    deleteConfirm.StartPosition = FormStartPosition.Manual;
+                    deleteConfirm.Location = new Point(Cursor.Position.X - deleteConfirm.Size.Width / 2 + 100, Cursor.Position.Y - deleteConfirm.Size.Height / 2);
                     if (deleteConfirm.ShowDialog() == DialogResult.OK)
                     {
                         if (!SQL_Operation.DeleteEntry(id, "EmployeeId", "EmployeeTable"))
@@ -439,13 +469,53 @@ namespace Year_14_CA_SSD
                 }
             }
         }
+        bool Employee_Can_Be_Archived(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM TestDriveTable WHERE EmployeeId = '{ id}' AND StartTime > {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    string[] testDrive = new string[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        testDrive[i] = reader.GetValue(i).ToString().Trim();
+                    }
+
+                    conn.Close();
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }
+        }
 
         private void Archive_Button_Click(object sender, EventArgs e)
         {
             if (Employee_ListView.SelectedItems.Count == 1)
             {
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
+                if (Employee_ListView.SelectedItems[0].ForeColor == Color.DarkGray)
+                {
+                    MessageBox.Show("Employee is already archived");
+                    return;
+                }
+                if(!Employee_Can_Be_Archived(id))
+                {
+                    MessageBox.Show("Employee cannot be archived");
+                    return;
+                }
                 ConfirmationForm archiveConfirm = new ConfirmationForm() { text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
+                archiveConfirm.StartPosition = FormStartPosition.Manual;
+                archiveConfirm.Location = new Point(Cursor.Position.X - archiveConfirm.Size.Width / 2 + 100, Cursor.Position.Y - archiveConfirm.Size.Height / 2);
                 if (archiveConfirm.ShowDialog() == DialogResult.OK)
                 {
                     if (!SQL_Operation.UpdateEntryVariable(id, "EmployeeId", "Archived", "True", "EmployeeTable"))
@@ -464,7 +534,7 @@ namespace Year_14_CA_SSD
             showArchived = true;
             Show_Archive_Button.Click -= new EventHandler(Show_Archive);
             Show_Archive_Button.Click += new EventHandler(Hide_Archive);
-            Show_Archive_Button.Image = Properties.Resources.archive_visible;
+            Show_Archive_Button.BackgroundImage = Properties.Resources.archive_visible;
             Display_Employees();
         }
         void Hide_Archive(object sender, EventArgs e)
@@ -472,7 +542,7 @@ namespace Year_14_CA_SSD
             showArchived = false;
             Show_Archive_Button.Click -= new EventHandler(Hide_Archive);
             Show_Archive_Button.Click += new EventHandler(Show_Archive);
-            Show_Archive_Button.Image = Properties.Resources.archive_not_visible;
+            Show_Archive_Button.BackgroundImage = Properties.Resources.archive_not_visible;
             Display_Employees();
         }
 
@@ -480,6 +550,11 @@ namespace Year_14_CA_SSD
         {
             if (Employee_ListView.SelectedItems.Count == 1)
             {
+                if (Employee_ListView.SelectedItems[0].ForeColor == Color.DarkGray)
+                {
+                    MessageBox.Show("Employee is archived and so cannot be edited");
+                    return;
+                }
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
                 if (AddEmployee != null)
                 {

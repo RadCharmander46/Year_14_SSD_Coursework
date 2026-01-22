@@ -185,28 +185,57 @@ namespace Year_14_CA_SSD
 
         private void Payments_ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Value_Tool_Tip.RemoveAll();
             if(Payments_ListView.SelectedItems.Count == 1)
             {
                 string[] payment = payments[displayedIndexes[Payments_ListView.SelectedItems[0].Index]];
                 string[] customer = Get_Customer_Values(payment[Get_Payment_Column_Index("CustomerId")]);
 
                 Cust_DOB_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Date Of Birth")]);
+                Value_Tool_Tip.SetToolTip(Cust_DOB_Label, Cust_DOB_Label.Text);
+
                 Cust_Email_Label.Text = customer[Get_Customer_Column_Index("Email Address")];
+                Value_Tool_Tip.SetToolTip(Cust_Email_Label, Cust_Email_Label.Text);
+
                 Cust_Tel_Label.Text = customer[Get_Customer_Column_Index("Phone Number")];
+                Value_Tool_Tip.SetToolTip(Cust_Tel_Label, Cust_Tel_Label.Text);
+
                 Cust_Postcode_Label.Text = customer[Get_Customer_Column_Index("Postcode")];
+                Value_Tool_Tip.SetToolTip(Cust_Postcode_Label, Cust_Postcode_Label.Text);
+
                 PrevCust_Label.Text = Globals.boolToYN(customer[Get_Customer_Column_Index("Previous Customer")]);
+                Value_Tool_Tip.SetToolTip(PrevCust_Label,PrevCust_Label.Text);
+
                 Cust_LicenseNo_Label.Text = customer[Get_Customer_Column_Index("License No")];
+                Value_Tool_Tip.SetToolTip(Cust_LicenseNo_Label, Cust_LicenseNo_Label.Text);
+
                 Cust_Issue_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Issue Date")]);
+                Value_Tool_Tip.SetToolTip(Cust_Issue_Label, Cust_Issue_Label.Text);
+
                 Cust_Expiry_Label.Text = Globals.removeTime(customer[Get_Customer_Column_Index("Expiry Date")]);
+                Value_Tool_Tip.SetToolTip(Cust_Expiry_Label, Cust_Expiry_Label.Text);
+
                 Verified_Label.Text = Globals.boolToYN(customer[Get_Customer_Column_Index("Verified License")]);
+                Value_Tool_Tip.SetToolTip(Verified_Label, Verified_Label.Text);
+
 
                 Transaction_Time_Label.Text = payment[Get_Payment_Column_Index("Transaction Time")];
-                Amount_Label.Text = payment[Get_Payment_Column_Index("Amount")];
-                Transaction_Type_Label.Text = payment[Get_Payment_Column_Index("Transaction Type")];
-                Paid_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Has Been Paid")]);
-                Cancelled_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Cancelled")]);
-                Description_Text_Label.Text = payment[Get_Payment_Column_Index("Description")];
+                Value_Tool_Tip.SetToolTip(Transaction_Time_Label, Transaction_Time_Label.Text);
 
+                Amount_Label.Text = "£" + payment[Get_Payment_Column_Index("Amount")];
+                Value_Tool_Tip.SetToolTip(Amount_Label, Amount_Label.Text);
+
+                Transaction_Type_Label.Text = payment[Get_Payment_Column_Index("Transaction Type")];
+                Value_Tool_Tip.SetToolTip(Transaction_Type_Label, Transaction_Time_Label.Text);
+
+                Paid_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Has Been Paid")]);
+                Value_Tool_Tip.SetToolTip(Paid_Label, Paid_Label.Text);
+
+                Cancelled_Label.Text = Globals.boolToYN(payment[Get_Payment_Column_Index("Cancelled")]);
+                Value_Tool_Tip.SetToolTip(Cancelled_Label, Cancelled_Label.Text);
+
+                Description_Text_Label.Text = payment[Get_Payment_Column_Index("Description")];
+                Value_Tool_Tip.SetToolTip(Description_Text_Label, Description_Text_Label.Text);
             }
             else
             {
@@ -441,7 +470,7 @@ namespace Year_14_CA_SSD
             showCancelled = true;
             Show_Cancelled_Button.Click -= new EventHandler(Show_Cancelled);
             Show_Cancelled_Button.Click += new EventHandler(Hide_Cancelled);
-            Show_Cancelled_Button.Image = Properties.Resources.cancel_visible;
+            Show_Cancelled_Button.BackgroundImage = Properties.Resources.cancel_visible;
             Display_Payments();
         }
         void Hide_Cancelled(object sender, EventArgs e)
@@ -449,7 +478,7 @@ namespace Year_14_CA_SSD
             showCancelled = false;
             Show_Cancelled_Button.Click -= new EventHandler(Hide_Cancelled);
             Show_Cancelled_Button.Click += new EventHandler(Show_Cancelled);
-            Show_Cancelled_Button.Image = Properties.Resources.cancel_not_visible;
+            Show_Cancelled_Button.BackgroundImage = Properties.Resources.cancel_not_visible;
             Display_Payments();
         }
         void Display_Payments()

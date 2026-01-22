@@ -29,26 +29,39 @@ namespace Year_14_CA_SSD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Title_Label = new System.Windows.Forms.Label();
             this.Car_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Available_Label = new System.Windows.Forms.Label();
             this.Power_Label = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.Engine_Size_Label = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.FuelType_Label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.Transmission_Label = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.NoOfSeats_Label = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.Colour_Label = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Bodystyle_Label = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Mileage_Label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Registration_Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Car_DropDown = new System.Windows.Forms.PictureBox();
             this.Car_TextBox = new System.Windows.Forms.TextBox();
             this.Employee_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Employee_Name_Label = new System.Windows.Forms.Label();
             this.Employee_Username_Label = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.Employee_Tel_Label = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.Employee_Name_Label = new System.Windows.Forms.Label();
             this.Employee_Email_Label = new System.Windows.Forms.Label();
             this.Employee_DOB_Label = new System.Windows.Forms.Label();
-            this.Employee_Tel_Label = new System.Windows.Forms.Label();
             this.Date_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,15 +69,24 @@ namespace Year_14_CA_SSD
             this.TestDrive_GroupBox = new System.Windows.Forms.GroupBox();
             this.Find_Test_Drive_Button = new System.Windows.Forms.Button();
             this.Customer_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Customer_Name_Label = new System.Windows.Forms.Label();
-            this.Postcode_Label = new System.Windows.Forms.Label();
             this.Verified_Label = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.Cust_Expiry_Label = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.Cust_Issue_Label = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.Cust_LicenseNo_Label = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.PrevCust_Label = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Postcode_Label = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.Cust_Email_Label = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.Cust_DOB_Label = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Customer_Name_Label = new System.Windows.Forms.Label();
             this.Cust_Tel_Label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -75,9 +97,19 @@ namespace Year_14_CA_SSD
             this.Cleaned_CheckBox = new System.Windows.Forms.CheckBox();
             this.Inspected_CheckBox = new System.Windows.Forms.CheckBox();
             this.New_Mileage_Label = new System.Windows.Forms.Label();
-            this.Car_Not_Damaged_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Car_Damaged_CheckBox = new System.Windows.Forms.CheckBox();
             this.Car_Returned_CheckBox = new System.Windows.Forms.CheckBox();
             this.Return_Button = new System.Windows.Forms.Button();
+            this.Car_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Customer_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.Employee_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Fee_FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.Late_Fee_Label = new System.Windows.Forms.Label();
+            this.Mileage_Fee_Label = new System.Windows.Forms.Label();
+            this.Damage_Fee_Label = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.Time_Returned_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Car_GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Car_DropDown)).BeginInit();
             this.Employee_GroupBox.SuspendLayout();
@@ -85,6 +117,7 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_NumericUpDown)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Title_Label
@@ -99,19 +132,27 @@ namespace Year_14_CA_SSD
             // 
             // Car_GroupBox
             // 
-            this.Car_GroupBox.Controls.Add(this.Available_Label);
             this.Car_GroupBox.Controls.Add(this.Power_Label);
+            this.Car_GroupBox.Controls.Add(this.label11);
             this.Car_GroupBox.Controls.Add(this.Engine_Size_Label);
+            this.Car_GroupBox.Controls.Add(this.label10);
             this.Car_GroupBox.Controls.Add(this.FuelType_Label);
+            this.Car_GroupBox.Controls.Add(this.label9);
             this.Car_GroupBox.Controls.Add(this.Transmission_Label);
+            this.Car_GroupBox.Controls.Add(this.label8);
             this.Car_GroupBox.Controls.Add(this.NoOfSeats_Label);
+            this.Car_GroupBox.Controls.Add(this.label7);
             this.Car_GroupBox.Controls.Add(this.Colour_Label);
+            this.Car_GroupBox.Controls.Add(this.label6);
             this.Car_GroupBox.Controls.Add(this.Bodystyle_Label);
+            this.Car_GroupBox.Controls.Add(this.label5);
             this.Car_GroupBox.Controls.Add(this.Mileage_Label);
+            this.Car_GroupBox.Controls.Add(this.label3);
             this.Car_GroupBox.Controls.Add(this.Registration_Label);
+            this.Car_GroupBox.Controls.Add(this.label1);
             this.Car_GroupBox.Controls.Add(this.Car_DropDown);
             this.Car_GroupBox.Controls.Add(this.Car_TextBox);
-            this.Car_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Car_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.Car_GroupBox.Location = new System.Drawing.Point(20, 56);
             this.Car_GroupBox.Name = "Car_GroupBox";
             this.Car_GroupBox.Size = new System.Drawing.Size(262, 515);
@@ -119,95 +160,167 @@ namespace Year_14_CA_SSD
             this.Car_GroupBox.TabStop = false;
             this.Car_GroupBox.Text = "Car";
             // 
-            // Available_Label
-            // 
-            this.Available_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Available_Label.Location = new System.Drawing.Point(8, 407);
-            this.Available_Label.Name = "Available_Label";
-            this.Available_Label.Size = new System.Drawing.Size(245, 34);
-            this.Available_Label.TabIndex = 21;
-            this.Available_Label.Text = " ";
-            // 
             // Power_Label
             // 
-            this.Power_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Power_Label.Location = new System.Drawing.Point(8, 363);
+            this.Power_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Power_Label.Location = new System.Drawing.Point(66, 363);
             this.Power_Label.Name = "Power_Label";
-            this.Power_Label.Size = new System.Drawing.Size(245, 34);
+            this.Power_Label.Size = new System.Drawing.Size(108, 34);
             this.Power_Label.TabIndex = 20;
-            this.Power_Label.Text = " ";
+            this.Power_Label.Text = "435hp";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 363);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 34);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Power:";
             // 
             // Engine_Size_Label
             // 
-            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Engine_Size_Label.Location = new System.Drawing.Point(8, 329);
+            this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Engine_Size_Label.Location = new System.Drawing.Point(112, 329);
             this.Engine_Size_Label.Name = "Engine_Size_Label";
-            this.Engine_Size_Label.Size = new System.Drawing.Size(245, 34);
+            this.Engine_Size_Label.Size = new System.Drawing.Size(98, 34);
             this.Engine_Size_Label.TabIndex = 19;
-            this.Engine_Size_Label.Text = " ";
+            this.Engine_Size_Label.Text = "2.5l";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 329);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 34);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Engine Size:";
             // 
             // FuelType_Label
             // 
-            this.FuelType_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelType_Label.Location = new System.Drawing.Point(8, 295);
+            this.FuelType_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FuelType_Label.Location = new System.Drawing.Point(94, 295);
             this.FuelType_Label.Name = "FuelType_Label";
-            this.FuelType_Label.Size = new System.Drawing.Size(245, 34);
+            this.FuelType_Label.Size = new System.Drawing.Size(118, 34);
             this.FuelType_Label.TabIndex = 18;
-            this.FuelType_Label.Text = " ";
+            this.FuelType_Label.Text = "Diesel";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 34);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Fuel Type:";
             // 
             // Transmission_Label
             // 
-            this.Transmission_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Transmission_Label.Location = new System.Drawing.Point(8, 261);
+            this.Transmission_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Transmission_Label.Location = new System.Drawing.Point(122, 261);
             this.Transmission_Label.Name = "Transmission_Label";
-            this.Transmission_Label.Size = new System.Drawing.Size(245, 34);
+            this.Transmission_Label.Size = new System.Drawing.Size(131, 34);
             this.Transmission_Label.TabIndex = 17;
-            this.Transmission_Label.Text = " ";
+            this.Transmission_Label.Text = "Automatic";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 261);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(166, 34);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Transmission:";
             // 
             // NoOfSeats_Label
             // 
-            this.NoOfSeats_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoOfSeats_Label.Location = new System.Drawing.Point(8, 217);
+            this.NoOfSeats_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoOfSeats_Label.Location = new System.Drawing.Point(157, 217);
             this.NoOfSeats_Label.Name = "NoOfSeats_Label";
-            this.NoOfSeats_Label.Size = new System.Drawing.Size(245, 34);
+            this.NoOfSeats_Label.Size = new System.Drawing.Size(68, 34);
             this.NoOfSeats_Label.TabIndex = 16;
-            this.NoOfSeats_Label.Text = " ";
+            this.NoOfSeats_Label.Text = "4";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 217);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(166, 34);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Number Of Seats:";
             // 
             // Colour_Label
             // 
-            this.Colour_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Colour_Label.Location = new System.Drawing.Point(8, 183);
+            this.Colour_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Colour_Label.Location = new System.Drawing.Point(72, 183);
             this.Colour_Label.Name = "Colour_Label";
-            this.Colour_Label.Size = new System.Drawing.Size(245, 34);
+            this.Colour_Label.Size = new System.Drawing.Size(135, 34);
             this.Colour_Label.TabIndex = 15;
-            this.Colour_Label.Text = " ";
+            this.Colour_Label.Text = "Black";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 34);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Colour:";
             // 
             // Bodystyle_Label
             // 
-            this.Bodystyle_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bodystyle_Label.Location = new System.Drawing.Point(8, 149);
+            this.Bodystyle_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bodystyle_Label.Location = new System.Drawing.Point(100, 149);
             this.Bodystyle_Label.Name = "Bodystyle_Label";
-            this.Bodystyle_Label.Size = new System.Drawing.Size(245, 34);
+            this.Bodystyle_Label.Size = new System.Drawing.Size(152, 34);
             this.Bodystyle_Label.TabIndex = 14;
-            this.Bodystyle_Label.Text = " ";
+            this.Bodystyle_Label.Text = "SUV";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 34);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Body Style:";
             // 
             // Mileage_Label
             // 
-            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mileage_Label.Location = new System.Drawing.Point(8, 104);
+            this.Mileage_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Label.Location = new System.Drawing.Point(84, 103);
             this.Mileage_Label.Name = "Mileage_Label";
-            this.Mileage_Label.Size = new System.Drawing.Size(245, 34);
+            this.Mileage_Label.Size = new System.Drawing.Size(102, 34);
             this.Mileage_Label.TabIndex = 13;
-            this.Mileage_Label.Text = " ";
+            this.Mileage_Label.Text = "25,000km";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 34);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Mileage:";
             // 
             // Registration_Label
             // 
-            this.Registration_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Registration_Label.Location = new System.Drawing.Point(8, 70);
+            this.Registration_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registration_Label.Location = new System.Drawing.Point(46, 69);
             this.Registration_Label.Name = "Registration_Label";
-            this.Registration_Label.Size = new System.Drawing.Size(245, 34);
+            this.Registration_Label.Size = new System.Drawing.Size(161, 34);
             this.Registration_Label.TabIndex = 12;
-            this.Registration_Label.Text = " ";
+            this.Registration_Label.Text = "UD132DH";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 34);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Reg:";
             // 
             // Car_DropDown
             // 
@@ -228,74 +341,119 @@ namespace Year_14_CA_SSD
             this.Car_TextBox.TabIndex = 10;
             this.Car_TextBox.Click += new System.EventHandler(this.Car_TextBox_Click);
             this.Car_TextBox.TextChanged += new System.EventHandler(this.Car_TextBox_TextChanged);
+            this.Car_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Car_TextBox_KeyDown);
             // 
             // Employee_GroupBox
             // 
-            this.Employee_GroupBox.Controls.Add(this.Employee_Name_Label);
             this.Employee_GroupBox.Controls.Add(this.Employee_Username_Label);
+            this.Employee_GroupBox.Controls.Add(this.label24);
+            this.Employee_GroupBox.Controls.Add(this.label23);
+            this.Employee_GroupBox.Controls.Add(this.Employee_Tel_Label);
+            this.Employee_GroupBox.Controls.Add(this.label22);
+            this.Employee_GroupBox.Controls.Add(this.label21);
+            this.Employee_GroupBox.Controls.Add(this.Employee_Name_Label);
             this.Employee_GroupBox.Controls.Add(this.Employee_Email_Label);
             this.Employee_GroupBox.Controls.Add(this.Employee_DOB_Label);
-            this.Employee_GroupBox.Controls.Add(this.Employee_Tel_Label);
-            this.Employee_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_GroupBox.Location = new System.Drawing.Point(866, 56);
+            this.Employee_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_GroupBox.Location = new System.Drawing.Point(595, 338);
             this.Employee_GroupBox.Name = "Employee_GroupBox";
-            this.Employee_GroupBox.Size = new System.Drawing.Size(301, 183);
+            this.Employee_GroupBox.Size = new System.Drawing.Size(263, 147);
             this.Employee_GroupBox.TabIndex = 13;
             this.Employee_GroupBox.TabStop = false;
             this.Employee_GroupBox.Text = "Employee";
             // 
-            // Employee_Name_Label
-            // 
-            this.Employee_Name_Label.AutoSize = true;
-            this.Employee_Name_Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Name_Label.Location = new System.Drawing.Point(6, 23);
-            this.Employee_Name_Label.Name = "Employee_Name_Label";
-            this.Employee_Name_Label.Size = new System.Drawing.Size(238, 25);
-            this.Employee_Name_Label.TabIndex = 16;
-            this.Employee_Name_Label.Text = "Name: Nathan Jake McGee";
-            // 
             // Employee_Username_Label
             // 
             this.Employee_Username_Label.AutoSize = true;
-            this.Employee_Username_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Username_Label.Location = new System.Drawing.Point(7, 146);
+            this.Employee_Username_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Username_Label.Location = new System.Drawing.Point(85, 116);
             this.Employee_Username_Label.Name = "Employee_Username_Label";
-            this.Employee_Username_Label.Size = new System.Drawing.Size(184, 21);
+            this.Employee_Username_Label.Size = new System.Drawing.Size(104, 21);
             this.Employee_Username_Label.TabIndex = 16;
-            this.Employee_Username_Label.Text = "Username: NAMCGEE782";
+            this.Employee_Username_Label.Text = "NAMCGEE782";
             this.Employee_Username_Label.Click += new System.EventHandler(this.Employee_Username_Label_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(7, 116);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(84, 21);
+            this.label24.TabIndex = 28;
+            this.label24.Text = "Username:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(7, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 21);
+            this.label23.TabIndex = 27;
+            this.label23.Text = "Email:";
+            // 
+            // Employee_Tel_Label
+            // 
+            this.Employee_Tel_Label.AutoSize = true;
+            this.Employee_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Tel_Label.Location = new System.Drawing.Point(33, 72);
+            this.Employee_Tel_Label.Name = "Employee_Tel_Label";
+            this.Employee_Tel_Label.Size = new System.Drawing.Size(96, 21);
+            this.Employee_Tel_Label.TabIndex = 13;
+            this.Employee_Tel_Label.Text = "07657234512";
+            this.Employee_Tel_Label.Click += new System.EventHandler(this.Employee_Tel_Label_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(7, 72);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 21);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Tel:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(7, 50);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(45, 21);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "DOB:";
+            // 
+            // Employee_Name_Label
+            // 
+            this.Employee_Name_Label.AutoEllipsis = true;
+            this.Employee_Name_Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Name_Label.Location = new System.Drawing.Point(6, 23);
+            this.Employee_Name_Label.Name = "Employee_Name_Label";
+            this.Employee_Name_Label.Size = new System.Drawing.Size(251, 25);
+            this.Employee_Name_Label.TabIndex = 16;
+            this.Employee_Name_Label.Text = "Name: Nathan Jake McGee";
             // 
             // Employee_Email_Label
             // 
-            this.Employee_Email_Label.AutoSize = true;
-            this.Employee_Email_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Email_Label.Location = new System.Drawing.Point(7, 119);
+            this.Employee_Email_Label.AutoEllipsis = true;
+            this.Employee_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_Email_Label.Location = new System.Drawing.Point(53, 94);
             this.Employee_Email_Label.Name = "Employee_Email_Label";
-            this.Employee_Email_Label.Size = new System.Drawing.Size(234, 21);
+            this.Employee_Email_Label.Size = new System.Drawing.Size(204, 21);
             this.Employee_Email_Label.TabIndex = 15;
-            this.Employee_Email_Label.Text = "Email: nathanmcgee@gmail.com";
+            this.Employee_Email_Label.Text = "nathanmcgee@gmail.com";
             this.Employee_Email_Label.Click += new System.EventHandler(this.Employee_Email_Label_Click);
             // 
             // Employee_DOB_Label
             // 
             this.Employee_DOB_Label.AutoSize = true;
-            this.Employee_DOB_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_DOB_Label.Location = new System.Drawing.Point(7, 50);
+            this.Employee_DOB_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employee_DOB_Label.Location = new System.Drawing.Point(47, 50);
             this.Employee_DOB_Label.Name = "Employee_DOB_Label";
-            this.Employee_DOB_Label.Size = new System.Drawing.Size(126, 21);
+            this.Employee_DOB_Label.Size = new System.Drawing.Size(86, 21);
             this.Employee_DOB_Label.TabIndex = 14;
-            this.Employee_DOB_Label.Text = "DOB: 26/03/2007";
-            // 
-            // Employee_Tel_Label
-            // 
-            this.Employee_Tel_Label.AutoSize = true;
-            this.Employee_Tel_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_Tel_Label.Location = new System.Drawing.Point(7, 75);
-            this.Employee_Tel_Label.Name = "Employee_Tel_Label";
-            this.Employee_Tel_Label.Size = new System.Drawing.Size(123, 21);
-            this.Employee_Tel_Label.TabIndex = 13;
-            this.Employee_Tel_Label.Text = "Tel: 07657234512";
-            this.Employee_Tel_Label.Click += new System.EventHandler(this.Employee_Tel_Label_Click);
+            this.Employee_DOB_Label.Text = "26/03/2007";
             // 
             // Date_DateTimePicker
             // 
@@ -353,7 +511,7 @@ namespace Year_14_CA_SSD
             this.TestDrive_GroupBox.Controls.Add(this.label4);
             this.TestDrive_GroupBox.Controls.Add(this.label2);
             this.TestDrive_GroupBox.Controls.Add(this.Date_DateTimePicker);
-            this.TestDrive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestDrive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TestDrive_GroupBox.Location = new System.Drawing.Point(288, 56);
             this.TestDrive_GroupBox.Name = "TestDrive_GroupBox";
             this.TestDrive_GroupBox.Size = new System.Drawing.Size(301, 104);
@@ -374,17 +532,26 @@ namespace Year_14_CA_SSD
             // 
             // Customer_GroupBox
             // 
-            this.Customer_GroupBox.Controls.Add(this.Customer_Name_Label);
-            this.Customer_GroupBox.Controls.Add(this.Postcode_Label);
             this.Customer_GroupBox.Controls.Add(this.Verified_Label);
+            this.Customer_GroupBox.Controls.Add(this.label20);
             this.Customer_GroupBox.Controls.Add(this.Cust_Expiry_Label);
+            this.Customer_GroupBox.Controls.Add(this.label19);
             this.Customer_GroupBox.Controls.Add(this.Cust_Issue_Label);
+            this.Customer_GroupBox.Controls.Add(this.label18);
             this.Customer_GroupBox.Controls.Add(this.Cust_LicenseNo_Label);
+            this.Customer_GroupBox.Controls.Add(this.label17);
             this.Customer_GroupBox.Controls.Add(this.PrevCust_Label);
+            this.Customer_GroupBox.Controls.Add(this.label16);
+            this.Customer_GroupBox.Controls.Add(this.Postcode_Label);
+            this.Customer_GroupBox.Controls.Add(this.label15);
             this.Customer_GroupBox.Controls.Add(this.Cust_Email_Label);
+            this.Customer_GroupBox.Controls.Add(this.label14);
+            this.Customer_GroupBox.Controls.Add(this.label13);
             this.Customer_GroupBox.Controls.Add(this.Cust_DOB_Label);
+            this.Customer_GroupBox.Controls.Add(this.label12);
+            this.Customer_GroupBox.Controls.Add(this.Customer_Name_Label);
             this.Customer_GroupBox.Controls.Add(this.Cust_Tel_Label);
-            this.Customer_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_GroupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Customer_GroupBox.Location = new System.Drawing.Point(595, 54);
             this.Customer_GroupBox.Name = "Customer_GroupBox";
             this.Customer_GroupBox.Size = new System.Drawing.Size(263, 278);
@@ -392,108 +559,200 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.TabStop = false;
             this.Customer_GroupBox.Text = "Customer";
             // 
-            // Customer_Name_Label
-            // 
-            this.Customer_Name_Label.AutoSize = true;
-            this.Customer_Name_Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Customer_Name_Label.Location = new System.Drawing.Point(5, 25);
-            this.Customer_Name_Label.Name = "Customer_Name_Label";
-            this.Customer_Name_Label.Size = new System.Drawing.Size(238, 25);
-            this.Customer_Name_Label.TabIndex = 15;
-            this.Customer_Name_Label.Text = "Name: Nathan Jake McGee";
-            // 
-            // Postcode_Label
-            // 
-            this.Postcode_Label.AutoSize = true;
-            this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Postcode_Label.Location = new System.Drawing.Point(6, 128);
-            this.Postcode_Label.Name = "Postcode_Label";
-            this.Postcode_Label.Size = new System.Drawing.Size(143, 21);
-            this.Postcode_Label.TabIndex = 14;
-            this.Postcode_Label.Text = "Postcode: BT79 3DS";
-            // 
             // Verified_Label
             // 
             this.Verified_Label.AutoSize = true;
-            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Verified_Label.Location = new System.Drawing.Point(6, 246);
+            this.Verified_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Verified_Label.Location = new System.Drawing.Point(66, 246);
             this.Verified_Label.Name = "Verified_Label";
-            this.Verified_Label.Size = new System.Drawing.Size(93, 21);
+            this.Verified_Label.Size = new System.Drawing.Size(31, 21);
             this.Verified_Label.TabIndex = 13;
-            this.Verified_Label.Text = "Verified: Yes";
+            this.Verified_Label.Text = "Yes";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(6, 246);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 21);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Verified:";
             // 
             // Cust_Expiry_Label
             // 
             this.Cust_Expiry_Label.AutoSize = true;
-            this.Cust_Expiry_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Expiry_Label.Location = new System.Drawing.Point(6, 225);
+            this.Cust_Expiry_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Expiry_Label.Location = new System.Drawing.Point(56, 225);
             this.Cust_Expiry_Label.Name = "Cust_Expiry_Label";
-            this.Cust_Expiry_Label.Size = new System.Drawing.Size(135, 21);
+            this.Cust_Expiry_Label.Size = new System.Drawing.Size(86, 21);
             this.Cust_Expiry_Label.TabIndex = 12;
-            this.Cust_Expiry_Label.Text = "Expiry: 05/05/2029";
+            this.Cust_Expiry_Label.Text = "05/05/2029";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(6, 225);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(55, 21);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Expiry:";
             // 
             // Cust_Issue_Label
             // 
             this.Cust_Issue_Label.AutoSize = true;
-            this.Cust_Issue_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Issue_Label.Location = new System.Drawing.Point(6, 204);
+            this.Cust_Issue_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Issue_Label.Location = new System.Drawing.Point(48, 204);
             this.Cust_Issue_Label.Name = "Cust_Issue_Label";
-            this.Cust_Issue_Label.Size = new System.Drawing.Size(128, 21);
+            this.Cust_Issue_Label.Size = new System.Drawing.Size(84, 21);
             this.Cust_Issue_Label.TabIndex = 11;
-            this.Cust_Issue_Label.Text = "Issue: 03/04/2019";
+            this.Cust_Issue_Label.Text = "03/04/2019";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(6, 204);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(48, 21);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Issue:";
             // 
             // Cust_LicenseNo_Label
             // 
-            this.Cust_LicenseNo_Label.AutoSize = true;
-            this.Cust_LicenseNo_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_LicenseNo_Label.Location = new System.Drawing.Point(6, 183);
+            this.Cust_LicenseNo_Label.AutoEllipsis = true;
+            this.Cust_LicenseNo_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_LicenseNo_Label.Location = new System.Drawing.Point(126, 183);
             this.Cust_LicenseNo_Label.Name = "Cust_LicenseNo_Label";
-            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(172, 21);
+            this.Cust_LicenseNo_Label.Size = new System.Drawing.Size(131, 21);
             this.Cust_LicenseNo_Label.TabIndex = 10;
-            this.Cust_LicenseNo_Label.Text = "License No: 1946835735";
+            this.Cust_LicenseNo_Label.Text = "1946835735";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 183);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(126, 21);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "License Number:";
             // 
             // PrevCust_Label
             // 
             this.PrevCust_Label.AutoSize = true;
-            this.PrevCust_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrevCust_Label.Location = new System.Drawing.Point(6, 149);
+            this.PrevCust_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrevCust_Label.Location = new System.Drawing.Point(146, 148);
             this.PrevCust_Label.Name = "PrevCust_Label";
-            this.PrevCust_Label.Size = new System.Drawing.Size(170, 21);
+            this.PrevCust_Label.Size = new System.Drawing.Size(31, 21);
             this.PrevCust_Label.TabIndex = 9;
-            this.PrevCust_Label.Text = "Previous Customer: Yes";
+            this.PrevCust_Label.Text = "Yes";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 148);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(145, 21);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Previous Customer:";
+            // 
+            // Postcode_Label
+            // 
+            this.Postcode_Label.AutoSize = true;
+            this.Postcode_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Postcode_Label.Location = new System.Drawing.Point(75, 128);
+            this.Postcode_Label.Name = "Postcode_Label";
+            this.Postcode_Label.Size = new System.Drawing.Size(74, 21);
+            this.Postcode_Label.TabIndex = 14;
+            this.Postcode_Label.Text = "BT79 3DS";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 21);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Postcode:";
             // 
             // Cust_Email_Label
             // 
-            this.Cust_Email_Label.AutoSize = true;
-            this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Email_Label.Location = new System.Drawing.Point(6, 95);
+            this.Cust_Email_Label.AutoEllipsis = true;
+            this.Cust_Email_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Email_Label.Location = new System.Drawing.Point(51, 95);
             this.Cust_Email_Label.Name = "Cust_Email_Label";
-            this.Cust_Email_Label.Size = new System.Drawing.Size(234, 21);
+            this.Cust_Email_Label.Size = new System.Drawing.Size(206, 21);
             this.Cust_Email_Label.TabIndex = 8;
-            this.Cust_Email_Label.Text = "Email: nathanmcgee@gmail.com";
+            this.Cust_Email_Label.Text = "nathanmcgee@gmail.com";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 95);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 21);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Email:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 21);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Tel:";
             // 
             // Cust_DOB_Label
             // 
             this.Cust_DOB_Label.AutoSize = true;
-            this.Cust_DOB_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_DOB_Label.Location = new System.Drawing.Point(6, 52);
+            this.Cust_DOB_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_DOB_Label.Location = new System.Drawing.Point(45, 53);
             this.Cust_DOB_Label.Name = "Cust_DOB_Label";
-            this.Cust_DOB_Label.Size = new System.Drawing.Size(126, 21);
+            this.Cust_DOB_Label.Size = new System.Drawing.Size(86, 21);
             this.Cust_DOB_Label.TabIndex = 7;
-            this.Cust_DOB_Label.Text = "DOB: 26/03/2007";
+            this.Cust_DOB_Label.Text = "26/03/2007";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 53);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 21);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "DOB:";
+            // 
+            // Customer_Name_Label
+            // 
+            this.Customer_Name_Label.AutoEllipsis = true;
+            this.Customer_Name_Label.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customer_Name_Label.Location = new System.Drawing.Point(5, 25);
+            this.Customer_Name_Label.Name = "Customer_Name_Label";
+            this.Customer_Name_Label.Size = new System.Drawing.Size(252, 25);
+            this.Customer_Name_Label.TabIndex = 15;
+            this.Customer_Name_Label.Text = "Name: Nathan Jake McGee";
             // 
             // Cust_Tel_Label
             // 
             this.Cust_Tel_Label.AutoSize = true;
-            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cust_Tel_Label.Location = new System.Drawing.Point(6, 74);
+            this.Cust_Tel_Label.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Tel_Label.Location = new System.Drawing.Point(35, 74);
             this.Cust_Tel_Label.Name = "Cust_Tel_Label";
-            this.Cust_Tel_Label.Size = new System.Drawing.Size(123, 21);
+            this.Cust_Tel_Label.Size = new System.Drawing.Size(96, 21);
             this.Cust_Tel_Label.TabIndex = 4;
-            this.Cust_Tel_Label.Text = "Tel: 07657234512";
+            this.Cust_Tel_Label.Text = "07657234512";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Time_Returned_DateTimePicker);
+            this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.Mileage_NumericUpDown);
             this.groupBox1.Controls.Add(this.Cleaned_Label);
             this.groupBox1.Controls.Add(this.Inspected_Label);
@@ -502,12 +761,12 @@ namespace Year_14_CA_SSD
             this.groupBox1.Controls.Add(this.Cleaned_CheckBox);
             this.groupBox1.Controls.Add(this.Inspected_CheckBox);
             this.groupBox1.Controls.Add(this.New_Mileage_Label);
-            this.groupBox1.Controls.Add(this.Car_Not_Damaged_CheckBox);
+            this.groupBox1.Controls.Add(this.Car_Damaged_CheckBox);
             this.groupBox1.Controls.Add(this.Car_Returned_CheckBox);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(866, 245);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(866, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 241);
+            this.groupBox1.Size = new System.Drawing.Size(301, 225);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car Return";
@@ -529,14 +788,15 @@ namespace Year_14_CA_SSD
             0});
             this.Mileage_NumericUpDown.Name = "Mileage_NumericUpDown";
             this.Mileage_NumericUpDown.Size = new System.Drawing.Size(147, 29);
-            this.Mileage_NumericUpDown.TabIndex = 23;
+            this.Mileage_NumericUpDown.TabIndex = 0;
             this.Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Mileage_NumericUpDown.ValueChanged += new System.EventHandler(this.Mileage_NumericUpDown_ValueChanged);
             // 
             // Cleaned_Label
             // 
             this.Cleaned_Label.AutoSize = true;
             this.Cleaned_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cleaned_Label.Location = new System.Drawing.Point(10, 166);
+            this.Cleaned_Label.Location = new System.Drawing.Point(10, 157);
             this.Cleaned_Label.Name = "Cleaned_Label";
             this.Cleaned_Label.Size = new System.Drawing.Size(194, 25);
             this.Cleaned_Label.TabIndex = 22;
@@ -546,7 +806,7 @@ namespace Year_14_CA_SSD
             // 
             this.Inspected_Label.AutoSize = true;
             this.Inspected_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inspected_Label.Location = new System.Drawing.Point(10, 134);
+            this.Inspected_Label.Location = new System.Drawing.Point(10, 127);
             this.Inspected_Label.Name = "Inspected_Label";
             this.Inspected_Label.Size = new System.Drawing.Size(207, 25);
             this.Inspected_Label.TabIndex = 21;
@@ -556,11 +816,11 @@ namespace Year_14_CA_SSD
             // 
             this.Damaged_Label.AutoSize = true;
             this.Damaged_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Damaged_Label.Location = new System.Drawing.Point(10, 99);
+            this.Damaged_Label.Location = new System.Drawing.Point(10, 97);
             this.Damaged_Label.Name = "Damaged_Label";
-            this.Damaged_Label.Size = new System.Drawing.Size(162, 25);
+            this.Damaged_Label.Size = new System.Drawing.Size(126, 25);
             this.Damaged_Label.TabIndex = 20;
-            this.Damaged_Label.Text = "Car Not Damaged";
+            this.Damaged_Label.Text = "Car Damaged";
             // 
             // Returned_Label
             // 
@@ -577,7 +837,7 @@ namespace Year_14_CA_SSD
             this.Cleaned_CheckBox.AutoSize = true;
             this.Cleaned_CheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cleaned_CheckBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cleaned_CheckBox.Location = new System.Drawing.Point(250, 165);
+            this.Cleaned_CheckBox.Location = new System.Drawing.Point(250, 156);
             this.Cleaned_CheckBox.Name = "Cleaned_CheckBox";
             this.Cleaned_CheckBox.Size = new System.Drawing.Size(36, 29);
             this.Cleaned_CheckBox.TabIndex = 18;
@@ -590,7 +850,7 @@ namespace Year_14_CA_SSD
             this.Inspected_CheckBox.AutoSize = true;
             this.Inspected_CheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Inspected_CheckBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inspected_CheckBox.Location = new System.Drawing.Point(250, 130);
+            this.Inspected_CheckBox.Location = new System.Drawing.Point(250, 123);
             this.Inspected_CheckBox.Name = "Inspected_CheckBox";
             this.Inspected_CheckBox.Size = new System.Drawing.Size(36, 29);
             this.Inspected_CheckBox.TabIndex = 17;
@@ -608,18 +868,18 @@ namespace Year_14_CA_SSD
             this.New_Mileage_Label.TabIndex = 16;
             this.New_Mileage_Label.Text = "Mileage (km):";
             // 
-            // Car_Not_Damaged_CheckBox
+            // Car_Damaged_CheckBox
             // 
-            this.Car_Not_Damaged_CheckBox.AutoSize = true;
-            this.Car_Not_Damaged_CheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Car_Not_Damaged_CheckBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Car_Not_Damaged_CheckBox.Location = new System.Drawing.Point(250, 95);
-            this.Car_Not_Damaged_CheckBox.Name = "Car_Not_Damaged_CheckBox";
-            this.Car_Not_Damaged_CheckBox.Size = new System.Drawing.Size(36, 29);
-            this.Car_Not_Damaged_CheckBox.TabIndex = 1;
-            this.Car_Not_Damaged_CheckBox.Text = " ";
-            this.Car_Not_Damaged_CheckBox.UseVisualStyleBackColor = true;
-            this.Car_Not_Damaged_CheckBox.CheckedChanged += new System.EventHandler(this.Car_Not_Damaged_CheckBox_CheckedChanged);
+            this.Car_Damaged_CheckBox.AutoSize = true;
+            this.Car_Damaged_CheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Car_Damaged_CheckBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Car_Damaged_CheckBox.Location = new System.Drawing.Point(250, 93);
+            this.Car_Damaged_CheckBox.Name = "Car_Damaged_CheckBox";
+            this.Car_Damaged_CheckBox.Size = new System.Drawing.Size(36, 29);
+            this.Car_Damaged_CheckBox.TabIndex = 2;
+            this.Car_Damaged_CheckBox.Text = " ";
+            this.Car_Damaged_CheckBox.UseVisualStyleBackColor = true;
+            this.Car_Damaged_CheckBox.CheckedChanged += new System.EventHandler(this.Car_Not_Damaged_CheckBox_CheckedChanged);
             // 
             // Car_Returned_CheckBox
             // 
@@ -629,7 +889,7 @@ namespace Year_14_CA_SSD
             this.Car_Returned_CheckBox.Location = new System.Drawing.Point(250, 63);
             this.Car_Returned_CheckBox.Name = "Car_Returned_CheckBox";
             this.Car_Returned_CheckBox.Size = new System.Drawing.Size(36, 29);
-            this.Car_Returned_CheckBox.TabIndex = 0;
+            this.Car_Returned_CheckBox.TabIndex = 1;
             this.Car_Returned_CheckBox.Text = " ";
             this.Car_Returned_CheckBox.UseVisualStyleBackColor = true;
             this.Car_Returned_CheckBox.CheckedChanged += new System.EventHandler(this.Car_Returned_CheckBox_CheckedChanged);
@@ -645,11 +905,90 @@ namespace Year_14_CA_SSD
             this.Return_Button.UseVisualStyleBackColor = true;
             this.Return_Button.Click += new System.EventHandler(this.Return_Button_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Fee_FlowLayoutPanel);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(866, 287);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(301, 198);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fees";
+            // 
+            // Fee_FlowLayoutPanel
+            // 
+            this.Fee_FlowLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.Fee_FlowLayoutPanel.Name = "Fee_FlowLayoutPanel";
+            this.Fee_FlowLayoutPanel.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.Fee_FlowLayoutPanel.Size = new System.Drawing.Size(280, 172);
+            this.Fee_FlowLayoutPanel.TabIndex = 0;
+            // 
+            // Late_Fee_Label
+            // 
+            this.Late_Fee_Label.AutoEllipsis = true;
+            this.Late_Fee_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Late_Fee_Label.Location = new System.Drawing.Point(534, 521);
+            this.Late_Fee_Label.Name = "Late_Fee_Label";
+            this.Late_Fee_Label.Size = new System.Drawing.Size(277, 25);
+            this.Late_Fee_Label.TabIndex = 29;
+            this.Late_Fee_Label.Text = "Late Fee (3 hours): £15.00";
+            this.Late_Fee_Label.Visible = false;
+            // 
+            // Mileage_Fee_Label
+            // 
+            this.Mileage_Fee_Label.AutoEllipsis = true;
+            this.Mileage_Fee_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_Fee_Label.Location = new System.Drawing.Point(344, 496);
+            this.Mileage_Fee_Label.Name = "Mileage_Fee_Label";
+            this.Mileage_Fee_Label.Size = new System.Drawing.Size(277, 25);
+            this.Mileage_Fee_Label.TabIndex = 30;
+            this.Mileage_Fee_Label.Text = "Mileage Fee (45 Miles): £22.50";
+            this.Mileage_Fee_Label.Visible = false;
+            // 
+            // Damage_Fee_Label
+            // 
+            this.Damage_Fee_Label.AutoEllipsis = true;
+            this.Damage_Fee_Label.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Damage_Fee_Label.Location = new System.Drawing.Point(306, 432);
+            this.Damage_Fee_Label.Name = "Damage_Fee_Label";
+            this.Damage_Fee_Label.Size = new System.Drawing.Size(268, 25);
+            this.Damage_Fee_Label.TabIndex = 31;
+            this.Damage_Fee_Label.Text = "Damage Fee: £1,200";
+            this.Damage_Fee_Label.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(10, 188);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(130, 25);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "Time Returned";
+            // 
+            // Time_Returned_DateTimePicker
+            // 
+            this.Time_Returned_DateTimePicker.CalendarFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_Returned_DateTimePicker.CustomFormat = "HH:mm dd/MM/yy";
+            this.Time_Returned_DateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.Time_Returned_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_Returned_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Time_Returned_DateTimePicker.Location = new System.Drawing.Point(139, 185);
+            this.Time_Returned_DateTimePicker.Name = "Time_Returned_DateTimePicker";
+            this.Time_Returned_DateTimePicker.Size = new System.Drawing.Size(147, 29);
+            this.Time_Returned_DateTimePicker.TabIndex = 12;
+            this.Time_Returned_DateTimePicker.ValueChanged += new System.EventHandler(this.Time_Returned_DateTimePicker_ValueChanged);
+            // 
             // CarReturnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 583);
+            this.Controls.Add(this.Damage_Fee_Label);
+            this.Controls.Add(this.Mileage_Fee_Label);
+            this.Controls.Add(this.Late_Fee_Label);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Return_Button);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Customer_GroupBox);
@@ -673,6 +1012,7 @@ namespace Year_14_CA_SSD
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_NumericUpDown)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,7 +1022,6 @@ namespace Year_14_CA_SSD
 
         private System.Windows.Forms.Label Title_Label;
         private System.Windows.Forms.GroupBox Car_GroupBox;
-        private System.Windows.Forms.Label Available_Label;
         private System.Windows.Forms.Label Power_Label;
         private System.Windows.Forms.Label Engine_Size_Label;
         private System.Windows.Forms.Label FuelType_Label;
@@ -717,7 +1056,7 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Customer_Name_Label;
         private System.Windows.Forms.Label Postcode_Label;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox Car_Not_Damaged_CheckBox;
+        private System.Windows.Forms.CheckBox Car_Damaged_CheckBox;
         private System.Windows.Forms.CheckBox Car_Returned_CheckBox;
         private System.Windows.Forms.Button Return_Button;
         private System.Windows.Forms.Label New_Mileage_Label;
@@ -729,5 +1068,37 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Damaged_Label;
         private System.Windows.Forms.Label Returned_Label;
         private System.Windows.Forms.NumericUpDown Mileage_NumericUpDown;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ToolTip Car_Tool_Tip;
+        private System.Windows.Forms.ToolTip Customer_Tool_Tip;
+        private System.Windows.Forms.ToolTip Employee_Tool_Tip;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.FlowLayoutPanel Fee_FlowLayoutPanel;
+        private System.Windows.Forms.Label Late_Fee_Label;
+        private System.Windows.Forms.Label Mileage_Fee_Label;
+        private System.Windows.Forms.Label Damage_Fee_Label;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker Time_Returned_DateTimePicker;
     }
 }

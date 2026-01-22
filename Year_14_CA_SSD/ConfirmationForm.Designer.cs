@@ -49,7 +49,7 @@ namespace Year_14_CA_SSD
             // Cancel_Button
             // 
             this.Cancel_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel_Button.Location = new System.Drawing.Point(181, 128);
+            this.Cancel_Button.Location = new System.Drawing.Point(178, 81);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(185, 46);
             this.Cancel_Button.TabIndex = 2;
@@ -60,7 +60,7 @@ namespace Year_14_CA_SSD
             // Confirm_Button
             // 
             this.Confirm_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm_Button.Location = new System.Drawing.Point(0, 128);
+            this.Confirm_Button.Location = new System.Drawing.Point(-3, 81);
             this.Confirm_Button.Name = "Confirm_Button";
             this.Confirm_Button.Size = new System.Drawing.Size(185, 46);
             this.Confirm_Button.TabIndex = 1;
@@ -72,12 +72,12 @@ namespace Year_14_CA_SSD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 174);
+            this.ClientSize = new System.Drawing.Size(364, 123);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Confirm_Button);
             this.Controls.Add(this.Text_Label);
             this.Name = "ConfirmationForm";
-            this.Text = "ConfirmationForm";
+            this.Text = "Are you sure?";
             this.Load += new System.EventHandler(this.ConfirmationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
