@@ -93,6 +93,12 @@
     <Compile Include="CarReturnForm.Designer.cs">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarServicingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarServicingForm.Designer.cs">
+      <DependentUpon>CarServicingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingsLoading.cs" />
     <Compile Include="ConfirmationForm.cs">
       <SubType>Form</SubType>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarReturnForm.resx">
       <DependentUpon>CarReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarServicingForm.resx">
+      <DependentUpon>CarServicingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmationForm.resx">
       <DependentUpon>ConfirmationForm.cs</DependentUpon>

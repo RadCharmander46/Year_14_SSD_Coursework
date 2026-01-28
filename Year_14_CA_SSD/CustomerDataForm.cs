@@ -444,40 +444,6 @@ namespace Year_14_CA_SSD
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
         public void Sort_Customer(List<int> items,int sortingIndex)
         {
             items.Sort((a, b) => customers[a][sortingIndex].CompareTo(customers[b][sortingIndex]));
@@ -565,61 +531,6 @@ namespace Year_14_CA_SSD
                 Display_Customers();
                 lastSort = "Inverse Phone Number";
             }
-        }
-
-        private void Damaged_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Previous_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Filter_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Filter_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
     public class Add_Customer_EventArgs : EventArgs

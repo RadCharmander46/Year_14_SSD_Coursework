@@ -46,14 +46,23 @@ namespace Year_14_CA_SSD
             this.Sunday_Label = new System.Windows.Forms.Label();
             this.Car_GroupBox = new System.Windows.Forms.GroupBox();
             this.Power_Label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.Engine_Size_Label = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.FuelType_Label = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.Transmission_Label = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.NoOfSeats_Label = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Colour_Label = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Bodystyle_Label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Mileage_Label = new System.Windows.Forms.Label();
             this.Registration_Label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Car_DropDown = new System.Windows.Forms.PictureBox();
             this.Car_TextBox = new System.Windows.Forms.TextBox();
             this.Date_GroupBox = new System.Windows.Forms.GroupBox();
@@ -67,15 +76,6 @@ namespace Year_14_CA_SSD
             this.Events_FlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Started_Label = new System.Windows.Forms.Label();
             this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.Car_Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
             this.Calendar_FlowPanel.SuspendLayout();
             this.Calendar_Date_FlowPanel.SuspendLayout();
@@ -136,7 +136,6 @@ namespace Year_14_CA_SSD
             this.Event_1_PictureBox.Size = new System.Drawing.Size(65, 6);
             this.Event_1_PictureBox.TabIndex = 5;
             this.Event_1_PictureBox.TabStop = false;
-            this.Event_1_PictureBox.Click += new System.EventHandler(this.Event_1_PictureBox_Click);
             // 
             // Event_2_PictureBox
             // 
@@ -146,7 +145,6 @@ namespace Year_14_CA_SSD
             this.Event_2_PictureBox.Size = new System.Drawing.Size(65, 6);
             this.Event_2_PictureBox.TabIndex = 6;
             this.Event_2_PictureBox.TabStop = false;
-            this.Event_2_PictureBox.Click += new System.EventHandler(this.Event_2_PictureBox_Click);
             // 
             // Event_3_PictureBox
             // 
@@ -156,7 +154,6 @@ namespace Year_14_CA_SSD
             this.Event_3_PictureBox.Size = new System.Drawing.Size(65, 6);
             this.Event_3_PictureBox.TabIndex = 7;
             this.Event_3_PictureBox.TabStop = false;
-            this.Event_3_PictureBox.Click += new System.EventHandler(this.Event_3_PictureBox_Click);
             // 
             // Day_Label
             // 
@@ -284,6 +281,16 @@ namespace Year_14_CA_SSD
             this.Power_Label.TabIndex = 20;
             this.Power_Label.Text = "435hp";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label9.Location = new System.Drawing.Point(3, 363);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 25);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Power:";
+            // 
             // Engine_Size_Label
             // 
             this.Engine_Size_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
@@ -292,6 +299,16 @@ namespace Year_14_CA_SSD
             this.Engine_Size_Label.Size = new System.Drawing.Size(141, 34);
             this.Engine_Size_Label.TabIndex = 19;
             this.Engine_Size_Label.Text = "1.5l";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label8.Location = new System.Drawing.Point(3, 329);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 25);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Engine Size:";
             // 
             // FuelType_Label
             // 
@@ -302,6 +319,16 @@ namespace Year_14_CA_SSD
             this.FuelType_Label.TabIndex = 18;
             this.FuelType_Label.Text = "Diesel";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label7.Location = new System.Drawing.Point(3, 295);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 25);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Fuel Type:";
+            // 
             // Transmission_Label
             // 
             this.Transmission_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
@@ -310,6 +337,16 @@ namespace Year_14_CA_SSD
             this.Transmission_Label.Size = new System.Drawing.Size(135, 34);
             this.Transmission_Label.TabIndex = 17;
             this.Transmission_Label.Text = "Automatic";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label6.Location = new System.Drawing.Point(3, 261);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 25);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Transmission:";
             // 
             // NoOfSeats_Label
             // 
@@ -320,6 +357,16 @@ namespace Year_14_CA_SSD
             this.NoOfSeats_Label.TabIndex = 16;
             this.NoOfSeats_Label.Text = "2";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label5.Location = new System.Drawing.Point(3, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(159, 25);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Number Of Seats:";
+            // 
             // Colour_Label
             // 
             this.Colour_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
@@ -329,6 +376,16 @@ namespace Year_14_CA_SSD
             this.Colour_Label.TabIndex = 15;
             this.Colour_Label.Text = "Black";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label4.Location = new System.Drawing.Point(3, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 25);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Colour:";
+            // 
             // Bodystyle_Label
             // 
             this.Bodystyle_Label.Font = new System.Drawing.Font("Segoe UI Light", 14.25F);
@@ -337,6 +394,16 @@ namespace Year_14_CA_SSD
             this.Bodystyle_Label.Size = new System.Drawing.Size(153, 34);
             this.Bodystyle_Label.TabIndex = 14;
             this.Bodystyle_Label.Text = "SUV";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label3.Location = new System.Drawing.Point(3, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 25);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Body Style:";
             // 
             // Mileage_Label
             // 
@@ -358,6 +425,26 @@ namespace Year_14_CA_SSD
             this.Registration_Label.TabIndex = 12;
             this.Registration_Label.Text = "RG134WS";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label2.Location = new System.Drawing.Point(3, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 25);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Mileage:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.label1.Location = new System.Drawing.Point(3, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Registration:";
+            // 
             // Car_DropDown
             // 
             this.Car_DropDown.Image = global::Year_14_CA_SSD.Properties.Resources.drop_down;
@@ -376,9 +463,7 @@ namespace Year_14_CA_SSD
             this.Car_TextBox.Size = new System.Drawing.Size(247, 35);
             this.Car_TextBox.TabIndex = 10;
             this.Car_TextBox.Click += new System.EventHandler(this.Car_TextBox_Click);
-            this.Car_TextBox.TextChanged += new System.EventHandler(this.Car_TextBox_TextChanged);
             this.Car_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Car_TextBox_KeyDown);
-            this.Car_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Car_TextBox_KeyPress);
             // 
             // Date_GroupBox
             // 
@@ -452,7 +537,6 @@ namespace Year_14_CA_SSD
             this.Previous_Month_Tab_Button.Size = new System.Drawing.Size(36, 38);
             this.Previous_Month_Tab_Button.TabIndex = 17;
             this.Previous_Month_Tab_Button.UseVisualStyleBackColor = true;
-            this.Previous_Month_Tab_Button.TabIndexChanged += new System.EventHandler(this.Previous_Month_Tab_Button_TabIndexChanged);
             this.Previous_Month_Tab_Button.Click += new System.EventHandler(this.Previous_Month_Button_Click);
             // 
             // Next_Month_Tab_Button
@@ -495,96 +579,6 @@ namespace Year_14_CA_SSD
             this.Started_Label.TabIndex = 15;
             this.Started_Label.Text = "Start: 2025/09/09 12:30";
             this.Started_Label.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label1.Location = new System.Drawing.Point(3, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 25);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Registration:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label2.Location = new System.Drawing.Point(3, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Mileage:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label3.Location = new System.Drawing.Point(3, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 25);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Body Style:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label4.Location = new System.Drawing.Point(3, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 25);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Colour:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label5.Location = new System.Drawing.Point(3, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 25);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Number Of Seats:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label6.Location = new System.Drawing.Point(3, 261);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 25);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Transmission:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label7.Location = new System.Drawing.Point(3, 295);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 25);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Fuel Type:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label8.Location = new System.Drawing.Point(3, 329);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 25);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Engine Size:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.label9.Location = new System.Drawing.Point(3, 363);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 25);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Power:";
             // 
             // CarCalendarForm
             // 

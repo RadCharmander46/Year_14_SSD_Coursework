@@ -1266,19 +1266,12 @@ namespace Year_14_CA_SSD
             displayedIndexes.Sort((b, a) => Convert.ToDateTime(Get_End_Time(testDrives[a][3])).CompareTo(Convert.ToDateTime(Get_End_Time(testDrives[b][3]))));
         }
 
-        private void Cost_Label_Click(object sender, EventArgs e)
+        private void Search_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Paid_Label_Click(object sender, EventArgs e)
-        {
-
+            if(e.KeyCode == Keys.Enter)
+            {
+                Search_Button.PerformClick();
+            }
         }
     }
     public class TestDrive_EventArgs : EventArgs

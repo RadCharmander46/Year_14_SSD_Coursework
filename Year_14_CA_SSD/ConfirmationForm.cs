@@ -18,11 +18,6 @@ namespace Year_14_CA_SSD
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ConfirmationForm_Load(object sender, EventArgs e)
         {
             Text_Label.Text = text;

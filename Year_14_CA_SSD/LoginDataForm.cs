@@ -73,11 +73,6 @@ namespace Year_14_CA_SSD
             this.Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Reset_Password_Button_Click(object sender, EventArgs e)
         {
             Error_ToolTip.RemoveAll();
@@ -100,31 +95,6 @@ namespace Year_14_CA_SSD
                 MessageBox.Show("An error occured ");
                 return;
             }
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void New_Password_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Retype_Password_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void New_Password_TextBox_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

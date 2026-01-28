@@ -202,7 +202,6 @@ namespace Year_14_CA_SSD
             this.Previous_Label.Size = new System.Drawing.Size(40, 30);
             this.Previous_Label.TabIndex = 24;
             this.Previous_Label.Text = "Yes";
-            this.Previous_Label.Click += new System.EventHandler(this.Previous_Label_Click);
             // 
             // Damaged_Label
             // 
@@ -213,7 +212,6 @@ namespace Year_14_CA_SSD
             this.Damaged_Label.Size = new System.Drawing.Size(40, 30);
             this.Damaged_Label.TabIndex = 25;
             this.Damaged_Label.Text = "No";
-            this.Damaged_Label.Click += new System.EventHandler(this.Damaged_Label_Click);
             // 
             // Refresh_Button
             // 
@@ -329,7 +327,6 @@ namespace Year_14_CA_SSD
             this.pictureBox2.Size = new System.Drawing.Size(598, 61);
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox4
             // 
@@ -340,7 +337,6 @@ namespace Year_14_CA_SSD
             this.pictureBox4.Size = new System.Drawing.Size(180, 61);
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox6
             // 
@@ -350,7 +346,6 @@ namespace Year_14_CA_SSD
             this.pictureBox6.Size = new System.Drawing.Size(164, 10);
             this.pictureBox6.TabIndex = 36;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -360,7 +355,6 @@ namespace Year_14_CA_SSD
             this.pictureBox5.Size = new System.Drawing.Size(164, 10);
             this.pictureBox5.TabIndex = 35;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox8
             // 
@@ -370,7 +364,6 @@ namespace Year_14_CA_SSD
             this.pictureBox8.Size = new System.Drawing.Size(5, 53);
             this.pictureBox8.TabIndex = 38;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox7
             // 
@@ -380,7 +373,6 @@ namespace Year_14_CA_SSD
             this.pictureBox7.Size = new System.Drawing.Size(5, 53);
             this.pictureBox7.TabIndex = 37;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // Filter_ComboBox
             // 
@@ -399,7 +391,6 @@ namespace Year_14_CA_SSD
             this.Filter_ComboBox.Name = "Filter_ComboBox";
             this.Filter_ComboBox.Size = new System.Drawing.Size(165, 38);
             this.Filter_ComboBox.TabIndex = 31;
-            this.Filter_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Filter_ComboBox_SelectedIndexChanged);
             // 
             // Filter_TextBox
             // 
@@ -409,7 +400,6 @@ namespace Year_14_CA_SSD
             this.Filter_TextBox.Name = "Filter_TextBox";
             this.Filter_TextBox.Size = new System.Drawing.Size(587, 39);
             this.Filter_TextBox.TabIndex = 30;
-            this.Filter_TextBox.TextChanged += new System.EventHandler(this.Filter_TextBox_TextChanged);
             // 
             // ListViewCustomers
             // 
@@ -454,7 +444,6 @@ namespace Year_14_CA_SSD
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contact Details";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label2
             // 

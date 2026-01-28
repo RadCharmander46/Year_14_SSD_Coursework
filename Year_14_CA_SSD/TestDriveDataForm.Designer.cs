@@ -39,7 +39,7 @@ namespace Year_14_CA_SSD
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Cust_DOB_Label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Cust_Dob_Text_Label = new System.Windows.Forms.Label();
             this.Cust_Postcode_Label = new System.Windows.Forms.Label();
             this.Cust_Email_Label = new System.Windows.Forms.Label();
             this.Employee_GroupBox = new System.Windows.Forms.GroupBox();
@@ -108,6 +108,7 @@ namespace Year_14_CA_SSD
             this.Edit_Button = new System.Windows.Forms.Button();
             this.Delete_Button = new System.Windows.Forms.Button();
             this.Search_Button = new System.Windows.Forms.Button();
+            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
             this.Customer_GroupBox.SuspendLayout();
             this.Employee_GroupBox.SuspendLayout();
             this.Test_Drive_GroupBox.SuspendLayout();
@@ -162,6 +163,7 @@ namespace Year_14_CA_SSD
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(408, 39);
             this.Search_TextBox.TabIndex = 25;
+            this.Search_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_TextBox_KeyDown);
             // 
             // Customer_GroupBox
             // 
@@ -170,7 +172,7 @@ namespace Year_14_CA_SSD
             this.Customer_GroupBox.Controls.Add(this.label3);
             this.Customer_GroupBox.Controls.Add(this.label2);
             this.Customer_GroupBox.Controls.Add(this.Cust_DOB_Label);
-            this.Customer_GroupBox.Controls.Add(this.label1);
+            this.Customer_GroupBox.Controls.Add(this.Cust_Dob_Text_Label);
             this.Customer_GroupBox.Controls.Add(this.Cust_Postcode_Label);
             this.Customer_GroupBox.Controls.Add(this.Cust_Email_Label);
             this.Customer_GroupBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,15 +233,15 @@ namespace Year_14_CA_SSD
             this.Cust_DOB_Label.TabIndex = 1;
             this.Cust_DOB_Label.Text = "26/03/2008";
             // 
-            // label1
+            // Cust_Dob_Text_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "DOB:";
+            this.Cust_Dob_Text_Label.AutoSize = true;
+            this.Cust_Dob_Text_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cust_Dob_Text_Label.Location = new System.Drawing.Point(6, 20);
+            this.Cust_Dob_Text_Label.Name = "Cust_Dob_Text_Label";
+            this.Cust_Dob_Text_Label.Size = new System.Drawing.Size(45, 21);
+            this.Cust_Dob_Text_Label.TabIndex = 8;
+            this.Cust_Dob_Text_Label.Text = "DOB:";
             // 
             // Cust_Postcode_Label
             // 
@@ -450,7 +452,6 @@ namespace Year_14_CA_SSD
             this.label19.Size = new System.Drawing.Size(110, 21);
             this.label19.TabIndex = 26;
             this.label19.Text = "Has Been Paid:";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
             // 
@@ -491,7 +492,6 @@ namespace Year_14_CA_SSD
             this.Paid_Label.Size = new System.Drawing.Size(30, 21);
             this.Paid_Label.TabIndex = 6;
             this.Paid_Label.Text = "No";
-            this.Paid_Label.Click += new System.EventHandler(this.Paid_Label_Click);
             // 
             // Cost_Label
             // 
@@ -502,7 +502,6 @@ namespace Year_14_CA_SSD
             this.Cost_Label.Size = new System.Drawing.Size(40, 21);
             this.Cost_Label.TabIndex = 0;
             this.Cost_Label.Text = "£180";
-            this.Cost_Label.Click += new System.EventHandler(this.Cost_Label_Click);
             // 
             // Searching_Group_ComboBox
             // 
@@ -909,6 +908,7 @@ namespace Year_14_CA_SSD
             this.Refresh_Button.Name = "Refresh_Button";
             this.Refresh_Button.Size = new System.Drawing.Size(66, 62);
             this.Refresh_Button.TabIndex = 45;
+            this.Tool_Tip.SetToolTip(this.Refresh_Button, "Refresh Bookings");
             this.Refresh_Button.UseVisualStyleBackColor = true;
             this.Refresh_Button.Click += new System.EventHandler(this.Refresh_Button_Click);
             // 
@@ -922,6 +922,7 @@ namespace Year_14_CA_SSD
             this.Show_Cancelled_Button.Name = "Show_Cancelled_Button";
             this.Show_Cancelled_Button.Size = new System.Drawing.Size(66, 62);
             this.Show_Cancelled_Button.TabIndex = 46;
+            this.Tool_Tip.SetToolTip(this.Show_Cancelled_Button, "Toggle Visibilty Of Cancelled Bookings");
             this.Show_Cancelled_Button.UseVisualStyleBackColor = true;
             this.Show_Cancelled_Button.Click += new System.EventHandler(this.Show_Cancelled);
             // 
@@ -935,6 +936,7 @@ namespace Year_14_CA_SSD
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(66, 62);
             this.Add_Button.TabIndex = 47;
+            this.Tool_Tip.SetToolTip(this.Add_Button, "Create Booking");
             this.Add_Button.UseVisualStyleBackColor = true;
             this.Add_Button.Click += new System.EventHandler(this.Add_Customer_Button_Click);
             // 
@@ -948,6 +950,7 @@ namespace Year_14_CA_SSD
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(66, 62);
             this.Cancel_Button.TabIndex = 48;
+            this.Tool_Tip.SetToolTip(this.Cancel_Button, "Cancel Booking");
             this.Cancel_Button.UseVisualStyleBackColor = true;
             this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
@@ -961,6 +964,7 @@ namespace Year_14_CA_SSD
             this.Edit_Button.Name = "Edit_Button";
             this.Edit_Button.Size = new System.Drawing.Size(66, 62);
             this.Edit_Button.TabIndex = 49;
+            this.Tool_Tip.SetToolTip(this.Edit_Button, "Edit Booking");
             this.Edit_Button.UseVisualStyleBackColor = true;
             this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
             // 
@@ -974,6 +978,7 @@ namespace Year_14_CA_SSD
             this.Delete_Button.Name = "Delete_Button";
             this.Delete_Button.Size = new System.Drawing.Size(66, 62);
             this.Delete_Button.TabIndex = 50;
+            this.Tool_Tip.SetToolTip(this.Delete_Button, "Delete Booking");
             this.Delete_Button.UseVisualStyleBackColor = true;
             this.Delete_Button.Click += new System.EventHandler(this.Remove_Test_Drive_Button_Click);
             // 
@@ -987,6 +992,7 @@ namespace Year_14_CA_SSD
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(66, 62);
             this.Search_Button.TabIndex = 51;
+            this.Tool_Tip.SetToolTip(this.Search_Button, "Search");
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
@@ -1104,7 +1110,7 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Cust_Dob_Text_Label;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -1136,5 +1142,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Button Edit_Button;
         private System.Windows.Forms.Button Delete_Button;
         private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.ToolTip Tool_Tip;
     }
 }

@@ -167,11 +167,6 @@ namespace Year_14_CA_SSD
             Username_TextBox.TextChanged += new EventHandler(Username_TextBox_TextChanged);
         }
 
-        private void Username_TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void Username_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -194,11 +189,6 @@ namespace Year_14_CA_SSD
             {
                 Password_TextBox.UseSystemPasswordChar = true;
             }
-        }
-
-        private void Show_Password_Button_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Show_Password_Tab_Button_Click(object sender, EventArgs e)

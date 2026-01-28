@@ -179,11 +179,6 @@ namespace Year_14_CA_SSD
             }
         }
 
-        private void Change_Column_Button_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -203,11 +198,6 @@ namespace Year_14_CA_SSD
             {
                 MessageBox.Show("Nothing is selected");
             }    
-        }
-
-        private void Table_ListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Search_TextBox_TextChanged(object sender, EventArgs e)
@@ -232,7 +222,7 @@ namespace Year_14_CA_SSD
             
         }
 
-        private void Change_Columm_Button_Click(object sender, EventArgs e)
+        private void Change_Column_Button_Click(object sender, EventArgs e)
         {
             try
             {

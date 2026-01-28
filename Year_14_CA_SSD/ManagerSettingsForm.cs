@@ -18,16 +18,6 @@ namespace Year_14_CA_SSD
             InitializeComponent();
         }
 
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Apply_Button_Click(object sender, EventArgs e)
         {
             if (Monday_Closed_CheckBox.Checked)
@@ -135,26 +125,6 @@ namespace Year_14_CA_SSD
                 Back.Invoke(this, EventArgs.Empty);
             }
             this.Close();
-        }
-
-        private void Half_Hour_Cost_NumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tuesday_TimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ManagerSettingsForm_Load(object sender, EventArgs e)

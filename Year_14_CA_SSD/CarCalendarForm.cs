@@ -216,10 +216,6 @@ namespace Year_14_CA_SSD
             Load_Calendar();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
         DateTime[][] Get_Car_Unavailabilty_Times()
         {
             List<DateTime[]> unavailabiltyTimes = new List<DateTime[]>();
@@ -307,20 +303,6 @@ namespace Year_14_CA_SSD
             return number;
         }
 
-        private void Event_1_PictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Event_2_PictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Event_3_PictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
         private void Date_Selected(object sender, EventArgs e)
         {
             Unselect_Date();
@@ -528,23 +510,9 @@ namespace Year_14_CA_SSD
             Power_Label.Text = "";
         }
 
-        private void Car_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Previous_Month_Tab_Button_EnabledChanged(object sender, EventArgs e)
-        {
-        }
-
         private void Previous_Month_Tab_Button_TabIndexChanged(object sender, EventArgs e)
         {
             Previous_Month_Button.BackColor = SystemColors.ControlDark;
-        }
-
-        private void Car_TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
         }
 
         private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)

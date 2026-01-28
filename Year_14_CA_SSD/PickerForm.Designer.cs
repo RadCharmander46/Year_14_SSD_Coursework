@@ -34,8 +34,8 @@ namespace Year_14_CA_SSD
             this.Continue_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.Sorting_Label = new System.Windows.Forms.Label();
-            this.Change_Columm_Button = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Change_Columm_Button)).BeginInit();
+            this.Change_Column_Button = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Change_Column_Button)).BeginInit();
             this.SuspendLayout();
             // 
             // Table_ListView
@@ -93,25 +93,25 @@ namespace Year_14_CA_SSD
             this.Sorting_Label.Text = "DOB";
             this.Sorting_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Change_Columm_Button
+            // Change_Column_Button
             // 
-            this.Change_Columm_Button.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Change_Columm_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Change_Columm_Button.Image = global::Year_14_CA_SSD.Properties.Resources.arrow1;
-            this.Change_Columm_Button.Location = new System.Drawing.Point(47, 220);
-            this.Change_Columm_Button.Name = "Change_Columm_Button";
-            this.Change_Columm_Button.Size = new System.Drawing.Size(39, 32);
-            this.Change_Columm_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Change_Columm_Button.TabIndex = 6;
-            this.Change_Columm_Button.TabStop = false;
-            this.Change_Columm_Button.Click += new System.EventHandler(this.Change_Columm_Button_Click);
+            this.Change_Column_Button.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Change_Column_Button.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Change_Column_Button.Image = global::Year_14_CA_SSD.Properties.Resources.arrow1;
+            this.Change_Column_Button.Location = new System.Drawing.Point(47, 220);
+            this.Change_Column_Button.Name = "Change_Column_Button";
+            this.Change_Column_Button.Size = new System.Drawing.Size(39, 32);
+            this.Change_Column_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Change_Column_Button.TabIndex = 6;
+            this.Change_Column_Button.TabStop = false;
+            this.Change_Column_Button.Click += new System.EventHandler(this.Change_Column_Button_Click);
             // 
             // PickerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 306);
-            this.Controls.Add(this.Change_Columm_Button);
+            this.Controls.Add(this.Change_Column_Button);
             this.Controls.Add(this.Search_TextBox);
             this.Controls.Add(this.Sorting_Label);
             this.Controls.Add(this.Cancel_Button);
@@ -120,7 +120,7 @@ namespace Year_14_CA_SSD
             this.Name = "PickerForm";
             this.Text = "Picker Form";
             this.Load += new System.EventHandler(this.PickerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Change_Columm_Button)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Change_Column_Button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +133,6 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Button Continue_Button;
         private System.Windows.Forms.Button Cancel_Button;
         private System.Windows.Forms.Label Sorting_Label;
-        private System.Windows.Forms.PictureBox Change_Columm_Button;
+        private System.Windows.Forms.PictureBox Change_Column_Button;
     }
 }

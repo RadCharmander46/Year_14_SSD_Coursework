@@ -89,6 +89,8 @@ namespace Year_14_CA_SSD
             this.Customer_Name_Label = new System.Windows.Forms.Label();
             this.Cust_Tel_Label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Time_Returned_DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
             this.Mileage_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Cleaned_Label = new System.Windows.Forms.Label();
             this.Inspected_Label = new System.Windows.Forms.Label();
@@ -108,8 +110,6 @@ namespace Year_14_CA_SSD
             this.Late_Fee_Label = new System.Windows.Forms.Label();
             this.Mileage_Fee_Label = new System.Windows.Forms.Label();
             this.Damage_Fee_Label = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.Time_Returned_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Car_GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Car_DropDown)).BeginInit();
             this.Employee_GroupBox.SuspendLayout();
@@ -340,7 +340,6 @@ namespace Year_14_CA_SSD
             this.Car_TextBox.Size = new System.Drawing.Size(247, 35);
             this.Car_TextBox.TabIndex = 10;
             this.Car_TextBox.Click += new System.EventHandler(this.Car_TextBox_Click);
-            this.Car_TextBox.TextChanged += new System.EventHandler(this.Car_TextBox_TextChanged);
             this.Car_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Car_TextBox_KeyDown);
             // 
             // Employee_GroupBox
@@ -371,7 +370,6 @@ namespace Year_14_CA_SSD
             this.Employee_Username_Label.Size = new System.Drawing.Size(104, 21);
             this.Employee_Username_Label.TabIndex = 16;
             this.Employee_Username_Label.Text = "NAMCGEE782";
-            this.Employee_Username_Label.Click += new System.EventHandler(this.Employee_Username_Label_Click);
             // 
             // label24
             // 
@@ -402,7 +400,6 @@ namespace Year_14_CA_SSD
             this.Employee_Tel_Label.Size = new System.Drawing.Size(96, 21);
             this.Employee_Tel_Label.TabIndex = 13;
             this.Employee_Tel_Label.Text = "07657234512";
-            this.Employee_Tel_Label.Click += new System.EventHandler(this.Employee_Tel_Label_Click);
             // 
             // label22
             // 
@@ -443,7 +440,6 @@ namespace Year_14_CA_SSD
             this.Employee_Email_Label.Size = new System.Drawing.Size(204, 21);
             this.Employee_Email_Label.TabIndex = 15;
             this.Employee_Email_Label.Text = "nathanmcgee@gmail.com";
-            this.Employee_Email_Label.Click += new System.EventHandler(this.Employee_Email_Label_Click);
             // 
             // Employee_DOB_Label
             // 
@@ -466,7 +462,6 @@ namespace Year_14_CA_SSD
             this.Date_DateTimePicker.Name = "Date_DateTimePicker";
             this.Date_DateTimePicker.Size = new System.Drawing.Size(130, 29);
             this.Date_DateTimePicker.TabIndex = 0;
-            this.Date_DateTimePicker.ValueChanged += new System.EventHandler(this.Date_DateTimePicker_ValueChanged);
             // 
             // label2
             // 
@@ -477,7 +472,6 @@ namespace Year_14_CA_SSD
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Start Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -488,7 +482,6 @@ namespace Year_14_CA_SSD
             this.label4.Size = new System.Drawing.Size(68, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Length";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Length_ComboBox
             // 
@@ -771,6 +764,29 @@ namespace Year_14_CA_SSD
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car Return";
             // 
+            // Time_Returned_DateTimePicker
+            // 
+            this.Time_Returned_DateTimePicker.CalendarFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_Returned_DateTimePicker.CustomFormat = "HH:mm dd/MM/yy";
+            this.Time_Returned_DateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.Time_Returned_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time_Returned_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Time_Returned_DateTimePicker.Location = new System.Drawing.Point(139, 185);
+            this.Time_Returned_DateTimePicker.Name = "Time_Returned_DateTimePicker";
+            this.Time_Returned_DateTimePicker.Size = new System.Drawing.Size(147, 29);
+            this.Time_Returned_DateTimePicker.TabIndex = 12;
+            this.Time_Returned_DateTimePicker.ValueChanged += new System.EventHandler(this.Time_Returned_DateTimePicker_ValueChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(10, 188);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(130, 25);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "Time Returned";
+            // 
             // Mileage_NumericUpDown
             // 
             this.Mileage_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -843,7 +859,6 @@ namespace Year_14_CA_SSD
             this.Cleaned_CheckBox.TabIndex = 18;
             this.Cleaned_CheckBox.Text = " ";
             this.Cleaned_CheckBox.UseVisualStyleBackColor = true;
-            this.Cleaned_CheckBox.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Inspected_CheckBox
             // 
@@ -856,7 +871,6 @@ namespace Year_14_CA_SSD
             this.Inspected_CheckBox.TabIndex = 17;
             this.Inspected_CheckBox.Text = " ";
             this.Inspected_CheckBox.UseVisualStyleBackColor = true;
-            this.Inspected_CheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // New_Mileage_Label
             // 
@@ -892,7 +906,6 @@ namespace Year_14_CA_SSD
             this.Car_Returned_CheckBox.TabIndex = 1;
             this.Car_Returned_CheckBox.Text = " ";
             this.Car_Returned_CheckBox.UseVisualStyleBackColor = true;
-            this.Car_Returned_CheckBox.CheckedChanged += new System.EventHandler(this.Car_Returned_CheckBox_CheckedChanged);
             // 
             // Return_Button
             // 
@@ -956,29 +969,6 @@ namespace Year_14_CA_SSD
             this.Damage_Fee_Label.TabIndex = 31;
             this.Damage_Fee_Label.Text = "Damage Fee: £1,200";
             this.Damage_Fee_Label.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(10, 188);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(130, 25);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "Time Returned";
-            // 
-            // Time_Returned_DateTimePicker
-            // 
-            this.Time_Returned_DateTimePicker.CalendarFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_Returned_DateTimePicker.CustomFormat = "HH:mm dd/MM/yy";
-            this.Time_Returned_DateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.Time_Returned_DateTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time_Returned_DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Time_Returned_DateTimePicker.Location = new System.Drawing.Point(139, 185);
-            this.Time_Returned_DateTimePicker.Name = "Time_Returned_DateTimePicker";
-            this.Time_Returned_DateTimePicker.Size = new System.Drawing.Size(147, 29);
-            this.Time_Returned_DateTimePicker.TabIndex = 12;
-            this.Time_Returned_DateTimePicker.ValueChanged += new System.EventHandler(this.Time_Returned_DateTimePicker_ValueChanged);
             // 
             // CarReturnForm
             // 

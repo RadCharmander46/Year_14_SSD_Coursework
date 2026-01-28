@@ -169,11 +169,6 @@ namespace Year_14_CA_SSD
             return Get_Customer_Values(Convert.ToInt32(customerId));
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void Refresh_Button_Click(object sender, EventArgs e)
         {
             Payments_ListView.Clear();
@@ -503,11 +498,6 @@ namespace Year_14_CA_SSD
                 }
             }
             displayedIndexes = tempIndexes;
-        }
-
-        private void Paid_Label_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

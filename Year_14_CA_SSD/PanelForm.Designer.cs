@@ -114,7 +114,6 @@ namespace Year_14_CA_SSD
             this.Taskbar_FlowPanel.Name = "Taskbar_FlowPanel";
             this.Taskbar_FlowPanel.Size = new System.Drawing.Size(1355, 91);
             this.Taskbar_FlowPanel.TabIndex = 5;
-            this.Taskbar_FlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Taskbar_FlowPanel_Paint);
             // 
             // Moving_Cars_Button
             // 
@@ -231,7 +230,6 @@ namespace Year_14_CA_SSD
             this.Sidebar_FlowPanel.Size = new System.Drawing.Size(121, 595);
             this.Sidebar_FlowPanel.TabIndex = 8;
             this.Sidebar_FlowPanel.TabStop = true;
-            this.Sidebar_FlowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Sidebar_FlowPanel_Paint);
             // 
             // Sidebar_Function1_PictureBox
             // 
@@ -380,7 +378,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button2_PictureBox.TabIndex = 15;
             this.Filler_Button2_PictureBox.TabStop = false;
             this.Base_ToolTip.SetToolTip(this.Filler_Button2_PictureBox, "Car Return");
-            this.Filler_Button2_PictureBox.Click += new System.EventHandler(this.Filler_Button2_PictureBox_Click);
             // 
             // Filler_Button5_PictureBox
             // 
@@ -514,7 +511,7 @@ namespace Year_14_CA_SSD
             this.Clock_Label.Size = new System.Drawing.Size(121, 61);
             this.Clock_Label.TabIndex = 6;
             this.Clock_Label.Text = "15:59\r\n07/11/2025";
-            this.Clock_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Clock_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Clock_Timer
             // 
@@ -527,7 +524,7 @@ namespace Year_14_CA_SSD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1350, 749);
+            this.ClientSize = new System.Drawing.Size(1350, 741);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Clock_Label);
             this.Controls.Add(this.Taskbar_FlowPanel);

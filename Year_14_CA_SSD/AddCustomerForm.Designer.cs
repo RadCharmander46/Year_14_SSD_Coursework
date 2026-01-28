@@ -96,7 +96,6 @@ namespace Year_14_CA_SSD
             this.First_Name_TextBox.TabIndex = 0;
             this.First_Name_TextBox.TextChanged += new System.EventHandler(this.First_Name_TextBox_TextChanged);
             this.First_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
-            this.First_Name_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.First_Name_TextBox_KeyPress);
             // 
             // Middle_Name_TextBox
             // 
@@ -127,7 +126,6 @@ namespace Year_14_CA_SSD
             this.First_Name_Label.Size = new System.Drawing.Size(113, 30);
             this.First_Name_Label.TabIndex = 4;
             this.First_Name_Label.Text = "First Name";
-            this.First_Name_Label.Click += new System.EventHandler(this.First_Name_Label_Click);
             // 
             // Middle_Name_Label
             // 
@@ -138,7 +136,6 @@ namespace Year_14_CA_SSD
             this.Middle_Name_Label.Size = new System.Drawing.Size(139, 30);
             this.Middle_Name_Label.TabIndex = 5;
             this.Middle_Name_Label.Text = "Middle Name";
-            this.Middle_Name_Label.Click += new System.EventHandler(this.Middle_Name_Label_Click);
             // 
             // Last_Name_Label
             // 
@@ -169,7 +166,6 @@ namespace Year_14_CA_SSD
             this.Phone_Number_Label.Size = new System.Drawing.Size(43, 30);
             this.Phone_Number_Label.TabIndex = 8;
             this.Phone_Number_Label.Text = "Tel:";
-            this.Phone_Number_Label.Click += new System.EventHandler(this.Phone_Number_Label_Click);
             // 
             // Email_Address_TextBox
             // 
@@ -210,7 +206,6 @@ namespace Year_14_CA_SSD
             this.Address_Line1_Label.Size = new System.Drawing.Size(104, 30);
             this.Address_Line1_Label.TabIndex = 12;
             this.Address_Line1_Label.Text = "Address 1";
-            this.Address_Line1_Label.Click += new System.EventHandler(this.Address_Line1_Label_Click);
             // 
             // Address_Line2_TextBox
             // 
@@ -231,7 +226,6 @@ namespace Year_14_CA_SSD
             this.Address_Line2_Label.Size = new System.Drawing.Size(104, 30);
             this.Address_Line2_Label.TabIndex = 14;
             this.Address_Line2_Label.Text = "Address 2";
-            this.Address_Line2_Label.Click += new System.EventHandler(this.Address_Line2_Label_Click);
             // 
             // Address_Line3_TextBox
             // 
@@ -347,7 +341,6 @@ namespace Year_14_CA_SSD
             this.Contact_Details_GroupBox.TabIndex = 30;
             this.Contact_Details_GroupBox.TabStop = false;
             this.Contact_Details_GroupBox.Text = "Contact Details";
-            this.Contact_Details_GroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Personal_Details_GroupBox
             // 
@@ -375,7 +368,6 @@ namespace Year_14_CA_SSD
             this.DOB_DateTimePicker.Name = "DOB_DateTimePicker";
             this.DOB_DateTimePicker.Size = new System.Drawing.Size(128, 35);
             this.DOB_DateTimePicker.TabIndex = 4;
-            this.DOB_DateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             this.DOB_DateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Details_GroupBox
@@ -427,7 +419,6 @@ namespace Year_14_CA_SSD
             this.Expiry_Invalid_Text.TabIndex = 28;
             this.Expiry_Invalid_Text.Text = "Expiry is invalid";
             this.Expiry_Invalid_Text.Visible = false;
-            this.Expiry_Invalid_Text.Click += new System.EventHandler(this.label1_Click);
             // 
             // Issue_Label
             // 
@@ -488,7 +479,6 @@ namespace Year_14_CA_SSD
             this.License_Number_Label.Size = new System.Drawing.Size(46, 30);
             this.License_Number_Label.TabIndex = 29;
             this.License_Number_Label.Text = "No:";
-            this.License_Number_Label.Click += new System.EventHandler(this.label2_Click);
             // 
             // History_GroupBox
             // 

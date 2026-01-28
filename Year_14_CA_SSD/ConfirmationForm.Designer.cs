@@ -44,7 +44,6 @@ namespace Year_14_CA_SSD
             this.Text_Label.TabIndex = 0;
             this.Text_Label.Text = "Warning: Archiving is a permanent action, \r\nIt cannot be undone\r\nOnly continue if" +
     " you are certain";
-            this.Text_Label.Click += new System.EventHandler(this.label1_Click);
             // 
             // Cancel_Button
             // 

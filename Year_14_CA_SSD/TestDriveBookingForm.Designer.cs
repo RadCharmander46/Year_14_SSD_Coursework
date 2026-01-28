@@ -347,7 +347,6 @@ namespace Year_14_CA_SSD
             this.Customer_TextBox.Size = new System.Drawing.Size(221, 25);
             this.Customer_TextBox.TabIndex = 5;
             this.Customer_TextBox.Click += new System.EventHandler(this.Customer_TextBox_Click);
-            this.Customer_TextBox.TextChanged += new System.EventHandler(this.Customer_TextBox_TextChanged);
             this.Customer_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Customer_TextBox_KeyDown);
             // 
             // Employee_GroupBox
@@ -484,7 +483,6 @@ namespace Year_14_CA_SSD
             this.Employee_TextBox.Size = new System.Drawing.Size(221, 25);
             this.Employee_TextBox.TabIndex = 7;
             this.Employee_TextBox.Click += new System.EventHandler(this.Employee_TextBox_Click);
-            this.Employee_TextBox.TextChanged += new System.EventHandler(this.Employee_TextBox_TextChanged_1);
             this.Employee_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Employee_TextBox_KeyDown);
             // 
             // Car_GroupBox
@@ -715,7 +713,6 @@ namespace Year_14_CA_SSD
             this.Car_TextBox.Size = new System.Drawing.Size(221, 25);
             this.Car_TextBox.TabIndex = 9;
             this.Car_TextBox.Click += new System.EventHandler(this.Car_TextBox_Click);
-            this.Car_TextBox.TextChanged += new System.EventHandler(this.Car_TextBox_TextChanged);
             this.Car_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Car_TextBox_KeyDown);
             // 
             // TestDrive_GroupBox
@@ -795,7 +792,6 @@ namespace Year_14_CA_SSD
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Length";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -806,7 +802,6 @@ namespace Year_14_CA_SSD
             this.label3.Size = new System.Drawing.Size(84, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Start Time ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Start_Time_ComboBox
             // 
@@ -875,8 +870,6 @@ namespace Year_14_CA_SSD
             this.Start_Time_ComboBox.Size = new System.Drawing.Size(111, 25);
             this.Start_Time_ComboBox.Sorted = true;
             this.Start_Time_ComboBox.TabIndex = 12;
-            this.Start_Time_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Start_Time_ComboBox_SelectedIndexChanged);
-            this.Start_Time_ComboBox.Click += new System.EventHandler(this.Start_Time_ComboBox_Click);
             // 
             // label2
             // 

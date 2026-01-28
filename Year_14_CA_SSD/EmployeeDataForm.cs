@@ -149,10 +149,6 @@ namespace Year_14_CA_SSD
                 }
             }
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void Sort_Employees(List<int> items, int sortingIndex)
         {
@@ -571,11 +567,6 @@ namespace Year_14_CA_SSD
                 AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = true });
             }
             this.Close();
-        }
-
-        private void Email_Label_Click(object sender, EventArgs e)
-        {
-
         }
     }
     public class Add_Employee_EventArgs : EventArgs

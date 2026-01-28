@@ -122,7 +122,6 @@ namespace Year_14_CA_SSD
             this.New_Password_Label.Size = new System.Drawing.Size(147, 30);
             this.New_Password_Label.TabIndex = 4;
             this.New_Password_Label.Text = "New Password";
-            this.New_Password_Label.Click += new System.EventHandler(this.New_Password_Label_Click);
             // 
             // Retype_Password_Label
             // 
@@ -133,7 +132,6 @@ namespace Year_14_CA_SSD
             this.Retype_Password_Label.Size = new System.Drawing.Size(168, 30);
             this.Retype_Password_Label.TabIndex = 5;
             this.Retype_Password_Label.Text = "Retype Password";
-            this.Retype_Password_Label.Click += new System.EventHandler(this.Retype_Password_Label_Click);
             // 
             // New_Password_TextBox
             // 
@@ -143,7 +141,6 @@ namespace Year_14_CA_SSD
             this.New_Password_TextBox.Name = "New_Password_TextBox";
             this.New_Password_TextBox.Size = new System.Drawing.Size(262, 33);
             this.New_Password_TextBox.TabIndex = 6;
-            this.New_Password_TextBox.TextChanged += new System.EventHandler(this.New_Password_TextBox_TextChanged);
             // 
             // Retype_Password_TextBox
             // 
@@ -153,7 +150,6 @@ namespace Year_14_CA_SSD
             this.Retype_Password_TextBox.Name = "Retype_Password_TextBox";
             this.Retype_Password_TextBox.Size = new System.Drawing.Size(262, 33);
             this.Retype_Password_TextBox.TabIndex = 7;
-            this.Retype_Password_TextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Reset_Password_Button
             // 
@@ -315,7 +311,6 @@ namespace Year_14_CA_SSD
             this.Department_Label.Size = new System.Drawing.Size(60, 30);
             this.Department_Label.TabIndex = 24;
             this.Department_Label.Text = "Sales";
-            this.Department_Label.Click += new System.EventHandler(this.label15_Click);
             // 
             // Department_Title_Label
             // 
@@ -326,7 +321,6 @@ namespace Year_14_CA_SSD
             this.Department_Title_Label.Size = new System.Drawing.Size(130, 30);
             this.Department_Title_Label.TabIndex = 23;
             this.Department_Title_Label.Text = "Department";
-            this.Department_Title_Label.Click += new System.EventHandler(this.label16_Click);
             // 
             // Personal_Details_GroupBox
             // 

@@ -46,7 +46,7 @@ namespace Year_14_CA_SSD
                         }
                         else
                         {
-                            values += "'" + entry + "',";
+                            values += "'" + entry.Replace('\'', ' ') + "',";
                         }
                     }
                     values = values.Remove(values.Length - 1, 1); //removing the last ,
@@ -81,7 +81,7 @@ namespace Year_14_CA_SSD
                         }
                         else
                         {
-                            values += "'" + entry + "',";
+                            values += "'" + entry.Replace('\'',' ') + "',";
                         }
                     }
                     values = values.Remove(values.Length - 1, 1); //removing the last ,

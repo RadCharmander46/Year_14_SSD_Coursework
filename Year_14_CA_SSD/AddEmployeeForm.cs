@@ -66,9 +66,12 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                bool success = SQL_Operation.UpdateEntryVariables(Id, "EmployeeId", employeeColumns, updatedValues, "EmployeeTable");
-                if (!success) { throw new Exception(); }
-                Return_To_EmployeeDataForm();
+                if (Employee_Valid())
+                {
+                    bool success = SQL_Operation.UpdateEntryVariables(Id, "EmployeeId", employeeColumns, updatedValues, "EmployeeTable");
+                    if (!success) { throw new Exception(); }
+                    Return_To_EmployeeDataForm();
+                }
             }
             catch
             {

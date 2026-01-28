@@ -31,43 +31,6 @@ namespace Year_14_CA_SSD
             InitializeComponent();
         }
 
-        private void Employee_Tel_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Employee_Email_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Employee_Username_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Date_DateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Car_DropDown_Click(object sender, EventArgs e)
         {
             Car_Picker();
@@ -274,11 +237,6 @@ namespace Year_14_CA_SSD
                     return;
                 }
             }
-        }
-
-        private void Car_TextBox_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void Car_TextBox_Click(object sender, EventArgs e)
@@ -581,26 +539,6 @@ namespace Year_14_CA_SSD
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Start_Time_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Car_Not_Damaged_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if(Car_Damaged_CheckBox.Checked)
@@ -636,11 +574,6 @@ namespace Year_14_CA_SSD
                 carPrice = Convert.ToDecimal(SQL_Operation.ReadColumn(CarId.Value, "CarId", "Price", "CarTable"));
             }
             return carPrice.Value;
-        }
-
-        private void Car_Returned_CheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)

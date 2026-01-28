@@ -29,6 +29,7 @@ namespace Year_14_CA_SSD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Back_Button = new System.Windows.Forms.Button();
             this.Half_Hour_Cost_Label = new System.Windows.Forms.Label();
             this.Day_Cost_Label = new System.Windows.Forms.Label();
@@ -44,7 +45,7 @@ namespace Year_14_CA_SSD
             this.Test_Drive_Cancel_Label = new System.Windows.Forms.Label();
             this.Min_Age_Label = new System.Windows.Forms.Label();
             this.Half_Hour_Mileage_Label = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.Day_Mileage_Label = new System.Windows.Forms.Label();
             this.Weekend_Mileage_Label = new System.Windows.Forms.Label();
             this.Mileage_Fee_Label = new System.Windows.Forms.Label();
             this.Apply_Button = new System.Windows.Forms.Button();
@@ -81,7 +82,7 @@ namespace Year_14_CA_SSD
             this.Cleaning_Time_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Cleaning_TIme_Label = new System.Windows.Forms.Label();
             this.Title_Label = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Opening_GroupBox = new System.Windows.Forms.GroupBox();
             this.Sunday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
             this.Saturday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
             this.Friday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
@@ -89,22 +90,23 @@ namespace Year_14_CA_SSD
             this.Wednesday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
             this.Tuesday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
             this.Monday_Closed_CheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.Default_Button = new System.Windows.Forms.Button();
+            this.Test_Drive_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Deposit_Percent_Sign_Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Expiry_Notice_Label = new System.Windows.Forms.Label();
+            this.Deposit_Percent_Label = new System.Windows.Forms.Label();
             this.Deposit_Percent_NumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Hours_Before_Late_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Expiry_Notice_NumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Mileage_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Costs_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Default_Button = new System.Windows.Forms.Button();
+            this.Late_Hours_Label = new System.Windows.Forms.Label();
+            this.Hours_Before_Late_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Hours_Before_Late_Label = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Late_Fee_NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Late_Fees_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Tool_Tip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Day_Cost_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Half_Hour_Cost_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Cost_NumericUpDown)).BeginInit();
@@ -116,13 +118,13 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cleaning_Time_NumericUpDown)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.Opening_GroupBox.SuspendLayout();
+            this.Test_Drive_GroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Deposit_Percent_NumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Hours_Before_Late_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Expiry_Notice_NumericUpDown)).BeginInit();
+            this.Mileage_GroupBox.SuspendLayout();
+            this.Costs_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Hours_Before_Late_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Late_Fee_NumericUpDown)).BeginInit();
             this.Late_Fees_GroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +135,7 @@ namespace Year_14_CA_SSD
             this.Back_Button.Location = new System.Drawing.Point(905, 520);
             this.Back_Button.Name = "Back_Button";
             this.Back_Button.Size = new System.Drawing.Size(109, 64);
-            this.Back_Button.TabIndex = 50;
+            this.Back_Button.TabIndex = 60;
             this.Back_Button.Text = "Back";
             this.Back_Button.UseVisualStyleBackColor = true;
             this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
@@ -147,6 +149,7 @@ namespace Year_14_CA_SSD
             this.Half_Hour_Cost_Label.Size = new System.Drawing.Size(134, 21);
             this.Half_Hour_Cost_Label.TabIndex = 24;
             this.Half_Hour_Cost_Label.Text = "30 Minutes: £0.00";
+            this.Tool_Tip.SetToolTip(this.Half_Hour_Cost_Label, "The cost of this type of test drive booking \r\n(0 is free)");
             // 
             // Day_Cost_Label
             // 
@@ -157,6 +160,7 @@ namespace Year_14_CA_SSD
             this.Day_Cost_Label.Size = new System.Drawing.Size(105, 21);
             this.Day_Cost_Label.TabIndex = 25;
             this.Day_Cost_Label.Text = "1 Day: £80.00";
+            this.Tool_Tip.SetToolTip(this.Day_Cost_Label, "The cost of this type of test drive booking \r\n(0 is free)\r\n");
             // 
             // Weekend_Cost_Label
             // 
@@ -167,6 +171,7 @@ namespace Year_14_CA_SSD
             this.Weekend_Cost_Label.Size = new System.Drawing.Size(129, 21);
             this.Weekend_Cost_Label.TabIndex = 26;
             this.Weekend_Cost_Label.Text = "Weekend: £17.00";
+            this.Tool_Tip.SetToolTip(this.Weekend_Cost_Label, "The cost of this type of test drive booking \r\n(0 is free)\r\n");
             // 
             // Discount_Label
             // 
@@ -177,6 +182,7 @@ namespace Year_14_CA_SSD
             this.Discount_Label.Size = new System.Drawing.Size(210, 21);
             this.Discount_Label.TabIndex = 27;
             this.Discount_Label.Text = "Previous Customer Discount:";
+            this.Tool_Tip.SetToolTip(this.Discount_Label, "The percent reduction in the cost\r\nof a test drive for a previous customer");
             // 
             // Monday_Label
             // 
@@ -247,7 +253,6 @@ namespace Year_14_CA_SSD
             this.Sunday_Label.Size = new System.Drawing.Size(62, 21);
             this.Sunday_Label.TabIndex = 34;
             this.Sunday_Label.Text = "Sunday";
-            this.Sunday_Label.Click += new System.EventHandler(this.label12_Click);
             // 
             // Test_Drive_Cancel_Label
             // 
@@ -258,6 +263,7 @@ namespace Year_14_CA_SSD
             this.Test_Drive_Cancel_Label.Size = new System.Drawing.Size(218, 21);
             this.Test_Drive_Cancel_Label.TabIndex = 42;
             this.Test_Drive_Cancel_Label.Text = "Test Drive Cancellation Notice:";
+            this.Tool_Tip.SetToolTip(this.Test_Drive_Cancel_Label, "The number of days advance needed to cancel a test drive booking");
             // 
             // Min_Age_Label
             // 
@@ -278,16 +284,20 @@ namespace Year_14_CA_SSD
             this.Half_Hour_Mileage_Label.Size = new System.Drawing.Size(91, 21);
             this.Half_Hour_Mileage_Label.TabIndex = 45;
             this.Half_Hour_Mileage_Label.Text = "30 Minutes:";
+            this.Tool_Tip.SetToolTip(this.Half_Hour_Mileage_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)");
             // 
-            // label24
+            // Day_Mileage_Label
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(53, 57);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(53, 21);
-            this.label24.TabIndex = 46;
-            this.label24.Text = "1 Day:";
+            this.Day_Mileage_Label.AutoSize = true;
+            this.Day_Mileage_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Day_Mileage_Label.Location = new System.Drawing.Point(53, 57);
+            this.Day_Mileage_Label.Name = "Day_Mileage_Label";
+            this.Day_Mileage_Label.Size = new System.Drawing.Size(53, 21);
+            this.Day_Mileage_Label.TabIndex = 46;
+            this.Day_Mileage_Label.Text = "1 Day:";
+            this.Tool_Tip.SetToolTip(this.Day_Mileage_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)\r\n");
             // 
             // Weekend_Mileage_Label
             // 
@@ -298,6 +308,8 @@ namespace Year_14_CA_SSD
             this.Weekend_Mileage_Label.Size = new System.Drawing.Size(77, 21);
             this.Weekend_Mileage_Label.TabIndex = 47;
             this.Weekend_Mileage_Label.Text = "Weekend:";
+            this.Tool_Tip.SetToolTip(this.Weekend_Mileage_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)\r\n");
             // 
             // Mileage_Fee_Label
             // 
@@ -308,6 +320,7 @@ namespace Year_14_CA_SSD
             this.Mileage_Fee_Label.Size = new System.Drawing.Size(104, 21);
             this.Mileage_Fee_Label.TabIndex = 48;
             this.Mileage_Fee_Label.Text = "Fee per Km: £";
+            this.Tool_Tip.SetToolTip(this.Mileage_Fee_Label, "The charged per km over the mileage limit of a test drive");
             // 
             // Apply_Button
             // 
@@ -315,7 +328,7 @@ namespace Year_14_CA_SSD
             this.Apply_Button.Location = new System.Drawing.Point(1024, 520);
             this.Apply_Button.Name = "Apply_Button";
             this.Apply_Button.Size = new System.Drawing.Size(151, 64);
-            this.Apply_Button.TabIndex = 49;
+            this.Apply_Button.TabIndex = 59;
             this.Apply_Button.Text = "Apply";
             this.Apply_Button.UseVisualStyleBackColor = true;
             this.Apply_Button.Click += new System.EventHandler(this.Apply_Button_Click);
@@ -334,8 +347,9 @@ namespace Year_14_CA_SSD
             0});
             this.Day_Cost_NumericUpDown.Name = "Day_Cost_NumericUpDown";
             this.Day_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
-            this.Day_Cost_NumericUpDown.TabIndex = 50;
+            this.Day_Cost_NumericUpDown.TabIndex = 3;
             this.Day_Cost_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Day_Cost_NumericUpDown, "The cost of this type of test drive booking \r\n(0 is free)\r\n");
             this.Day_Cost_NumericUpDown.Value = new decimal(new int[] {
             80,
             0,
@@ -356,9 +370,9 @@ namespace Year_14_CA_SSD
             0});
             this.Half_Hour_Cost_NumericUpDown.Name = "Half_Hour_Cost_NumericUpDown";
             this.Half_Hour_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
-            this.Half_Hour_Cost_NumericUpDown.TabIndex = 51;
+            this.Half_Hour_Cost_NumericUpDown.TabIndex = 2;
             this.Half_Hour_Cost_NumericUpDown.ThousandsSeparator = true;
-            this.Half_Hour_Cost_NumericUpDown.ValueChanged += new System.EventHandler(this.Half_Hour_Cost_NumericUpDown_ValueChanged);
+            this.Tool_Tip.SetToolTip(this.Half_Hour_Cost_NumericUpDown, "The cost of this type of test drive booking \r\n(0 is free)\r\n");
             // 
             // Weekend_Cost_NumericUpDown
             // 
@@ -374,8 +388,9 @@ namespace Year_14_CA_SSD
             0});
             this.Weekend_Cost_NumericUpDown.Name = "Weekend_Cost_NumericUpDown";
             this.Weekend_Cost_NumericUpDown.Size = new System.Drawing.Size(69, 25);
-            this.Weekend_Cost_NumericUpDown.TabIndex = 52;
+            this.Weekend_Cost_NumericUpDown.TabIndex = 4;
             this.Weekend_Cost_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Weekend_Cost_NumericUpDown, "The cost of this type of test drive booking \r\n(0 is free)\r\n");
             this.Weekend_Cost_NumericUpDown.Value = new decimal(new int[] {
             175,
             0,
@@ -391,8 +406,9 @@ namespace Year_14_CA_SSD
             this.Discount_NumericUpDown.Name = "Discount_NumericUpDown";
             this.Discount_NumericUpDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Discount_NumericUpDown.Size = new System.Drawing.Size(46, 25);
-            this.Discount_NumericUpDown.TabIndex = 53;
+            this.Discount_NumericUpDown.TabIndex = 1;
             this.Discount_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Discount_NumericUpDown, "The percent reduction in the cost\r\nof a test drive for a previous customer\r\n");
             this.Discount_NumericUpDown.Value = new decimal(new int[] {
             15,
             0,
@@ -408,7 +424,7 @@ namespace Year_14_CA_SSD
             this.Percent_Unit_Label.Size = new System.Drawing.Size(23, 21);
             this.Percent_Unit_Label.TabIndex = 54;
             this.Percent_Unit_Label.Text = "%";
-            this.Percent_Unit_Label.Click += new System.EventHandler(this.label27_Click);
+            this.Tool_Tip.SetToolTip(this.Percent_Unit_Label, "The percent reduction in the cost\r\nof a test drive for a previous customer\r\n");
             // 
             // Min_Age_NumericUpDown
             // 
@@ -428,7 +444,7 @@ namespace Year_14_CA_SSD
             0});
             this.Min_Age_NumericUpDown.Name = "Min_Age_NumericUpDown";
             this.Min_Age_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Min_Age_NumericUpDown.TabIndex = 55;
+            this.Min_Age_NumericUpDown.TabIndex = 2;
             this.Min_Age_NumericUpDown.ThousandsSeparator = true;
             this.Min_Age_NumericUpDown.Value = new decimal(new int[] {
             18,
@@ -449,15 +465,15 @@ namespace Year_14_CA_SSD
             0});
             this.Cancel_Days_NumericUpDown.Name = "Cancel_Days_NumericUpDown";
             this.Cancel_Days_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Cancel_Days_NumericUpDown.TabIndex = 56;
+            this.Cancel_Days_NumericUpDown.TabIndex = 1;
             this.Cancel_Days_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Cancel_Days_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Cancel_Days_NumericUpDown, "The number of days advance needed to cancel a test drive booking");
             this.Cancel_Days_NumericUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.Cancel_Days_NumericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Day_Unit_Label
             // 
@@ -468,6 +484,7 @@ namespace Year_14_CA_SSD
             this.Day_Unit_Label.Size = new System.Drawing.Size(50, 21);
             this.Day_Unit_Label.TabIndex = 57;
             this.Day_Unit_Label.Text = "Day/s";
+            this.Tool_Tip.SetToolTip(this.Day_Unit_Label, "The number of days advance needed to cancel a test drive booking");
             // 
             // Half_Hour_Mileage_NumericUpDown
             // 
@@ -482,9 +499,11 @@ namespace Year_14_CA_SSD
             0});
             this.Half_Hour_Mileage_NumericUpDown.Name = "Half_Hour_Mileage_NumericUpDown";
             this.Half_Hour_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
-            this.Half_Hour_Mileage_NumericUpDown.TabIndex = 58;
+            this.Half_Hour_Mileage_NumericUpDown.TabIndex = 1;
             this.Half_Hour_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Half_Hour_Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Half_Hour_Mileage_NumericUpDown, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)\r\n");
             // 
             // Half_Km_Label
             // 
@@ -495,6 +514,8 @@ namespace Year_14_CA_SSD
             this.Half_Km_Label.Size = new System.Drawing.Size(32, 21);
             this.Half_Km_Label.TabIndex = 59;
             this.Half_Km_Label.Text = "km";
+            this.Tool_Tip.SetToolTip(this.Half_Km_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)\r\n");
             // 
             // Day_Km_Label
             // 
@@ -505,6 +526,8 @@ namespace Year_14_CA_SSD
             this.Day_Km_Label.Size = new System.Drawing.Size(32, 21);
             this.Day_Km_Label.TabIndex = 61;
             this.Day_Km_Label.Text = "km";
+            this.Tool_Tip.SetToolTip(this.Day_Km_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)");
             // 
             // Day_Mileage_NumericUpDown
             // 
@@ -519,9 +542,11 @@ namespace Year_14_CA_SSD
             0});
             this.Day_Mileage_NumericUpDown.Name = "Day_Mileage_NumericUpDown";
             this.Day_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
-            this.Day_Mileage_NumericUpDown.TabIndex = 60;
+            this.Day_Mileage_NumericUpDown.TabIndex = 2;
             this.Day_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Day_Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Day_Mileage_NumericUpDown, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)\r\n");
             this.Day_Mileage_NumericUpDown.Value = new decimal(new int[] {
             100,
             0,
@@ -537,6 +562,8 @@ namespace Year_14_CA_SSD
             this.Weekend_Km_Label.Size = new System.Drawing.Size(32, 21);
             this.Weekend_Km_Label.TabIndex = 63;
             this.Weekend_Km_Label.Text = "km";
+            this.Tool_Tip.SetToolTip(this.Weekend_Km_Label, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)");
             // 
             // Weekend_Mileage_NumericUpDown
             // 
@@ -551,9 +578,11 @@ namespace Year_14_CA_SSD
             0});
             this.Weekend_Mileage_NumericUpDown.Name = "Weekend_Mileage_NumericUpDown";
             this.Weekend_Mileage_NumericUpDown.Size = new System.Drawing.Size(56, 25);
-            this.Weekend_Mileage_NumericUpDown.TabIndex = 62;
+            this.Weekend_Mileage_NumericUpDown.TabIndex = 3;
             this.Weekend_Mileage_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Weekend_Mileage_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Weekend_Mileage_NumericUpDown, "The maximum mileage a customer can use in this \r\ntype of booking without incurrin" +
+        "g a charge (0 for no limit)");
             this.Weekend_Mileage_NumericUpDown.Value = new decimal(new int[] {
             200,
             0,
@@ -574,8 +603,9 @@ namespace Year_14_CA_SSD
             131072});
             this.Mileage_Fee_NumericUpDown.Name = "Mileage_Fee_NumericUpDown";
             this.Mileage_Fee_NumericUpDown.Size = new System.Drawing.Size(50, 25);
-            this.Mileage_Fee_NumericUpDown.TabIndex = 64;
+            this.Mileage_Fee_NumericUpDown.TabIndex = 4;
             this.Mileage_Fee_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Mileage_Fee_NumericUpDown, "The charged per km over the mileage limit of a test drive");
             this.Mileage_Fee_NumericUpDown.Value = new decimal(new int[] {
             5,
             0,
@@ -591,7 +621,7 @@ namespace Year_14_CA_SSD
             this.Monday_Opening_TimePicker.Name = "Monday_Opening_TimePicker";
             this.Monday_Opening_TimePicker.ShowUpDown = true;
             this.Monday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Monday_Opening_TimePicker.TabIndex = 65;
+            this.Monday_Opening_TimePicker.TabIndex = 1;
             this.Monday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Monday_Closing_TimePicker
@@ -603,7 +633,7 @@ namespace Year_14_CA_SSD
             this.Monday_Closing_TimePicker.Name = "Monday_Closing_TimePicker";
             this.Monday_Closing_TimePicker.ShowUpDown = true;
             this.Monday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Monday_Closing_TimePicker.TabIndex = 66;
+            this.Monday_Closing_TimePicker.TabIndex = 2;
             this.Monday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
             // 
             // Tuesday_Closing_TimePicker
@@ -615,9 +645,8 @@ namespace Year_14_CA_SSD
             this.Tuesday_Closing_TimePicker.Name = "Tuesday_Closing_TimePicker";
             this.Tuesday_Closing_TimePicker.ShowUpDown = true;
             this.Tuesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Tuesday_Closing_TimePicker.TabIndex = 68;
+            this.Tuesday_Closing_TimePicker.TabIndex = 5;
             this.Tuesday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
-            this.Tuesday_Closing_TimePicker.ValueChanged += new System.EventHandler(this.Tuesday_TimePicker_ValueChanged);
             // 
             // Tuesday_Opening_TimePicker
             // 
@@ -628,7 +657,7 @@ namespace Year_14_CA_SSD
             this.Tuesday_Opening_TimePicker.Name = "Tuesday_Opening_TimePicker";
             this.Tuesday_Opening_TimePicker.ShowUpDown = true;
             this.Tuesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Tuesday_Opening_TimePicker.TabIndex = 67;
+            this.Tuesday_Opening_TimePicker.TabIndex = 4;
             this.Tuesday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Wednesday_Closing_TimePicker
@@ -640,7 +669,7 @@ namespace Year_14_CA_SSD
             this.Wednesday_Closing_TimePicker.Name = "Wednesday_Closing_TimePicker";
             this.Wednesday_Closing_TimePicker.ShowUpDown = true;
             this.Wednesday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Wednesday_Closing_TimePicker.TabIndex = 70;
+            this.Wednesday_Closing_TimePicker.TabIndex = 8;
             this.Wednesday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
             // 
             // Wednesday_Opening_TimePicker
@@ -652,7 +681,7 @@ namespace Year_14_CA_SSD
             this.Wednesday_Opening_TimePicker.Name = "Wednesday_Opening_TimePicker";
             this.Wednesday_Opening_TimePicker.ShowUpDown = true;
             this.Wednesday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Wednesday_Opening_TimePicker.TabIndex = 69;
+            this.Wednesday_Opening_TimePicker.TabIndex = 7;
             this.Wednesday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Thursday_Closing_TimePicker
@@ -664,7 +693,7 @@ namespace Year_14_CA_SSD
             this.Thursday_Closing_TimePicker.Name = "Thursday_Closing_TimePicker";
             this.Thursday_Closing_TimePicker.ShowUpDown = true;
             this.Thursday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Thursday_Closing_TimePicker.TabIndex = 72;
+            this.Thursday_Closing_TimePicker.TabIndex = 11;
             this.Thursday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
             // 
             // Thursday_Opening_TimePicker
@@ -676,7 +705,7 @@ namespace Year_14_CA_SSD
             this.Thursday_Opening_TimePicker.Name = "Thursday_Opening_TimePicker";
             this.Thursday_Opening_TimePicker.ShowUpDown = true;
             this.Thursday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Thursday_Opening_TimePicker.TabIndex = 71;
+            this.Thursday_Opening_TimePicker.TabIndex = 10;
             this.Thursday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Friday_Closing_TimePicker
@@ -688,7 +717,7 @@ namespace Year_14_CA_SSD
             this.Friday_Closing_TimePicker.Name = "Friday_Closing_TimePicker";
             this.Friday_Closing_TimePicker.ShowUpDown = true;
             this.Friday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Friday_Closing_TimePicker.TabIndex = 74;
+            this.Friday_Closing_TimePicker.TabIndex = 14;
             this.Friday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 18, 0, 0, 0);
             // 
             // Friday_Opening_TimePicker
@@ -700,7 +729,7 @@ namespace Year_14_CA_SSD
             this.Friday_Opening_TimePicker.Name = "Friday_Opening_TimePicker";
             this.Friday_Opening_TimePicker.ShowUpDown = true;
             this.Friday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Friday_Opening_TimePicker.TabIndex = 73;
+            this.Friday_Opening_TimePicker.TabIndex = 13;
             this.Friday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Saturday_Closing_TimePicker
@@ -712,7 +741,7 @@ namespace Year_14_CA_SSD
             this.Saturday_Closing_TimePicker.Name = "Saturday_Closing_TimePicker";
             this.Saturday_Closing_TimePicker.ShowUpDown = true;
             this.Saturday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Saturday_Closing_TimePicker.TabIndex = 76;
+            this.Saturday_Closing_TimePicker.TabIndex = 17;
             this.Saturday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 20, 0, 0, 0);
             // 
             // Saturday_Opening_TimePicker
@@ -724,7 +753,7 @@ namespace Year_14_CA_SSD
             this.Saturday_Opening_TimePicker.Name = "Saturday_Opening_TimePicker";
             this.Saturday_Opening_TimePicker.ShowUpDown = true;
             this.Saturday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Saturday_Opening_TimePicker.TabIndex = 75;
+            this.Saturday_Opening_TimePicker.TabIndex = 16;
             this.Saturday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 7, 0, 0, 0);
             // 
             // Sunday_Closing_TimePicker
@@ -736,7 +765,7 @@ namespace Year_14_CA_SSD
             this.Sunday_Closing_TimePicker.Name = "Sunday_Closing_TimePicker";
             this.Sunday_Closing_TimePicker.ShowUpDown = true;
             this.Sunday_Closing_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Sunday_Closing_TimePicker.TabIndex = 78;
+            this.Sunday_Closing_TimePicker.TabIndex = 20;
             this.Sunday_Closing_TimePicker.Value = new System.DateTime(2025, 12, 9, 15, 0, 0, 0);
             // 
             // Sunday_Opening_TimePicker
@@ -748,7 +777,7 @@ namespace Year_14_CA_SSD
             this.Sunday_Opening_TimePicker.Name = "Sunday_Opening_TimePicker";
             this.Sunday_Opening_TimePicker.ShowUpDown = true;
             this.Sunday_Opening_TimePicker.Size = new System.Drawing.Size(66, 29);
-            this.Sunday_Opening_TimePicker.TabIndex = 77;
+            this.Sunday_Opening_TimePicker.TabIndex = 19;
             this.Sunday_Opening_TimePicker.Value = new System.DateTime(2025, 12, 9, 9, 0, 0, 0);
             // 
             // Hours_Unit_Label
@@ -760,6 +789,8 @@ namespace Year_14_CA_SSD
             this.Hours_Unit_Label.Size = new System.Drawing.Size(65, 21);
             this.Hours_Unit_Label.TabIndex = 81;
             this.Hours_Unit_Label.Text = "Hours/s";
+            this.Tool_Tip.SetToolTip(this.Hours_Unit_Label, "The minimuum number of hours between test drives \r\nto allow for cleaning and othe" +
+        "r preparation");
             // 
             // Cleaning_Time_NumericUpDown
             // 
@@ -774,9 +805,11 @@ namespace Year_14_CA_SSD
             0});
             this.Cleaning_Time_NumericUpDown.Name = "Cleaning_Time_NumericUpDown";
             this.Cleaning_Time_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Cleaning_Time_NumericUpDown.TabIndex = 80;
+            this.Cleaning_Time_NumericUpDown.TabIndex = 3;
             this.Cleaning_Time_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Cleaning_Time_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Cleaning_Time_NumericUpDown, "The minimuum number of hours between test drives \r\nto allow for cleaning and othe" +
+        "r preparation\r\n");
             this.Cleaning_Time_NumericUpDown.Value = new decimal(new int[] {
             4,
             0,
@@ -792,6 +825,8 @@ namespace Year_14_CA_SSD
             this.Cleaning_TIme_Label.Size = new System.Drawing.Size(253, 21);
             this.Cleaning_TIme_Label.TabIndex = 79;
             this.Cleaning_TIme_Label.Text = "Cleaning Time Between Test Drives:";
+            this.Tool_Tip.SetToolTip(this.Cleaning_TIme_Label, "The minimuum number of hours between test drives \r\nto allow for cleaning and othe" +
+        "r preparation");
             // 
             // Title_Label
             // 
@@ -803,43 +838,43 @@ namespace Year_14_CA_SSD
             this.Title_Label.TabIndex = 82;
             this.Title_Label.Text = "Manager Settings";
             // 
-            // groupBox1
+            // Opening_GroupBox
             // 
-            this.groupBox1.Controls.Add(this.Sunday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Saturday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Friday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Thursday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Wednesday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Tuesday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Monday_Closed_CheckBox);
-            this.groupBox1.Controls.Add(this.Monday_Label);
-            this.groupBox1.Controls.Add(this.Tuesday_Label);
-            this.groupBox1.Controls.Add(this.Wednesday_Label);
-            this.groupBox1.Controls.Add(this.Thursday_Label);
-            this.groupBox1.Controls.Add(this.Friday_Label);
-            this.groupBox1.Controls.Add(this.Sunday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Saturday_Label);
-            this.groupBox1.Controls.Add(this.Sunday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Sunday_Label);
-            this.groupBox1.Controls.Add(this.Saturday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Monday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Saturday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Monday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Friday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Tuesday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Friday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Tuesday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Thursday_Closing_TimePicker);
-            this.groupBox1.Controls.Add(this.Wednesday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Thursday_Opening_TimePicker);
-            this.groupBox1.Controls.Add(this.Wednesday_Closing_TimePicker);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(635, 175);
-            this.groupBox1.TabIndex = 83;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opening Times";
+            this.Opening_GroupBox.Controls.Add(this.Sunday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Saturday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Friday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Thursday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Wednesday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Tuesday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Monday_Closed_CheckBox);
+            this.Opening_GroupBox.Controls.Add(this.Monday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Tuesday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Wednesday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Thursday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Friday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Sunday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Saturday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Sunday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Sunday_Label);
+            this.Opening_GroupBox.Controls.Add(this.Saturday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Monday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Saturday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Monday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Friday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Tuesday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Friday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Tuesday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Thursday_Closing_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Wednesday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Thursday_Opening_TimePicker);
+            this.Opening_GroupBox.Controls.Add(this.Wednesday_Closing_TimePicker);
+            this.Opening_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Opening_GroupBox.Location = new System.Drawing.Point(20, 59);
+            this.Opening_GroupBox.Name = "Opening_GroupBox";
+            this.Opening_GroupBox.Size = new System.Drawing.Size(635, 175);
+            this.Opening_GroupBox.TabIndex = 0;
+            this.Opening_GroupBox.TabStop = false;
+            this.Opening_GroupBox.Text = "Opening Times";
             // 
             // Sunday_Closed_CheckBox
             // 
@@ -847,7 +882,7 @@ namespace Year_14_CA_SSD
             this.Sunday_Closed_CheckBox.Location = new System.Drawing.Point(551, 128);
             this.Sunday_Closed_CheckBox.Name = "Sunday_Closed_CheckBox";
             this.Sunday_Closed_CheckBox.Size = new System.Drawing.Size(66, 41);
-            this.Sunday_Closed_CheckBox.TabIndex = 85;
+            this.Sunday_Closed_CheckBox.TabIndex = 21;
             this.Sunday_Closed_CheckBox.Text = "Closed on day";
             this.Sunday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Sunday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Sunday_Closed_CheckBox_CheckedChanged);
@@ -858,7 +893,7 @@ namespace Year_14_CA_SSD
             this.Saturday_Closed_CheckBox.Location = new System.Drawing.Point(462, 128);
             this.Saturday_Closed_CheckBox.Name = "Saturday_Closed_CheckBox";
             this.Saturday_Closed_CheckBox.Size = new System.Drawing.Size(66, 41);
-            this.Saturday_Closed_CheckBox.TabIndex = 84;
+            this.Saturday_Closed_CheckBox.TabIndex = 18;
             this.Saturday_Closed_CheckBox.Text = "Closed on day";
             this.Saturday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Saturday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Saturday_Closed_CheckBox_CheckedChanged);
@@ -869,7 +904,7 @@ namespace Year_14_CA_SSD
             this.Friday_Closed_CheckBox.Location = new System.Drawing.Point(372, 128);
             this.Friday_Closed_CheckBox.Name = "Friday_Closed_CheckBox";
             this.Friday_Closed_CheckBox.Size = new System.Drawing.Size(67, 41);
-            this.Friday_Closed_CheckBox.TabIndex = 83;
+            this.Friday_Closed_CheckBox.TabIndex = 15;
             this.Friday_Closed_CheckBox.Text = "Closed on day";
             this.Friday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Friday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Friday_Closed_CheckBox_CheckedChanged);
@@ -880,7 +915,7 @@ namespace Year_14_CA_SSD
             this.Thursday_Closed_CheckBox.Location = new System.Drawing.Point(283, 128);
             this.Thursday_Closed_CheckBox.Name = "Thursday_Closed_CheckBox";
             this.Thursday_Closed_CheckBox.Size = new System.Drawing.Size(67, 41);
-            this.Thursday_Closed_CheckBox.TabIndex = 82;
+            this.Thursday_Closed_CheckBox.TabIndex = 12;
             this.Thursday_Closed_CheckBox.Text = "Closed on day";
             this.Thursday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Thursday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Thursday_Closed_CheckBox_CheckedChanged);
@@ -891,7 +926,7 @@ namespace Year_14_CA_SSD
             this.Wednesday_Closed_CheckBox.Location = new System.Drawing.Point(195, 128);
             this.Wednesday_Closed_CheckBox.Name = "Wednesday_Closed_CheckBox";
             this.Wednesday_Closed_CheckBox.Size = new System.Drawing.Size(67, 41);
-            this.Wednesday_Closed_CheckBox.TabIndex = 81;
+            this.Wednesday_Closed_CheckBox.TabIndex = 9;
             this.Wednesday_Closed_CheckBox.Text = "Closed on day";
             this.Wednesday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Wednesday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Wednesday_Closed_TextBox_CheckedChanged);
@@ -902,7 +937,7 @@ namespace Year_14_CA_SSD
             this.Tuesday_Closed_CheckBox.Location = new System.Drawing.Point(106, 128);
             this.Tuesday_Closed_CheckBox.Name = "Tuesday_Closed_CheckBox";
             this.Tuesday_Closed_CheckBox.Size = new System.Drawing.Size(67, 41);
-            this.Tuesday_Closed_CheckBox.TabIndex = 80;
+            this.Tuesday_Closed_CheckBox.TabIndex = 6;
             this.Tuesday_Closed_CheckBox.Text = "Closed on day";
             this.Tuesday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Tuesday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Tuesday_Closed_TextBox_CheckedChanged);
@@ -913,85 +948,46 @@ namespace Year_14_CA_SSD
             this.Monday_Closed_CheckBox.Location = new System.Drawing.Point(17, 128);
             this.Monday_Closed_CheckBox.Name = "Monday_Closed_CheckBox";
             this.Monday_Closed_CheckBox.Size = new System.Drawing.Size(67, 41);
-            this.Monday_Closed_CheckBox.TabIndex = 79;
+            this.Monday_Closed_CheckBox.TabIndex = 3;
             this.Monday_Closed_CheckBox.Text = "Closed on day";
             this.Monday_Closed_CheckBox.UseVisualStyleBackColor = true;
             this.Monday_Closed_CheckBox.CheckedChanged += new System.EventHandler(this.Monday_Closed_CheckBox_CheckedChanged);
             // 
-            // groupBox2
+            // Test_Drive_GroupBox
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.Day_Unit_Label);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.Test_Drive_Cancel_Label);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.Min_Age_Label);
-            this.groupBox2.Controls.Add(this.Deposit_Percent_NumericUpDown);
-            this.groupBox2.Controls.Add(this.Hours_Unit_Label);
-            this.groupBox2.Controls.Add(this.Expiry_Notice_NumericUpDown);
-            this.groupBox2.Controls.Add(this.Min_Age_NumericUpDown);
-            this.groupBox2.Controls.Add(this.Cleaning_Time_NumericUpDown);
-            this.groupBox2.Controls.Add(this.Cancel_Days_NumericUpDown);
-            this.groupBox2.Controls.Add(this.Cleaning_TIme_Label);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(20, 240);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 169);
-            this.groupBox2.TabIndex = 84;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Test Drive";
+            this.Test_Drive_GroupBox.Controls.Add(this.Deposit_Percent_Sign_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Day_Unit_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.label1);
+            this.Test_Drive_GroupBox.Controls.Add(this.Test_Drive_Cancel_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Expiry_Notice_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Deposit_Percent_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Min_Age_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Deposit_Percent_NumericUpDown);
+            this.Test_Drive_GroupBox.Controls.Add(this.Hours_Unit_Label);
+            this.Test_Drive_GroupBox.Controls.Add(this.Expiry_Notice_NumericUpDown);
+            this.Test_Drive_GroupBox.Controls.Add(this.Min_Age_NumericUpDown);
+            this.Test_Drive_GroupBox.Controls.Add(this.Cleaning_Time_NumericUpDown);
+            this.Test_Drive_GroupBox.Controls.Add(this.Cancel_Days_NumericUpDown);
+            this.Test_Drive_GroupBox.Controls.Add(this.Cleaning_TIme_Label);
+            this.Test_Drive_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Test_Drive_GroupBox.Location = new System.Drawing.Point(20, 240);
+            this.Test_Drive_GroupBox.Name = "Test_Drive_GroupBox";
+            this.Test_Drive_GroupBox.Size = new System.Drawing.Size(383, 169);
+            this.Test_Drive_GroupBox.TabIndex = 10;
+            this.Test_Drive_GroupBox.TabStop = false;
+            this.Test_Drive_GroupBox.Text = "Test Drive";
             // 
-            // groupBox3
+            // Deposit_Percent_Sign_Label
             // 
-            this.groupBox3.Controls.Add(this.Mileage_Fee_NumericUpDown);
-            this.groupBox3.Controls.Add(this.Half_Hour_Mileage_Label);
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.Weekend_Mileage_Label);
-            this.groupBox3.Controls.Add(this.Mileage_Fee_Label);
-            this.groupBox3.Controls.Add(this.Half_Hour_Mileage_NumericUpDown);
-            this.groupBox3.Controls.Add(this.Weekend_Km_Label);
-            this.groupBox3.Controls.Add(this.Half_Km_Label);
-            this.groupBox3.Controls.Add(this.Weekend_Mileage_NumericUpDown);
-            this.groupBox3.Controls.Add(this.Day_Mileage_NumericUpDown);
-            this.groupBox3.Controls.Add(this.Day_Km_Label);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(414, 240);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(223, 173);
-            this.groupBox3.TabIndex = 85;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Test Drive Mileage Limits";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.Weekend_Cost_NumericUpDown);
-            this.groupBox4.Controls.Add(this.Day_Cost_NumericUpDown);
-            this.groupBox4.Controls.Add(this.Half_Hour_Cost_NumericUpDown);
-            this.groupBox4.Controls.Add(this.Discount_NumericUpDown);
-            this.groupBox4.Controls.Add(this.Half_Hour_Cost_Label);
-            this.groupBox4.Controls.Add(this.Day_Cost_Label);
-            this.groupBox4.Controls.Add(this.Weekend_Cost_Label);
-            this.groupBox4.Controls.Add(this.Percent_Unit_Label);
-            this.groupBox4.Controls.Add(this.Discount_Label);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(305, 419);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(333, 154);
-            this.groupBox4.TabIndex = 86;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Test Drive Costs";
-            // 
-            // Default_Button
-            // 
-            this.Default_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Default_Button.Location = new System.Drawing.Point(20, 541);
-            this.Default_Button.Name = "Default_Button";
-            this.Default_Button.Size = new System.Drawing.Size(144, 43);
-            this.Default_Button.TabIndex = 87;
-            this.Default_Button.Text = "Reset To Default";
-            this.Default_Button.UseVisualStyleBackColor = true;
-            this.Default_Button.Click += new System.EventHandler(this.Default_Button_Click);
+            this.Deposit_Percent_Sign_Label.AutoSize = true;
+            this.Deposit_Percent_Sign_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deposit_Percent_Sign_Label.Location = new System.Drawing.Point(313, 137);
+            this.Deposit_Percent_Sign_Label.Name = "Deposit_Percent_Sign_Label";
+            this.Deposit_Percent_Sign_Label.Size = new System.Drawing.Size(23, 21);
+            this.Deposit_Percent_Sign_Label.TabIndex = 55;
+            this.Deposit_Percent_Sign_Label.Text = "%";
+            this.Tool_Tip.SetToolTip(this.Deposit_Percent_Sign_Label, "The percent of a cars price which is used for a deposit for a test drive \r\nand so" +
+        " is charged if the car is damaged");
             // 
             // label1
             // 
@@ -1002,36 +998,32 @@ namespace Year_14_CA_SSD
             this.label1.Size = new System.Drawing.Size(50, 21);
             this.label1.TabIndex = 57;
             this.label1.Text = "Day/s";
+            this.Tool_Tip.SetToolTip(this.label1, "The minimum number of days away a customer’s license can be\r\nfrom expiry on the s" +
+        "tart of the test drive");
             // 
-            // label2
+            // Expiry_Notice_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 21);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Driving License Expiry Notice:";
+            this.Expiry_Notice_Label.AutoSize = true;
+            this.Expiry_Notice_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Expiry_Notice_Label.Location = new System.Drawing.Point(13, 110);
+            this.Expiry_Notice_Label.Name = "Expiry_Notice_Label";
+            this.Expiry_Notice_Label.Size = new System.Drawing.Size(214, 21);
+            this.Expiry_Notice_Label.TabIndex = 42;
+            this.Expiry_Notice_Label.Text = "Driving License Expiry Notice:";
+            this.Tool_Tip.SetToolTip(this.Expiry_Notice_Label, "The minimum number of days away a customer’s license can be\r\nfrom expiry on the s" +
+        "tart of the test drive");
             // 
-            // label3
+            // Deposit_Percent_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 21);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Deposit Price Percentage";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(210, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 21);
-            this.label4.TabIndex = 81;
-            this.label4.Text = "Hours/s";
+            this.Deposit_Percent_Label.AutoSize = true;
+            this.Deposit_Percent_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deposit_Percent_Label.Location = new System.Drawing.Point(13, 137);
+            this.Deposit_Percent_Label.Name = "Deposit_Percent_Label";
+            this.Deposit_Percent_Label.Size = new System.Drawing.Size(181, 21);
+            this.Deposit_Percent_Label.TabIndex = 43;
+            this.Deposit_Percent_Label.Text = "Deposit Price Percentage";
+            this.Tool_Tip.SetToolTip(this.Deposit_Percent_Label, "The percent of a cars price which is used for a deposit for a test drive \r\nand so" +
+        " is charged if the car is damaged");
             // 
             // Deposit_Percent_NumericUpDown
             // 
@@ -1046,37 +1038,12 @@ namespace Year_14_CA_SSD
             0});
             this.Deposit_Percent_NumericUpDown.Name = "Deposit_Percent_NumericUpDown";
             this.Deposit_Percent_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Deposit_Percent_NumericUpDown.TabIndex = 55;
+            this.Deposit_Percent_NumericUpDown.TabIndex = 5;
             this.Deposit_Percent_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Deposit_Percent_NumericUpDown, "The percent of a cars price which is used for a deposit for a test drive \r\nand so" +
+        " is charged if the car is damaged");
             this.Deposit_Percent_NumericUpDown.Value = new decimal(new int[] {
             10,
-            0,
-            0,
-            0});
-            // 
-            // Hours_Before_Late_NumericUpDown
-            // 
-            this.Hours_Before_Late_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
-            this.Hours_Before_Late_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Hours_Before_Late_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hours_Before_Late_NumericUpDown.Location = new System.Drawing.Point(167, 25);
-            this.Hours_Before_Late_NumericUpDown.Maximum = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
-            this.Hours_Before_Late_NumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.Hours_Before_Late_NumericUpDown.Name = "Hours_Before_Late_NumericUpDown";
-            this.Hours_Before_Late_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Hours_Before_Late_NumericUpDown.TabIndex = 80;
-            this.Hours_Before_Late_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Hours_Before_Late_NumericUpDown.ThousandsSeparator = true;
-            this.Hours_Before_Late_NumericUpDown.Value = new decimal(new int[] {
-            2,
             0,
             0,
             0});
@@ -1099,34 +1066,120 @@ namespace Year_14_CA_SSD
             0});
             this.Expiry_Notice_NumericUpDown.Name = "Expiry_Notice_NumericUpDown";
             this.Expiry_Notice_NumericUpDown.Size = new System.Drawing.Size(37, 25);
-            this.Expiry_Notice_NumericUpDown.TabIndex = 56;
+            this.Expiry_Notice_NumericUpDown.TabIndex = 4;
             this.Expiry_Notice_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Expiry_Notice_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Expiry_Notice_NumericUpDown, "The minimum number of days away a customer’s license can be\r\nfrom expiry on the s" +
+        "tart of the test drive");
             this.Expiry_Notice_NumericUpDown.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
             // 
-            // label5
+            // Mileage_GroupBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 21);
-            this.label5.TabIndex = 79;
-            this.label5.Text = "Hours Before Late";
+            this.Mileage_GroupBox.Controls.Add(this.Mileage_Fee_NumericUpDown);
+            this.Mileage_GroupBox.Controls.Add(this.Half_Hour_Mileage_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Day_Mileage_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Weekend_Mileage_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Mileage_Fee_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Half_Hour_Mileage_NumericUpDown);
+            this.Mileage_GroupBox.Controls.Add(this.Weekend_Km_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Half_Km_Label);
+            this.Mileage_GroupBox.Controls.Add(this.Weekend_Mileage_NumericUpDown);
+            this.Mileage_GroupBox.Controls.Add(this.Day_Mileage_NumericUpDown);
+            this.Mileage_GroupBox.Controls.Add(this.Day_Km_Label);
+            this.Mileage_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mileage_GroupBox.Location = new System.Drawing.Point(414, 240);
+            this.Mileage_GroupBox.Name = "Mileage_GroupBox";
+            this.Mileage_GroupBox.Size = new System.Drawing.Size(223, 173);
+            this.Mileage_GroupBox.TabIndex = 30;
+            this.Mileage_GroupBox.TabStop = false;
+            this.Mileage_GroupBox.Text = "Test Drive Mileage Limits";
             // 
-            // label6
+            // Costs_GroupBox
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(313, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 21);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "%";
+            this.Costs_GroupBox.Controls.Add(this.Weekend_Cost_NumericUpDown);
+            this.Costs_GroupBox.Controls.Add(this.Day_Cost_NumericUpDown);
+            this.Costs_GroupBox.Controls.Add(this.Half_Hour_Cost_NumericUpDown);
+            this.Costs_GroupBox.Controls.Add(this.Discount_NumericUpDown);
+            this.Costs_GroupBox.Controls.Add(this.Half_Hour_Cost_Label);
+            this.Costs_GroupBox.Controls.Add(this.Day_Cost_Label);
+            this.Costs_GroupBox.Controls.Add(this.Weekend_Cost_Label);
+            this.Costs_GroupBox.Controls.Add(this.Percent_Unit_Label);
+            this.Costs_GroupBox.Controls.Add(this.Discount_Label);
+            this.Costs_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Costs_GroupBox.Location = new System.Drawing.Point(305, 419);
+            this.Costs_GroupBox.Name = "Costs_GroupBox";
+            this.Costs_GroupBox.Size = new System.Drawing.Size(333, 154);
+            this.Costs_GroupBox.TabIndex = 50;
+            this.Costs_GroupBox.TabStop = false;
+            this.Costs_GroupBox.Text = "Test Drive Costs";
+            // 
+            // Default_Button
+            // 
+            this.Default_Button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Default_Button.Location = new System.Drawing.Point(20, 541);
+            this.Default_Button.Name = "Default_Button";
+            this.Default_Button.Size = new System.Drawing.Size(144, 43);
+            this.Default_Button.TabIndex = 87;
+            this.Default_Button.Text = "Reset To Default";
+            this.Default_Button.UseVisualStyleBackColor = true;
+            this.Default_Button.Click += new System.EventHandler(this.Default_Button_Click);
+            // 
+            // Late_Hours_Label
+            // 
+            this.Late_Hours_Label.AutoSize = true;
+            this.Late_Hours_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Late_Hours_Label.Location = new System.Drawing.Point(210, 25);
+            this.Late_Hours_Label.Name = "Late_Hours_Label";
+            this.Late_Hours_Label.Size = new System.Drawing.Size(65, 21);
+            this.Late_Hours_Label.TabIndex = 81;
+            this.Late_Hours_Label.Text = "Hours/s";
+            this.Tool_Tip.SetToolTip(this.Late_Hours_Label, "The number of hours a test drive can be late \r\nbefore a late charge is then appli" +
+        "ed\r\n");
+            // 
+            // Hours_Before_Late_NumericUpDown
+            // 
+            this.Hours_Before_Late_NumericUpDown.BackColor = System.Drawing.SystemColors.Control;
+            this.Hours_Before_Late_NumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Hours_Before_Late_NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hours_Before_Late_NumericUpDown.Location = new System.Drawing.Point(167, 25);
+            this.Hours_Before_Late_NumericUpDown.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.Hours_Before_Late_NumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Hours_Before_Late_NumericUpDown.Name = "Hours_Before_Late_NumericUpDown";
+            this.Hours_Before_Late_NumericUpDown.Size = new System.Drawing.Size(37, 25);
+            this.Hours_Before_Late_NumericUpDown.TabIndex = 1;
+            this.Hours_Before_Late_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Hours_Before_Late_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Hours_Before_Late_NumericUpDown, "The number of hours a test drive can be late \r\nbefore a late charge is then appli" +
+        "ed\r\n");
+            this.Hours_Before_Late_NumericUpDown.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // Hours_Before_Late_Label
+            // 
+            this.Hours_Before_Late_Label.AutoSize = true;
+            this.Hours_Before_Late_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hours_Before_Late_Label.Location = new System.Drawing.Point(6, 25);
+            this.Hours_Before_Late_Label.Name = "Hours_Before_Late_Label";
+            this.Hours_Before_Late_Label.Size = new System.Drawing.Size(134, 21);
+            this.Hours_Before_Late_Label.TabIndex = 79;
+            this.Hours_Before_Late_Label.Text = "Hours Before Late";
+            this.Tool_Tip.SetToolTip(this.Hours_Before_Late_Label, "The number of hours a test drive can be late \r\nbefore a late charge is then appli" +
+        "ed");
             // 
             // label8
             // 
@@ -1137,6 +1190,7 @@ namespace Year_14_CA_SSD
             this.label8.Size = new System.Drawing.Size(153, 21);
             this.label8.TabIndex = 82;
             this.label8.Text = "Late Fee per Hour:  £";
+            this.Tool_Tip.SetToolTip(this.label8, "The fee charged per hour late after the test drive\r\nhas pased the late threshold");
             // 
             // Late_Fee_NumericUpDown
             // 
@@ -1152,8 +1206,9 @@ namespace Year_14_CA_SSD
             131072});
             this.Late_Fee_NumericUpDown.Name = "Late_Fee_NumericUpDown";
             this.Late_Fee_NumericUpDown.Size = new System.Drawing.Size(50, 25);
-            this.Late_Fee_NumericUpDown.TabIndex = 65;
+            this.Late_Fee_NumericUpDown.TabIndex = 2;
             this.Late_Fee_NumericUpDown.ThousandsSeparator = true;
+            this.Tool_Tip.SetToolTip(this.Late_Fee_NumericUpDown, "The fee charged per hour late after the test drive\r\nhas pased the late threshold");
             this.Late_Fee_NumericUpDown.Value = new decimal(new int[] {
             5,
             0,
@@ -1162,16 +1217,16 @@ namespace Year_14_CA_SSD
             // 
             // Late_Fees_GroupBox
             // 
-            this.Late_Fees_GroupBox.Controls.Add(this.label5);
+            this.Late_Fees_GroupBox.Controls.Add(this.Hours_Before_Late_Label);
             this.Late_Fees_GroupBox.Controls.Add(this.Late_Fee_NumericUpDown);
             this.Late_Fees_GroupBox.Controls.Add(this.Hours_Before_Late_NumericUpDown);
             this.Late_Fees_GroupBox.Controls.Add(this.label8);
-            this.Late_Fees_GroupBox.Controls.Add(this.label4);
+            this.Late_Fees_GroupBox.Controls.Add(this.Late_Hours_Label);
             this.Late_Fees_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Late_Fees_GroupBox.Location = new System.Drawing.Point(20, 419);
             this.Late_Fees_GroupBox.Name = "Late_Fees_GroupBox";
             this.Late_Fees_GroupBox.Size = new System.Drawing.Size(276, 88);
-            this.Late_Fees_GroupBox.TabIndex = 86;
+            this.Late_Fees_GroupBox.TabIndex = 40;
             this.Late_Fees_GroupBox.TabStop = false;
             this.Late_Fees_GroupBox.Text = "Late Fees";
             // 
@@ -1182,10 +1237,10 @@ namespace Year_14_CA_SSD
             this.ClientSize = new System.Drawing.Size(1187, 596);
             this.Controls.Add(this.Late_Fees_GroupBox);
             this.Controls.Add(this.Default_Button);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Costs_GroupBox);
+            this.Controls.Add(this.Mileage_GroupBox);
+            this.Controls.Add(this.Test_Drive_GroupBox);
+            this.Controls.Add(this.Opening_GroupBox);
             this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.Apply_Button);
             this.Controls.Add(this.Back_Button);
@@ -1203,17 +1258,17 @@ namespace Year_14_CA_SSD
             ((System.ComponentModel.ISupportInitialize)(this.Weekend_Mileage_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mileage_Fee_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cleaning_Time_NumericUpDown)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.Opening_GroupBox.ResumeLayout(false);
+            this.Opening_GroupBox.PerformLayout();
+            this.Test_Drive_GroupBox.ResumeLayout(false);
+            this.Test_Drive_GroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Deposit_Percent_NumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Hours_Before_Late_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Expiry_Notice_NumericUpDown)).EndInit();
+            this.Mileage_GroupBox.ResumeLayout(false);
+            this.Mileage_GroupBox.PerformLayout();
+            this.Costs_GroupBox.ResumeLayout(false);
+            this.Costs_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Hours_Before_Late_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Late_Fee_NumericUpDown)).EndInit();
             this.Late_Fees_GroupBox.ResumeLayout(false);
             this.Late_Fees_GroupBox.PerformLayout();
@@ -1239,7 +1294,7 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Test_Drive_Cancel_Label;
         private System.Windows.Forms.Label Min_Age_Label;
         private System.Windows.Forms.Label Half_Hour_Mileage_Label;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label Day_Mileage_Label;
         private System.Windows.Forms.Label Weekend_Mileage_Label;
         private System.Windows.Forms.Label Mileage_Fee_Label;
         private System.Windows.Forms.Button Apply_Button;
@@ -1276,10 +1331,10 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.NumericUpDown Cleaning_Time_NumericUpDown;
         private System.Windows.Forms.Label Cleaning_TIme_Label;
         private System.Windows.Forms.Label Title_Label;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox Opening_GroupBox;
+        private System.Windows.Forms.GroupBox Test_Drive_GroupBox;
+        private System.Windows.Forms.GroupBox Mileage_GroupBox;
+        private System.Windows.Forms.GroupBox Costs_GroupBox;
         private System.Windows.Forms.Button Default_Button;
         private System.Windows.Forms.CheckBox Sunday_Closed_CheckBox;
         private System.Windows.Forms.CheckBox Saturday_Closed_CheckBox;
@@ -1288,17 +1343,18 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.CheckBox Wednesday_Closed_CheckBox;
         private System.Windows.Forms.CheckBox Tuesday_Closed_CheckBox;
         private System.Windows.Forms.CheckBox Monday_Closed_CheckBox;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Deposit_Percent_Sign_Label;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Expiry_Notice_Label;
+        private System.Windows.Forms.Label Deposit_Percent_Label;
         private System.Windows.Forms.NumericUpDown Deposit_Percent_NumericUpDown;
         private System.Windows.Forms.NumericUpDown Expiry_Notice_NumericUpDown;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Late_Hours_Label;
         private System.Windows.Forms.NumericUpDown Hours_Before_Late_NumericUpDown;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Hours_Before_Late_Label;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown Late_Fee_NumericUpDown;
         private System.Windows.Forms.GroupBox Late_Fees_GroupBox;
+        private System.Windows.Forms.ToolTip Tool_Tip;
     }
 }

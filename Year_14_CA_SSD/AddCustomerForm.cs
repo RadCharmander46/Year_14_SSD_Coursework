@@ -129,7 +129,12 @@ namespace Year_14_CA_SSD
             int age = Get_Age();
             if (age != 0)
             {
-                if (Issue_DateTimePicker.Value < new DateTime(2000, 1, 1))
+                if(Issue_DateTimePicker.Value < DOB_DateTimePicker.Value.AddYears(16))
+                {
+                    Expiry_Invalid_Text.Visible = true;
+                    valid = false;
+                }
+                else if (Issue_DateTimePicker.Value < new DateTime(2000, 1, 1))
                 {
                     if (Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, DOB_DateTimePicker.Value, 70))
                     {
@@ -162,7 +167,7 @@ namespace Year_14_CA_SSD
                     }
                 }
             }
-                if (!Globals.validPhoneNumber(Phone_Number_TextBox.Text))
+            if (!Globals.validPhoneNumber(Phone_Number_TextBox.Text))
             {
                 Phone_Number_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Phone_Number_TextBox, "Phone number is invalid \n ensure that you put 0 in front of a UK number");
@@ -226,9 +231,12 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                bool success = SQL_Operation.UpdateEntryVariables(Id, "CustomerId", columnsToUpdate, updatedValues, "CustomerTable");
-                if(!success) { throw new Exception(); }
-                Return_To_CustomerDataForm();
+                if (Customer_Valid())
+                {
+                    bool success = SQL_Operation.UpdateEntryVariables(Id, "CustomerId", columnsToUpdate, updatedValues, "CustomerTable");
+                    if (!success) { throw new Exception(); }
+                    Return_To_CustomerDataForm();
+                }
             }
             catch
             {
@@ -323,27 +331,11 @@ namespace Year_14_CA_SSD
             PostCode_TextBox.Tag = PostCode_TextBox.Text;
         }
 
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Middle_Name_TextBox_TextChanged(object sender, EventArgs e)
         {
             Middle_Name_TextBox.TextChanged -= new EventHandler(Middle_Name_TextBox_TextChanged);
             Globals.Remove_Illegal_Characters(Middle_Name_TextBox, Globals.typedNameInvalid);
             Middle_Name_TextBox.TextChanged += new EventHandler(Middle_Name_TextBox_TextChanged);
-        }
-
-        private void Middle_Name_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void First_Name_Label_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void First_Name_TextBox_TextChanged(object sender, EventArgs e)
@@ -359,31 +351,6 @@ namespace Year_14_CA_SSD
 
             //    }
             //}
-        }
-
-        private void Address_Line1_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Address_Line2_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Phone_Number_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Verified_License_CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -478,15 +445,6 @@ namespace Year_14_CA_SSD
             Add_Customer_Button_Click(this, EventArgs.Empty);
         }
       
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void First_Name_TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
         private void First_Name_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

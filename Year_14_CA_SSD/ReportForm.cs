@@ -103,16 +103,6 @@ namespace Year_14_CA_SSD
             }
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Time_RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if(Time_RadioButton.Checked)

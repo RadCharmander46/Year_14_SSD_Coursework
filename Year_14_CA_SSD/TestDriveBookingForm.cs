@@ -72,6 +72,16 @@ namespace Year_14_CA_SSD
         {
             Title_Label.Text = "Edit a Test Drive";
             Book_Test_Drive_Button.Text = "Edit Test Drive";
+            Previous_Customer_CheckBox.Visible = false;
+            Subtotal_Label.Visible = false;
+            Total_Label.Visible = false;
+            Customer_DropDown.Enabled = false;
+            Customer_TextBox.Enabled = false;
+            Car_DropDown.Enabled = false;
+            Car_TextBox.Enabled = false;
+            Length_ComboBox.Text = "";
+            Length_ComboBox.SelectedIndex = -1;
+            Length_ComboBox.Enabled = false;
         }
         void Load_Customer_Data()
         {
@@ -341,20 +351,9 @@ namespace Year_14_CA_SSD
             dayOfWeek--;
             return Globals.settings.ClosingTimes[dayOfWeek];
         }
-        private void Customer_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Load_Customer_Data();
-            
-        }
-
         private void Car_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load_Car_Data();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Length_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -377,12 +376,34 @@ namespace Year_14_CA_SSD
 
         private void Previous_Customer_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            if(!CustomerId.HasValue && Previous_Customer_CheckBox.Checked)
+            {
+                MessageBox.Show("Must select a customer first");
+                Previous_Customer_CheckBox.Checked = false;
+            }
             if (!Globals.isManager && Previous_Customer_CheckBox.Checked)
             {
                 MessageBox.Show("Needs Manager Approval");
                 Previous_Customer_CheckBox.Checked = false;
             }
+            if(!Is_Previous_Customer(CustomerId.Value) && Previous_Customer_CheckBox.Checked)
+            {
+                MessageBox.Show("Customer must be a previous customer");
+                Previous_Customer_CheckBox.Checked = false;
+            }
             Display_Price();
+        }
+        bool Is_Previous_Customer(int id)
+        {
+            try
+            {
+                string[] values = SQL_Operation.ReadEntry(id, "CustomerId", "CustomerTable");
+                return Convert.ToBoolean(values[15]);
+            }
+            catch
+            {
+                return false;
+            }
         }
         decimal Calculate_Price()
         {
@@ -628,7 +649,7 @@ namespace Year_14_CA_SSD
                 return true;
             }
             DateTime expiryDate = Convert.ToDateTime(customer[13]);
-            if(expiryDate < DateTime.Now.AddDays(Globals.settings.LicenseExpiryAdvance.TotalDays))
+            if(expiryDate < Get_Start_Date().Value.AddDays(Globals.settings.LicenseExpiryAdvance.TotalDays))
             {
                 MessageBox.Show("Customer's license is too close to expiry, please renew it");
                 return true;
@@ -871,10 +892,6 @@ namespace Year_14_CA_SSD
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
         int Convert_Time_To_Minutes(string time)
         {
             try
@@ -1060,7 +1077,7 @@ namespace Year_14_CA_SSD
             int dayOfWeek = ((int)time.DayOfWeek);
             if (dayOfWeek == 0) { dayOfWeek = 7; }//sunday is 0 so move to 7 to be 1-7 monday-sunday
             dayOfWeek--;                         //minus so 0-6 = monday-sunday
-            if (Convert.ToDateTime(Globals.settings.OpenningTimes[dayOfWeek]).TimeOfDay < time.TimeOfDay && time.TimeOfDay < Convert.ToDateTime(Globals.settings.ClosingTimes[dayOfWeek]).TimeOfDay)
+            if (Convert.ToDateTime(Globals.settings.OpenningTimes[dayOfWeek]).TimeOfDay <= time.TimeOfDay && time.TimeOfDay < Convert.ToDateTime(Globals.settings.ClosingTimes[dayOfWeek]).TimeOfDay)
             {
                 return true;
             }
@@ -1237,25 +1254,6 @@ namespace Year_14_CA_SSD
             Car_Picker();
         }
 
-        private void Start_Time_ComboBox_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Start_Time_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Show_Text_Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Customer_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
@@ -1266,24 +1264,9 @@ namespace Year_14_CA_SSD
             e.SuppressKeyPress = true;
         }
 
-        private void Car_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Car_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
-        }
-
-        private void Customer_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Employee_TextBox_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

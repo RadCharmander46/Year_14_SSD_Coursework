@@ -338,7 +338,6 @@ namespace Year_14_CA_SSD
             this.Payment_Label.TabIndex = 50;
             this.Payment_Label.TabStop = false;
             this.Payment_Label.Text = "Payment";
-            this.Payment_Label.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Cancelled_Label
             // 
@@ -369,7 +368,6 @@ namespace Year_14_CA_SSD
             this.Paid_Label.Size = new System.Drawing.Size(36, 25);
             this.Paid_Label.TabIndex = 3;
             this.Paid_Label.Text = "Yes";
-            this.Paid_Label.Click += new System.EventHandler(this.Paid_Label_Click);
             // 
             // label13
             // 

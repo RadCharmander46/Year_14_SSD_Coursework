@@ -184,7 +184,6 @@ namespace Year_14_CA_SSD
             this.Email_Label.Size = new System.Drawing.Size(221, 61);
             this.Email_Label.TabIndex = 29;
             this.Email_Label.Text = "ethanbarret\r\n@gmail.com\r\n";
-            this.Email_Label.Click += new System.EventHandler(this.Email_Label_Click);
             // 
             // Telephone_Label
             // 

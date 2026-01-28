@@ -441,7 +441,7 @@ namespace Year_14_CA_SSD
                 string lastNameCode = macRg.Replace(lastName, "Mc");
                 for (int i = 0; i < 4; i++) //checking first 5 characters
                 {
-                    if (i < lastNameCode.Length - 1) //checking the name is long enough
+                    if (i < lastNameCode.Length) //checking the name is long enough
                     {
                         if (driverNumber[i] != lastNameCode[i])
                         {

@@ -232,6 +232,16 @@ namespace Year_14_CA_SSD
             Manager_Object.Show();
             Manager_Object.Back += new EventHandler(Load_LoginDataForm);
         }
+        void Load_CarServicingForm(object sender, EventArgs e)
+        {
+            CarServicingForm Servicing_Object = new CarServicingForm();
+            Servicing_Object.TopLevel = false;
+            Servicing_Object.AutoScroll = true;
+            Servicing_Object.FormBorderStyle = FormBorderStyle.None;
+            Servicing_Object.Dock = DockStyle.Fill;
+            Screen_Panel.Controls.Add(Servicing_Object);
+            Servicing_Object.Show();
+        }
 
         private void Adding_Cars_Button_Click(object sender, EventArgs e)
         {
@@ -579,21 +589,7 @@ namespace Year_14_CA_SSD
             Wipe_Panel();
             Reset_Sidebar_Highlights();
             Car_Servicing_Button.BackColor = Color.FromArgb(145, 145, 145);
-        }
-
-        private void Sidebar_FlowPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Taskbar_FlowPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Filler_Button2_PictureBox_Click(object sender, EventArgs e)
-        {
-
+            Load_CarServicingForm(this, EventArgs.Empty);
         }
     }
 }
