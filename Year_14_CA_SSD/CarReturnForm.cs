@@ -499,6 +499,7 @@ namespace Year_14_CA_SSD
             if(damageFee > 0)
             {
                 Create_Fee(damageFee, "Fee for damaging a car");
+                SQL_Operation.UpdateEntryVariable(CustomerId.Value, "CustomerId", "DamagedVehicle", "True", "CustomerTable");
             }
             if(Return != null)
             {
