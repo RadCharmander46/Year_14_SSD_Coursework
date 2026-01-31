@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Year_14_CA_SSD
 {
-    public partial class LoginDataForm : Form
+    public partial class AccountDataForm : Form
     {
         public event EventHandler ManagerSettings;
         public event EventHandler HomeScreen;
-        public LoginDataForm()
+        public AccountDataForm()
         {
             InitializeComponent();
         }
@@ -95,7 +95,17 @@ namespace Year_14_CA_SSD
                 MessageBox.Show("An error occured ");
                 return;
             }
+            New_Password_TextBox.Text = "";
+            Retype_Password_TextBox.Text = "";
 
+        }
+
+        private void New_Password_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Reset_Password_Button.PerformClick();
+            }
         }
     }
 }

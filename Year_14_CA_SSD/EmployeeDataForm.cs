@@ -552,9 +552,11 @@ namespace Year_14_CA_SSD
                     return;
                 }
                 int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
+                bool ownAccount = false;
+                if(Globals.loginId == id) { ownAccount = true; }
                 if (AddEmployee != null)
                 {
-                    AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = false, Id = id });
+                    AddEmployee.Invoke(this, new Add_Employee_EventArgs { AddMode = false, Id = id, OwnAccount = ownAccount });
                 }
                 this.Close();
             }
@@ -573,5 +575,6 @@ namespace Year_14_CA_SSD
     {
         public int Id;
         public bool AddMode;
+        public bool OwnAccount;
     }
 }

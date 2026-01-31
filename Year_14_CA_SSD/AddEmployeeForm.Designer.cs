@@ -189,6 +189,7 @@ namespace Year_14_CA_SSD
             this.Manager_Access_CheckBox.Text = "Manager Access";
             this.Manager_Access_CheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Manager_Access_CheckBox.UseVisualStyleBackColor = false;
+            this.Manager_Access_CheckBox.CheckedChanged += new System.EventHandler(this.Manager_Access_CheckBox_CheckedChanged);
             this.Manager_Access_CheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Details_GroupBox

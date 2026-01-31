@@ -1,7 +1,7 @@
 ﻿
 namespace Year_14_CA_SSD
 {
-    partial class LoginDataForm
+    partial class AccountDataForm
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@ namespace Year_14_CA_SSD
             this.Department_Title_Label = new System.Windows.Forms.Label();
             this.Personal_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.Contact_Details_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Work_Details_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Job_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.Manager_Title_Label = new System.Windows.Forms.Label();
             this.Manager_Label = new System.Windows.Forms.Label();
             this.Address_GroupBox = new System.Windows.Forms.GroupBox();
@@ -66,17 +66,17 @@ namespace Year_14_CA_SSD
             this.Error_ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Personal_Details_GroupBox.SuspendLayout();
             this.Contact_Details_GroupBox.SuspendLayout();
-            this.Work_Details_GroupBox.SuspendLayout();
+            this.Job_Details_GroupBox.SuspendLayout();
             this.Address_GroupBox.SuspendLayout();
             this.Reset_Password_GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // Sign_Out_Button
             // 
-            this.Sign_Out_Button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sign_Out_Button.Location = new System.Drawing.Point(1063, 535);
+            this.Sign_Out_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sign_Out_Button.Location = new System.Drawing.Point(1063, 517);
             this.Sign_Out_Button.Name = "Sign_Out_Button";
-            this.Sign_Out_Button.Size = new System.Drawing.Size(112, 49);
+            this.Sign_Out_Button.Size = new System.Drawing.Size(112, 64);
             this.Sign_Out_Button.TabIndex = 10;
             this.Sign_Out_Button.Text = "Sign Out";
             this.Sign_Out_Button.UseVisualStyleBackColor = true;
@@ -104,10 +104,10 @@ namespace Year_14_CA_SSD
             // 
             // Manager_Settings_Button
             // 
-            this.Manager_Settings_Button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Manager_Settings_Button.Location = new System.Drawing.Point(829, 535);
+            this.Manager_Settings_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Manager_Settings_Button.Location = new System.Drawing.Point(829, 517);
             this.Manager_Settings_Button.Name = "Manager_Settings_Button";
-            this.Manager_Settings_Button.Size = new System.Drawing.Size(228, 49);
+            this.Manager_Settings_Button.Size = new System.Drawing.Size(228, 64);
             this.Manager_Settings_Button.TabIndex = 9;
             this.Manager_Settings_Button.Text = "Manager Settings";
             this.Manager_Settings_Button.UseVisualStyleBackColor = true;
@@ -141,6 +141,7 @@ namespace Year_14_CA_SSD
             this.New_Password_TextBox.Name = "New_Password_TextBox";
             this.New_Password_TextBox.Size = new System.Drawing.Size(262, 33);
             this.New_Password_TextBox.TabIndex = 6;
+            this.New_Password_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.New_Password_TextBox_KeyDown);
             // 
             // Retype_Password_TextBox
             // 
@@ -150,6 +151,7 @@ namespace Year_14_CA_SSD
             this.Retype_Password_TextBox.Name = "Retype_Password_TextBox";
             this.Retype_Password_TextBox.Size = new System.Drawing.Size(262, 33);
             this.Retype_Password_TextBox.TabIndex = 7;
+            this.Retype_Password_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.New_Password_TextBox_KeyDown);
             // 
             // Reset_Password_Button
             // 
@@ -352,21 +354,21 @@ namespace Year_14_CA_SSD
             this.Contact_Details_GroupBox.TabStop = false;
             this.Contact_Details_GroupBox.Text = "Contact Details";
             // 
-            // Work_Details_GroupBox
+            // Job_Details_GroupBox
             // 
-            this.Work_Details_GroupBox.Controls.Add(this.Manager_Title_Label);
-            this.Work_Details_GroupBox.Controls.Add(this.Manager_Label);
-            this.Work_Details_GroupBox.Controls.Add(this.Department_Title_Label);
-            this.Work_Details_GroupBox.Controls.Add(this.Department_Label);
-            this.Work_Details_GroupBox.Controls.Add(this.Role_Title_Label);
-            this.Work_Details_GroupBox.Controls.Add(this.Role_Label);
-            this.Work_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Work_Details_GroupBox.Location = new System.Drawing.Point(20, 271);
-            this.Work_Details_GroupBox.Name = "Work_Details_GroupBox";
-            this.Work_Details_GroupBox.Size = new System.Drawing.Size(688, 100);
-            this.Work_Details_GroupBox.TabIndex = 27;
-            this.Work_Details_GroupBox.TabStop = false;
-            this.Work_Details_GroupBox.Text = "Work Details";
+            this.Job_Details_GroupBox.Controls.Add(this.Manager_Title_Label);
+            this.Job_Details_GroupBox.Controls.Add(this.Manager_Label);
+            this.Job_Details_GroupBox.Controls.Add(this.Department_Title_Label);
+            this.Job_Details_GroupBox.Controls.Add(this.Department_Label);
+            this.Job_Details_GroupBox.Controls.Add(this.Role_Title_Label);
+            this.Job_Details_GroupBox.Controls.Add(this.Role_Label);
+            this.Job_Details_GroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Job_Details_GroupBox.Location = new System.Drawing.Point(20, 271);
+            this.Job_Details_GroupBox.Name = "Job_Details_GroupBox";
+            this.Job_Details_GroupBox.Size = new System.Drawing.Size(688, 100);
+            this.Job_Details_GroupBox.TabIndex = 27;
+            this.Job_Details_GroupBox.TabStop = false;
+            this.Job_Details_GroupBox.Text = "Job Details";
             // 
             // Manager_Title_Label
             // 
@@ -435,7 +437,7 @@ namespace Year_14_CA_SSD
             this.Error_ToolTip.ReshowDelay = 0;
             this.Error_ToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
             // 
-            // LoginDataForm
+            // AccountDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -443,19 +445,19 @@ namespace Year_14_CA_SSD
             this.Controls.Add(this.Title_Label);
             this.Controls.Add(this.Reset_Password_GroupBox);
             this.Controls.Add(this.Address_GroupBox);
-            this.Controls.Add(this.Work_Details_GroupBox);
+            this.Controls.Add(this.Job_Details_GroupBox);
             this.Controls.Add(this.Contact_Details_GroupBox);
             this.Controls.Add(this.Personal_Details_GroupBox);
             this.Controls.Add(this.Manager_Settings_Button);
             this.Controls.Add(this.Sign_Out_Button);
-            this.Name = "LoginDataForm";
+            this.Name = "AccountDataForm";
             this.Load += new System.EventHandler(this.LoginDataForm_Load);
             this.Personal_Details_GroupBox.ResumeLayout(false);
             this.Personal_Details_GroupBox.PerformLayout();
             this.Contact_Details_GroupBox.ResumeLayout(false);
             this.Contact_Details_GroupBox.PerformLayout();
-            this.Work_Details_GroupBox.ResumeLayout(false);
-            this.Work_Details_GroupBox.PerformLayout();
+            this.Job_Details_GroupBox.ResumeLayout(false);
+            this.Job_Details_GroupBox.PerformLayout();
             this.Address_GroupBox.ResumeLayout(false);
             this.Address_GroupBox.PerformLayout();
             this.Reset_Password_GroupBox.ResumeLayout(false);
@@ -494,7 +496,7 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.Label Department_Title_Label;
         private System.Windows.Forms.GroupBox Personal_Details_GroupBox;
         private System.Windows.Forms.GroupBox Contact_Details_GroupBox;
-        private System.Windows.Forms.GroupBox Work_Details_GroupBox;
+        private System.Windows.Forms.GroupBox Job_Details_GroupBox;
         private System.Windows.Forms.Label Manager_Title_Label;
         private System.Windows.Forms.Label Manager_Label;
         private System.Windows.Forms.GroupBox Address_GroupBox;

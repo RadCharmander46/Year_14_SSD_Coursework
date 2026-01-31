@@ -125,5 +125,10 @@ namespace Year_14_CA_SSD
         {
             e.SuppressKeyPress = true;
         }
+
+        private void Customer_Drop_Down_Click(object sender, EventArgs e)
+        {
+            Customer_DropDown();
+        }
     }
 }

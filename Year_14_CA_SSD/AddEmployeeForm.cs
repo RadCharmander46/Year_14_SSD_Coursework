@@ -18,6 +18,7 @@ namespace Year_14_CA_SSD
             InitializeComponent();
         }
         public bool addMode = true;
+        public bool ownAccount = false;
         public int Id = 0;
         public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Manager Access" };
         public string[] updatedValues;
@@ -370,6 +371,18 @@ namespace Year_14_CA_SSD
             {
                 Add_Employee_Button.PerformClick();
             }
+        }
+
+        private void Manager_Access_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Manager_Access_CheckBox.CheckedChanged -= new EventHandler(Manager_Access_CheckBox_CheckedChanged);
+            if(ownAccount)
+            {
+                Manager_Access_CheckBox.Checked = !Manager_Access_CheckBox.Checked;
+                MessageBox.Show("Cannot edit manager access for own account");
+            }
+            Manager_Access_CheckBox.CheckedChanged += new EventHandler(Manager_Access_CheckBox_CheckedChanged);
+
         }
     }
 }

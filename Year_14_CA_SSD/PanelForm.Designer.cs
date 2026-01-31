@@ -506,12 +506,12 @@ namespace Year_14_CA_SSD
             this.Clock_Label.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Clock_Label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Clock_Label.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clock_Label.Location = new System.Drawing.Point(1, 686);
+            this.Clock_Label.Location = new System.Drawing.Point(1, 685);
             this.Clock_Label.Name = "Clock_Label";
             this.Clock_Label.Size = new System.Drawing.Size(121, 61);
             this.Clock_Label.TabIndex = 6;
             this.Clock_Label.Text = "15:59\r\n07/11/2025";
-            this.Clock_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Clock_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Clock_Timer
             // 

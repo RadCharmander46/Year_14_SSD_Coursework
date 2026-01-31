@@ -134,11 +134,11 @@
     <Compile Include="HomeScreenForm.Designer.cs">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginDataForm.cs">
+    <Compile Include="AccountDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDataForm.Designer.cs">
-      <DependentUpon>LoginDataForm.cs</DependentUpon>
+    <Compile Include="AccountDataForm.Designer.cs">
+      <DependentUpon>AccountDataForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -232,8 +232,8 @@
     <EmbeddedResource Include="HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginDataForm.resx">
-      <DependentUpon>LoginDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="AccountDataForm.resx">
+      <DependentUpon>AccountDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

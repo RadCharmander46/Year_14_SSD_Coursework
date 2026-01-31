@@ -128,7 +128,7 @@ namespace Year_14_CA_SSD
         }
         void Load_LoginDataForm(object sender, EventArgs e)
         {
-            LoginDataForm Login_Object = new LoginDataForm();
+            AccountDataForm Login_Object = new AccountDataForm();
             Login_Object.TopLevel = false;
             Login_Object.AutoScroll = true;
             Login_Object.FormBorderStyle = FormBorderStyle.None;
@@ -213,6 +213,7 @@ namespace Year_14_CA_SSD
             Add_Employee_EventArgs eArgs = (Add_Employee_EventArgs)e;
             Add_Employee_Object.Id = eArgs.Id;
             Add_Employee_Object.addMode = eArgs.AddMode;
+            Add_Employee_Object.ownAccount = eArgs.OwnAccount;
             Add_Employee_Object.TopLevel = false;
             Add_Employee_Object.AutoScroll = true;
             Add_Employee_Object.FormBorderStyle = FormBorderStyle.None;
