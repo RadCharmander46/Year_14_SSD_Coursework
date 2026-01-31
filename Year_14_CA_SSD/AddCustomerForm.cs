@@ -74,7 +74,7 @@ namespace Year_14_CA_SSD
         {
             Error_ToolTip.RemoveAll();
             Set_TextBox_Backgrounds();
-            Expiry_Invalid_Text.Visible = false;
+            Expiry_Invalid_Label.Visible = false;
 
             bool valid = true;
 
@@ -131,14 +131,14 @@ namespace Year_14_CA_SSD
             {
                 if(Issue_DateTimePicker.Value < DOB_DateTimePicker.Value.AddYears(16))
                 {
-                    Expiry_Invalid_Text.Visible = true;
+                    Issue_Invalid_Label.Visible = true;
                     valid = false;
                 }
                 else if (Issue_DateTimePicker.Value < new DateTime(2000, 1, 1))
                 {
                     if (Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, DOB_DateTimePicker.Value, 70))
                     {
-                        Expiry_Invalid_Text.Visible = true;
+                        Expiry_Invalid_Label.Visible = true;
                         valid = false;
                     }
                 }
@@ -146,7 +146,7 @@ namespace Year_14_CA_SSD
                 {
                     if (!Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, Issue_DateTimePicker.Value, 10))
                     {
-                        Expiry_Invalid_Text.Visible = true;
+                        Expiry_Invalid_Label.Visible = true;
                         valid = false;
                     }
                 }
@@ -154,7 +154,7 @@ namespace Year_14_CA_SSD
                 {
                     if (!Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, Issue_DateTimePicker.Value, 3))
                     {
-                        Expiry_Invalid_Text.Visible = true;
+                        Expiry_Invalid_Label.Visible = true;
                         valid = false;
                     }
                 }
@@ -162,7 +162,7 @@ namespace Year_14_CA_SSD
                 {
                     if (!Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, Issue_DateTimePicker.Value, 5) && !Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, Issue_DateTimePicker.Value, 3) && !Times_Roughly_Years_Apart(Expiry_DateTimePicker.Value, Issue_DateTimePicker.Value, 1))
                     {
-                        Expiry_Invalid_Text.Visible = true;
+                        Expiry_Invalid_Label.Visible = true;
                         valid = false;
                     }
                 }

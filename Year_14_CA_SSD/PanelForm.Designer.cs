@@ -310,7 +310,7 @@ namespace Year_14_CA_SSD
             this.Employee_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Employee_Database_Button.TabIndex = 8;
             this.Employee_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Employee_Database_Button, "Employee Database");
+            this.Base_ToolTip.SetToolTip(this.Employee_Database_Button, "Employee Accounts");
             this.Employee_Database_Button.Click += new System.EventHandler(this.Employee_Database_Button_Click);
             // 
             // Sidebar_Function4_PictureBox
@@ -337,7 +337,7 @@ namespace Year_14_CA_SSD
             this.Payment_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Payment_Database_Button.TabIndex = 7;
             this.Payment_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payment Database");
+            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payments");
             this.Payment_Database_Button.Click += new System.EventHandler(this.Payment_Database_Button_Click);
             // 
             // Sidebar_Function5_PictureBox
@@ -364,7 +364,7 @@ namespace Year_14_CA_SSD
             this.Customer_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Customer_Database_Button.TabIndex = 3;
             this.Customer_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Customer_Database_Button, "Customer Database");
+            this.Base_ToolTip.SetToolTip(this.Customer_Database_Button, "Customer Accounts");
             this.Customer_Database_Button.Click += new System.EventHandler(this.Customer_Database_Button_Click);
             // 
             // Filler_Button2_PictureBox
@@ -442,7 +442,7 @@ namespace Year_14_CA_SSD
             this.Test_Drive_Data_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Test_Drive_Data_Button.TabIndex = 4;
             this.Test_Drive_Data_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Test_Drive_Data_Button, "Test Drive Database");
+            this.Base_ToolTip.SetToolTip(this.Test_Drive_Data_Button, "Test Drive Bookings");
             this.Test_Drive_Data_Button.Click += new System.EventHandler(this.Test_Drive_Data_Button_Click);
             // 
             // Reports_Button

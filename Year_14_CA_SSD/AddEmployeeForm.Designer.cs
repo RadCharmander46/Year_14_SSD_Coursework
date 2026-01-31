@@ -115,6 +115,7 @@ namespace Year_14_CA_SSD
             this.Retype_Password_TextBox.Name = "Retype_Password_TextBox";
             this.Retype_Password_TextBox.Size = new System.Drawing.Size(188, 35);
             this.Retype_Password_TextBox.TabIndex = 35;
+            this.Retype_Password_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // label1
             // 
@@ -133,6 +134,7 @@ namespace Year_14_CA_SSD
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.Size = new System.Drawing.Size(188, 35);
             this.Password_TextBox.TabIndex = 33;
+            this.Password_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Issue_Label
             // 
@@ -152,6 +154,7 @@ namespace Year_14_CA_SSD
             this.Username_TextBox.Size = new System.Drawing.Size(188, 35);
             this.Username_TextBox.TabIndex = 31;
             this.Username_TextBox.TextChanged += new System.EventHandler(this.Usernname_TextBox_TextChanged);
+            this.Username_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // License_Number_Label
             // 
@@ -186,6 +189,7 @@ namespace Year_14_CA_SSD
             this.Manager_Access_CheckBox.Text = "Manager Access";
             this.Manager_Access_CheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Manager_Access_CheckBox.UseVisualStyleBackColor = false;
+            this.Manager_Access_CheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Details_GroupBox
             // 
@@ -213,6 +217,7 @@ namespace Year_14_CA_SSD
             this.Address_Line3_TextBox.Size = new System.Drawing.Size(317, 35);
             this.Address_Line3_TextBox.TabIndex = 15;
             this.Address_Line3_TextBox.TextChanged += new System.EventHandler(this.Address_Line3_TextBox_TextChanged);
+            this.Address_Line3_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line1_TextBox
             // 
@@ -222,6 +227,7 @@ namespace Year_14_CA_SSD
             this.Address_Line1_TextBox.Size = new System.Drawing.Size(317, 35);
             this.Address_Line1_TextBox.TabIndex = 11;
             this.Address_Line1_TextBox.TextChanged += new System.EventHandler(this.Address_Line1_TextBox_TextChanged);
+            this.Address_Line1_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line1_Label
             // 
@@ -241,6 +247,7 @@ namespace Year_14_CA_SSD
             this.Address_Line2_TextBox.Size = new System.Drawing.Size(260, 35);
             this.Address_Line2_TextBox.TabIndex = 13;
             this.Address_Line2_TextBox.TextChanged += new System.EventHandler(this.Address_Line2_TextBox_TextChanged);
+            this.Address_Line2_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Address_Line2_Label
             // 
@@ -270,6 +277,7 @@ namespace Year_14_CA_SSD
             this.PostCode_TextBox.Size = new System.Drawing.Size(156, 35);
             this.PostCode_TextBox.TabIndex = 17;
             this.PostCode_TextBox.TextChanged += new System.EventHandler(this.PostCode_TextBox_TextChanged);
+            this.PostCode_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // PostCode_Label
             // 
@@ -307,6 +315,7 @@ namespace Year_14_CA_SSD
             this.Last_Name_TextBox.Size = new System.Drawing.Size(241, 35);
             this.Last_Name_TextBox.TabIndex = 3;
             this.Last_Name_TextBox.TextChanged += new System.EventHandler(this.Last_Name_TextBox_TextChanged);
+            this.Last_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // First_Name_TextBox
             // 
@@ -316,6 +325,7 @@ namespace Year_14_CA_SSD
             this.First_Name_TextBox.Size = new System.Drawing.Size(241, 35);
             this.First_Name_TextBox.TabIndex = 1;
             this.First_Name_TextBox.TextChanged += new System.EventHandler(this.First_Name_TextBox_TextChanged);
+            this.First_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Middle_Name_TextBox
             // 
@@ -325,6 +335,7 @@ namespace Year_14_CA_SSD
             this.Middle_Name_TextBox.Size = new System.Drawing.Size(156, 35);
             this.Middle_Name_TextBox.TabIndex = 2;
             this.Middle_Name_TextBox.TextChanged += new System.EventHandler(this.Middle_Name_TextBox_TextChanged);
+            this.Middle_Name_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Date_Of_Birth_Label
             // 
@@ -355,6 +366,7 @@ namespace Year_14_CA_SSD
             this.DOB_DateTimePicker.Name = "DOB_DateTimePicker";
             this.DOB_DateTimePicker.Size = new System.Drawing.Size(128, 35);
             this.DOB_DateTimePicker.TabIndex = 4;
+            this.DOB_DateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Middle_Name_Label
             // 
@@ -398,6 +410,7 @@ namespace Year_14_CA_SSD
             this.Email_Address_TextBox.Size = new System.Drawing.Size(317, 35);
             this.Email_Address_TextBox.TabIndex = 23;
             this.Email_Address_TextBox.TextChanged += new System.EventHandler(this.Email_Address_TextBox_TextChanged);
+            this.Email_Address_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Email_Address_Label
             // 
@@ -417,6 +430,7 @@ namespace Year_14_CA_SSD
             this.Phone_Number_TextBox.Size = new System.Drawing.Size(151, 35);
             this.Phone_Number_TextBox.TabIndex = 21;
             this.Phone_Number_TextBox.TextChanged += new System.EventHandler(this.Phone_Number_TextBox_TextChanged);
+            this.Phone_Number_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Phone_Number_Label
             // 
@@ -485,6 +499,7 @@ namespace Year_14_CA_SSD
             this.Role_TextBox.Size = new System.Drawing.Size(241, 35);
             this.Role_TextBox.TabIndex = 42;
             this.Role_TextBox.TextChanged += new System.EventHandler(this.Role_TextBox_TextChanged);
+            this.Role_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // label2
             // 
@@ -504,6 +519,7 @@ namespace Year_14_CA_SSD
             this.Department_TextBox.Size = new System.Drawing.Size(156, 35);
             this.Department_TextBox.TabIndex = 41;
             this.Department_TextBox.TextChanged += new System.EventHandler(this.Department_TextBox_TextChanged);
+            this.Department_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.First_Name_TextBox_KeyDown);
             // 
             // Error_ToolTip
             // 

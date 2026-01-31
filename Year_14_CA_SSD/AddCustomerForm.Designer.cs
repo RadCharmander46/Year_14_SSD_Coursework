@@ -59,7 +59,7 @@ namespace Year_14_CA_SSD
             this.DOB_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Address_Details_GroupBox = new System.Windows.Forms.GroupBox();
             this.License_Details_GroupBox = new System.Windows.Forms.GroupBox();
-            this.Expiry_Invalid_Text = new System.Windows.Forms.Label();
+            this.Expiry_Invalid_Label = new System.Windows.Forms.Label();
             this.Issue_Label = new System.Windows.Forms.Label();
             this.Expiry_Label = new System.Windows.Forms.Label();
             this.Expiry_DateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -69,6 +69,7 @@ namespace Year_14_CA_SSD
             this.History_GroupBox = new System.Windows.Forms.GroupBox();
             this.Damaged_Vehicle_CheckBox = new System.Windows.Forms.CheckBox();
             this.Error_ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.Issue_Invalid_Label = new System.Windows.Forms.Label();
             this.Contact_Details_GroupBox.SuspendLayout();
             this.Personal_Details_GroupBox.SuspendLayout();
             this.Address_Details_GroupBox.SuspendLayout();
@@ -391,7 +392,8 @@ namespace Year_14_CA_SSD
             // License_Details_GroupBox
             // 
             this.License_Details_GroupBox.BackColor = System.Drawing.SystemColors.Control;
-            this.License_Details_GroupBox.Controls.Add(this.Expiry_Invalid_Text);
+            this.License_Details_GroupBox.Controls.Add(this.Issue_Invalid_Label);
+            this.License_Details_GroupBox.Controls.Add(this.Expiry_Invalid_Label);
             this.License_Details_GroupBox.Controls.Add(this.Issue_Label);
             this.License_Details_GroupBox.Controls.Add(this.Expiry_Label);
             this.License_Details_GroupBox.Controls.Add(this.Expiry_DateTimePicker);
@@ -408,17 +410,17 @@ namespace Year_14_CA_SSD
             this.License_Details_GroupBox.TabStop = false;
             this.License_Details_GroupBox.Text = "License Details";
             // 
-            // Expiry_Invalid_Text
+            // Expiry_Invalid_Label
             // 
-            this.Expiry_Invalid_Text.AutoSize = true;
-            this.Expiry_Invalid_Text.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Expiry_Invalid_Text.ForeColor = System.Drawing.Color.Red;
-            this.Expiry_Invalid_Text.Location = new System.Drawing.Point(229, 107);
-            this.Expiry_Invalid_Text.Name = "Expiry_Invalid_Text";
-            this.Expiry_Invalid_Text.Size = new System.Drawing.Size(154, 30);
-            this.Expiry_Invalid_Text.TabIndex = 28;
-            this.Expiry_Invalid_Text.Text = "Expiry is invalid";
-            this.Expiry_Invalid_Text.Visible = false;
+            this.Expiry_Invalid_Label.AutoSize = true;
+            this.Expiry_Invalid_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Expiry_Invalid_Label.ForeColor = System.Drawing.Color.Red;
+            this.Expiry_Invalid_Label.Location = new System.Drawing.Point(229, 107);
+            this.Expiry_Invalid_Label.Name = "Expiry_Invalid_Label";
+            this.Expiry_Invalid_Label.Size = new System.Drawing.Size(154, 30);
+            this.Expiry_Invalid_Label.TabIndex = 28;
+            this.Expiry_Invalid_Label.Text = "Expiry is invalid";
+            this.Expiry_Invalid_Label.Visible = false;
             // 
             // Issue_Label
             // 
@@ -514,6 +516,18 @@ namespace Year_14_CA_SSD
             this.Error_ToolTip.ReshowDelay = 0;
             this.Error_ToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
             // 
+            // Issue_Invalid_Label
+            // 
+            this.Issue_Invalid_Label.AutoSize = true;
+            this.Issue_Invalid_Label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Issue_Invalid_Label.ForeColor = System.Drawing.Color.Red;
+            this.Issue_Invalid_Label.Location = new System.Drawing.Point(229, 68);
+            this.Issue_Invalid_Label.Name = "Issue_Invalid_Label";
+            this.Issue_Invalid_Label.Size = new System.Drawing.Size(146, 30);
+            this.Issue_Invalid_Label.TabIndex = 33;
+            this.Issue_Invalid_Label.Text = "Issue is invalid";
+            this.Issue_Invalid_Label.Visible = false;
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,7 +598,8 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.GroupBox History_GroupBox;
         private System.Windows.Forms.CheckBox Damaged_Vehicle_CheckBox;
         private System.Windows.Forms.ToolTip Error_ToolTip;
-        private System.Windows.Forms.Label Expiry_Invalid_Text;
+        private System.Windows.Forms.Label Expiry_Invalid_Label;
         private System.Windows.Forms.DateTimePicker DOB_DateTimePicker;
+        private System.Windows.Forms.Label Issue_Invalid_Label;
     }
 }

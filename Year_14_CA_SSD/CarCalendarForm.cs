@@ -500,6 +500,7 @@ namespace Year_14_CA_SSD
         void Reset_Labels()
         {
             Car_TextBox.Text = "";
+            Mileage_Label.Text = "";
             Registration_Label.Text = "";
             Bodystyle_Label.Text = "";
             Colour_Label.Text = "";

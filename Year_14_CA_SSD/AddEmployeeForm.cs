@@ -363,5 +363,13 @@ namespace Year_14_CA_SSD
             Globals.Remove_Illegal_Characters(Role_TextBox, typedDepartmentInvalid);
             Role_TextBox.TextChanged += new EventHandler(Role_TextBox_TextChanged);
         }
+
+        private void First_Name_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Add_Employee_Button.PerformClick();
+            }
+        }
     }
 }
