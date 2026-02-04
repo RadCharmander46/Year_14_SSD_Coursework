@@ -570,6 +570,14 @@ namespace Year_14_CA_SSD
             }
             this.Close();
         }
+
+        private void Search_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Search_Button.PerformClick();
+            }
+        }
     }
     public class Add_Employee_EventArgs : EventArgs
     {

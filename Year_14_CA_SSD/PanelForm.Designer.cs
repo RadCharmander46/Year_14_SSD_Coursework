@@ -256,7 +256,7 @@ namespace Year_14_CA_SSD
             this.Test_Drive_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Test_Drive_Button.TabIndex = 0;
             this.Test_Drive_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Test_Drive_Button, "Test Drives");
+            this.Base_ToolTip.SetToolTip(this.Test_Drive_Button, "Book Test Drive");
             this.Test_Drive_Button.Click += new System.EventHandler(this.Test_Drive_Button_Click);
             // 
             // Sidebar_Function2_PictureBox
@@ -337,7 +337,7 @@ namespace Year_14_CA_SSD
             this.Payment_Database_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Payment_Database_Button.TabIndex = 7;
             this.Payment_Database_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payments");
+            this.Base_ToolTip.SetToolTip(this.Payment_Database_Button, "Payment Records");
             this.Payment_Database_Button.Click += new System.EventHandler(this.Payment_Database_Button_Click);
             // 
             // Sidebar_Function5_PictureBox
@@ -377,7 +377,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button2_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Filler_Button2_PictureBox.TabIndex = 15;
             this.Filler_Button2_PictureBox.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Filler_Button2_PictureBox, "Car Return");
             // 
             // Filler_Button5_PictureBox
             // 
@@ -389,7 +388,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button5_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Filler_Button5_PictureBox.TabIndex = 18;
             this.Filler_Button5_PictureBox.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Filler_Button5_PictureBox, "Car Return");
             // 
             // Filler_Button4_PictureBox
             // 
@@ -401,7 +399,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button4_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Filler_Button4_PictureBox.TabIndex = 17;
             this.Filler_Button4_PictureBox.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Filler_Button4_PictureBox, "Car Return");
             // 
             // Car_Return_Button
             // 
@@ -428,7 +425,7 @@ namespace Year_14_CA_SSD
             this.Calender_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Calender_Button.TabIndex = 2;
             this.Calender_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Calender_Button, "Car Availabilty");
+            this.Base_ToolTip.SetToolTip(this.Calender_Button, "Car Calendar");
             this.Calender_Button.Click += new System.EventHandler(this.Calender_Button_Click);
             // 
             // Test_Drive_Data_Button
@@ -456,7 +453,7 @@ namespace Year_14_CA_SSD
             this.Reports_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Reports_Button.TabIndex = 5;
             this.Reports_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Reports_Button, "Test Drive Database");
+            this.Base_ToolTip.SetToolTip(this.Reports_Button, "Reports");
             this.Reports_Button.Click += new System.EventHandler(this.Reports_Button_Click);
             // 
             // Filler_Button1_PictureBox
@@ -469,7 +466,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button1_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Filler_Button1_PictureBox.TabIndex = 14;
             this.Filler_Button1_PictureBox.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Filler_Button1_PictureBox, "Car Return");
             // 
             // Filler_Button3_PictureBox
             // 
@@ -481,7 +477,6 @@ namespace Year_14_CA_SSD
             this.Filler_Button3_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Filler_Button3_PictureBox.TabIndex = 16;
             this.Filler_Button3_PictureBox.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Filler_Button3_PictureBox, "Car Return");
             // 
             // Base_ToolTip
             // 
@@ -498,7 +493,7 @@ namespace Year_14_CA_SSD
             this.Login_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Login_Button.TabIndex = 9;
             this.Login_Button.TabStop = false;
-            this.Base_ToolTip.SetToolTip(this.Login_Button, "Login");
+            this.Base_ToolTip.SetToolTip(this.Login_Button, "Account");
             this.Login_Button.Click += new System.EventHandler(this.Login_Button_Click);
             // 
             // Clock_Label

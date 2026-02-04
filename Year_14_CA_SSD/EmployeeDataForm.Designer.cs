@@ -163,6 +163,7 @@ namespace Year_14_CA_SSD
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(587, 39);
             this.Search_TextBox.TabIndex = 52;
+            this.Search_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Search_TextBox_KeyDown);
             // 
             // pictureBox2
             // 

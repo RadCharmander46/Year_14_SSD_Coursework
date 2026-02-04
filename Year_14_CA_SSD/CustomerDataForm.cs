@@ -532,6 +532,14 @@ namespace Year_14_CA_SSD
                 lastSort = "Inverse Phone Number";
             }
         }
+
+        private void Filter_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Search_Button.PerformClick();
+            }
+        }
     }
     public class Add_Customer_EventArgs : EventArgs
     {

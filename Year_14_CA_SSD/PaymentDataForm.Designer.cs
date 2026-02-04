@@ -483,6 +483,7 @@ namespace Year_14_CA_SSD
             this.Filter_TextBox.Name = "Filter_TextBox";
             this.Filter_TextBox.Size = new System.Drawing.Size(587, 39);
             this.Filter_TextBox.TabIndex = 55;
+            this.Filter_TextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_TextBox_KeyDown);
             // 
             // pictureBox8
             // 

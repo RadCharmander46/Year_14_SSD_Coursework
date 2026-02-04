@@ -499,5 +499,13 @@ namespace Year_14_CA_SSD
             }
             displayedIndexes = tempIndexes;
         }
+
+        private void Filter_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Search_Button.PerformClick();
+            }
+        }
     }
 }
