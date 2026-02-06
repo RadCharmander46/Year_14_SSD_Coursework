@@ -631,8 +631,8 @@ namespace Year_14_CA_SSD
             string[] customer = SQL_Operation.ReadEntry(CustomerId.Value, "CustomerId", "CustomerTable");
 
             DateTime dob = Convert.ToDateTime(customer[4]);
-            int age = DateTime.Now.Year - dob.Year;
-            if(dob > DateTime.Now.AddYears(-age)) //if the birthday hasn't happened yet this year
+            int age = Get_Start_Date().Value.Year - dob.Year;
+            if(dob > Get_Start_Date().Value.AddYears(-age)) //if the birthday hasn't happened yet this year
             {
                 age--;
             }
