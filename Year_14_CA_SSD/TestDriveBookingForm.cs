@@ -938,7 +938,7 @@ namespace Year_14_CA_SSD
             if (CarId != null)
             {
                 DateTime[][] unavailabiltyTimes = Get_Unavailabilty_For_Day();
-                DateTime[][] employeeAvailabilty = unavailabiltyTimes;
+                DateTime[][] employeeAvailabilty = new List<DateTime[]>().ToArray();
                 if (Employee_Accom.Checked && !EmployeeId.HasValue)
                 {
                     Start_Time_ComboBox.Items.Add("Pick an employee");
@@ -1083,6 +1083,9 @@ namespace Year_14_CA_SSD
                 if (haveCleaningTime)
                 {
                     endTime += Globals.settings.CleaningTimeBetweeenTestDrives;
+                    if(Globals.settings.CleaningTimeBetweeenTestDrives > TimeSpan.Zero) { endTime.AddMinutes(-1); }
+                    //to avoid a one off error, ie. test drive ends at 9:30 and cleaning time is 4 hours but 
+                    // next time would be 11:35 despite the expectation that it would be 11:30
                 }
                 for (int i = 0; i < unavailabiltyTimes.Length; i++)
                 {

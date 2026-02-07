@@ -20,21 +20,22 @@ namespace Year_14_CA_SSD
         public bool addMode = true;
         public bool ownAccount = false;
         public int Id = 0;
-        public string[] employeeColumns = { "EmployeeId", "First Name/s", "Middle Name/s", "Last Name/s", "Date Of Birth", "Phone Number", "Email Address", "Address Line 1", "Address Line 2", "Town/City", "Postcode", "Department","Role","Username","Password","Archived","Manager Access" };
+        public string[] employeeColumns = {"FirstName", "MiddleName", "LastName", "DateOfBirth", "PhoneNumber", "EmailAddress", "AddressLine1", "AddressLine2", "AddressLine3", "Postcode", "Department","Role","Username","Password","Archived","ManagerAccess" };
         public string[] updatedValues;
+        public bool passwordUpdate = true;
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
             if(!addMode)
             {
                 Load_Employee_Data();
+                Setup_Edit();
             }
             DOB_DateTimePicker.MaxDate = DateTime.Today.AddYears(-16);
         }
 
         private void Add_Employee_Button_Click(object sender, EventArgs e)
         {
-            updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Username_TextBox.Text, Password_TextBox.Text, "False", Convert.ToString(Manager_Access_CheckBox.Checked) };
             if (addMode)
             {
                 Add_Employee();
@@ -44,8 +45,18 @@ namespace Year_14_CA_SSD
                 Update_Employee();
             }
         }
+        void Setup_Edit()
+        {
+            Title_Label.Text = "Edit Employee";
+            Add_Employee_Button.Text = "Edit Employee";
+        }
+        string Get_Employee_Password() //specifically is unsafe
+        {
+            return SQL_Operation.ReadColumn(Id, "EmployeeId", "Password", "EmployeeTable");
+        }
         void Add_Employee()
         {
+            updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Username_TextBox.Text, Password_TextBox.Text, "False", Convert.ToString(Manager_Access_CheckBox.Checked) };
             try
             {
                 if (Employee_Valid())
@@ -67,6 +78,17 @@ namespace Year_14_CA_SSD
         {
             try
             {
+                if (Password_TextBox.Text != "")
+                {
+                    passwordUpdate = true;
+                    updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Username_TextBox.Text, Password_TextBox.Text, "False", Convert.ToString(Manager_Access_CheckBox.Checked) };
+                }
+                else
+                {
+                    passwordUpdate = false;
+                    updatedValues = new string[] { First_Name_TextBox.Text, Middle_Name_TextBox.Text, Last_Name_TextBox.Text, DOB_DateTimePicker.Value.ToString("yyyyMMdd hh:mm:ss tt"), Phone_Number_TextBox.Text, Email_Address_TextBox.Text, Address_Line1_TextBox.Text, Address_Line2_TextBox.Text, Address_Line3_TextBox.Text, PostCode_TextBox.Text, Department_TextBox.Text, Role_TextBox.Text, Username_TextBox.Text, Get_Employee_Password(), "False", Convert.ToString(Manager_Access_CheckBox.Checked) };
+                }
+
                 if (Employee_Valid())
                 {
                     bool success = SQL_Operation.UpdateEntryVariables(Id, "EmployeeId", employeeColumns, updatedValues, "EmployeeTable");
@@ -76,7 +98,7 @@ namespace Year_14_CA_SSD
             }
             catch
             {
-                MessageBox.Show("An error occured updating the customer");
+                MessageBox.Show("An error occured updating the employee");
             }
         }
         void Load_Employee_Data()
@@ -123,7 +145,7 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(First_Name_TextBox, "First Name is invalid \n Check that it is not empty and has no numbers or special characters \n If a double barrel name is used, use a space not a hypen");
                 valid = false;
             }
-            if(Middle_Name_TextBox.Text != "" && Globals.validName(Middle_Name_TextBox.Text))
+            if(Middle_Name_TextBox.Text != "" && !Globals.validName(Middle_Name_TextBox.Text))
             {
                 Middle_Name_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Middle_Name_TextBox, "Middle Name is invalid \n If filled in, it must not have any numebr or special characters \n If a double barrel name is used, use a space");
@@ -183,17 +205,20 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(Role_TextBox, "Role name is invalid \n Ensure you have spelt it correctly");
                 valid = false;
             }
-            if(!Globals.validPassword(Password_TextBox.Text))
+            if (addMode || Password_TextBox.Text != "") //not checking when editing unless they're resetting their password
             {
-                Password_TextBox.BackColor = Color.Salmon;
-                Error_ToolTip.SetToolTip(Password_TextBox, "Password does not meet the requirements \n Needs to be between 8 and 50 characters, \n Have mixed case, a digit and a special character \n Also cannot contain spaces");
-                valid = false;
-            }
-            if(Password_TextBox.Text != Retype_Password_TextBox.Text)
-            {
-                Retype_Password_TextBox.BackColor = Color.Salmon;
-                Error_ToolTip.SetToolTip(Retype_Password_TextBox, "Passwords do not match");
-                valid = false;
+                if (!Globals.validPassword(Password_TextBox.Text))
+                {
+                    Password_TextBox.BackColor = Color.Salmon;
+                    Error_ToolTip.SetToolTip(Password_TextBox, "Password does not meet the requirements \n Needs to be between 8 and 50 characters, \n Have mixed case, a digit and a special character \n Also cannot contain spaces");
+                    valid = false;
+                }
+                if (Password_TextBox.Text != Retype_Password_TextBox.Text)
+                {
+                    Retype_Password_TextBox.BackColor = Color.Salmon;
+                    Error_ToolTip.SetToolTip(Retype_Password_TextBox, "Passwords do not match");
+                    valid = false;
+                }
             }
             return valid;
         }
