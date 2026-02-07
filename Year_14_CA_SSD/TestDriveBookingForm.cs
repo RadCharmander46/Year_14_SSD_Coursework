@@ -938,6 +938,23 @@ namespace Year_14_CA_SSD
             if (CarId != null)
             {
                 DateTime[][] unavailabiltyTimes = Get_Unavailabilty_For_Day();
+                DateTime[][] employeeAvailabilty = unavailabiltyTimes;
+                if (Employee_Accom.Checked && !EmployeeId.HasValue)
+                {
+                    Start_Time_ComboBox.Items.Add("Pick an employee");
+                    return;
+                }
+
+                if (Employee_Accom.Checked)
+                {
+                     employeeAvailabilty = Get_Employee_Unavailabilty((int)EmployeeId);
+                }
+                if(!CustomerId.HasValue)
+                {
+                    Start_Time_ComboBox.Items.Add("Pick a customer");
+                    return;
+                }
+                DateTime[][] customerAvailabilty = Get_Customer_Unavailabilty(CustomerId.Value);
                 double hoursOffset = 0;
                 if (Length_ComboBox.Text == "30 Minutes")
                 {
@@ -959,10 +976,26 @@ namespace Year_14_CA_SSD
                 for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
                 {
                     DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
-                    if (!Time_Is_Unavailable(time,time.AddHours(hoursOffset), unavailabiltyTimes) && Globals.timeIsInFuture(time))
+                    DateTime endTime = time.AddHours(hoursOffset);
+                    bool valid = true;
+                    if (Time_Is_Unavailable(time,endTime, unavailabiltyTimes) || !Globals.timeIsInFuture(time))
                     {
-                        Start_Time_ComboBox.Items.Add(time.ToShortTimeString());
+                        valid = false;
                     }
+                    if (Employee_Accom.Checked && Time_Is_Unavailable(time, endTime, employeeAvailabilty, false))
+                    {
+                        valid = false;
+                    }
+                    if (Time_Is_Unavailable(time, endTime, customerAvailabilty, false))
+                    {
+                        valid = false;
+                    }
+
+                    if(valid)
+                    {
+                         Start_Time_ComboBox.Items.Add(time.ToShortTimeString());
+                    }
+
                 }
                 if(Start_Time_ComboBox.Items.Count == 0)
                 {
@@ -1087,6 +1120,13 @@ namespace Year_14_CA_SSD
         {
             Start_Time_ComboBox.Items.Clear();
             Display_Possible_Times();
+            if (Length_ComboBox.Text == "Weekend" && Get_Start_Date().Value.DayOfWeek != DayOfWeek.Friday)
+            {
+                MessageBox.Show("Weekend test drive must start on friday");
+                Length_ComboBox.Text = "";
+                Length_ComboBox.SelectedItem = null;
+                Length_ComboBox.SelectedIndex = 0;
+            }
         }
 
 
@@ -1113,6 +1153,11 @@ namespace Year_14_CA_SSD
                 {
                     MessageBox.Show("No customer selected");
                 }
+                finally
+                {
+                    Start_Time_ComboBox.Items.Clear();
+                    Display_Possible_Times();
+                }
             }
             else
             {
@@ -1135,11 +1180,17 @@ namespace Year_14_CA_SSD
                 {
                     EmployeeId = (int)customerPicker.SelectedId;
                     Load_Employee_Data();
+                    Display_Possible_Times();
                 }
             }
             catch
             {
                 MessageBox.Show("No customer selected");
+            }
+            finally
+            {
+                Start_Time_ComboBox.Items.Clear();
+                Display_Possible_Times();
             }
         }
 
@@ -1210,11 +1261,22 @@ namespace Year_14_CA_SSD
         private void Employee_Accom_CheckedChanged(object sender, EventArgs e)
         {
             Employee_Accom.Checked = Need_Employee();
+            if(Employee_Accom.Checked)
+            {
+                Employee_TextBox.Enabled = true;
+                Employee_DropDown.Enabled = true;
+            }
+            else
+            {
+                Employee_TextBox.Enabled = false;
+                Employee_DropDown.Enabled = false;
+            }
         }
         void Update_Employee_Accom()
         {
             Employee_Accom.Checked = Need_Employee();
-            if(Employee_Accom.Checked && EmployeeId.HasValue)
+            
+            if (Employee_Accom.Checked && EmployeeId.HasValue)
             {
                 Load_Employee_Data();
             }
