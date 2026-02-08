@@ -381,6 +381,10 @@ namespace Year_14_CA_SSD
                 return null;
             }
         }
+        bool Test_Drive_Returned_Damaged(string[] testDrive)
+        {
+            return Convert.ToBoolean(testDrive[Get_TestDrive_Column_Index("ReturnedDamaged")]);
+        }
         void Display_All_TestDrives()
         {
             Test_Drives_ListView.Items.Clear();
@@ -396,6 +400,10 @@ namespace Year_14_CA_SSD
                 if(Test_Drive_Is_Cancelled(testDrive))
                 {
                     row.ForeColor = Color.DarkGray;
+                }
+                else if(Test_Drive_Returned_Damaged(testDrive))
+                {
+                    row.ForeColor = Color.Red;
                 }
                 else
                 {

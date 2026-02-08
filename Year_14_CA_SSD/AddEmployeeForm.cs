@@ -127,9 +127,11 @@ namespace Year_14_CA_SSD
                 Department_TextBox.Text = values[11];
                 Role_TextBox.Text = values[12];
                 Username_TextBox.Text = values[13];
+                Manager_Access_CheckBox.CheckedChanged -= new EventHandler(Manager_Access_CheckBox_CheckedChanged);
                 Manager_Access_CheckBox.Checked = Convert.ToBoolean(values[16]);
+                Manager_Access_CheckBox.CheckedChanged += new EventHandler(Manager_Access_CheckBox_CheckedChanged);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("An error occurred when fetching user data");
             }
