@@ -420,29 +420,33 @@ namespace Year_14_CA_SSD
 
         private void Edit_Button_Click(object sender, EventArgs e)
         {
-            try
+            if(Test_Drives_ListView.SelectedItems.Count != 1)
             {
-                string[] testDrive = testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]];
+                MessageBox.Show("A test drive must be selected");
+                return;
+            }
+            string[] testDrive = testDrives[displayedIndexes[Test_Drives_ListView.SelectedItems[0].Index]];
 
-                DateTime startTime = Convert.ToDateTime(Test_Drives_ListView.SelectedItems[0].SubItems[3].Text);
-                if (Globals.timeIsInFuture(startTime))
-                {
-                    if (TestDrive != null)
-                    {
-                        TestDrive.Invoke(this, new TestDrive_EventArgs { Id = Convert.ToInt32(testDrive[0]), AddMode = false });
-                    }
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Test drive has already started, cannot be edited");
-                }
-            }
-            catch
+            DateTime startTime = Convert.ToDateTime(Test_Drives_ListView.SelectedItems[0].SubItems[3].Text);
+
+            if (!Globals.timeIsInFuture(startTime))
             {
-                MessageBox.Show("A entry had not been selected");
+                MessageBox.Show("Test drive has already started, cannot be edited");
+                return;
             }
-            
+
+            if(Convert.ToBoolean(testDrive[Get_TestDrive_Column_Index("IsCancelled")]))
+            {
+                MessageBox.Show("Can't edit a cancelled test drive");
+                return;
+            }
+
+
+            if (TestDrive != null)
+            {
+                TestDrive.Invoke(this, new TestDrive_EventArgs { Id = Convert.ToInt32(testDrive[0]), AddMode = false });
+            }
+            this.Close();
         }
     
 
@@ -1057,7 +1061,7 @@ namespace Year_14_CA_SSD
                         string[] payment = new string[reader.FieldCount];
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            testDrive[i] = reader.GetValue(i).ToString().Trim();
+                            payment[i] = reader.GetValue(i).ToString().Trim();
                         }
 
                         conn.Close();
@@ -1083,7 +1087,7 @@ namespace Year_14_CA_SSD
                         string[] payment = new string[reader.FieldCount];
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            testDrive[i] = reader.GetValue(i).ToString().Trim();
+                            payment[i] = reader.GetValue(i).ToString().Trim();
                         }
 
                         conn.Close();

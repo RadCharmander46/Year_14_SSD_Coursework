@@ -79,8 +79,6 @@ namespace Year_14_CA_SSD
             Customer_TextBox.Enabled = false;
             Car_DropDown.Enabled = false;
             Car_TextBox.Enabled = false;
-            Length_ComboBox.Text = "";
-            Length_ComboBox.SelectedIndex = -1;
             Length_ComboBox.Enabled = false;
         }
         void Load_Customer_Data()
@@ -298,7 +296,29 @@ namespace Year_14_CA_SSD
         }
         void Add_Blocked_Times(DateTime startTime, DateTime endTime,int carUnavailabiltyId)
         {
+            if (CarId == null)
+            {
+                Start_Time_ComboBox.Items.Add("Choose a car");
+                return;
+            }
             DateTime[][] unavailabiltyTimes = Get_Reduced_Car_Unavailabilty(carUnavailabiltyId);
+            DateTime[][] employeeAvailabilty = new List<DateTime[]>().ToArray();
+            if (Employee_Accom.Checked && !EmployeeId.HasValue)
+            {
+                Start_Time_ComboBox.Items.Add("Pick an employee");
+                return;
+            }
+
+            if (Employee_Accom.Checked)
+            {
+                employeeAvailabilty = Get_Reduced_Employee_Availabilty((int)EmployeeId,TestDriveId);
+            }
+            if (!CustomerId.HasValue)
+            {
+                Start_Time_ComboBox.Items.Add("Pick a customer");
+                return;
+            }
+            DateTime[][] customerAvailabilty = Get_Reduced_Customer_Availabilty(CustomerId.Value,TestDriveId);
             double hoursOffset = 0;
             if (Length_ComboBox.Text == "30 Minutes")
             {
@@ -320,10 +340,26 @@ namespace Year_14_CA_SSD
             for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
             {
                 DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
-                if (!Time_Is_Unavailable(time, time.AddHours(hoursOffset), unavailabiltyTimes) && Globals.timeIsInFuture(time))
+                DateTime endingTime = time.AddHours(hoursOffset);
+                bool valid = true;
+                if (Time_Is_Unavailable(time, endingTime, unavailabiltyTimes) || !Globals.timeIsInFuture(time))
+                {
+                    valid = false;
+                }
+                if (Employee_Accom.Checked && Time_Is_Unavailable(time, endingTime, employeeAvailabilty, false))
+                {
+                    valid = false;
+                }
+                if (Time_Is_Unavailable(time, endingTime, customerAvailabilty, false))
+                {
+                    valid = false;
+                }
+
+                if (valid)
                 {
                     Start_Time_ComboBox.Items.Add(time.ToShortTimeString());
                 }
+
             }
             if (Start_Time_ComboBox.Items.Count == 0)
             {
@@ -754,7 +790,7 @@ namespace Year_14_CA_SSD
                     conn.Open();
                     string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
                         "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
-                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}'";
+                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -788,7 +824,7 @@ namespace Year_14_CA_SSD
                     conn.Open();
                     string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
                         "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
-                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}' AND TestDriveTable.TestDriveId != '{testDriveId}'";
+                        $"WHERE TestDriveTable.EmployeeId = '{employeeId}' AND TestDriveTable.TestDriveId != '{testDriveId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -822,7 +858,7 @@ namespace Year_14_CA_SSD
                     conn.Open();
                     string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
                         "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
-                        $"WHERE TestDriveTable.CustomerId = '{customerId}'";
+                        $"WHERE TestDriveTable.CustomerId = '{customerId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -856,7 +892,7 @@ namespace Year_14_CA_SSD
                     conn.Open();
                     string query = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
                         "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
-                        $"WHERE TestDriveTable.CustomerId = '{customerId}' AND TestDriveTable.TestDriveId != '{testDriveId}'";
+                        $"WHERE TestDriveTable.CustomerId = '{customerId}' AND TestDriveTable.TestDriveId != '{testDriveId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -935,76 +971,74 @@ namespace Year_14_CA_SSD
         }
         void Display_Possible_Times()
         {
-            if (CarId != null)
+            if (CarId == null)
             {
-                DateTime[][] unavailabiltyTimes = Get_Unavailabilty_For_Day();
-                DateTime[][] employeeAvailabilty = new List<DateTime[]>().ToArray();
-                if (Employee_Accom.Checked && !EmployeeId.HasValue)
-                {
-                    Start_Time_ComboBox.Items.Add("Pick an employee");
-                    return;
-                }
+                Start_Time_ComboBox.Items.Add("Choose a car");
+                return;
+            }
+            DateTime[][] unavailabiltyTimes = Get_Unavailabilty_For_Day();
+            DateTime[][] employeeAvailabilty = new List<DateTime[]>().ToArray();
+            if (Employee_Accom.Checked && !EmployeeId.HasValue)
+            {
+                Start_Time_ComboBox.Items.Add("Pick an employee");
+                return;
+            }
 
-                if (Employee_Accom.Checked)
-                {
-                     employeeAvailabilty = Get_Employee_Unavailabilty((int)EmployeeId);
-                }
-                if(!CustomerId.HasValue)
-                {
-                    Start_Time_ComboBox.Items.Add("Pick a customer");
-                    return;
-                }
-                DateTime[][] customerAvailabilty = Get_Customer_Unavailabilty(CustomerId.Value);
-                double hoursOffset = 0;
-                if (Length_ComboBox.Text == "30 Minutes")
-                {
-                    hoursOffset = 0.5d;
-                }
-                else if(Length_ComboBox.Text == "1 Day")
-                {
-                    hoursOffset = 24;
-                }
-                else if(Length_ComboBox.Text == "Weekend")
-                {
-                    hoursOffset = 72;
-                }
-                else
-                {
-                    Start_Time_ComboBox.Items.Add("Pick a length");
-                    return;
-                }
-                for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
-                {
-                    DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
-                    DateTime endTime = time.AddHours(hoursOffset);
-                    bool valid = true;
-                    if (Time_Is_Unavailable(time,endTime, unavailabiltyTimes) || !Globals.timeIsInFuture(time))
-                    {
-                        valid = false;
-                    }
-                    if (Employee_Accom.Checked && Time_Is_Unavailable(time, endTime, employeeAvailabilty, false))
-                    {
-                        valid = false;
-                    }
-                    if (Time_Is_Unavailable(time, endTime, customerAvailabilty, false))
-                    {
-                        valid = false;
-                    }
-
-                    if(valid)
-                    {
-                         Start_Time_ComboBox.Items.Add(time.ToShortTimeString());
-                    }
-
-                }
-                if(Start_Time_ComboBox.Items.Count == 0)
-                {
-                    Start_Time_ComboBox.Items.Add("No times available");
-                }
+            if (Employee_Accom.Checked)
+            {
+                employeeAvailabilty = Get_Employee_Unavailabilty((int)EmployeeId);
+            }
+            if(!CustomerId.HasValue)
+            {
+                Start_Time_ComboBox.Items.Add("Pick a customer");
+                return;
+            }
+            DateTime[][] customerAvailabilty = Get_Customer_Unavailabilty(CustomerId.Value);
+            double hoursOffset = 0;
+            if (Length_ComboBox.Text == "30 Minutes")
+            {
+                hoursOffset = 0.5d;
+            }
+            else if(Length_ComboBox.Text == "1 Day")
+            {
+                hoursOffset = 24;
+            }
+            else if(Length_ComboBox.Text == "Weekend")
+            {
+                hoursOffset = 72;
             }
             else
             {
-                Start_Time_ComboBox.Items.Add("Choose a car");
+                Start_Time_ComboBox.Items.Add("Pick a length");
+                return;
+            }
+            for (int minutes = Convert_Time_To_Minutes(Get_Opening_Time()); minutes <= Convert_Time_To_Minutes(Get_Closing_Time()); minutes += 5)
+            {
+                DateTime time = Date_DateTimePicker.Value.Date.AddMinutes(minutes);
+                DateTime endTime = time.AddHours(hoursOffset);
+                bool valid = true;
+                if (Time_Is_Unavailable(time,endTime, unavailabiltyTimes) || !Globals.timeIsInFuture(time))
+                {
+                    valid = false;
+                }
+                if (Employee_Accom.Checked && Time_Is_Unavailable(time, endTime, employeeAvailabilty, false))
+                {
+                    valid = false;
+                }
+                if (Time_Is_Unavailable(time, endTime, customerAvailabilty, false))
+                {
+                    valid = false;
+                }
+
+                if(valid)
+                {
+                    Start_Time_ComboBox.Items.Add(time.ToShortTimeString());
+                }
+
+            }
+            if(Start_Time_ComboBox.Items.Count == 0)
+            {
+                Start_Time_ComboBox.Items.Add("No times available");
             }
         }
         DateTime[][] Get_Unavailabilty_For_Day()
@@ -1016,7 +1050,9 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string cmdText = $"SELECT StartTime,EndTime FROM CarUnavailabiltyTable WHERE  CarId = '{CarId}' "; //((StartTime >= '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND StartTime < '{day.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss")}') OR (EndTime >= '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND EndTime < '{day.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss")}') OR (StartTime < '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND EndTime > '{day.ToString("yyyy-MM-dd HH:mm:ss")}') AND
+                    string cmdText = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                        "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                        $"WHERE CarUnavailabiltyTable.CarId = '{CarId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -1046,7 +1082,9 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string cmdText = $"SELECT StartTime,EndTime FROM CarUnavailabiltyTable WHERE  CarId = '{CarId}' AND CarUnavailabiltyId != '{unavailabiltyToSkipId}' "; //((StartTime >= '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND StartTime < '{day.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss")}') OR (EndTime >= '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND EndTime < '{day.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss")}') OR (StartTime < '{day.ToString("yyyy-MM-dd HH:mm:ss")}' AND EndTime > '{day.ToString("yyyy-MM-dd HH:mm:ss")}') AND
+                    string cmdText = "SELECT CarUnavailabiltyTable.StartTime, CarUnavailabiltyTable.EndTime FROM TestDriveTable " +
+                       "INNER JOIN CarUnavailabiltyTable ON TestDriveTable.CarUnavailabiltyId = CarUnavailabiltyTable.CarUnavailabiltyId " +
+                       $"WHERE CarUnavailabiltyTable.CarId = '{CarId}' AND CarUnavailabiltyTable.CarUnavailabiltyId != '{unavailabiltyToSkipId}' AND TestDriveTable.IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
