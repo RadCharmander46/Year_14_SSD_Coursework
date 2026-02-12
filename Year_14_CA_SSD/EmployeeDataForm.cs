@@ -496,32 +496,34 @@ namespace Year_14_CA_SSD
 
         private void Archive_Button_Click(object sender, EventArgs e)
         {
-            if (Employee_ListView.SelectedItems.Count == 1)
+            if (Employee_ListView.SelectedItems.Count != 1)
             {
-                int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
-                if (Employee_ListView.SelectedItems[0].ForeColor == Color.DarkGray)
+                MessageBox.Show("No employee was selected");
+                return;
+            }
+            int id = Convert.ToInt32(employees[displayedIndexes[Employee_ListView.SelectedItems[0].Index]][0]);
+            if (Employee_ListView.SelectedItems[0].ForeColor == Color.DarkGray)
+            {
+                MessageBox.Show("Employee is already archived");
+                return;
+            }
+            if (!Employee_Can_Be_Archived(id))
+            {
+                MessageBox.Show("Employee cannot be archived");
+                return;
+            }
+            ConfirmationForm archiveConfirm = new ConfirmationForm() { text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
+            archiveConfirm.StartPosition = FormStartPosition.Manual;
+            archiveConfirm.Location = new Point(Cursor.Position.X - archiveConfirm.Size.Width / 2 + 100, Cursor.Position.Y - archiveConfirm.Size.Height / 2);
+            if (archiveConfirm.ShowDialog() == DialogResult.OK)
+            {
+                if (!SQL_Operation.UpdateEntryVariable(id, "EmployeeId", "Archived", "True", "EmployeeTable"))
                 {
-                    MessageBox.Show("Employee is already archived");
-                    return;
+                    MessageBox.Show("An error ocurred");
                 }
-                if(!Employee_Can_Be_Archived(id))
+                else
                 {
-                    MessageBox.Show("Employee cannot be archived");
-                    return;
-                }
-                ConfirmationForm archiveConfirm = new ConfirmationForm() { text = "Warning: Archiving is a permanent action \n Only continue if you are certain" };
-                archiveConfirm.StartPosition = FormStartPosition.Manual;
-                archiveConfirm.Location = new Point(Cursor.Position.X - archiveConfirm.Size.Width / 2 + 100, Cursor.Position.Y - archiveConfirm.Size.Height / 2);
-                if (archiveConfirm.ShowDialog() == DialogResult.OK)
-                {
-                    if (!SQL_Operation.UpdateEntryVariable(id, "EmployeeId", "Archived", "True", "EmployeeTable"))
-                    {
-                        MessageBox.Show("An error ocurred");
-                    }
-                    else
-                    {
-                        Refresh_Page();
-                    }
+                    Refresh_Page();
                 }
             }
         }

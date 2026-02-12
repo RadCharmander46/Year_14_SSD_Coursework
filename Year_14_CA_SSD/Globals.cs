@@ -35,7 +35,7 @@ namespace Year_14_CA_SSD
             }
 
         }
-        public static bool validString(string testString, int maxLength,int minLength,bool lettersOnly, bool numericAllowed, bool specialCharactersAllowed,bool spaceAllowed)
+        public static bool validString(string testString, int maxLength,int minLength,bool lettersOnly, bool numericAllowed, bool specialCharactersAllowed,bool spaceAllowed,bool laggingWhitespace)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Year_14_CA_SSD
                 {
                     return false;
                 }
-               if(minLength != 0 && (testString[0] == ' ' || testString[testString.Length-1] == ' ') )//can't have leading or lagging whitespace
+               if(minLength != 0 && (testString[0] == ' ' || (testString[testString.Length-1] == ' ' && !laggingWhitespace) ) )//can't have leading or lagging whitespace
                 {
                     return false;
                 }
@@ -107,7 +107,7 @@ namespace Year_14_CA_SSD
         }
         public static bool validName(string name)
         {
-            bool validString = Globals.validString(name, 50, 1, false, false, true, true);
+            bool validString = Globals.validString(name, 50, 1, false, false, true, true,false);
             if(!validString)
             {
                 return false;
@@ -137,7 +137,7 @@ namespace Year_14_CA_SSD
         }
         public static bool typedNameInvalid(string name)
         {
-            bool validString = Globals.validString(name, 50, 0, false, false, true, true);
+            bool validString = Globals.validString(name, 50, 0, false, false, true, true,true);
             if (!validString)
             {
                 return true;
@@ -172,7 +172,7 @@ namespace Year_14_CA_SSD
         }
         public static bool validAddress(string address)
         {
-            bool validString = Globals.validString(address, 50, 1, false, true, true, true);
+            bool validString = Globals.validString(address, 50, 1, false, true, true, true,false);
             if(!validString)
             {
                 return false;
@@ -270,7 +270,7 @@ namespace Year_14_CA_SSD
         {
             try
             {
-                if (!validString(postCode, 8, 5, false, true, false, true)) //checks only contains numbers and lettera
+                if (!validString(postCode, 8, 5, false, true, false, true,false)) //checks only contains numbers and lettera
                 {
                     return false;
                 }
@@ -375,11 +375,15 @@ namespace Year_14_CA_SSD
         }
         public static bool typedPhoneNumberInvalid(string phoneNumber)
         {
+            if(phoneNumber.Length > 11)
+            {
+                return true;
+            }
             try
             {
                 foreach(char character in phoneNumber)
                 {
-                    int num = Convert.ToInt32(character);
+                    int num = Convert.ToInt32(character.ToString());
                 }
                 return false;
             }
@@ -483,7 +487,7 @@ namespace Year_14_CA_SSD
                     return false;
                 }
                 int num = Convert.ToInt32(driverNumber[13]); //checking 14th char is number
-                bool charactersValid = validString(driverNumber[14].ToString() + driverNumber[15].ToString(), 2, 2, false, true, false, false);
+                bool charactersValid = validString(driverNumber[14].ToString() + driverNumber[15].ToString(), 2, 2, false, true, false, false,false);
                 if(!charactersValid) //checking the 15th & 16th characters are alphanumeric
                 {
                     return false;
@@ -661,6 +665,11 @@ namespace Year_14_CA_SSD
             {
                 string domain = splitEmail[1];
 
+                if (doubleDotRg.IsMatch(domain)) //checking if there are consecutive '.'s which is not allowed
+                {
+                    return true;
+                }
+
                 if (domain.Length > 255)
                 {
                     return true;
@@ -672,7 +681,7 @@ namespace Year_14_CA_SSD
                     {
                         return true;
                     }
-                    if (label[0] == '-' || label[label.Length - 1] == '-') //hypen can't be first of last letter of a dns label
+                    if (label[0] == '-') //hypen can't be first of last letter of a dns label
                     {
                         return true;
                     }

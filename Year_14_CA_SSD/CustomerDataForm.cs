@@ -393,7 +393,7 @@ namespace Year_14_CA_SSD
                 try
                 {
                     conn.Open();
-                    string query = $"SELECT * FROM TestDriveTable WHERE CustomerId = '{ customerId}'";
+                    string query = $"SELECT * FROM TestDriveTable WHERE CustomerId = '{ customerId}' AND IsCanceled = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -417,12 +417,44 @@ namespace Year_14_CA_SSD
         }
         bool Can_Archive(int customerId)
         {
+            return Has_Bookings_Coming_Up(customerId) || Has_Unpaid_Payments(customerId);
+        }
+        bool Has_Bookings_Coming_Up(int customerId)
+        {
             using (SqlConnection conn = new SqlConnection(Globals.connectionString))
             {
                 try
                 {
                     conn.Open();
                     string query = $"SELECT * FROM TestDriveTable WHERE CustomerId = '{ customerId}' AND StartTime > {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    string[] testDrive = new string[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        testDrive[i] = reader.GetValue(i).ToString().Trim();
+                    }
+
+                    conn.Close();
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    return true;
+                }
+            }
+        }
+        bool Has_Unpaid_Payments(int customerId)
+        {
+            using (SqlConnection conn = new SqlConnection(Globals.connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"SELECT * FROM PaymentTable WHERE CustomerId = '{ customerId}' AND HasBeenPaid = 'False'";
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     SqlDataReader reader = cmd.ExecuteReader();

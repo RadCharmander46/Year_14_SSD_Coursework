@@ -195,13 +195,19 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(Email_Address_TextBox, "Email Address in invalid \n Ensure you have spelt it correctly");
                 valid = false;
             }
-            if(!Globals.validString(Department_TextBox.Text,20,1,false,false,false,true))
+            if(!Globals.validString(Username_TextBox.Text,10,10,false,true,false,true,false))
+            {
+                Username_TextBox.BackColor = Color.Salmon;
+                Error_ToolTip.SetToolTip(Username_TextBox, "Username is invalid \n Ensure that it is 10 characters long");
+                valid = false;
+            }
+            if(!Globals.validString(Department_TextBox.Text,20,1,false,false,false,true,false))
             {
                 Department_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Department_TextBox, "Department name is invalid \n Ensure you have spelt it correctly");
                 valid = false;
             }
-            if(!Globals.validString(Role_TextBox.Text,20,1,false,false,false,true))
+            if(!Globals.validString(Role_TextBox.Text,20,1,false,false,false,true,false))
             {
                 Role_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Role_TextBox, "Role name is invalid \n Ensure you have spelt it correctly");
@@ -332,7 +338,7 @@ namespace Year_14_CA_SSD
                 PostCode_TextBox.SelectionStart = index + 1;
             }
 
-            if (!Globals.validString(PostCode_TextBox.Text, 8, 0, false, true, false, true) || Globals.containsAccentedCharacters(PostCode_TextBox.Text))
+            if (!Globals.validString(PostCode_TextBox.Text, 8, 0, false, true, false, true,true) || Globals.containsAccentedCharacters(PostCode_TextBox.Text))
             {
                 PostCode_TextBox.TextChanged -= new EventHandler(PostCode_TextBox_TextChanged);
                 PostCode_TextBox.Text = (string)PostCode_TextBox.Tag;
@@ -378,11 +384,11 @@ namespace Year_14_CA_SSD
         }
         bool typedDepartmentInvalid(string department)
         {
-            return !Globals.validString(department, 20, 0, false, false, true, true);
+            return !Globals.validString(department, 20, 0, false, false, false, true,true);
         }
         bool typedRoleInvalid(string role)
         {
-            return !Globals.validString(role, 0, 20, false, false, true, true);
+            return !Globals.validString(role, 0, 20, false, false, true, true,true);
         }
 
         private void Role_TextBox_TextChanged(object sender, EventArgs e)

@@ -108,7 +108,7 @@ namespace Year_14_CA_SSD
                 Error_ToolTip.SetToolTip(Address_Line2_TextBox, "Address Line 2 is invalid \n Check that it is filled in and not left empty");
                 valid = false;
             }
-            if (!Globals.validAddress(Address_Line3_TextBox.Text) || !Globals.validString(Address_Line3_TextBox.Text, 50, 1, false, false, true,true)) //can't have numbers in line 3
+            if (!Globals.validAddress(Address_Line3_TextBox.Text) || !Globals.validString(Address_Line3_TextBox.Text, 50, 1, false, false, true,true,true)) //can't have numbers in line 3
             {
                 Address_Line3_TextBox.BackColor = Color.Salmon;
                 Error_ToolTip.SetToolTip(Address_Line3_TextBox, "Address Line 3 is invalid");
@@ -317,7 +317,7 @@ namespace Year_14_CA_SSD
                 PostCode_TextBox.SelectionStart = index + 1;
             }
 
-            if (!Globals.validString(PostCode_TextBox.Text,8,0,false,true,false,true) || Globals.containsAccentedCharacters(PostCode_TextBox.Text))
+            if (!Globals.validString(PostCode_TextBox.Text,8,0,false,true,false,true,false) || Globals.containsAccentedCharacters(PostCode_TextBox.Text))
             {
                 PostCode_TextBox.TextChanged -= new EventHandler(PostCode_TextBox_TextChanged);
                 PostCode_TextBox.Text = (string)PostCode_TextBox.Tag;
