@@ -396,10 +396,10 @@ namespace Year_14_CA_SSD
         {
             if (!(Length_ComboBox.Text == "Weekend" && Get_Start_Date().Value.DayOfWeek != DayOfWeek.Friday))
             {
+                Update_Employee_Accom();
                 Display_Price();
                 Start_Time_ComboBox.Items.Clear();
                 Display_Possible_Times();
-                Update_Employee_Accom();
             }
             else
             {
@@ -1121,7 +1121,7 @@ namespace Year_14_CA_SSD
                 if (haveCleaningTime)
                 {
                     endTime += Globals.settings.CleaningTimeBetweeenTestDrives;
-                    if(Globals.settings.CleaningTimeBetweeenTestDrives > TimeSpan.Zero) { endTime.AddMinutes(-1); }
+                    if(Globals.settings.CleaningTimeBetweeenTestDrives > TimeSpan.Zero) {endTime = endTime.AddMinutes(-1); startTime = startTime.AddMinutes(1); }
                     //to avoid a one off error, ie. test drive ends at 9:30 and cleaning time is 4 hours but 
                     // next time would be 11:35 despite the expectation that it would be 11:30
                 }
@@ -1151,7 +1151,9 @@ namespace Year_14_CA_SSD
             int dayOfWeek = ((int)time.DayOfWeek);
             if (dayOfWeek == 0) { dayOfWeek = 7; }//sunday is 0 so move to 7 to be 1-7 monday-sunday
             dayOfWeek--;                         //minus so 0-6 = monday-sunday
-            if (Convert.ToDateTime(Globals.settings.OpenningTimes[dayOfWeek]).TimeOfDay <= time.TimeOfDay && time.TimeOfDay < Convert.ToDateTime(Globals.settings.ClosingTimes[dayOfWeek]).TimeOfDay)
+            TimeSpan openingTime = Convert.ToDateTime(Globals.settings.OpenningTimes[dayOfWeek]).TimeOfDay;
+            TimeSpan closingTime = Convert.ToDateTime(Globals.settings.ClosingTimes[dayOfWeek]).TimeOfDay;
+            if (openingTime <= time.TimeOfDay && time.TimeOfDay < closingTime)
             {
                 return true;
             }

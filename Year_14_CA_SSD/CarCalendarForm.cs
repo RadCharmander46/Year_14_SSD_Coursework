@@ -46,26 +46,29 @@ namespace Year_14_CA_SSD
             if (indexFirstDayMonth < 0) { indexFirstDayMonth += 7; }
             indexFirstDayMonth -= 1;
             int year = Convert.ToInt32(Year_Label.Text);
+            int previousYear = year;
             int previousMonth = month - 1;
             if(previousMonth < 1)
             {
                 previousMonth = 12;
+                previousYear--;
             }
             int previousMonthDays = DateTime.DaysInMonth(year, previousMonth);
             int monthDays = DateTime.DaysInMonth(year, month);
 
+            int nextYear = year;
             int nextMonth = month + 1;
             if (nextMonth > 12)
             {
                 nextMonth = 1;
-                year++;
+                nextYear++;
             }
 
             DateTime[][] carUnavailabiltyTimes = Get_Car_Unavailabilty_Times();
 
             for(int i = previousMonthDays - indexFirstDayMonth ; i<=previousMonthDays;i++)
             {
-                DateTime date = Convert.ToDateTime($"{year}/{previousMonth}/{i}");
+                DateTime date = Convert.ToDateTime($"{previousYear}/{previousMonth}/{i}");
                 Calendar_FlowPanel.Controls.Add(Create_Date(date, carUnavailabiltyTimes, true));
             }
             for (int i = 1; i <= monthDays; i++)
@@ -79,7 +82,7 @@ namespace Year_14_CA_SSD
             if(numberToShow == 7) { numberToShow = 0; }
             for (int i = 1; i <= numberToShow; i++)
             {
-                DateTime date = Convert.ToDateTime($"{year}/{nextMonth}/{i}");
+                DateTime date = Convert.ToDateTime($"{nextYear}/{nextMonth}/{i}");
                 Calendar_FlowPanel.Controls.Add(Create_Date(date,carUnavailabiltyTimes,true));
             }
             Calendar_Date_FlowPanel.Hide();

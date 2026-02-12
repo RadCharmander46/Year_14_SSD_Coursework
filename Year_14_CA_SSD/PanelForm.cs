@@ -20,7 +20,7 @@ namespace Year_14_CA_SSD
             Clear_To_HomeScreen();
         }
         public Action<object,EventArgs>[] sidebarEvents = new Action<object, EventArgs>[5];
-        void Reset_SidebarEvents()
+        void Reset_Sidebar_Events()
         {
             sidebarEvents = new Action<object, EventArgs>[5];
         }
@@ -249,7 +249,7 @@ namespace Year_14_CA_SSD
             Clear_To_HomeScreen();
             Reset_Taskbar_Highlights();
             Reset_Sidebar_Highlights();
-            Reset_SidebarEvents();
+            Reset_Sidebar_Events();
             Adding_Cars_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Fill_Sidebar_Filler();
@@ -261,7 +261,7 @@ namespace Year_14_CA_SSD
             Clear_To_HomeScreen();
             Reset_Taskbar_Highlights();
             Reset_Sidebar_Highlights();
-            Reset_SidebarEvents();
+            Reset_Sidebar_Events();
             Selling_Cars_Button.BackColor = SystemColors.ActiveBorder;
             Sidebar_FlowPanel.Controls.Clear();
             Fill_Sidebar_Filler();
@@ -292,7 +292,7 @@ namespace Year_14_CA_SSD
                 Clear_To_HomeScreen();
                 Reset_Taskbar_Highlights();
                 Reset_Sidebar_Highlights();
-                Reset_SidebarEvents();
+                Reset_Sidebar_Events();
                 Moving_Cars_Button.BackColor = SystemColors.ActiveBorder;
 
                 Sidebar_FlowPanel.Controls.Clear();
@@ -321,33 +321,31 @@ namespace Year_14_CA_SSD
 
         private void Staff_Button_Click(object sender, EventArgs e)
         {
-            if (Globals.signedIn)
-            {
-                Clear_To_HomeScreen();
-                Reset_Taskbar_Highlights();
-                Reset_Sidebar_Highlights();
-                Reset_SidebarEvents();
-                Staff_Button.BackColor = SystemColors.ActiveBorder;
-
-                Sidebar_FlowPanel.Controls.Clear();
-                Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Reports_Button);
-                Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
-                Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
-                Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
-
-                sidebarEvents[0] = Reports_Button_Click;
-                sidebarEvents[1] = Employee_Database_Button_Click;
-            }
-            else
+            if (!Globals.signedIn)
             {
                 MessageBox.Show("Please Sign In");
+                return;
             }
+            Clear_To_HomeScreen();
+            Reset_Taskbar_Highlights();
+            Reset_Sidebar_Highlights();
+            Reset_Sidebar_Events();
+            Staff_Button.BackColor = SystemColors.ActiveBorder; //highlight colour
+
+            Sidebar_FlowPanel.Controls.Clear();
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function1_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Reports_Button);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function2_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Employee_Database_Button);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function3_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button3_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function4_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button4_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Sidebar_Function5_PictureBox);
+            Sidebar_FlowPanel.Controls.Add(Filler_Button5_PictureBox);
+
+            sidebarEvents[0] = Reports_Button_Click;
+            sidebarEvents[1] = Employee_Database_Button_Click;
         }
 
         private void Customers_Button_Click(object sender, EventArgs e)
@@ -357,7 +355,7 @@ namespace Year_14_CA_SSD
                 Clear_To_HomeScreen();
                 Reset_Taskbar_Highlights();
                 Reset_Sidebar_Highlights();
-                Reset_SidebarEvents();
+                Reset_Sidebar_Events();
                 Customers_Button.BackColor = SystemColors.ActiveBorder;
 
                 Sidebar_FlowPanel.Controls.Clear();
@@ -487,7 +485,7 @@ namespace Year_14_CA_SSD
                 Clear_To_HomeScreen();
                 Reset_Taskbar_Highlights();
                 Reset_Sidebar_Highlights();
-                Reset_SidebarEvents();
+                Reset_Sidebar_Events();
                 Payment_Button.BackColor = SystemColors.ActiveBorder;
 
                 Sidebar_FlowPanel.Controls.Clear();
