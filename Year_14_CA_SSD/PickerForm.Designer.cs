@@ -29,12 +29,14 @@ namespace Year_14_CA_SSD
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Table_ListView = new System.Windows.Forms.ListView();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.Continue_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
-            this.Sorting_Label = new System.Windows.Forms.Label();
+            this.Searching_Label = new System.Windows.Forms.Label();
             this.Change_Column_Button = new System.Windows.Forms.PictureBox();
+            this.Sorting_ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Change_Column_Button)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,15 +85,15 @@ namespace Year_14_CA_SSD
             this.Cancel_Button.UseVisualStyleBackColor = true;
             this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
-            // Sorting_Label
+            // Searching_Label
             // 
-            this.Sorting_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sorting_Label.Location = new System.Drawing.Point(2, 219);
-            this.Sorting_Label.Name = "Sorting_Label";
-            this.Sorting_Label.Size = new System.Drawing.Size(43, 32);
-            this.Sorting_Label.TabIndex = 5;
-            this.Sorting_Label.Text = "DOB";
-            this.Sorting_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Searching_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searching_Label.Location = new System.Drawing.Point(2, 219);
+            this.Searching_Label.Name = "Searching_Label";
+            this.Searching_Label.Size = new System.Drawing.Size(43, 32);
+            this.Searching_Label.TabIndex = 5;
+            this.Searching_Label.Text = "DOB";
+            this.Searching_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Change_Column_Button
             // 
@@ -113,7 +115,7 @@ namespace Year_14_CA_SSD
             this.ClientSize = new System.Drawing.Size(384, 306);
             this.Controls.Add(this.Change_Column_Button);
             this.Controls.Add(this.Search_TextBox);
-            this.Controls.Add(this.Sorting_Label);
+            this.Controls.Add(this.Searching_Label);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Continue_Button);
             this.Controls.Add(this.Table_ListView);
@@ -132,7 +134,8 @@ namespace Year_14_CA_SSD
         private System.Windows.Forms.TextBox Search_TextBox;
         private System.Windows.Forms.Button Continue_Button;
         private System.Windows.Forms.Button Cancel_Button;
-        private System.Windows.Forms.Label Sorting_Label;
+        private System.Windows.Forms.Label Searching_Label;
         private System.Windows.Forms.PictureBox Change_Column_Button;
+        private System.Windows.Forms.ToolTip Sorting_ToolTip;
     }
 }

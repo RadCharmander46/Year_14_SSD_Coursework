@@ -99,6 +99,11 @@ namespace Year_14_CA_SSD
             }
             else if(Customer_RadioButton.Checked)
             {
+                if(!customerId.HasValue)
+                {
+                    MessageBox.Show("Customer has not been selected");
+                    return;
+                }
                 Load_Customer_Report();
             }
         }

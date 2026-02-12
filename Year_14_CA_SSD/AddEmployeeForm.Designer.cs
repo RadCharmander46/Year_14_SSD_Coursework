@@ -112,6 +112,7 @@ namespace Year_14_CA_SSD
             // 
             this.Retype_Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Retype_Password_TextBox.Location = new System.Drawing.Point(184, 150);
+            this.Retype_Password_TextBox.MaxLength = 50;
             this.Retype_Password_TextBox.Name = "Retype_Password_TextBox";
             this.Retype_Password_TextBox.Size = new System.Drawing.Size(188, 35);
             this.Retype_Password_TextBox.TabIndex = 35;
@@ -131,6 +132,7 @@ namespace Year_14_CA_SSD
             // 
             this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_TextBox.Location = new System.Drawing.Point(184, 109);
+            this.Password_TextBox.MaxLength = 50;
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.Size = new System.Drawing.Size(188, 35);
             this.Password_TextBox.TabIndex = 33;

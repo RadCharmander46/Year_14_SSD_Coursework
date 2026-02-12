@@ -31,7 +31,8 @@ namespace Year_14_CA_SSD
             Table_ListView.Columns.Add("Date Of Birth", 91);
             Load_Customers();
             Display_Values();
-            Sorting_Label.Text = "Fn";
+            Searching_Label.Text = "Fn";
+            Sorting_ToolTip.SetToolTip(Searching_Label, "First Name");
         }
         void Setup_Employees()
         {
@@ -41,7 +42,8 @@ namespace Year_14_CA_SSD
             Table_ListView.Columns.Add("Date Of Birth", 91);
             Load_Employees();
             Display_Values();
-            Sorting_Label.Text = "ID";
+            Searching_Label.Text = "ID";
+            Sorting_ToolTip.SetToolTip(Searching_Label, "Employee Id");
         }
         void Setup_Cars()
         {
@@ -51,7 +53,8 @@ namespace Year_14_CA_SSD
             Table_ListView.Columns.Add("Year Of Manufacture", 91);
             Load_Cars();
             Display_Values();
-            Sorting_Label.Text = "REG";
+            Searching_Label.Text = "REG";
+            Sorting_ToolTip.SetToolTip(Searching_Label, "Registration");
         }
         private void Load_Customers()
         {
@@ -240,23 +243,28 @@ namespace Year_14_CA_SSD
         }
         void Change_Filter_Label()
         {
+            Sorting_ToolTip.RemoveAll();
             if (Table == "Customers")
             {
                 if(FilteringIndex == 0)
                 {
-                    Sorting_Label.Text = "FN";
+                    Searching_Label.Text = "FN";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "First Name");
                 }
                 else if (FilteringIndex == 1)
                 {
-                    Sorting_Label.Text = "LN";
+                    Searching_Label.Text = "LN";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Last Name");
                 }
                 else if (FilteringIndex == 2)
                 {
-                    Sorting_Label.Text = "Tel";
+                    Searching_Label.Text = "Tel";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Phone Number");
                 }
                 else if (FilteringIndex == 3)
                 {
-                    Sorting_Label.Text = "DOB";
+                    Searching_Label.Text = "DOB";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Date Of Birth");
                 }
                 else
                 {
@@ -267,19 +275,23 @@ namespace Year_14_CA_SSD
             {
                 if (FilteringIndex == 0)
                 {
-                    Sorting_Label.Text = "ID";
+                    Searching_Label.Text = "ID";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Employee Id");
                 }
                 else if (FilteringIndex == 1)
                 {
-                    Sorting_Label.Text = "FN";
+                    Searching_Label.Text = "FN";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "First Name");
                 }
                 else if (FilteringIndex == 2)
                 {
-                    Sorting_Label.Text = "LN";
+                    Searching_Label.Text = "LN";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Last Name");
                 }
                 else if (FilteringIndex == 3)
                 {
-                    Sorting_Label.Text = "DOB";
+                    Searching_Label.Text = "DOB";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Date Of Birth");
                 }
                 else
                 {
@@ -290,19 +302,23 @@ namespace Year_14_CA_SSD
             {
                 if (FilteringIndex == 0)
                 {
-                    Sorting_Label.Text = "REG";
+                    Searching_Label.Text = "REG";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Registration");
                 }
                 else if (FilteringIndex == 1)
                 {
-                    Sorting_Label.Text = "MK";
+                    Searching_Label.Text = "MK";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Car Make");
                 }
                 else if (FilteringIndex == 2)
                 {
-                    Sorting_Label.Text = "MDL";
+                    Searching_Label.Text = "MDL";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Car Model");
                 }
                 else if (FilteringIndex == 3)
                 {
-                    Sorting_Label.Text = "YOM";
+                    Searching_Label.Text = "YOM";
+                    Sorting_ToolTip.SetToolTip(Searching_Label, "Year Of Manufacture");
                 }
                 else
                 {

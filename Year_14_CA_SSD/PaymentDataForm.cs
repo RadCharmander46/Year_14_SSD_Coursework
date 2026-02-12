@@ -280,6 +280,14 @@ namespace Year_14_CA_SSD
             }
             return -1;
         }
+        bool Get_Payment_Paid(string[] payment)
+        {
+            return Convert.ToBoolean(payment[Get_Payment_Column_Index("Has Been Paid")]);
+        }
+        bool Get_Payment_Cancelled(string[] payment)
+        {
+            return Convert.ToBoolean(payment[Get_Payment_Column_Index("Cancelled")]);
+        }
 
         private void Sort_Customer_Click(object sender, EventArgs e)
         {
@@ -442,22 +450,36 @@ namespace Year_14_CA_SSD
 
         private void Mark_Paid_Button_Click(object sender, EventArgs e)
         {
-            if (Payments_ListView.SelectedItems.Count == 1)
+            if (Payments_ListView.SelectedItems.Count != 1)
             {
-                try
+                MessageBox.Show("A payment needs to be selected");
+                return;
+            }
+            try
+            {
+                string[] payment = payments[displayedIndexes[Payments_ListView.SelectedItems[0].Index]];
+                bool cancelled = Get_Payment_Cancelled(payment);
+                if (cancelled)
                 {
-                    int id = Convert.ToInt32(payments[displayedIndexes[Payments_ListView.SelectedItems[0].Index]][0]);
-                    if (!SQL_Operation.UpdateEntryVariable(id, "PaymentId", "IsCancelled", "True", "PaymentTable")) //paying was succesful
-                    {
-                        MessageBox.Show("An error occurred when updating the payment");
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("An error occurred when updating the payment ");
+                    MessageBox.Show("The selected payment has been cancelled and so cannot be paid");
                     return;
                 }
-
+                bool paid = Get_Payment_Paid(payment);
+                if (paid)
+                {
+                    MessageBox.Show("The selected payment has already been paid");
+                    return;
+                }
+                int id = Convert.ToInt32(payment[0]);
+                if (!SQL_Operation.UpdateEntryVariable(id, "PaymentId", "HasBeenPaid", "True", "PaymentTable")) //paying was succesful
+                {
+                    MessageBox.Show("An error occurred when updating the payment");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when updating the payment ");
+                return;
             }
         }
         void Show_Cancelled(object sender, EventArgs e)
